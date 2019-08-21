@@ -23,13 +23,13 @@
 
     <!--    <demo></demo>-->
     <div class="foot-father">
-
       <div class="footer">
         <div class="footer-center">
           <div class="footer-left">
             <p style="font-size: 18px; line-height: 40px;">客服电话</p>
             <p style="font-size: 23px; line-height: 27px; color: #389efb;">86800055</p>
-            <p style="font-size: 11px; line-height: 40px; font-family: 'Microsoft YaHei'; color: #999">工作时间 周一至周六 8:00-17:30</p>
+            <p style="font-size: 11px; line-height: 40px; font-family: 'Microsoft YaHei'; color: #999">工作时间 周一至周六
+              8:00-17:30</p>
             <p style="font-size: 12px; vertical-align: middle; color: #717171;">
               客服QQ &nbsp;
               <img src="/static/image/site_qq.jpg" height="21" alt="点击咨询"/>
@@ -152,9 +152,7 @@
 </script>
 
 <style lang="css">
-
   /*@import "/static/css/index.css"; 引入样式*/
-
   * {
     word-break: break-word;
     margin: 0 auto;
