@@ -81,8 +81,8 @@
     /*top: 380px;*/
     padding-left: 20px;
     top: 5px;
-    bottom: 10px;
-    margin-bottom: 30px;
+    bottom: 5px;
+    margin-bottom: 20px;
     background: #FFFFFF;
     padding-top: 20px;
     height: 200px;

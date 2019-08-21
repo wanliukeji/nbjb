@@ -29,8 +29,7 @@
     /*top: 380px;*/
     padding-left: auto;
     top: 5px;
-    bottom: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   .img-div {
     margin-top: 1px;
