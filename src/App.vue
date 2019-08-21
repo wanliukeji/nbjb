@@ -18,14 +18,10 @@
     <!--    <div class="centext">-->
     <img-model></img-model>
     <example-model></example-model>
-    <example-model></example-model>
-    <footer-table></footer-table>
     <footer-table></footer-table>
     <!--    <data-dmo></data-dmo>-->
 
     <!--    <demo></demo>-->
-
-
     <div class="foot-father">
 
       <div class="footer">
