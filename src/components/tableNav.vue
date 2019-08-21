@@ -67,7 +67,8 @@
         </tr>
       </table>
     </div>
-    <img src="/static/image/bujubeilun.png" alt="" width="1200" height="70">
+<!--    <img src="/static/image/timg.jpg" alt="" width="1200" height="70">-->
+<!--    <img src="/static/image/bujubeilun.png" alt="" width="1200" height="70">-->
   </div>
 
 </template>
@@ -83,10 +84,10 @@
     min-width: 100%;
     min-height: 91px;
     background: #FFFFFF;
-    position: absolute;
+    position: relative;
     min-height: 91px;
     height: auto;
-    top: 206px;
+    top: 0px;
     /*padding-left: 10%;*/
     margin: 0 auto;
     vertical-align: middle;

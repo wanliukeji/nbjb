@@ -18,6 +18,6 @@
    z-index: 100;
    position: relative;
    background: black;
-   top:600px;
+   /*top:600px;*/
  }
 </style>

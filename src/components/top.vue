@@ -23,6 +23,7 @@
     padding-left: 10%;
     padding-right: 10%;
     min-width: 1200px;
+    position: relative;
     /*border: 1px black solid;*/
   }
 </style>

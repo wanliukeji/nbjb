@@ -1,20 +1,17 @@
 <template lang="html">
-  <div class="img-model">
-    <img src="../../static/image/bujubeilun.png" class="img-div" height="70" width="1200"/>
-    <img src="../../static/image/wanke.gif" class="img-div" height="70" width="1200"/>
-    <img src="../../static/image/lanhai.gif" class="img-div" height="70" width="1200"/>
-    <img src="../../static/image/jiuyue.png" class="img-div" height="70" width="1200"/>
+  <div class="model">
+
   </div>
 </template>
 
 <script>
     export default {
-        name: "imgModel"
+        name: "exampleModel"
     }
 </script>
 
 <style scoped>
-  .img-model {
+  .model {
     position: relative;
     width: 100%;
     min-width: 1200px;
@@ -31,6 +28,7 @@
     top: 5px;
     bottom: 10px;
     margin-bottom: 30px;
+    background: #FFFFFF;
   }
   .img-div {
     margin-top: 1px;

@@ -30,8 +30,8 @@
 
 <style scoped>
   .menu-nav {
-    position: absolute;
-    top: 160px;
+    position: relative;
+    top: 0px;
     margin: 0 auto;
     min-height: 46px;
     background: #1c8ce9;

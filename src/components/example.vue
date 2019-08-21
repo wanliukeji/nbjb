@@ -30,9 +30,9 @@
     height: auto;
     background: #ff9715;
     color: black;
-    position: absolute;
+    position: relative;
     min-height: 120px;
-    top: 40px;
+    top: 0px;
     min-width: 1200px;
     background: url("/static/image/header_bg.jpg") no-repeat;
     background-size: 100%;
