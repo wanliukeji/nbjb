@@ -15,7 +15,7 @@
 
 <style scoped>
   .img-model {
-    position: absolute;
+    position: relative;
     width: 100%;
     min-width: 1200px;
     height: auto;
@@ -26,10 +26,9 @@
     /*margin-top: 10px;*/
     display: block;
     /*border: black 1px solid;*/
-    top: 300px;
+    top: 360px;
     padding-left: auto;
   }
-
   .img-div {
     margin-top: 1px;
   }

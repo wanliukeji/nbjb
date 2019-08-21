@@ -67,6 +67,7 @@
         </tr>
       </table>
     </div>
+    <img src="/static/image/bujubeilun.png" alt="" width="1200" height="70">
   </div>
 
 </template>
@@ -83,12 +84,14 @@
     min-height: 91px;
     background: #FFFFFF;
     position: absolute;
-    height: 91px;
+    min-height: 91px;
+    height: auto;
     top: 206px;
     /*padding-left: 10%;*/
     margin: 0 auto;
     vertical-align: middle;
     text-align: center;
+    padding-bottom: 10px;
   }
 
   .table-center {
@@ -98,6 +101,7 @@
     height: auto;
     position: relative;
     padding-top: 13px;
+    margin-bottom: 10px;
   }
 
   * {
@@ -151,6 +155,9 @@
 
   a {
    font:  10px/1.5 Tahoma,'Microsoft Yahei','Simsun';
+  }
+  img {
+    margin-top: 10px;
   }
 
 </style>

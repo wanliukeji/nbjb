@@ -1,6 +1,24 @@
 <template>
-  <div class="menu_nav">
-
+  <div class="menu-nav">
+    <div class="nav-div">
+      <ul>
+        <li class="li-div">
+          首页
+        </li>
+        <li class="li-div">
+          论坛
+        </li>
+        <li class="li-div">
+          手机版
+        </li>
+        <li class="li-div">
+          我的贴子
+        </li>
+        <li class="li-div">
+          APP下载
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -11,15 +29,46 @@
 </script>
 
 <style scoped>
-  .menu_nav {
+  .menu-nav {
     position: absolute;
     top: 160px;
     margin: 0 auto;
-    padding-right: 10%;
-    padding-left: 10%;
     min-height: 46px;
     background: #1c8ce9;
     width: 100%;
-    min-width: 100%;
+    min-width: 1200px;
+    vertical-align: center;
+    text-align: center;
+    /*border: black 1px solid;*/
+  }
+  .nav-div {
+    width: 85%;
+    height: auto;
+    /*border: black 1px solid;*/
+    position: relative;
+    min-width: 1200px;
+  }
+  .li-div {
+    width: 100px;
+    min-width: 100px;
+    /*border: #88ff19 1px solid;*/
+    /*height: 30px;*/
+    height: 46px;
+    position: relative;
+    color: #FFFFFF;
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 45px;
+  }
+  li:first-child {
+    background: #1382de;
+  }
+
+
+  .li-div:hover {
+    background: #1382de;
+    cursor: pointer;
   }
 </style>

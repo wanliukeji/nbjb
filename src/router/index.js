@@ -22,7 +22,12 @@ export default new Router({
       path: '/movieInfo',
       name: 'movieInfo',
       component: movieInfo
-     }
+     },
+    {
+      path: '/showModel',
+      name: 'showModel',
+      component: () => import('@/components/showModel.vue')
+    }
     // {
     //   path: '/',
     //   name: 'bodyText',

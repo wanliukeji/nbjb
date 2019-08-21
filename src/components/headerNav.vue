@@ -36,16 +36,16 @@
             //         console.log("http error" + error);
             //     });
         },
-        props: {navTitle:String},
-        methods:{
-            goToInfo(info){
+        props: {navTitle: String},
+        methods: {
+            goToInfo(info) {
                 //这里因为我想把整个对象传给详情页，所以使用的是session
-                sessionStorage.setItem('movieInfo',JSON.stringify(info));
+                sessionStorage.setItem('movieInfo', JSON.stringify(info));
                 this.$router.push({
-                    path:'/movieInfo',  //路径
-                    name:'movieInfo', //配置路由时的name
+                    path: '/movieInfo',  //路径
+                    name: 'movieInfo', //配置路由时的name
                 });
             }
         }
     };
- </script>
+</script>

@@ -1,5 +1,10 @@
 <template lang="html">
-  <div class="top"></div>
+  <div class="top">
+    <ul>
+<!--      -->
+<!--      <li>首页</li>-->
+    </ul>
+  </div>
 </template>
 
 <script>
