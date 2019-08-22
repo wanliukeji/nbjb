@@ -21,7 +21,7 @@
     <footer-table></footer-table>
     <!--    <data-dmo></data-dmo>-->
 
-    <!--    <demo></demo>-->
+        <demo></demo>
     <div class="foot-father">
       <div class="footer">
         <div class="footer-center">

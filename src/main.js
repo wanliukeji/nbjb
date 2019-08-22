@@ -11,12 +11,17 @@ import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import'vant/lib/vant-css/index.css';
 import VueResource from 'vue-resource'
+import ElementUI from 'element-ui' //element-ui的全部组件
+import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
+
 
 
 Vue.use(Vuex);
 Vue.use(Vant);
 // Vue.use($query);
 Vue.use(VueResource);
+Vue.use(ElementUI) //使用elementUI
+
 // Vue.use(axios);
 // Vue.prototype.$http=axios;
 // Vue.prototype.$http.get=VueResource;
