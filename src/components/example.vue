@@ -116,22 +116,7 @@
     cursor: pointer;
   }
 
-  .nav_bbs {
-    position: relative;
-    z-index: 1;
-    float: left;
-    margin-top: 12px;
-    width: 92px;
-    height: 18px;
-    /*border-right: 1px solid #ebebeb;*/
-  }
-
-  .set {
-    background: url(https://bbs.cnnb.com/template/weixia_cms/weixia/src/svg/d_s.svg) center right 8px no-repeat;
-    background-size: 15px;
-  }
-
-  p, .nav_bbs {
+  p {
     display: block;
     padding-left: 10px;
     font-size: 14px;

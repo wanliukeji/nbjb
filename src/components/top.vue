@@ -2,10 +2,16 @@
   <div class="top">
     <div class="top-center">
       <ul class="top-left">
-        <li class="top-left-li">Webmaster, 您好！</li>
-        <li class="top-left-li">首页</li>
-        <li class="top-left-li">管理中心</li>
-        <li class="top-left-li">退出</li>
+        <li class="top-left-li">您好！ <a href="">请登录</a></li>
+        <li class="top-left-li">免费注册</li>
+        <li class="top-left-li">
+          <i class="bd-qq"></i>
+          QQ登录
+        </li>
+        <li class="top-left-li">
+          <i class="icon-weixin"></i>
+          微信登录
+        </li>
       </ul>
 
       <ul class="top-right">
@@ -123,6 +129,7 @@
     line-height: 18px;
     /*border: black 1px solid;*/
   }
+
   .ul-hide-me {
     right: 50px;
     width: 70px;

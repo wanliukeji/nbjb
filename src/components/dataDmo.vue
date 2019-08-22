@@ -5,13 +5,13 @@
     </ul>
   </div>
 
-<!--  <a href="javascript:void(0)" @click="$router.push('/dialog')">-->
-<!--    <van-col span="6" class="marb20">-->
-<!--      <van-icon name="pending-deliver" />-->
-<!--      <div>弹出框</div>-->
-<!--    </van-col>-->
-<!--  </a>-->
-<!--  <van-button type="primary" @click="onClick">弹出</van-button>-->
+  <!--  <a href="javascript:void(0)" @click="$router.push('/dialog')">-->
+  <!--    <van-col span="6" class="marb20">-->
+  <!--      <van-icon name="pending-deliver" />-->
+  <!--      <div>弹出框</div>-->
+  <!--    </van-col>-->
+  <!--  </a>-->
+  <!--  <van-button type="primary" @click="onClick">弹出</van-button>-->
 </template>
 
 <script>
@@ -111,7 +111,7 @@
   }
 
   .red-300 {
-   background: red;
+    background: red;
   }
 
   li:hover {

@@ -161,4 +161,9 @@
     margin-top: 10px;
   }
 
+  td:hover {
+    color: #18b7eb;
+    cursor: pointer;
+  }
+
 </style>

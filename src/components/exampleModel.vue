@@ -15,7 +15,6 @@
             };
         },
         created() {
-
             this.$http.get('/static/data/demo.json').then(res => {
                 var obj = res.data;
                 this.items = obj;
@@ -24,17 +23,17 @@
                 console.log('obj :' + JSON.stringify(obj));
                 //
                 // console.log('res :' + JSON.stringify(res));
-
                 if (res.status == 200) {
                     // alert('数据获取成功');
                 } else {
                     // alert('获取数据失败');
                 }
             })
-        },
-        methods() {
-
         }
+        // },
+        // methods() {
+        //
+        // }
     }
 </script>
 

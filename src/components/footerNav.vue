@@ -6,9 +6,9 @@
 <script>
     export default {
         data() {
-          return {
-              nowTab:''
-          };
+            return {
+                nowTab: ''
+            };
         },
     }
 </script>

@@ -25,7 +25,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.css'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
@@ -67,6 +67,16 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
+      // ,
+      // {
+      //   test: /\.js$/,
+      //   loader: 'babel-loader',
+      //   include: [
+      //     path.join(projectRoot, 'src'),
+      //     path.join(projectRoot, "node_modules/vue-awesome"),
+      //   ],
+      //   exclude: /node_modules/,
+      // },
     ]
   },
   node: {

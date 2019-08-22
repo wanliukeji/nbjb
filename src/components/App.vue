@@ -1,4 +1,5 @@
 <template lang="html">
+  <!--  备注 -->
   <div class="container">
     <!--  引入的header组件 -->
     <!--    <headerNav :navTitle="navTitle"></headerNav>-->
@@ -17,23 +18,23 @@
     <!--        <div class="body_center">-->
     <!--    <div class="centext">-->
     <img-model></img-model>
+    <example-model></example-model>
+    <footer-table></footer-table>
+    <!--    <data-dmo></data-dmo>-->
 
-    <data-dmo></data-dmo>
-
-    <demo>
-
-    </demo>
-
-
+    <!--    <demo></demo>-->
     <div class="foot-father">
-
       <div class="footer">
         <div class="footer-center">
           <div class="footer-left">
             <p style="font-size: 18px; line-height: 40px;">客服电话</p>
-            <p style="font-size: 23px; line-height: 27px; color: #0a67fb;">86800055</p>
-            <p style="font-size: 12px; line-height: 40px; font-family: 'Microsoft YaHei'">工作时间 周一至周六 8:00-17:30</p>
-            <p style="font-size: 12px; line-height: 20px;">客服QQ ： 1193227758</p>
+            <p style="font-size: 23px; line-height: 27px; color: #389efb;">86800055</p>
+            <p style="font-size: 11px; line-height: 40px; font-family: 'Microsoft YaHei'; color: #999">工作时间 周一至周六
+              8:00-17:30</p>
+            <p style="font-size: 12px; vertical-align: middle; color: #717171;">
+              客服QQ &nbsp;
+              <img src="/static/image/site_qq.jpg" height="21" alt="点击咨询"/>
+            </p>
           </div>
 
           <div class="footer-herf">
@@ -113,6 +114,8 @@
     import Footer from "./components/footer";
     import DataDmo from "./components/dataDmo";
     import Demo from "./view/demo";
+    import ExampleModel from "./components/exampleModel";
+    import FooterTable from "./components/footerTable";
 
     export default {
         data() {
@@ -124,6 +127,8 @@
         },
         //组件
         components: {
+            FooterTable,
+            ExampleModel,
             Demo,
             DataDmo,
             Footer,
@@ -148,9 +153,7 @@
 </script>
 
 <style lang="css">
-
   /*@import "/static/css/index.css"; 引入样式*/
-
   * {
     word-break: break-word;
     margin: 0 auto;
@@ -202,38 +205,39 @@
   .container {
     width: 100%;
     /*padding: 2rem 0;*/
-    position: absolute;
+    position: relative;
     background: #f2f2f2;
     /*top: 0px;*/
-    min-height: 1800px;
+    /*min-height: 1800px;*/
     height: 100%;
   }
 
   .footer {
     margin: 0 auto;
-    position: absolute;
-    height: 280px;
-    min-height: 260.8px;
+    /*position: relative;*/
+    /*height: 280px;*/
+    height: auto;
+    min-height: 230px;
     background: #ffffff;
     width: 100%;
     /*left: 0;*/
     /*top: 1200px;*/
-    min-height: 100%;
+    /*min-height: 100%;*/
     min-width: 1200px;
     max-width: 100%;
     bottom: 0;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-left: 0px;
     padding-bottom: 0px;
   }
 
   .foot-father {
     bottom: 0;
-    position: absolute;
+    position: relative;
     height: auto;
     width: 100%;
     background: #FFFFFF;
-    padding-top: 40px;
+    padding-top: 5px;
     padding-left: 0px;
     padding-bottom: 0px;
     /*border: black 1px solid;*/
@@ -243,13 +247,13 @@
     margin: 0 auto;
     width: 87%;
     /*padding-top: 40px;*/
-    position: relative;
+    /*position: relative;*/
     /*padding-bottom: 100px;*/
     /*margin-bottom: 40px;*/
     /*border: black 1px solid;*/
     padding-left: 0px;
     height: auto;
-    min-height: 200px;
+    min-height: 130px;
     min-width: 1200px;
   }
 
@@ -282,12 +286,13 @@
   .footer-dd {
     text-align: center;
     line-height: 25px;
-    font-size: 12px;
-
+    font-size: 11px;
+    color: #7a7a7a;
   }
 
   .footer-dd:hover, .footer-dt:hover {
     cursor: pointer;
+    color: #0a0a0a;
   }
 
   .footer-right {
@@ -312,8 +317,8 @@
     display: block;
     width: 100%;
     background-color: #1382de;
-    position: absolute;
-    top: 180px;
+    /*position: absolute;*/
+    /*top: 180px;*/
     min-width: 1200px;
     margin: 0 auto;
     padding-top: 5px;
@@ -342,16 +347,16 @@
     display: block;
     width: 100%;
     background-color: #ffffff;
-    position: absolute;
-    top: 250px;
+    position: relative;
+    /*top: 250px;*/
     min-width: 1024px;
     margin: 0 auto;
     padding-bottom: 5px;
     vertical-align: center;
-    height: 35px;
+    height: 20px;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-size: 10px;
   }
 
