@@ -16,7 +16,7 @@
 <style scoped>
   .img-model {
     position: relative;
-    width: 100%;
+    width: 80%;
     min-width: 1200px;
     height: auto;
     /*padding-left: 7.5%;*/

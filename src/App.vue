@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="container">
+  <div class="container-body">
     <!--  引入的header组件 -->
     <!--    <headerNav :navTitle="navTitle"></headerNav>-->
     <!--      引入的top组件 -->
@@ -201,7 +201,7 @@
     color: inherit
   }
 
-  .container {
+  .container-body {
     width: 100%;
     /*padding: 2rem 0;*/
     position: relative;

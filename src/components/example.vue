@@ -44,7 +44,7 @@
   }
 
   .seach-center {
-    width: 60%;
+    width: 80%;
     /*border: black 1px solid;*/
     min-width: 1200px;
     height: 120px;

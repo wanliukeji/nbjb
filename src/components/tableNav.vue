@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="table-div">
+  <div class="table-div-father">
     <div class="table-center">
-      <table class="table">
+      <table class="table-model">
         <tr>
           <td rowspan="2" class="td-font-1">民生</td>
           <td><a href="">我爱北仑</a></td>
@@ -14,7 +14,7 @@
           <td><a href="">曝光台</a></td>
         </tr>
       </table>
-      <table class="table">
+      <table class="table-model">
         <tr>
           <td rowspan="2" class="td-font-2">生活</td>
           <td><a href="">我爱北仑</a></td>
@@ -27,7 +27,7 @@
           <td><a href="">曝光台</a></td>
         </tr>
       </table>
-      <table class="table">
+      <table class="table-model">
         <tr>
           <td rowspan="2" class="td-font-3">房产</td>
           <td><a href="">我爱北仑</a></td>
@@ -40,7 +40,7 @@
           <td><a href="">曝光台</a></td>
         </tr>
       </table>
-      <table class="table">
+      <table class="table-model">
         <tr>
           <td rowspan="2" class="td-font-4">招聘</td>
           <td><a href="">我爱北仑</a></td>
@@ -53,7 +53,7 @@
           <td><a href="">曝光台</a></td>
         </tr>
       </table>
-      <table class="table">
+      <table class="table-model">
         <tr>
           <td rowspan="2" class="td-font-5">分类</td>
           <td><a href="">我爱北仑</a></td>
@@ -80,12 +80,11 @@
 </script>
 
 <style scoped>
-  .table-div {
-    min-width: 100%;
+  .table-div-father {
+    min-width: 1200px;
     min-height: 91px;
     background: #FFFFFF;
-    position: relative;
-    min-height: 91px;
+    /*position: relative;*/
     height: auto;
     top: 0px;
     /*padding-left: 10%;*/
@@ -93,11 +92,12 @@
     vertical-align: middle;
     text-align: center;
     padding-bottom: 10px;
+    padding-left: 10px;
   }
 
   .table-center {
     /*border: #0a0a0a 1px solid;*/
-    width: 87%;
+    width: 80%;
     min-width: 1200px;
     height: auto;
     position: relative;
@@ -109,12 +109,15 @@
     line-height: 18px;
   }
 
-  .table {
+  .table-model {
     display: inline-block;
     float: left;
     /*border: 1px saddlebrown solid;*/
-    margin-left: 25px;
+    margin-left: 0px;
     /*margin: 18px;*/
+    width: 19.8%;
+    /*position: relative;*/
+    /*min-width: 230px;*/
   }
 
   .td-font-1, .td-font-2, .td-font-3, .td-font-4, .td-font-5 {
@@ -127,6 +130,7 @@
     -webkit-border-radius: 8%;
     -moz-border-radius: 8%;
     line-height: 25px;
+    margin-right: 8px;
   }
 
   .td-font-1 {

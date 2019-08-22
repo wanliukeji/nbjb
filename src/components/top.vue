@@ -72,7 +72,7 @@
 
   .top-center {
     position: relative;
-    width: 86%;
+    width: 80%;
     min-width: 1200px;
     height: 40px;
     margin: 0 auto;

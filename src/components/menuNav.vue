@@ -42,7 +42,7 @@
     /*border: black 1px solid;*/
   }
   .nav-div {
-    width: 85%;
+    width: 80%;
     height: auto;
     /*border: black 1px solid;*/
     position: relative;

@@ -8,7 +8,7 @@ import router from './router'  /* 这里是引入vue的路由 */
 import Vant from 'vant'
 import $ from 'jquery'
 // import 'bootstrap/dist/js/bootstrap.min.js'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 // import'vant/lib/vant-css/index.css';
 import VueResource from 'vue-resource'
 
