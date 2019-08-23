@@ -19,6 +19,7 @@
         <li class="top-right-li">
           <i class="-mobile-phone"></i>
           手机端
+          <i class="arrow1"></i>
           <div class="img-div">
             <img src="/static/image/weixin.png" class="img-hide" alt="手机版" title="手机版">
             <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">
@@ -26,6 +27,7 @@
           </div>
         </li>
         <li class="top-right-li">个人中心
+          <i class="arrow1"></i>
           <ul class="ul-hide-me">
             <li class="ul-hide-li">个人设置</li>
             <li class="ul-hide-li">信息中心</li>
@@ -38,6 +40,7 @@
         </li>
         <li class="top-right-li">
           快速导航
+          <i class="arrow1"></i>
           <ul class="ul-hide">
             <li class="ul-hide-li">积分充值</li>
             <li class="ul-hide-li">设为首页</li>
@@ -157,5 +160,31 @@
   .img-hide {
     width: 120px;
     height: 120px;
+  }
+
+  .arrow1 {
+    position: absolute;
+    right: 3px;
+    top: 48%;
+    width: 6px;
+    height: 6px;
+    margin-top: 0px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    -webkit-transform: rotate(225deg);
+    content: '';
+  }
+  .arrow2:hover {
+    position: absolute;
+    right: 3px;
+    top: 40%;
+    width: 6px;
+    height: 6px;
+    margin-top: 0px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    content: '';
   }
 </style>

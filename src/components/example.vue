@@ -39,6 +39,10 @@
               </select>
             </td>
           </tr>
+          <tr>
+            <td class="td-name">户籍：</td>
+            <td class="td-input"><input type="text" class="input" v-model="info.address"></td>
+          </tr>
         </table>
                    
         <div style="padding-top:20px;text-align: right;">
