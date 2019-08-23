@@ -22,7 +22,7 @@
         },
         methods: {
             go() {
-              alert(this.num);
+              // alert(this.num);
               this.num = 0;
               this.$router.go(-1);
             }

@@ -23,7 +23,6 @@
                 // alert('正在跳转.....');
                 const that = this;
                 this.num = +1
-                alert(this.num);
                 //携带参数跳转
                 that.$router.push({path: '/home', query: {num: this.num}}).catch(err => {
                     console.log(err);
