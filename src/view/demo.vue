@@ -2,7 +2,7 @@
   <div class="model">
     <div class="dial-header" style="margin: 0 auto;">
              
-      <el-dialog title="请选择适配器" :visible.sync="showFlag"
+      <el-dialog title="请填写以下信息" :visible.sync="showFlag"
                  style="width:100%; min-width: 1200px;">
                  
         <div style="text-align: center; width: 100%; height: auto;">

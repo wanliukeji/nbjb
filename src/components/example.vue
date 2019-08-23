@@ -8,16 +8,80 @@
         <input type="submit" name="searchsubmit" value="搜索" class="seach-btn">
       </div>
 
-      <a href="#" onclick="showWindow('nav', this.href, 'get', 0)"
+      <a href="#" @click="showFlag = true"
          class="seach-edit">免费发布信息</a>
     </div>
+
+    <el-dialog title="请填写以下信息" :visible.sync="showFlag"
+               style="width:100%; min-width: 1200px;">
+               
+      <div style="text-align: center; width: 100%; height: auto;">
+
+        <table>
+          <tr>
+            <td class="td-name">姓名：</td>
+            <td class="td-input"><input type="text" class="input" v-model="info.name"></td>
+          </tr>
+          <tr>
+            <td class="td-name">职业：</td>
+            <td class="td-input"><input type="text" class="input" v-model="info.job"></td>
+          </tr>
+          <tr>
+            <td class="td-name">住址：</td>
+            <td class="td-input"><input type="text" class="input" v-model="info.address"></td>
+          </tr>
+          <tr>
+            <td class="td-name">性别：</td>
+            <td class="td-input">
+              <select type="text" class="input" v-model="info.sex">
+                <option selected>男</option>
+                <option>女</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+                   
+        <div style="padding-top:20px;text-align: right;">
+                       
+          <el-button type="text" size="small" @click="showFlag = false">取消</el-button>
+                       
+          <el-button type="primary" size="small" @click="radioEvent()">确定</el-button>
+                     
+        </div>
+               
+      </div>
+             
+    </el-dialog>
+
   </div>
   <!--  <div class="seachZ"></div>-->
 </template>
 
 <script>
     export default {
-        name: "example"
+        name: "example",
+        data() {
+            return {
+                showFlag: false,
+                radio: "",
+                info: {
+                    name: 'chenny',
+                    job: '程序猿',
+                    address: '宁波北仑区大榭',
+                    sex: '男'
+                }
+            }
+        },
+        methods: {
+            show() {
+
+            },
+            radioEvent() {
+                alert(this.info.name);
+                this.showFlag = false;
+                this.adapterSelected = this.radio;
+            }
+        }
     }
 </script>
 
@@ -160,4 +224,39 @@
     text-decoration: none;
   }
 
+  .dial-header, el-dialog {
+  }
+
+  .input,select, option {
+    width: 90%;
+    height: 35px;
+    text-align: left;
+    font-size: 16px;
+    border: #dfdfdf 0.3px solid;
+    padding-left: 3px;
+  }
+
+  el-dialog {
+  }
+
+  table {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .td-name {
+    text-align: right;
+    color: black;
+  }
+
+  tr {
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+
+  .td-input {
+    text-align: left;
+    color: black;
+  }
 </style>
