@@ -150,4 +150,14 @@
     cursor: pointer;
     top: 40px;
   }
+
+  .seach-edit:hover {
+    color: #f4f4f4;
+  }
+
+  a {
+    list-style-type: none;
+    text-decoration: none;
+  }
+
 </style>
