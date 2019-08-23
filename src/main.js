@@ -16,7 +16,7 @@ import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
 // import popup from '/src/view/popup'
 import layer from 'vue-layer'
 import iView from 'iview'
-// import 'iview/dist/styles/iview.css'
+import 'iview/dist/styles/iview.css'  //引用 ivew 全局样式
 
 // Vue.use(layer);
 // Vue.prototype.$layer = layer(Vue);
@@ -26,7 +26,7 @@ Vue.use(Vant);
 // Vue.use($query);
 Vue.use(VueResource);
 Vue.use(ElementUI) //使用elementUI
-// Vue.use(iView);
+Vue.use(iView);
 
 // Vue.use(axios);
 // Vue.prototype.$http=axios;
@@ -36,12 +36,18 @@ Vue.use(ElementUI) //使用elementUI
 
 Vue.config.productionTip = false;
 
+// The routing configuration  备注
+const RouterConfig = {
+  routes: router
+};
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
+  // render: h => h(App)
 })
 
 

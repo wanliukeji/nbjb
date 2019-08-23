@@ -1,15 +1,15 @@
 <template lang="html">
-  <div class="seach">
-    <div class="seach-center">
+  <div class="seach-div">
+    <div class="seach-center-div">
       <div class="img_log"></div>
-      <div class="seach-input">
-        <input type="text" name="srchtxt" class="seach-text" value="" placeholder="请输入关键字" autocomplete="off"
+      <div class="seach-input-div">
+        <input type="text" name="srchtxt" class="seach-text-div" value="" placeholder="请输入关键字" autocomplete="off"
                x-webkit-speech="" speech="">
-        <input type="submit" name="searchsubmit" value="搜索" class="seach-btn">
+        <input type="submit" name="searchsubmit" value="搜索" class="seach-btn-div">
       </div>
 
       <a href="#" @click="showFlag = true"
-         class="seach-edit">免费发布信息</a>
+         class="seach-edit-div">免费发布信息</a>
     </div>
 
     <el-dialog title="请填写以下信息" :visible.sync="showFlag"
@@ -81,7 +81,7 @@
 
             },
             radioEvent() {
-              // this.$dialog.alert(this.info.name);
+                // this.$dialog.alert(this.info.name);
                 this.showFlag = false;
                 this.adapterSelected = this.radio;
             }
@@ -90,12 +90,11 @@
 </script>
 
 <style scoped>
-  .seach {
-    margin: 0 auto;
+  .seach-div {
     text-align: center;
     width: 100%;
     vertical-align: middle;
-    height: auto;
+    height: 120px;
     background: #ff9715;
     color: black;
     position: relative;
@@ -108,16 +107,19 @@
     /*padding-right: auto;*/
     /*padding-top: 20px;*/
     /*border: black 1px solid;*/
+    margin: 0 auto;
     text-align: center;
   }
 
-  .seach-center {
+  .seach-center-div {
     width: 80%;
     /*border: black 1px solid;*/
     min-width: 1200px;
     height: 120px;
     vertical-align: top;
-    display: inline-block;
+    position: relative;
+    display: block;
+    margin: 0px auto;
   }
 
   .img_log {
@@ -133,20 +135,21 @@
     float: left;
   }
 
-  .seach-input {
+  .seach-input-div {
     display: block;
     height: auto;
     /*border: red 1px solid;*/
-    min-height: 40px;
+    /*min-height: 40px;*/
     width: auto;
     bottom: 0px;
     position: relative;
     top: 40px;
-    border: #0a6beb solid 1px;
+    /*border: #0a6beb solid 1px;*/
     width: 400px;
+    margin: 0 auto;
   }
 
-  .seach-text {
+  .seach-text-div {
     float: left;
     width: 372px;
     height: 42px;
@@ -160,18 +163,18 @@
     line-height: 42px;
     top: 41px;
     /*border: #ff291f 1px solid;*/
-    border-bottom: 1px #0a6beb solid;
+    /*border-bottom: 2px #0a6beb solid;*/
     position: static;
   }
 
-  .seach-btn {
+  .seach-btn-div {
     position: absolute;
-    top: -1.5px;
+    top: -0.5px;
     right: -1px;
     display: block;
     overflow: hidden;
     width: 66px;
-    height: 44px;
+    height: 43px;
     outline: 0;
     border: 0 none;
     border-top-right-radius: 2px;
@@ -202,7 +205,7 @@
     padding: 0;
   }
 
-  .seach-edit {
+  .seach-edit-div {
     float: right;
     /*margin-top: 35px;*/
     padding: 0 18px 0 10px;
@@ -217,9 +220,10 @@
     line-height: 44px;
     cursor: pointer;
     top: 40px;
+    position: absolute;
   }
 
-  .seach-edit:hover {
+  .seach-edit-div:hover {
     color: #f4f4f4;
   }
 

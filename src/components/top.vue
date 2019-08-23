@@ -1,3 +1,4 @@
+<!--<link rel="stylesheet" href="/node_modules/iview/dist/styles/iview.css">-->
 <template lang="html">
   <div class="top">
     <div class="top-center">
@@ -5,7 +6,7 @@
         <li class="top-left-li">您好！ <a href="">请登录</a></li>
         <li class="top-left-li">免费注册</li>
         <li class="top-left-li">
-          <i class="bd-qq"></i>
+          <i class="icon-qq"></i>
           QQ登录
         </li>
         <li class="top-left-li">
@@ -17,37 +18,96 @@
       <ul class="top-right">
         <li class="top-right-li">网站首页</li>
         <li class="top-right-li">
-          <i class="-mobile-phone"></i>
-          手机端
+          <Dropdown>
+            <a href="javascript:void(0)">
+              手机端
+              <Icon type="ios-arrow-down"></Icon>
+            </a>
+            <DropdownMenu slot="list">
+              <div class="img-div">
+                <div class="img-div-child">
+                  <img src="/static/image/weixin.png" class="img-hide" alt="手机版" title="手机版">
+                  <br>
+                  手机版
+                </div>
+                <div class="img-div-child">
+                  <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">
+                  <br>
+                  微信公众号
+                </div>
+                <!--                <div class="img-div-child">-->
+                <!--                  <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">-->
+                <!--                  微信公众号-->
+                <!--                  <br>-->
+                <!--                </div>-->
+                <div class="img-div-child">
+                  <img src="/static/image/weixin.png" class="img-hide" alt="小程序" title="小程序">
+                  <br>
+                  小程序
+                </div>
+              </div>
+            </DropdownMenu>
+          </Dropdown>
           <!--          <i class="arrow1"></i>-->
-          <div class="img-div">
-            <img src="/static/image/weixin.png" class="img-hide" alt="手机版" title="手机版">
-            <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">
-            <img src="/static/image/weixin.png" class="img-hide" alt="小程序" title="小程序">
-          </div>
-        </li>
-        <li class="top-right-li">个人中心
-          <!--          <i class="arrow1"></i>-->
-          <ul class="ul-hide-me">
-            <li class="ul-hide-li">个人设置</li>
-            <li class="ul-hide-li">信息中心</li>
-            <li class="ul-hide-li">我的贴子</li>
-            <li class="ul-hide-li">我的收藏</li>
-            <li class="ul-hide-li">我的好友</li>
-            <li class="ul-hide-li">门户管理</li>
-            <li class="ul-hide-li">退出</li>
-          </ul>
+          <!--          <div class="img-div">-->
+          <!--            <img src="/static/image/weixin.png" class="img-hide" alt="手机版" title="手机版">-->
+          <!--            <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">-->
+          <!--            <img src="/static/image/weixin.png" class="img-hide" alt="小程序" title="小程序">-->
+          <!--          </div>-->
         </li>
         <li class="top-right-li">
-          快速导航
-          <!--          <i class="arrow1"></i>-->
-          <ul class="ul-hide">
-            <li class="ul-hide-li">积分充值</li>
-            <li class="ul-hide-li">设为首页</li>
-            <li class="ul-hide-li">设为本站</li>
-            <li class="ul-hide-li">手机客户端</li>
-            <li class="ul-hide-li">道具中心</li>
-          </ul>
+
+          <!--          个人中心<i class="arrow1"></i>-->
+          <!--          <ul class="ul-hide-me">-->
+          <!--            <li class="ul-hide-li">个人设置</li>-->
+          <!--            <li class="ul-hide-li">信息中心</li>-->
+          <!--            <li class="ul-hide-li">我的贴子</li>-->
+          <!--            <li class="ul-hide-li">我的收藏</li>-->
+          <!--            <li class="ul-hide-li">我的好友</li>-->
+          <!--            <li class="ul-hide-li">门户管理</li>-->
+          <!--            <li class="ul-hide-li">退出</li>-->
+          <!--          </ul>-->
+          <Dropdown>
+            <a href="javascript:void(0)">
+              个人中心
+              <Icon type="ios-arrow-down"></Icon>
+            </a>
+            <DropdownMenu slot="list">
+              <DropdownItem>个人设置</DropdownItem>
+              <DropdownItem>信息中心</DropdownItem>
+              <DropdownItem>我的贴子</DropdownItem>
+              <DropdownItem>我的收藏</DropdownItem>
+              <DropdownItem>我的好友</DropdownItem>
+              <DropdownItem>门户管理</DropdownItem>
+              <DropdownItem>退出</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </li>
+        <!--        <li class="top-right-li">-->
+        <!--          快速导航-->
+        <!--          &lt;!&ndash;          <i class="arrow1"></i>&ndash;&gt;-->
+        <!--          <ul class="ul-hide">-->
+        <!--            <li class="ul-hide-li">积分充值</li>-->
+        <!--            <li class="ul-hide-li">设为首页</li>-->
+        <!--            <li class="ul-hide-li">设为本站</li>-->
+        <!--            <li class="ul-hide-li">手机客户端</li>-->
+        <!--            <li class="ul-hide-li">道具中心</li>-->
+        <!--          </ul>-->
+        <!--        </li>-->
+        <li class="top-right-li">
+          <Dropdown>
+            <a href="javascript:void(0)">
+              快速导航
+              <Icon type="ios-arrow-down"></Icon>
+            </a>
+            <DropdownMenu slot="list">
+              <DropdownItem>积分充值</DropdownItem>
+              <DropdownItem>设为首页</DropdownItem>
+              <DropdownItem>设为本站</DropdownItem>
+              <DropdownItem>手机客户端</DropdownItem>
+              <DropdownItem>道具中心</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </li>
       </ul>
     </div>
@@ -65,11 +125,22 @@
 <script>
     export default {
         name: "top",
+        data() {
+            return {
+                visible: false
+            }
+        },
         methods: {
-            showDiyChild(){
+            handleOpen() {
+                this.visible = true;
+            },
+            handleClose() {
+                this.visible = false;
+            },
+            showDiyChild() {
                 //引用JQUERY
                 var text = $('.jq').text();
-                alert(text);
+                // alert(text);
             }
         }
     }
@@ -157,6 +228,7 @@
     right: 0px;
     z-index: 11;
   }
+
   .diy {
     position: relative;
     top: -2px;
@@ -184,7 +256,7 @@
   }
 
   .img-div {
-    display: none;
+    /*display: none;*/
     /*border: black 1px solid;*/
     position: absolute;
     top: 40px;
@@ -192,6 +264,18 @@
     right: 115px;
     padding: 5px;
     background: #FFFFFF;
+    width: 380px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .img-div-child {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    font-size: 10px;
+    color: #8d8d8d;
   }
 
   .img-hide {
@@ -229,6 +313,4 @@
   .top-right-li-diy-child {
     display: none;
   }
-
-
 </style>

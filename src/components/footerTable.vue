@@ -8,52 +8,52 @@
       <li class="li-div">蚌埠论坛</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">化龙巷</li>
+      <li class="li-div">平湖论坛</li>
+      <li class="li-div">莱芜论坛</li>
+      <li class="li-div">徐州论坛</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">乐清上班族</li>
+      <li class="li-div">海宁论坛</li>
+      <li class="li-div">高邮论坛</li>
+      <li class="li-div">湖州南太湖</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">女排在线</li>
+      <li class="li-div">新昌论坛</li>
+      <li class="li-div">潍坊论坛</li>
+      <li class="li-div">易车论坛</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">慈溪论坛</li>
+      <li class="li-div">星空论坛</li>
+      <li class="li-div">丹阳翼网</li>
+      <li class="li-div">番禺社区</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">余姚论坛</li>
+      <li class="li-div">东林书院</li>
+      <li class="li-div">昆山热线</li>
+      <li class="li-div">株洲在线</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">宁海在线</li>
+      <li class="li-div">烟台论坛</li>
+      <li class="li-div">重庆论坛</li>
+      <li class="li-div">荆州论坛</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">奉化论坛</li>
+      <li class="li-div">昆山论坛</li>
+      <li class="li-div">镇江论坛</li>
+      <li class="li-div">长沙论坛</li>
     </ul>
     <ul class="ul-div">
-      <li class="li-div">北仑区幼</li>
-      <li class="li-div">上虞论坛</li>
-      <li class="li-div">泉州论坛</li>
-      <li class="li-div">蚌埠论坛</li>
+      <li class="li-div">厦门小鱼网</li>
+      <li class="li-div">淮北人论坛</li>
+      <li class="li-div">碧海潮声</li>
+      <li class="li-div">YY515游戏</li>
     </ul>
   </div>
 </template>
@@ -70,23 +70,16 @@
     width: 80%;
     min-width: 1200px;
     height: auto;
-    /*min-height: 300px;*/
-    /*padding-left: 7.5%;*/
-    margin: 0 auto;
-    /*min-height: 800px;*/
     vertical-align: center;
-    /*margin-top: 10px;*/
     display: block;
-    /*border: black 1px solid;*/
-    /*top: 380px;*/
-    padding-left: 20px;
-    top: 5px;
-    bottom: 5px;
-    margin-bottom: 20px;
+    padding-left: 30px;
     background: #FFFFFF;
-    padding-top: 20px;
+    padding-top: 30px;
     height: 200px;
-
+    margin: 0 auto;
+    bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .p-font, a {

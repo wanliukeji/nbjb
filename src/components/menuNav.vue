@@ -47,13 +47,14 @@
     /*border: black 1px solid;*/
     position: relative;
     min-width: 1200px;
+    margin: 0 auto;
   }
   .li-div {
     width: 100px;
     min-width: 100px;
     /*border: #88ff19 1px solid;*/
     /*height: 30px;*/
-    height: 46px;
+    height: auto;
     position: relative;
     color: #FFFFFF;
     display: inline-block;
