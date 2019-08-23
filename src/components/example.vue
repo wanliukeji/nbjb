@@ -8,7 +8,7 @@
         <input type="submit" name="searchsubmit" value="搜索" class="seach-btn">
       </div>
 
-      <a href="https://bbs.cnnb.com/forum.php?mod=misc&amp;action=nav" onclick="showWindow('nav', this.href, 'get', 0)"
+      <a href="#" onclick="showWindow('nav', this.href, 'get', 0)"
          class="seach-edit">免费发布信息</a>
     </div>
   </div>

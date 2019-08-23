@@ -19,9 +19,16 @@
     <img-model></img-model>
     <example-model></example-model>
     <footer-table></footer-table>
+
+<!--    <model-first></model-first>-->
+<!--    <model-first></model-first>-->
     <!--    <data-dmo></data-dmo>-->
 
-        <demo></demo>
+    <demo></demo>
+<!-- <example-model></example-model>-->
+<!--    弹出框 测试 模型 -->
+<!--<popup></popup>-->
+
     <div class="foot-father">
       <div class="footer">
         <div class="footer-center">
@@ -115,6 +122,7 @@
     import Demo from "./view/demo";
     import ExampleModel from "./components/exampleModel";
     import FooterTable from "./components/footerTable";
+    import Popup from "./view/popup";
 
     export default {
         data() {
@@ -126,6 +134,7 @@
         },
         //组件
         components: {
+            Popup,
             FooterTable,
             ExampleModel,
             Demo,
@@ -138,7 +147,7 @@
             headerNav,
             example,
             tableNav,
-            footerNav,
+            footerNav
         },
         mounted() {
         },
