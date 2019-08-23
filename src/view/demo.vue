@@ -86,7 +86,9 @@
     width: 90%;
     height: 35px;
     text-align: left;
-    font-size: 24px;
+    font-size: 16px;
+    border: #dfdfdf 0.3px solid;
+    padding-left: 3px;
   }
 
   table {
