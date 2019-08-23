@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="model">
-
+    <router-link to='app.html'>
+      <button>点我到第二个页面</button>
+    </router-link>
   </div>
 </template>
 

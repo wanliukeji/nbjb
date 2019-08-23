@@ -5,21 +5,15 @@ import movieInfo from '@/components/movieInfo.vue'
 // import '/node_modules/bootstrap/dist/css/bootstrap.min.css';  /* 引入bootstrap 样式 */
 // import '/node_modules/bootstrap/dist/js/bootstrap.min.js';
 import $ from 'jquery' ;
+import index from '@/components/index.vue'
+import hello from '@/components/hello.vue'
+import login from '@/view/login.vue'
+import home from '@/view/home.vue'
 
 Vue.use(Router)  /* 使用路由 */
 
 export default new Router({
   routes: [ /* 进行路由配置，规定“/”引入到组件 */
-    {
-      path: '/',//默认页面
-      name: 'movieList',
-      component: movieList  /* 注册组件 */
-    },
-    {
-      path: '/movieList',
-      name: 'movieList',
-      component: movieList
-    },
     {
       path: '/movieInfo',
       name: 'movieInfo',
@@ -29,11 +23,26 @@ export default new Router({
       path: '/showModel',
       name: 'showModel',
       component: () => import('@/components/showModel.vue')
+    },
+    {
+      path: '/index',
+      name: 'index',
+      component: index
+    },
+    {
+      path: '/hello',
+      name: 'hello',
+      component: hello
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: () => import('@/view/home.vue')
     }
-    // {
-    //   path: '/',
-    //   name: 'bodyText',
-    //   component: bodyText  /* 注册组件 */
-    //}
   ]
 })

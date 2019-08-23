@@ -5,44 +5,10 @@
     <menu-nav></menu-nav>
     <table-nav></table-nav>
     <img-model></img-model>
-    <model-first></model-first>
+<!--    <model-first></model-first>-->
+    <Hello></Hello>
     <footer-table></footer-table>
     <footer-nav></footer-nav>
-    <!--    -->
-    <!--  引入的header组件 -->
-    <!--        <headerNav :navTitle="navTitle"></headerNav>-->
-
-    <!--      引入的top组件 -->
-
-    <!--      引入的example组件 -->
-
-    <!--    <div class="content">-->
-    <!--      <router-view v-on:setNav="setNav"></router-view>  &lt;!&ndash; 这里是展示来自路由页面数据的 &ndash;&gt;-->
-    <!--    </div>-->
-
-    <!-- 引入的menu-nav组件 -->
-
-    <!--      引入的table-nav组件 -->
-    <!--      引入的img-model组件 -->
-    <!--        <div class="body_center">-->
-    <!--    <div class="centext">-->
-
-
-    <!--    <example-model></example-model>-->
-
-    <!--        <model-1></model-1>-->
-
-
-    <!--    <model-first></model-first>-->
-    <!--    <model-first></model-first>-->
-    <!--    <data-dmo></data-dmo>-->
-
-    <!--    <demo></demo>-->
-    <!-- <example-model></example-model>-->
-    <!--    弹出框 测试 模型 -->
-    <!--    <popup></popup>-->
-
-
   </div>
 </template>
 <script>
@@ -62,6 +28,7 @@
     import FooterTable from "./components/footerTable";
     import Popup from "./view/popup";
     import Model1 from "./model/model-1";
+    import Hello from "./components/hello";
 
     export default {
         data() {
@@ -73,6 +40,7 @@
         },
         //组件
         components: {
+            Hello,
             Model1,
             Popup,
             FooterTable,
@@ -115,13 +83,7 @@
     padding: 0
   }
 
-  html {
-    /*overflow-y: scroll*/
-  }
-
   body {
-    /*font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;*/
-    /*font-size: 14px;*/
     -webkit-font-smoothing: antialiased;
     position: relative;
     text-align: center;

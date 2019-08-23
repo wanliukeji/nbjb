@@ -26,7 +26,7 @@
             <DropdownMenu slot="list">
               <div class="img-div">
                 <div class="img-div-child">
-                  <img src="/static/image/weixin.png" class="img-hide" alt="手机版" title="手机版">
+                  <img src="/static/image/app.png" class="img-hide" alt="手机版" title="手机版">
                   <br>
                   手机版
                 </div>
@@ -35,38 +35,16 @@
                   <br>
                   微信公众号
                 </div>
-                <!--                <div class="img-div-child">-->
-                <!--                  <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">-->
-                <!--                  微信公众号-->
-                <!--                  <br>-->
-                <!--                </div>-->
                 <div class="img-div-child">
-                  <img src="/static/image/weixin.png" class="img-hide" alt="小程序" title="小程序">
+                  <img src="/static/image/xiao.png" class="img-hide" alt="小程序" title="小程序">
                   <br>
                   小程序
                 </div>
               </div>
             </DropdownMenu>
           </Dropdown>
-          <!--          <i class="arrow1"></i>-->
-          <!--          <div class="img-div">-->
-          <!--            <img src="/static/image/weixin.png" class="img-hide" alt="手机版" title="手机版">-->
-          <!--            <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">-->
-          <!--            <img src="/static/image/weixin.png" class="img-hide" alt="小程序" title="小程序">-->
-          <!--          </div>-->
         </li>
         <li class="top-right-li">
-
-          <!--          个人中心<i class="arrow1"></i>-->
-          <!--          <ul class="ul-hide-me">-->
-          <!--            <li class="ul-hide-li">个人设置</li>-->
-          <!--            <li class="ul-hide-li">信息中心</li>-->
-          <!--            <li class="ul-hide-li">我的贴子</li>-->
-          <!--            <li class="ul-hide-li">我的收藏</li>-->
-          <!--            <li class="ul-hide-li">我的好友</li>-->
-          <!--            <li class="ul-hide-li">门户管理</li>-->
-          <!--            <li class="ul-hide-li">退出</li>-->
-          <!--          </ul>-->
           <Dropdown>
             <a href="javascript:void(0)">
               个人中心
@@ -83,17 +61,6 @@
             </DropdownMenu>
           </Dropdown>
         </li>
-        <!--        <li class="top-right-li">-->
-        <!--          快速导航-->
-        <!--          &lt;!&ndash;          <i class="arrow1"></i>&ndash;&gt;-->
-        <!--          <ul class="ul-hide">-->
-        <!--            <li class="ul-hide-li">积分充值</li>-->
-        <!--            <li class="ul-hide-li">设为首页</li>-->
-        <!--            <li class="ul-hide-li">设为本站</li>-->
-        <!--            <li class="ul-hide-li">手机客户端</li>-->
-        <!--            <li class="ul-hide-li">道具中心</li>-->
-        <!--          </ul>-->
-        <!--        </li>-->
         <li class="top-right-li">
           <Dropdown>
             <a href="javascript:void(0)">
