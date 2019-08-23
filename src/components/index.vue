@@ -10,7 +10,7 @@
         name: "index",
         data() {
             return {
-                msg: 'My Name Is Chenny Life!'
+                msg: 'INDEX.VUE!'
             }
         },
         methods:{

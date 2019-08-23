@@ -1,10 +1,11 @@
 <template>
   <div class="model">
-    {{msg}}
-    <button @click="back">点我返回</button>
-<!--    <router-link to="/home">-->
-<!--      <button>点我进入</button>-->
-<!--    </router-link>-->
+    <div>
+      {{msg}}
+      <br>
+      <button @click="back" >点我进入</button>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -13,14 +14,18 @@
         name: "hello",
         data() {
             return {
-                msg: 'My Name Is Chenny Son !'
+                msg: 'HELLO.VUE !',
+                num: 0
             }
         },
         methods: {
             back() {
                 // alert('正在跳转.....');
                 const that = this;
-                that.$router.push({name: 'home'}).catch(err => {
+                this.num = +1
+                alert(this.num);
+                //携带参数跳转
+                that.$router.push({path: '/home', query: {num: this.num}}).catch(err => {
                     console.log(err);
                 })
                 // this.$router.push('/movieList')
@@ -38,7 +43,7 @@
     position: relative;
     background: #FFFFFF;
     color: black;
-    font-size: 20px;
+    font-size: 40px;
     margin: 0 auto;
     text-align: center;
     font-family: 楷体;
