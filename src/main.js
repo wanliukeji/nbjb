@@ -15,6 +15,8 @@ import ElementUI from 'element-ui' //element-ui的全部组件
 import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
 // import popup from '/src/view/popup'
 import layer from 'vue-layer'
+import iView from 'iview'
+// import 'iview/dist/styles/iview.css'
 
 // Vue.use(layer);
 // Vue.prototype.$layer = layer(Vue);
@@ -24,6 +26,7 @@ Vue.use(Vant);
 // Vue.use($query);
 Vue.use(VueResource);
 Vue.use(ElementUI) //使用elementUI
+// Vue.use(iView);
 
 // Vue.use(axios);
 // Vue.prototype.$http=axios;

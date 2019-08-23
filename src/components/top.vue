@@ -49,14 +49,16 @@
             <li class="ul-hide-li">道具中心</li>
           </ul>
         </li>
-        <li class="top-right-li-diy">
-          <img src="/static/image/panel-toggle.png" class="diy" @mouseover="showDiyChild" alt="">
-          <ul class="top-right-li-diy-child">
-            <li class="jq">CHENYU</li>
-          </ul>
-        </li>
       </ul>
     </div>
+
+    <div class="top-right-diy">
+      <img src="/static/image/panel-toggle.png" class="diy" @mouseover="showDiyChild" alt="">
+      <ul class="top-right-li-diy-child">
+        <li class="jq">CHENYU</li>
+      </ul>
+    </div>
+
   </div>
 </template>
 
@@ -110,7 +112,7 @@
     float: right;
   }
 
-  .top-left-li, .top-right-li, .top-right-li-diy {
+  .top-left-li, .top-right-li {
     display: inline-block;
     float: left;
     font-size: 11px;
@@ -120,7 +122,7 @@
     /*min-width: 80px;*/
   }
 
-  .top-right-li:hover, .top-right-li-diy:hover {
+  .top-right-li:hover, .top-right-diy:hover {
     cursor: pointer;
     color: #0a6beb;
   }
@@ -147,9 +149,13 @@
     /*border: black 1px solid;*/
   }
 
-  .top-right-li-diy {
-    position: absolute;
-    right: -100px;
+  .top-right-diy {
+    position: relative;
+    display: inline-block;
+    float: right;
+    top: -27px;
+    right: 0px;
+    z-index: 11;
   }
   .diy {
     position: relative;
