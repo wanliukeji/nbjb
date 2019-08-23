@@ -77,7 +77,7 @@
 
             },
             radioEvent() {
-                alert(this.info.name);
+              // this.$dialog.alert(this.info.name);
                 this.showFlag = false;
                 this.adapterSelected = this.radio;
             }

@@ -67,8 +67,8 @@
         </tr>
       </table>
     </div>
-<!--    <img src="/static/image/timg.jpg" alt="" width="1200" height="70">-->
-<!--    <img src="/static/image/bujubeilun.png" alt="" width="1200" height="70">-->
+    <!--    <img src="/static/image/timg.jpg" alt="" width="1200" height="70">-->
+    <!--    <img src="/static/image/bujubeilun.png" alt="" width="1200" height="70">-->
   </div>
 
 </template>
@@ -159,8 +159,10 @@
   }
 
   a {
-   font:  10px/1.5 Tahoma,'Microsoft Yahei','Simsun';
+    font: 10px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+    text-decoration: none;
   }
+
   img {
     margin-top: 10px;
   }
@@ -169,5 +171,9 @@
     color: #18b7eb;
     cursor: pointer;
   }
+  .td-font-1:hover, .td-font-2:hover, .td-font-3:hover, .td-font-4:hover, .td-font-5:hover {
+    color: #efefef;
+  }
+
 
 </style>
