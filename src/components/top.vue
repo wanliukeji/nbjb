@@ -19,7 +19,7 @@
         <li class="top-right-li">
           <i class="-mobile-phone"></i>
           手机端
-          <i class="arrow1"></i>
+          <!--          <i class="arrow1"></i>-->
           <div class="img-div">
             <img src="/static/image/weixin.png" class="img-hide" alt="手机版" title="手机版">
             <img src="/static/image/weixin.png" class="img-hide" alt="微信公众号" title="微信公众号">
@@ -27,7 +27,7 @@
           </div>
         </li>
         <li class="top-right-li">个人中心
-          <i class="arrow1"></i>
+          <!--          <i class="arrow1"></i>-->
           <ul class="ul-hide-me">
             <li class="ul-hide-li">个人设置</li>
             <li class="ul-hide-li">信息中心</li>
@@ -40,13 +40,19 @@
         </li>
         <li class="top-right-li">
           快速导航
-          <i class="arrow1"></i>
+          <!--          <i class="arrow1"></i>-->
           <ul class="ul-hide">
             <li class="ul-hide-li">积分充值</li>
             <li class="ul-hide-li">设为首页</li>
             <li class="ul-hide-li">设为本站</li>
             <li class="ul-hide-li">手机客户端</li>
             <li class="ul-hide-li">道具中心</li>
+          </ul>
+        </li>
+        <li class="top-right-li-diy">
+          <img src="/static/image/panel-toggle.png" class="diy" @mouseover="showDiyChild" alt="">
+          <ul class="top-right-li-diy-child">
+            <li class="jq">CHENYU</li>
           </ul>
         </li>
       </ul>
@@ -56,7 +62,14 @@
 
 <script>
     export default {
-        name: "top"
+        name: "top",
+        methods: {
+            showDiyChild(){
+                //引用JQUERY
+                var text = $('.jq').text();
+                alert(text);
+            }
+        }
     }
 </script>
 
@@ -97,16 +110,17 @@
     float: right;
   }
 
-  .top-left-li, .top-right-li {
+  .top-left-li, .top-right-li, .top-right-li-diy {
     display: inline-block;
     float: left;
     font-size: 11px;
     margin-right: 12px;
     color: #404040;
+    /*border: black 1px solid;*/
     /*min-width: 80px;*/
   }
 
-  .top-right-li:hover {
+  .top-right-li:hover, .top-right-li-diy:hover {
     cursor: pointer;
     color: #0a6beb;
   }
@@ -131,6 +145,23 @@
     padding: 8px;
     line-height: 18px;
     /*border: black 1px solid;*/
+  }
+
+  .top-right-li-diy {
+    position: absolute;
+    right: -100px;
+  }
+  .diy {
+    position: relative;
+    top: -2px;
+    /*right: 10px;*/
+    /*float: right;*/
+    /*padding: 0;*/
+    /*width: 56px;*/
+    /*background: url(/static/image/panel-toggle.png) no-repeat 100% 1px;*/
+    /*text-indent: -9999px;*/
+    /*overflow: hidden;*/
+    /*border: 1px black solid;*/
   }
 
   .ul-hide-me {
@@ -174,6 +205,7 @@
     -webkit-transform: rotate(225deg);
     content: '';
   }
+
   .arrow2:hover {
     position: absolute;
     right: 3px;
@@ -187,4 +219,10 @@
     -webkit-transform: rotate(45deg);
     content: '';
   }
+
+  .top-right-li-diy-child {
+    display: none;
+  }
+
+
 </style>
