@@ -1,12 +1,10 @@
 <template lang="html">
   <div>
-
     <top-model></top-model>
     <head></head>
     <nav></nav>
     <menu></menu>
     <foot></foot>
-
   </div>
 </template>
 <script>

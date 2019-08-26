@@ -1,22 +1,22 @@
 //读取数据库数据
-var mysql  = require('mysql');  //调用MySQL模块
+var mysql = require('mysql');  //调用MySQL模块
 var DATABASE = "user";
 //创建一个connection
 var connection = mysql.createConnection({
 
-  host     : '127.0.0.1',       //主机
-  user     : 'root',            //MySQL认证用户名
-  password:'root',
-  port:   '3306',
+  host: '127.0.0.1',       //主机
+  user: 'root',            //MySQL认证用户名
+  password: 'root',
+  port: '3306',
   database: DATABASE
 });
 
 //创建一个connection
-connection.connect(function(err){
+connection.connect(function (err) {
 
-  if(err){
+  if (err) {
 
-    console.log('[query] - :'+err);
+    console.log('[query] - :' + err);
 
     return;
 
@@ -27,11 +27,11 @@ connection.connect(function(err){
 });
 
 //执行SQL语句
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
 
   if (err) {
 
-    console.log('[query] - :'+err);
+    console.log('[query] - :' + err);
 
     return;
 
@@ -42,9 +42,9 @@ connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
 });
 
 //关闭connection
-connection.end(function(err){
+connection.end(function (err) {
 
-  if(err){
+  if (err) {
 
     return;
 

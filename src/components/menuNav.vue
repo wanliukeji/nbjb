@@ -2,20 +2,11 @@
   <div class="menu-nav">
     <div class="nav-div">
       <ul>
-        <li class="li-div">
-          首页
-        </li>
-        <li class="li-div">
-          论坛
-        </li>
-        <li class="li-div">
-          手机版
-        </li>
-        <li class="li-div">
-          我的贴子
-        </li>
-        <li class="li-div">
-          APP下载
+<!--      slice 截取集合长度 控制循环次数    -->
+        <li class="li-div" v-for="(item,index) in  items.slice(0,10)" :key="index" >
+          <a :href="item.href">
+            {{item.name}}
+          </a>
         </li>
       </ul>
     </div>
@@ -24,7 +15,34 @@
 
 <script>
     export default {
-        name: "menuNav"
+        name: "menuNav",
+        data() {
+            return {
+                items: []
+            }
+        },
+        created() {
+            this.$http.get('/static/data/menuNav.json').then(res => {
+                var obj = res.data;
+                this.items = obj;
+                if (res.status == 200) {
+                    this.$notify({
+                        title: '成功连接服务器',
+                        message: '获取数据成功',
+                        type: 'success'
+                    });
+                    console.log(this.items);
+                } else {
+                    this.$message.error('获取数据失败');
+                }
+            }).catch(function (result) {
+                this.$notify.error({
+                    title: '成功连接服务器',
+                    message: result,
+                    type: 'error'
+                });
+            });
+        }
     }
 </script>
 
@@ -41,6 +59,7 @@
     text-align: center;
     /*border: black 1px solid;*/
   }
+
   .nav-div {
     width: 80%;
     height: auto;
@@ -49,7 +68,8 @@
     min-width: 1200px;
     margin: 0 auto;
   }
-  .li-div {
+
+  .li-div, a {
     width: 100px;
     min-width: 100px;
     /*border: #88ff19 1px solid;*/
@@ -63,6 +83,11 @@
     text-align: center;
     line-height: 45px;
   }
+
+  .li-div > a {
+    font-size: 16px;
+  }
+
   li:first-child {
     background: #1382de;
   }
@@ -73,3 +98,18 @@
     cursor: pointer;
   }
 </style>
+
+
+<!--备份-->
+<!--        <li class="li-div">-->
+<!--          论坛-->
+<!--        </li>-->
+<!--        <li class="li-div">-->
+<!--          手机版-->
+<!--        </li>-->
+<!--        <li class="li-div">-->
+<!--          我的贴子-->
+<!--        </li>-->
+<!--        <li class="li-div">-->
+<!--          APP下载-->
+<!--        </li>-->

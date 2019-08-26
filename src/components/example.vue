@@ -2,7 +2,13 @@
   <div class="seach-div">
     <div class="seach-center-div">
       <div class="img_log"></div>
-      <div class="seach-input-div">
+      <div class="seach-input-div" style=" display: inline-block;">
+        <select class="select-div">
+<!--          <icon type="el-icon-arrow-down" style="position: absolute; z-index: 100;"></icon>-->
+          <option>全部板块</option>
+          <option>阿拉新闻</option>
+          <option>阿拉娱乐</option>
+        </select>
         <input type="text" name="srchtxt" class="seach-text-div" value="" placeholder="请输入关键字" autocomplete="off"
                x-webkit-speech="" speech="">
         <input type="submit" name="searchsubmit" value="搜索" class="seach-btn-div">
@@ -73,7 +79,11 @@
                     job: '程序猿',
                     address: '宁波北仑区大榭',
                     sex: '男'
-                }
+                },
+                input1: '',
+                input2: '',
+                input3: '',
+                select: ''
             }
         },
         methods: {
@@ -88,6 +98,7 @@
         }
     }
 </script>
+
 
 <style scoped>
   .seach-div {
@@ -135,11 +146,55 @@
     float: left;
   }
 
+  .select-div {
+    display: inline-block;
+    float: left;
+    width: 120px;
+    height: 42px;
+    margin-left: -320px;
+    position: absolute;
+    font-size: 13px;
+    color: #454545;
+    padding-left: 15px;
+    text-align: center;
+    appearance: none;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari 和 Chrome */
+    border: 1px #1C8CE9 solid;
+    border-right: none;
+  }
+
+  .select-div:hover {
+    cursor: pointer;
+  }
+
+  .select-div > option {
+    font-size: 13px;
+    color: #454545;
+    border: 0;
+    border: none;
+    border: 0;
+    background: transparent;
+    /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+  }
+
+  option::-ms-expand {
+    display: none;
+  }
+
+  option {
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari 和 Chrome */
+    appearance: none;
+    outline: none;
+    border: 0;
+  }
+
+
   .seach-input-div {
     display: block;
     height: auto;
     /*border: red 1px solid;*/
-    /*min-height: 40px;*/
     width: auto;
     bottom: 0px;
     position: relative;
@@ -147,6 +202,15 @@
     /*border: #0a6beb solid 1px;*/
     width: 400px;
     margin: 0 auto;
+  }
+
+  .el-select .el-input {
+    width: 130px;
+    z-index: 11;
+  }
+
+  .input-with-select .el-input-group__prepend {
+    background-color: #fff;
   }
 
   .seach-text-div {
@@ -164,6 +228,8 @@
     top: 41px;
     /*border: #ff291f 1px solid;*/
     /*border-bottom: 2px #0a6beb solid;*/
+    border-top: 1px #1C8CE9 solid;
+    border-bottom: 1px #1C8CE9 solid;
     position: static;
   }
 
@@ -221,6 +287,7 @@
     cursor: pointer;
     top: 40px;
     position: absolute;
+    right: 10px;
   }
 
   .seach-edit-div:hover {
@@ -235,7 +302,7 @@
   .dial-header, el-dialog {
   }
 
-  .input,select, option {
+  .input, select, option {
     width: 90%;
     height: 35px;
     text-align: left;

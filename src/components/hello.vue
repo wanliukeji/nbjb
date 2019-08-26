@@ -35,16 +35,18 @@
 
 <style scoped>
   .model {
-    height: 300px;
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    height: 800px;
+    width: 80%;
     position: relative;
+    min-width: 1200px;
     background: #FFFFFF;
     color: black;
     font-size: 40px;
     margin: 0 auto;
     text-align: center;
     font-family: 楷体;
+    /*border: #0a0a0a 1px solid;*/
+    margin-top: 10px;
+    margin-bottom: 15px;
   }
 </style>
