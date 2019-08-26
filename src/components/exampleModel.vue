@@ -1,14 +1,18 @@
 <template lang="html">
   <div class="model">
-    <ul>
-      <li class="model-li" v-for="item in items">{{item.name}}</li>
-    </ul>
+    <job-model>
+
+
+    </job-model>
   </div>
 </template>
 
 <script>
+    import JobModel from "./jobModel";
+
     export default {
         name: "exampleModel",
+        components: {JobModel},
         data() {
             return {
                 items: []
@@ -40,36 +44,16 @@
 <style scoped>
   .model {
     position: relative;
-    width: 80%;
+    width: 100%;
     min-width: 1200px;
     height: auto;
-    /*padding-left: 7.5%;*/
     margin: 0 auto;
-    /*min-height: 800px;*/
     vertical-align: center;
-    /*margin-top: 10px;*/
     display: block;
     /*border: black 1px solid;*/
-    /*top: 380px;*/
-    padding-left: auto;
-    top: 5px;
-    bottom: 10px;
-    margin-bottom: 10px;
-    background: #FFFFFF;
-    /*min-height: 400px;*/
-    margin-top: 10px;
+    top: 0px;
+    /*bottom: 10px;*/
+    /*margin-bottom: 10px;*/
   }
 
-  .model-li {
-    height: auto;
-    font-size: 24px;
-    background: #fffffc;
-    font-family: 楷体;
-    margin-top: 3px;
-    cursor: pointer;
-  }
-
-  .model-li:hover {
-    background: #0a6beb;
-  }
 </style>

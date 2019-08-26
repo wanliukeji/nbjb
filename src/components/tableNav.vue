@@ -93,7 +93,7 @@
       </table>
     </div>
     <!--        <img src="/static/image/timg.jpg" alt="" width="1200" height="70">-->
-    <!--        <img src="/static/image/bujubeilun.png" alt="" width="1200" height="70">-->
+            <img src="/static/image/fuli.gif" alt="" width="1200" height="70">
   </div>
 
 </template>

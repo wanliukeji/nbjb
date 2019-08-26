@@ -4,7 +4,8 @@
     <example></example>
     <menu-nav></menu-nav>
     <table-nav></table-nav>
-    <img-model></img-model>
+<!--    <img-model></img-model>-->
+    <example-model></example-model>
     <footer-table></footer-table>
     <footer-nav></footer-nav>
   </div>
@@ -18,6 +19,7 @@
     import ImgModel from "./components/imgModel";
     import Top from "./components/top";
     import FooterTable from "./components/footerTable";
+    import ExampleModel from "./components/exampleModel";
 
     export default {
         data() {
@@ -29,6 +31,7 @@
         },
         //组件
         components: {
+            ExampleModel,
             Top,
             example,
             MenuNav,
