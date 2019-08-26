@@ -6,7 +6,8 @@
       </a>
       <div class="seach-input-div" style=" display: inline-block;">
         <select class="select-div">
-          <!--          <icon type="el-icon-arrow-down" style="position: absolute; z-index: 100;"></icon>-->
+          <icon type="el-icon-arrow-down"
+                style="position: absolute; z-index: 100; top: 5px; background: #0a0a0a;"></icon>
           <option>全部板块</option>
           <option>阿拉新闻</option>
           <option>阿拉娱乐</option>
@@ -151,17 +152,17 @@
   .select-div {
     display: inline-block;
     float: left;
-    width: 120px;
+    width: 100px;
     height: 42px;
-    margin-left: -320px;
+    margin-left: -300px;
     position: absolute;
     font-size: 13px;
     color: #454545;
     padding-left: 15px;
     text-align: center;
-    appearance: none;
-    -moz-appearance: none; /* Firefox */
-    -webkit-appearance: none; /* Safari 和 Chrome */
+    /*appearance: none;*/
+    /*-moz-appearance: none; !* Firefox *!*/
+    /*-webkit-appearance: none; !* Safari 和 Chrome *!*/
     border: 1px #1C8CE9 solid;
     border-right: none;
   }

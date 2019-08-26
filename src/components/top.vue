@@ -20,7 +20,11 @@
               d="M980.79827 694.105946c-21.144216-122.796973-109.844757-203.250162-109.844757-203.250162 12.647784-111.477622-33.792-131.26573-33.792-131.26573C827.392 14.668108 530.985514 20.67373 524.730811 20.839784 518.476108 20.67373 222.01427 14.668108 212.300108 359.590054c0 0-46.467459 19.788108-33.819676 131.26573 0 0-88.700541 80.453189-109.817081 203.250162 0 0-11.291676 207.484541 101.403676 25.40627 0 0 25.350919 69.161514 71.790703 131.26573 0 0-83.082378 28.256865-75.997405 101.625081 0 0-2.87827 81.836973 177.401081 76.218811 0 0 126.699243-9.852541 164.753297-63.515676l16.605405 0 0.276757 0 16.633081 0c38.026378 53.635459 164.725622 63.515676 164.725622 63.515676 180.224 5.618162 177.401081-76.218811 177.401081-76.218811 7.029622-73.368216-75.997405-101.625081-75.997405-101.625081 46.439784-62.104216 71.790703-131.26573 71.790703-131.26573C992.034595 901.590486 980.79827 694.105946 980.79827 694.105946z"
               p-id="1148" fill="#1296db"></path>
           </svg>
-          QQ登录
+          <a
+            href="https://www.cnnb.com/connect.php?mod=login&amp;op=init&amp;referer=https%3A%2F%2Fwww.cnnb.com%2F&amp;statfrom=login"
+            rel="nofollow">
+            QQ登录
+          </a>
         </li>
         <li class="top-left-li">
           <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +102,7 @@
               <Icon type="ios-arrow-down"></Icon>
               <!--              <span class="right-i"></span>-->
             </a>
-            <DropdownMenu slot="list">
+            <DropdownMenu slot="list" >
               <DropdownItem>
                 <a href="https://bbs.cnnb.com/home.php?mod=spacecp">个人设置</a>
               </DropdownItem>
@@ -139,7 +143,7 @@
               <DropdownItem>
                 <a
                   href="https://bbs.cnnb.com/home.php?mod=spacecp&amp;ac=plugin&amp;op=credit&amp;id=duceapp_scorebuy:addfunds"
-                  class="" >
+                  class="">
                   <b style="color:#F60; font-size: 11px;">积分充值</b>
                 </a>
               </DropdownItem>
@@ -182,48 +186,73 @@
 
     <div class="dial-header" style="margin: 0 auto;">
              
-      <el-dialog title="请填写以下信息" :visible.sync="showFlag"
-                 style="width:100%; min-width: 1200px; ">
-                 
+      <el-dialog title="用户登录" :visible.sync="showFlag"
+                 style="width:100%; min-width: 1200px; " align="left">
+                
         <div style="text-align: center; width: 100%; height: auto; ">
           <table>
             <tr>
               <td class="td-name">账号：</td>
               <td class="td-input"><input type="text" class="input" v-model="info.name">
-                <span style="font-size: 16px; color: #bbbbbb;">
-                  <a href="">注册</a>
+                <span style="font-size: 16px; color: #999;">
+                  <a href="https://bbs.cnnb.com/member.php?mod=register" style="font-size: 11px;">注册</a>
                 </span>
               </td>
             </tr>
             <tr>
               <td class="td-name">密码：</td>
-              <td class="td-input"><input type="text" class="input" v-model="info.job">
-                <span style="font-size: 16px; color: #bbbbbb;">
-                  <a href="">找回密码</a>
+              <td class="td-input"><input type="password" class="input" v-model="info.job">
+                <span style="color: #999;">
+                  <a href="https://bbs.cnnb.com/" style="font-size: 11px;">找回密码</a>
                 </span>
               </td>
             </tr>
             <tr>
               <td class="td-name">安全提问：</td>
-              <td class="td-input"><select type="text" class="input" v-model="info.job">
-                <option selected>安全问题</option>
-                <option>您的出生日期</option>
-                <option>您的出生地址</option>
-              </select></td>
+              <td class="td-input">
+                <select type="text" class="input">
+                  <option>安全问题(未设置请忽略)</option>
+                  <option>母亲的名字</option>
+                  <option>爷爷的名字</option>
+                  <option>父亲出生的城市</option>
+                  <option>你其中一位老师的名字</option>
+                  <option>你个人计算机的型号</option>
+                  <option>你最新欢的餐馆名称</option>
+                  <option>驾驶执照最后四位数</option>
+                </select>
+              </td>
             </tr>
             <tr>
-              <td class="td-name">密码：</td>
-              <td class="td-input"><input type="text" class="input" v-model="info.job"></td>
+              <td class="td-name">
+              </td>
+              <td class="td-input">
+                <input type="checkbox" id="checkbox"/><label for="checkbox">&nbsp;
+                <span style="font-size: 14px;">自动登录</span>
+              </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="td-name">
+              </td>
+              <td class="td-input">
+                <el-button size="mini" type="success" @click="radioEvent()">登录</el-button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <Divider />
+              </td>
+            </tr>
+            <tr>
+              <td class="td-name">
+                快捷登录：
+              </td>
+              <td class="td-input">
+                <a href="https://www.cnnb.com/connect.php?mod=login&amp;op=init&amp;referer=https%3A%2F%2Fwww.cnnb.com%2F&amp;statfrom=login"
+                  rel="nofollow"><img src="/static/image/qq_login.gif" width="100" height="20"></a>
+              </td>
             </tr>
           </table>
-                     
-          <div style="padding-top:20px;text-align: right;">
-                         
-            <el-button type="text" size="small" @click="showFlag = false">取消</el-button>
-                         
-            <el-button type="primary" size="small" @click="radioEvent()">确定</el-button>
-                       
-          </div>
                  
         </div>
                
@@ -332,19 +361,6 @@
     display: block;
   }
 
-  .ul-hide, .ul-hide-me {
-    display: none;
-    z-index: 1;
-    position: absolute;
-    /*padding-left: 0;*/
-    top: 40px;
-    width: auto;
-    background: #FFFFFF;
-    padding: 8px;
-    line-height: 18px;
-    /*border: black 1px solid;*/
-  }
-
   .top-right-diy {
     position: relative;
     display: inline-block;
@@ -357,19 +373,6 @@
   .diy {
     position: relative;
     top: -2px;
-  }
-
-  .ul-hide-me {
-    right: 50px;
-    width: 70px;
-  }
-
-  .ul-hide-li {
-    font-size: 11px;
-    width: 60px;
-    padding-left: 0;
-    text-align: left;
-    line-height: 18px;
   }
 
   .img-div {
@@ -400,47 +403,6 @@
     height: 120px;
   }
 
-  .arrow1 {
-    position: absolute;
-    right: 3px;
-    top: 48%;
-    width: 6px;
-    height: 6px;
-    margin-top: 0px;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    -webkit-transform: rotate(225deg);
-    content: '';
-  }
-
-  .arrow2:hover {
-    position: absolute;
-    right: 3px;
-    top: 40%;
-    width: 6px;
-    height: 6px;
-    margin-top: 0px;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    content: '';
-  }
-
-  .top-right-li-diy-child {
-    display: none;
-  }
-
-  .right-i {
-    height: 16px;
-    border-left: #dddddd solid 1px;
-    top: 40px;
-    width: 0px;
-    /*position: relative;*/
-    display: inline-block;
-
-  }
-
   .dial-header, el-dialog {
   }
 
@@ -450,7 +412,7 @@
     text-align: left;
     font-size: 14px;
     border: #dfdfdf 0.3px solid;
-    padding-left: 3px;
+    padding-left: 7px;
   }
 
   table {
@@ -461,6 +423,8 @@
 
   .td-name {
     text-align: right;
+    color: #878787;
+    font-size: 12px;
   }
 
   tr {
@@ -470,6 +434,17 @@
 
   .td-input {
     text-align: left;
+    font-size: 12px;
+    color: #878787;
+  }
+
+  option, select {
+    font-size: 14px;
+    color: #878787;
+  }
+
+  select:hover {
+    cursor: pointer;
   }
 
 

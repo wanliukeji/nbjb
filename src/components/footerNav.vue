@@ -192,8 +192,8 @@
   .footer-dt {
     text-align: center;
     line-height: 35px;
-    font-size: 18px;
-    font-family: "Microsoft JhengHei";
+    font-size: 16px;
+    font-family: Tahoma,'Microsoft Yahei','Simsun';;
     color: #606060;
   }
 
@@ -201,7 +201,7 @@
     text-align: center;
     line-height: 25px;
     font-size: 11px;
-    color: #7a7a7a;
+    color: #666666;
   }
 
   .footer-dd:hover, .footer-dt:hover {
