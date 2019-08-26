@@ -136,9 +136,8 @@
     padding-top: 30px;
     height: 200px;
     margin: 0 auto;
-    bottom: 10px;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   .p-font, a {

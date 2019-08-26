@@ -1,8 +1,6 @@
 <template lang="html">
   <div class="model">
-    <router-link to='app.html'>
-      <button>点我到第二个页面</button>
-    </router-link>
+
   </div>
 </template>
 
@@ -15,14 +13,14 @@
 <style scoped>
   .model {
     display: block;
+    width: 100%;
     position: relative;
     background: #FFFFFF;
-    min-height: 300px;
-    width: 1200px;
+    min-height: 100px;
+    min-width: 1200px;
     height: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
     margin: 0 auto;
+    border: #ececec 0.5px solid;
   }
 
 </style>

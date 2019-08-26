@@ -3,13 +3,16 @@
     <div class="footer">
       <div class="footer-center">
         <div class="footer-left">
-          <p style="font-size: 18px; line-height: 40px;">客服电话</p>
-          <p style="font-size: 23px; line-height: 27px; color: #389efb;">86800055</p>
-          <p style="font-size: 11px; line-height: 40px; font-family: 'Microsoft YaHei'; color: #999">工作时间 周一至周六
+          <p style="font-size: 18px; line-height: 40px;" align="left">客服电话</p>
+          <p style="font-size: 23px; line-height: 27px; color: #389efb;" align="left">86800055</p>
+          <p style="font-size: 11px; line-height: 40px; font-family: 'Microsoft YaHei'; color: #999" align="left">工作时间
+            周一至周六
             8:00-17:30</p>
-          <p style="font-size: 12px; vertical-align: middle; color: #717171;">
-            客服QQ &nbsp;
-            <img src="/static/image/site_qq.jpg" height="21" alt="点击咨询"/>
+          <p style="font-size: 12px; vertical-align: middle; color: #717171;" align="left">
+            客服QQ
+            <a href="https://wpa.qq.com/msgrd?v=3&uin=139578001&site=阿拉宁波网&menu=yes&from=discuz">
+              <img src="/static/image/site_qq.jpg" height="21" alt="点击咨询"/>
+            </a>&nbsp;
           </p>
         </div>
 
@@ -60,18 +63,61 @@
       </div>
       <div class="footer-bottom">
         <div class="footer-bottom-text">
-          <span class="footer-bottom-span">宁波阿拉网</span>
-          <span class="footer-bottom-span">广告服务</span>
-          <span class="footer-bottom-span">排行榜</span>
-          <span class="footer-bottom-span">Archiver</span>
-          <span class="footer-bottom-span">手机版</span>
-          <span class="footer-bottom-span">浙ICP备12020218号</span>
+          <span class="footer-bottom-span"><a href="https://www.cnnb.com">阿拉宁波网广告服务</a></span>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#ffffff"></path>
+          </svg>
+          <span class="footer-bottom-span"><a href="http://ad.cnnb.com/adinfo/index.html">广告服务</a></span>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#ffffff"></path>
+          </svg>
+          <span class="footer-bottom-span"><a href="https://bbs.cnnb.com/misc.php?mod=ranklist">排行榜</a></span>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#ffffff"></path>
+          </svg>
+          <span class="footer-bottom-span"><a href="https://bbs.cnnb.com/misc.php?mod=stat">统计</a></span>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#ffffff"></path>
+          </svg>
+          <span class="footer-bottom-span"><a href="">举报</a></span>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#ffffff"></path>
+          </svg>
+          <span class="footer-bottom-span"><a href="https://bbs.cnnb.com/archiver/">Archiver</a></span>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#ffffff"></path>
+          </svg>
+          <span class="footer-bottom-span"><a href="https://app.cnnb.com/mag/wap/v1/wap/waphome">手机版</a></span>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#ffffff"></path>
+          </svg>
+          <span class="footer-bottom-span"><a href="http://www.miitbeian.gov.cn/">浙ICP备12020218号</a></span>
         </div>
       </div>
 
       <div class="footer-bottom-index">
-        Powered by Discuz! X3.4 © 2001-2017 Comsenz Inc. GMT+8, 2019-8-17 17:02 , Processed in 0.067049 second(s), 1
-        queries , MemCache On.
+        Powered by <span style="color: black; font-size: 12px; font-weight: 10px; ">Discuz</span>! X3.4 © 2001-2017 Comsenz Inc.   GMT+8, 2019-8-26 09:36 , Processed in 0.085814 second(s), 1 queries , MemCache On.
       </div>
     </div>
   </div>
@@ -117,11 +163,6 @@
   .footer-center {
     margin: 0 auto;
     width: 87%;
-    /*padding-top: 40px;*/
-    /*position: relative;*/
-    /*padding-bottom: 100px;*/
-    /*margin-bottom: 40px;*/
-    /*border: black 1px solid;*/
     padding-left: 0px;
     height: auto;
     min-height: 130px;
@@ -136,7 +177,7 @@
     position: relative;
     padding: 0px;
     /*border: #88ff19 1px solid;*/
-    /*margin-left: 40px;*/
+    margin-right: 70px;
   }
 
   .footer-herf {
@@ -151,7 +192,9 @@
   .footer-dt {
     text-align: center;
     line-height: 35px;
-    font-size: 17px;
+    font-size: 18px;
+    font-family: "Microsoft JhengHei";
+    color: #606060;
   }
 
   .footer-dd {
@@ -188,8 +231,6 @@
     display: block;
     width: 100%;
     background-color: #1382de;
-    /*position: absolute;*/
-    /*top: 180px;*/
     min-width: 1200px;
     margin: 0 auto;
     padding-top: 5px;
@@ -200,17 +241,16 @@
   }
 
   .footer-bottom-text {
-    margin-left: 33%;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .footer-bottom-span {
-    display: inline-block;
-    float: left;
     width: auto;
-    border-right: #bcbcbc solid 1px;
-    font-size: 12px;
+    font-size: 11px;
     padding: 5px;
-    color: #d0e0f1;
+    color: #ffffff;
     vertical-align: center;
   }
 
@@ -219,16 +259,18 @@
     width: 100%;
     background-color: #ffffff;
     position: relative;
-    /*top: 250px;*/
     min-width: 1024px;
     margin: 0 auto;
-    padding-bottom: 5px;
     vertical-align: center;
-    height: 20px;
+    height: 45px;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-bottom: 5px;
-    font-size: 10px;
+    font-size: 11px;
+    color: #898989;
   }
 
+  .footer-bottom-index>a:hover {
+    background: #ffffff;
+  }
 </style>

@@ -3,10 +3,11 @@
   <div class="top">
     <div class="top-center">
       <ul class="top-left">
-        <li class="top-left-li">您好！<a style="color: blue;" @click="showFlag = true">请登录</a></li>
+        <li class="top-left-li">您好！<a style="color: #1C8CE9;" @click="showFlag = true">请登录</a></li>
         <li class="top-left-li"><a href="https://app.cnnb.com/mag/wap/v1/wap/waphome/signup"
                                    style="position: relative;">免费注册</a>
-          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               p-id="7678" width="14" height="14">
             <path
               d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
               p-id="7679" fill="#bfbfbf"></path>
@@ -93,18 +94,32 @@
                   d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
                   p-id="7679" fill="#bfbfbf"></path>
               </svg>
-              个人中心
+              <a href="https://bbs.cnnb.com/space-uid-8.html">个人中心</a>
               <Icon type="ios-arrow-down"></Icon>
               <!--              <span class="right-i"></span>-->
             </a>
             <DropdownMenu slot="list">
-              <DropdownItem>个人设置</DropdownItem>
-              <DropdownItem>信息中心</DropdownItem>
-              <DropdownItem>我的贴子</DropdownItem>
-              <DropdownItem>我的收藏</DropdownItem>
-              <DropdownItem>我的好友</DropdownItem>
-              <DropdownItem>门户管理</DropdownItem>
-              <DropdownItem>退出</DropdownItem>
+              <DropdownItem>
+                <a href="https://bbs.cnnb.com/home.php?mod=spacecp">个人设置</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="https://bbs.cnnb.com/home.php?mod=space&amp;do=pm">信息通知</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="https://bbs.cnnb.com/forum.php?mod=guide&amp;view=my">我的帖子</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="https://bbs.cnnb.com/home.php?mod=space&amp;do=favorite&amp;view=me">我的收藏</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="https://bbs.cnnb.com/home.php?mod=space&amp;do=friend">我的好友</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="https://www.cnnb.com/portal.php?mod=portalcp">门户管理</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="member.php?mod=logging&amp;action=logout&amp;formhash=952854de" rel="nofollow">退出</a>
+              </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </li>
@@ -117,15 +132,31 @@
                   d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
                   p-id="7679" fill="#bfbfbf"></path>
               </svg>
-              快速导航
+              <a href="javascript:void(0);" style="color:#f78115;">快速导航</a>
               <Icon type="ios-arrow-down"></Icon>
             </a>
             <DropdownMenu slot="list">
-              <DropdownItem>积分充值</DropdownItem>
-              <DropdownItem>设为首页</DropdownItem>
-              <DropdownItem>设为本站</DropdownItem>
-              <DropdownItem>手机客户端</DropdownItem>
-              <DropdownItem>道具中心</DropdownItem>
+              <DropdownItem>
+                <a
+                  href="https://bbs.cnnb.com/home.php?mod=spacecp&amp;ac=plugin&amp;op=credit&amp;id=duceapp_scorebuy:addfunds"
+                  class="" >
+                  <b style="color:#F60; font-size: 11px;">积分充值</b>
+                </a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="javascript:;"
+                   onclick="setHomepage('https://www.cnnb.com/source/plugin/magmobileapi/');">设为首页</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="https://www.cnnb.com/source/plugin/magmobileapi/"
+                   onclick="addFavorite(this.href, '阿拉宁波网');return false;">收藏本站</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="http://url.cn/5SdZZYR" target="_blank">手机客户端</a>
+              </DropdownItem>
+              <DropdownItem>
+                <a href="https://bbs.cnnb.com/home.php?mod=magic">道具中心</a>
+              </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </li>
@@ -133,10 +164,18 @@
     </div>
 
     <div class="top-right-diy">
-      <img src="/static/image/panel-toggle.png" class="diy" @mouseover="showDiyChild" alt="">
-      <ul class="top-right-li-diy-child">
-        <li class="jq">CHENYU</li>
-      </ul>
+      <Dropdown>
+        <a href="javascript:void(0)">
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg" p-id="7678" width="14" height="14">
+          </svg>
+          <img src="/static/image/panel-toggle.png" class="diy" @mouseover="showDiyChild" alt="">
+        </a>
+        <DropdownMenu slot="list">
+          <DropdownItem @click="showHideTop">简易模式</DropdownItem>
+          <DropdownItem @click="showHideTop">高级模式</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </div>
 
     <!--  start  -->
@@ -227,6 +266,9 @@
                 alert(this.info.name);
                 this.showFlag = false;
                 this.adapterSelected = this.radio;
+            },
+            showHideTop() {
+                this.$notify.success({});
             }
         }
     }
