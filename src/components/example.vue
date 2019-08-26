@@ -6,12 +6,23 @@
       </a>
       <div class="seach-input-div" style=" display: inline-block;">
         <select class="select-div">
-          <icon type="el-icon-arrow-down"
-                style="position: absolute; z-index: 100; top: 5px; background: #0a0a0a;"></icon>
+
           <option>全部板块</option>
           <option>阿拉新闻</option>
           <option>阿拉娱乐</option>
         </select>
+        <svg t="1566803108722" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             p-id="3566" width="18" height="18" style="position:absolute; margin-left: -225px; top: 13px;">
+          <path
+            d="M512 721.5c-4.6 0-9.2-1.8-12.7-5.3l-383.1-383c-7-7-7-18.4 0-25.5s18.4-7 25.5 0L512 678.1l370.3-370.3c7-7 18.4-7 25.5 0 7 7 7 18.4 0 25.5l-383.1 383c-3.5 3.5-8.1 5.2-12.7 5.2z"
+            p-id="3567" fill="#8a8a8a"></path>
+        </svg>
+        <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             p-id="7678" width="20" height="20" style="position:absolute; margin-left: -208px; top: 10px;">
+          <path
+            d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+            p-id="7679" fill="#ccc"></path>
+        </svg>
         <input type="text" name="srchtxt" class="seach-text-div" value="" placeholder="请输入关键字" autocomplete="off"
                x-webkit-speech="" speech="">
         <input type="submit" name="searchsubmit" value="搜索" class="seach-btn-div">
@@ -21,47 +32,169 @@
          class="seach-edit-div">免费发布信息</a>
     </div>
 
-    <el-dialog title="请填写以下信息" :visible.sync="showFlag"
-               style="width:100%; min-width: 1200px;">
-               
-      <div style="text-align: center; width: 100%; height: auto;">
+    <el-dialog title="论坛导航" :visible.sync="showFlag" style="width:100%; min-width: 1200px;float: left; font-size: 14px; font-weight: 700;
+    color: #999;" align="left">
+      <div class="hide-div-nav">
+        <p class="hide-p">
+          <span class="hide-p-span">
+            阿拉宁波网 > 阿拉宁波-职场 > 个人求职专区 &nbsp;[进入板块]
+          </span>
+          <button class="hide-p-btn">发新帖</button>
+        </p>
+        <ul class="hide-ul-div" style="padding: 8px;">
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">常用板块</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-民生</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-生活</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-职场</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-分类信息</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-商家</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-文化</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-文化</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-公益</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-趣园</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
 
-        <table>
-          <tr>
-            <td class="td-name">姓名：</td>
-            <td class="td-input"><input type="text" class="input" v-model="info.name"></td>
-          </tr>
-          <tr>
-            <td class="td-name">职业：</td>
-            <td class="td-input"><input type="text" class="input" v-model="info.job"></td>
-          </tr>
-          <tr>
-            <td class="td-name">住址：</td>
-            <td class="td-input"><input type="text" class="input" v-model="info.address"></td>
-          </tr>
-          <tr>
-            <td class="td-name">性别：</td>
-            <td class="td-input">
-              <select type="text" class="input" v-model="info.sex">
-                <option selected>男</option>
-                <option>女</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="td-name">户籍：</td>
-            <td class="td-input"><input type="text" class="input" v-model="info.address"></td>
-          </tr>
-        </table>
-                   
-        <div style="padding-top:20px;text-align: right;">
-                       
-          <el-button type="text" size="small" @click="showFlag = false">取消</el-button>
-                       
-          <el-button type="primary" size="small" @click="radioEvent()">确定</el-button>
-                     
-        </div>
-               
+        </ul>
+
+        <ul class="hide-ul-div">
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">我爱北仑</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉播报</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉知道</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">曝光台</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉城事</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">阿拉宁波-商家</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">民生关注</span>
+            <svg style="float: right;" t="1566798959379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1821" width="10" height="10">
+              <path d="M270.387 27.273l484.233 485.222-485.222 484.233z" p-id="1822" fill="#bfbfbf"></path>
+            </svg>
+          </li>
+          <br>
+        </ul>
+
+        <ul class="hide-ul-div">
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">企业招聘-认证区</span>
+          </li>
+          <br>
+          <li class="hide-ul-div-li">
+            <span class="hide-ul-div-li-span">个人求职专区</span>
+          </li>
+          <br>
+        </ul>
+                           
       </div>
              
     </el-dialog>
@@ -160,9 +293,9 @@
     color: #454545;
     padding-left: 15px;
     text-align: center;
-    /*appearance: none;*/
-    /*-moz-appearance: none; !* Firefox *!*/
-    /*-webkit-appearance: none; !* Safari 和 Chrome *!*/
+    appearance: none;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari 和 Chrome */
     border: 1px #1C8CE9 solid;
     border-right: none;
   }
@@ -337,4 +470,69 @@
     text-align: left;
     color: black;
   }
+
+  .hide-div-nav {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    min-width: 581px;
+  }
+
+  .hide-p {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    padding: 7px 0;
+    text-align: left;
+    padding-left: 30px;
+
+  }
+
+  .hide-p-span {
+    color: #444;
+    font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+
+  }
+
+  .hide-p-btn {
+    border: none;
+    background: #f2f2f2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+    color: #959595;
+    float: right;
+  }
+
+  .hide-ul-div {
+    display: inline-block;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 5px;
+    width: 196px;
+    height: 300px;
+    border: 1px solid #CCC;
+    position: relative;
+    margin-left: -5px;
+  }
+
+  .hide-ul-div-li {
+    width: 180px;
+    display: block;
+    margin-top: 3px;
+  }
+
+  .hide-ul-div-li:hover {
+    background: #c12446;
+    cursor: pointer;
+  }
+
+  .hide-ul-div-li-span {
+    color: #9c9c9c;
+    float: left;
+    font-size: 11px;
+  }
+
 </style>
