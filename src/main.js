@@ -14,8 +14,6 @@ import 'vant/lib/index.css';
 import VueResource from 'vue-resource'
 import ElementUI from 'element-ui' //element-ui的全部组件
 import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
-// import popup from '/src/view/popup'
-import layer from 'vue-layer'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'  //引用 ivew 全局样式
 
@@ -47,10 +45,10 @@ const RouterConfig = {
 };
 
 //页面跳转异常处理
-// const originalPush = VueRouter.prototype.push
-// VueRouter.prototype.push = function push(location) {
-//   return originalPush.call(this, location).catch(err => err)
-// }
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 
 /* eslint-disable no-new */

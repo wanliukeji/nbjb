@@ -5,30 +5,19 @@
     <menu-nav></menu-nav>
     <table-nav></table-nav>
     <img-model></img-model>
-<!--    <model-first></model-first>-->
-    <Hello></Hello>
     <footer-table></footer-table>
     <footer-nav></footer-nav>
   </div>
 </template>
 <script>
     /* 引用组件 */
-    import headerNav from "@/components/headerNav";
     import example from "@/components/example";
     import tableNav from "@/components/tableNav";
     import footerNav from "@/components/footerNav";
     import MenuNav from "./components/menuNav";
     import ImgModel from "./components/imgModel";
     import Top from "./components/top";
-    import ModelFirst from "./components/model-first";
-    import Footer from "./components/footer";
-    import DataDmo from "./components/dataDmo";
-    import Demo from "./view/demo";
-    import ExampleModel from "./components/exampleModel";
     import FooterTable from "./components/footerTable";
-    import Popup from "./view/popup";
-    import Model1 from "./model/model-1";
-    import Hello from "./components/hello";
 
     export default {
         data() {
@@ -40,30 +29,18 @@
         },
         //组件
         components: {
-            Hello,
-            Model1,
-            Popup,
-            FooterTable,
-            ExampleModel,
-            Demo,
-            DataDmo,
-            Footer,
-            ModelFirst,
             Top,
-            ImgModel,
-            MenuNav,
-            headerNav,
             example,
+            MenuNav,
+            ImgModel,
             tableNav,
+            FooterTable,
             footerNav
         },
         mounted() {
         },
         methods: {
-            setNav(seterArr) {
-                this.navTitle = seterArr[0];
-                this.nowTab = seterArr[1];
-            }
+
         }
     };
 </script>

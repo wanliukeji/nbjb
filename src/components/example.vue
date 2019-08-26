@@ -1,10 +1,12 @@
 <template lang="html">
   <div class="seach-div">
     <div class="seach-center-div">
-      <div class="img_log"></div>
+      <a href="/index.html">
+        <div class="img_log"></div>
+      </a>
       <div class="seach-input-div" style=" display: inline-block;">
         <select class="select-div">
-<!--          <icon type="el-icon-arrow-down" style="position: absolute; z-index: 100;"></icon>-->
+          <!--          <icon type="el-icon-arrow-down" style="position: absolute; z-index: 100;"></icon>-->
           <option>全部板块</option>
           <option>阿拉新闻</option>
           <option>阿拉娱乐</option>

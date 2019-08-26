@@ -26,14 +26,18 @@
                 var obj = res.data;
                 this.items = obj;
                 if (res.status == 200) {
-                    this.$notify({
-                        title: '成功连接服务器',
-                        message: '获取数据成功',
-                        type: 'success'
-                    });
-                    console.log(this.items);
+                    // this.$notify({
+                    //     title: '成功连接服务器',
+                    //     message: '获取数据成功',
+                    //     type: 'success'
+                    // });
+                    // console.log(this.items);
                 } else {
-                    this.$message.error('获取数据失败');
+                    this.$notify.error({
+                        title: '连接服务器失败',
+                        message: result,
+                        type: 'error'
+                    });
                 }
             }).catch(function (result) {
                 this.$notify.error({
