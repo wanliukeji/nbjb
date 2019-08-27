@@ -5,14 +5,13 @@
     <menu-nav></menu-nav>
     <table-nav></table-nav>
 <!--    <img-model></img-model>-->
-<!--    <example-model></example-model>-->
+    <example-model></example-model>
 
     <footer-table></footer-table>
     <footer-nav></footer-nav>
   </div>
 </template>
 <script>
-    /* 引用组件 */
     import example from "@/components/example";
     import tableNav from "@/components/tableNav";
     import footerNav from "@/components/footerNav";
@@ -24,13 +23,11 @@
 
     export default {
         data() {
-            /* 这里是数据，注意数据一定要放data中然后用return返回 */
             return {
                 navTitle: '',
                 nowTab: 1,
             };
         },
-        //组件
         components: {
             ExampleModel,
             Top,
