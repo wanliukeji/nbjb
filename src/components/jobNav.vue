@@ -128,10 +128,411 @@
 
       <div class="hidden-div" ref="hide_div" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
         <div class="hidden-div-center">
-
+          <div class="hidden-div-model">
+            <h4>
+              <a href="" class="hidden-div-p">
+                销售管理
+              </a>
+            </h4>
+            <ul class="hidden-div-model-ul">
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hidden-div-model">
+            <h4>
+              <a href="" class="hidden-div-p">
+                销售管理
+              </a>
+            </h4>
+            <ul class="hidden-div-model-ul">
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hidden-div-model">
+            <h4>
+              <a href="" class="hidden-div-p">
+                销售管理
+              </a>
+            </h4>
+            <ul class="hidden-div-model-ul">
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hidden-div-model">
+            <h5>
+              <a href="" class="hidden-div-p">销售管理</a>
+            </h5>
+            <ul class="hidden-div-model-ul">
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+            </ul>
+          </div>
+          <div class="hidden-div-model">
+            <h5>
+              <a href="" class="hidden-div-p">销售管理</a>
+            </h5>
+            <ul class="hidden-div-model-ul">
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+              <li class="hidden-div-model-li">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="nav-bottom">
       <ul class="nav-bottom-ul">
         <li class="nav-bottom-li">
@@ -172,7 +573,6 @@
         </ul>
       </div>
     </div>
-
 
     <div class="model-div">
       <div class="model-div-title">
@@ -236,25 +636,26 @@
         name: "jobNav",
         data() {
             return {
-                info : {
-                    val : ''
+                info: {
+                    val: ''
                 }
             }
         },
+        created() {
+        },
         methods: {
-            changeActive($event) {
-                var el = $event.currentTarget;
-                // alert("当前对象的内容："+el.innerHTML);
-                console.log($event.innerHTML);
-                this.$notify.success({
-                    title: '触发事件成功!',
-                    message: $event,
-                    type: 'succee'
-                });
+            changeActive(e) {
+                let sub = e.currentTarget.firstElementChild;
+                $(sub).css('display','none');
                 this.$refs.hide_div.style.display = 'block';
             },
-            removeActive($event) {
+            removeActive(e) {
+                let sub = e.currentTarget.firstElementChild;
+                $(sub).css('display','block');
                 this.$refs.hide_div.style.display = 'none';
+            },
+            showarrow() {
+
             }
         }
     }
@@ -367,8 +768,64 @@
     z-index: 10;
     left: 270px;
     top: auto;
-    display: block;
+    display: none;
     background: #FFFFFF;
+    padding: 25px;
+    overflow-y: scroll;
+    /*overflow-x: scroll;*/
+  }
+
+  .hidden-div-center {
+    /*border: 1px black solid;*/
+    width: auto;
+    height: auto;
+    position: relative;
+    overflow-y: auto;
+  }
+
+  .hidden-div-model {
+    width: auto;
+    height: auto;
+    position: relative;
+    display: block;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    /*border: 1px black solid;*/
+    /*white-space: nowrap;*/
+  }
+
+  .hidden-div-model-ul {
+    width: auto;
+    height: auto;
+  }
+
+  .hidden-div-model-li {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-align: left;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  .hidden-div-p {
+    font-size: 14px;
+    color: #151515;
+    text-align: left;
+    width: 100%;
+    display: block;
+    float: left;
+    margin-bottom: 10px;
+  }
+
+  .hidden-div-model-li-a {
+    font-size: 12px;
+    color: #6b6b6b;
+  }
+
+  .hidden-div-model-li-a:hover {
+    color: #0a6beb;;
   }
 
   .demo-carousel {
@@ -598,4 +1055,5 @@
     box-shadow: 5px 5px 5px #cfcfcf;
     margin-left: -5px;
   }
+
 </style>
