@@ -5,7 +5,8 @@
     <menu-nav></menu-nav>
     <table-nav></table-nav>
 <!--    <img-model></img-model>-->
-    <example-model></example-model>
+<!--    <example-model></example-model>-->
+
     <footer-table></footer-table>
     <footer-nav></footer-nav>
   </div>
