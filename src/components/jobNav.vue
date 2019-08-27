@@ -571,7 +571,15 @@
 
       <div class="model-div-row">
         <ul class="model-div-row-ul">
-          <li class="model-div-row-li-3"></li>
+          <li class="model-div-row-li-3">
+            <div style="position: absolute;">
+              <h3>
+                <a href="" style=" font-size: 18px; color: #38383b;">JAVA工程师</a>
+                <span style="color: red; font-family: Tahoma, 'Microsoft Yahei', 'Simsun'; right: 0; font-size: 16px; font-weight: bolder;">8000-10000</span>
+              </h3>
+              <h3></h3>
+            </div>
+          </li>
           <li class="model-div-row-li-3"></li>
           <li class="model-div-row-li-3"></li>
         </ul>
@@ -651,15 +659,15 @@
             changeActive(e) {
                 let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
-                $(parent).css('background-color','#0a6beb');
-                $(sub).css('display','none');
+                $(parent).css('background-color', '#0a6beb');
+                $(sub).css('display', 'none');
                 this.$refs.hide_div.style.display = 'block';
             },
             removeActive(e) {
                 let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
-                $(sub).css('display','block');
-                $(parent).css('background-color','#1c8ce9');
+                $(sub).css('display', 'block');
+                $(parent).css('background-color', '#1c8ce9');
                 this.$refs.hide_div.style.display = 'none';
             },
             showarrow() {
