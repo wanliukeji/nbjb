@@ -94,6 +94,10 @@
             人力/行政/管理
             <i class="right-arrow"></i>
           </li>
+          <li class="nav-left-li" v-model="info.val" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
+            其他
+            <i class="right-arrow"></i>
+          </li>
         </ul>
       </div>
       <div class="nav-center">
@@ -126,7 +130,7 @@
         </Tabs>
       </div>
 
-      <div class="hidden-div" ref="hide_div" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
+      <div class="hidden-div" ref="hide_div" @mouseover="showarrow($event)" @mouseout="hidearrow($event)">
         <div class="hidden-div-center">
           <div class="hidden-div-model">
             <h4>
@@ -645,17 +649,29 @@
         },
         methods: {
             changeActive(e) {
+                let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
+                $(parent).css('background-color','#0a6beb');
                 $(sub).css('display','none');
                 this.$refs.hide_div.style.display = 'block';
             },
             removeActive(e) {
+                let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
                 $(sub).css('display','block');
+                $(parent).css('background-color','#1c8ce9');
                 this.$refs.hide_div.style.display = 'none';
             },
             showarrow() {
-
+                // alert(1.1);
+                // let sub = e.currentTarget.firstElementChild;
+                // $(sub).css('display','none');
+                this.$refs.hide_div.style.display = 'block';
+            },
+            hidearrow() {
+                // let sub = e.currentTarget.firstElementChild;
+                // $(sub).css('display','block');
+                this.$refs.hide_div.style.display = 'none';
             }
         }
     }
@@ -789,7 +805,7 @@
     position: relative;
     display: block;
     padding-bottom: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     /*border: 1px black solid;*/
     /*white-space: nowrap;*/
   }
@@ -824,9 +840,9 @@
     color: #6b6b6b;
   }
 
-  .hidden-div-model-li-a:hover {
-    color: #0a6beb;;
-  }
+  /*.hidden-div-model-li-a:hover {*/
+  /*  color: #0a6beb;;*/
+  /*}*/
 
   .demo-carousel {
     width: 100%;
