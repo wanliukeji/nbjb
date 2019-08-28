@@ -1253,9 +1253,7 @@
         </ul>
       </div>
     </div>
-
     <br>
-
     <div class="model-div">
       <div class="model-div-title">
         <i class="row-left"></i>
@@ -1659,7 +1657,7 @@
     background-color: #fff;
     display: inline-block;
     padding: 25px 20px;
-    width: 566px;
+    width: 590px;
     height: 170px;
     margin-right: 15px;
     margin-bottom: 15px;
@@ -1872,13 +1870,25 @@
   }
 
   .hot-qy-top {
-    border: #d0e0f1 solid 1px;
     position: absolute;
+    margin: 0 auto;
+    width: auto;
+    padding:12px;
   }
 
   .hot-qy-img {
-    width: 284px;
-    height: 180px;
+    width: 260px;
+    height: 160px;
+  }
+  .hot-qy-img:hover {
+    -webkit-transition: All 0.4s ease-in-out;
+     transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    -o-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    -moz-transform: scale(1.08);
+
+    z-index: -10;
   }
 
   .hot-qy-center {
@@ -1887,7 +1897,7 @@
     border-radius: 50%;
     position: relative;
     z-index: 10;
-    top: 140px;
+    top: 125px;
     left: 100px;
     border: #FFFFFF 2px solid;
   }
@@ -1937,7 +1947,7 @@
     word-break: break-word;
   }
 
-  .hot-qy-bottom>a:hover {
+  .hot-qy-bottom > a:hover {
     color: #53eb45;
   }
 
