@@ -1263,10 +1263,67 @@
 
       <div class="model-div-row">
         <ul class="model-div-row-ul">
-          <li class="model-div-row-li-2"></li>
-          <li class="model-div-row-li-2"></li>
-          <li class="model-div-row-li-2"></li>
-          <li class="model-div-row-li-2"></li>
+          <li class="model-div-row-li-2">
+            <div class="work-w">
+              <div class="work-w-right">
+                <img src="/static/image/timg%20(3).jpg" alt="" class="work-w-img">
+              </div>
+              <div class="work-w-left">
+                <a href="">
+                  <h4 class="work-w-left-title">
+                    9月25日山东历城人才市大型就业援助综合类招聘会
+                  </h4>
+                </a>
+                <p class="work-w-left-time">2018-01-11 08:00-13:00</p>
+                <p class="work-w-left-address">江苏 苏州 高井头1号</p>
+              </div>
+            </div>
+          </li>
+          <li class="model-div-row-li-2">
+            <div class="work-w">
+              <div class="work-w-right">
+                <img src="/static/image/timg%20(3).jpg" alt="" class="work-w-img">
+              </div>
+              <div class="work-w-left">
+                <a href="">
+                  <h4 class="work-w-left-title">
+                    9月25日山东历城人才市大型就业援助综合类招聘会</h4>
+                </a>
+                <p class="work-w-left-time">2018-01-11 08:00-13:00</p>
+                <p class="work-w-left-address">江苏 苏州 高井头1号</p>
+              </div>
+            </div>
+          </li>
+          <li class="model-div-row-li-2">
+            <div class="work-w">
+              <div class="work-w-right">
+                <img src="/static/image/timg%20(3).jpg" alt="" class="work-w-img">
+              </div>
+              <div class="work-w-left">
+                <a href="">
+                  <h4 class="work-w-left-title">
+                    9月25日山东历城人才市大型就业援助综合类招聘会</h4>
+                </a>
+                <p class="work-w-left-time">2018-01-11 08:00-13:00</p>
+                <p class="work-w-left-address">江苏 苏州 高井头1号</p>
+              </div>
+            </div>
+          </li>
+          <li class="model-div-row-li-2">
+            <div class="work-w">
+              <div class="work-w-right">
+                <img src="/static/image/timg%20(3).jpg" alt="" class="work-w-img">
+              </div>
+              <div class="work-w-left">
+                <a href="">
+                  <h4 class="work-w-left-title">
+                    9月25日山东历城人才市大型就业援助综合类招聘会</h4>
+                </a>
+                <p class="work-w-left-time">2018-01-11 08:00-13:00</p>
+                <p class="work-w-left-address">江苏 苏州 高井头1号</p>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -1873,13 +1930,14 @@
     position: absolute;
     margin: 0 auto;
     width: auto;
-    padding:12px;
+    padding: 12px;
   }
 
   .hot-qy-img {
     width: 260px;
     height: 160px;
   }
+
   .hot-qy-img:hover {
     -webkit-transition: All 0.4s ease-in-out;
      transform: scale(1.08);
@@ -1954,4 +2012,66 @@
   .hot-qy-bottom-font:hover {
     color: #53eb45;
   }
+
+  .work-w {
+    height: 100%;
+    width: 100%;
+  }
+
+  .work-w-right {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 150px;
+    margin: 0 auto;
+    position: relative;
+    vertical-align: middle;
+    padding-top: 20px;
+    text-align: left;
+  }
+
+  .work-w-img {
+    width: 112px;
+    height: 75px;
+  }
+
+  .work-w-left {
+    display: inline-block;
+    float: right;
+    width: 380px;
+    height: 100%;
+    position: relative;
+  }
+
+  .work-w-left-title {
+    font-size: 18px;
+    color: #38383b;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 35px;
+    text-align: left;
+  }
+
+  .work-w-left-title:hover {
+    color: #53eb45;
+  }
+
+
+  .work-w-left-time {
+    font-size: 17px;
+    color: #00c192;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .work-w-left-address {
+    font-size: 15px;
+    color: #919191;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+  }
+
 </style>
