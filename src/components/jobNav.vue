@@ -1332,11 +1332,64 @@
 
     <div class="model-foot">
       <div class="foot-left">
-
+        <Button shape="circle" style="position: relative; top: 370px;">查看更多</Button>
       </div>
       <div class="foot-center">
         <Tabs>
-          <TabPane label="才市速递"></TabPane>
+          <TabPane label="才市速递">
+            <div style="display: inline-block; float: left; width: auto; height: auto;">
+              <div class="block" style="width: 260px; margin-bottom: 20px;">
+                <span class="demonstration"></span>
+                <el-carousel trigger="click" height="150px">
+                  <el-carousel-item><img src="/static/image/yangjiaxi_chenwu-007.jpg" alt="" width="190" height="150">
+                  </el-carousel-item>
+                  <el-carousel-item><img src="/static/image/yangjiaxi_chenwu-007.jpg" alt="" width="190" height="150">
+                  </el-carousel-item>
+                  <el-carousel-item><img src="/static/image/yangjiaxi_chenwu-007.jpg" alt="" width="190" height="150">
+                  </el-carousel-item>
+                </el-carousel>
+              </div>
+              <div class="block" style="width: 260px; margin-bottom: 20px;">
+                <span class="demonstration"></span>
+                <el-carousel trigger="click" height="150px">
+                  <el-carousel-item><img src="/static/image/yangjiaxi_chenwu-007.jpg" alt="" width="190" height="150">
+                  </el-carousel-item>
+                  <el-carousel-item><img src="/static/image/yangjiaxi_chenwu-007.jpg" alt="" width="190" height="150">
+                  </el-carousel-item>
+                  <el-carousel-item><img src="/static/image/yangjiaxi_chenwu-007.jpg" alt="" width="190" height="150">
+                  </el-carousel-item>
+                </el-carousel>
+              </div>
+            </div>
+
+            <div
+              style="width: 340px; height: 100%; position: relative; display: inline-block; float: right;">
+              <ul>
+                <li style="height: 35px;">
+                  <a href="">
+                    <span
+                      style="float: left;  max-width: 270px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 200px;">山东威海市：为人才服务到每个细节</span>
+                  </a>
+                  <span style="font-size: 16px; color: #ababab; float: right; font-family: 宋体;">2016-09-19</span>
+                </li>
+                <li style="height: 35px;">
+                  <a href="">
+                    <span
+                      style="float: left;  max-width: 270px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 200px;">山东威海市：为人才服务到每个细节</span>
+                  </a>
+                  <span style="font-size: 16px; color: #ababab; float: right; font-family: 宋体;">2016-09-19</span>
+                </li>
+                <li style="height: 35px;">
+                  <a href="">
+                    <span
+                      style="float: left;  max-width: 270px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 200px;">山东威海市：为人才服务到每个细节</span>
+                  </a>
+                  <span style="font-size: 16px; color: #ababab; float: right; font-family: 宋体;">2016-09-19</span>
+                </li>
+              </ul>
+            </div>
+
+          </TabPane>
           <TabPane label="招聘现场"></TabPane>
           <TabPane label="培训进修"></TabPane>
           <TabPane label="薪酬福利"></TabPane>
@@ -1785,6 +1838,7 @@
     box-shadow: 0px 5px #cfcfcf;
     margin-left: 5px;
     margin-right: -15px;
+    background: url('/static/image/yangjiaxi_chenwu-007.jpg') no-repeat center center;
   }
 
   .foot-center {
