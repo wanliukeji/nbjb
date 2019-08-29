@@ -162,7 +162,7 @@
 
   .footer-center {
     margin: 0 auto;
-    width: 87%;
+    width: 80%;
     padding-left: 0px;
     height: auto;
     min-height: 130px;
