@@ -3,8 +3,6 @@ import Router from 'vue-router' /* 引用vue路由模块，并赋值给变量Rou
 // import '/node_modules/bootstrap/dist/css/bootstrap.min.css';  /* 引入bootstrap 样式 */
 // import '/node_modules/bootstrap/dist/js/bootstrap.min.js';
 import $ from 'jquery' ;
-import hello from '@/components/hello.vue'
-import home from '@/view/home.vue'
 
 Vue.use(Router)  /* 使用路由 */
 

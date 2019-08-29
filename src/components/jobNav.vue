@@ -1,64 +1,5 @@
 <template>
   <div class="model">
-    <!--    <div class="model-top">-->
-    <!--      <el-menu class="el-menu-demo" mode="horizontal" style="background: #f1f1f1;">-->
-    <!--        <el-menu-item index="1">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">首页</span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-    <!--        <el-menu-item index="2">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">-->
-    <!--            职位-->
-    <!--            </span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-    <!--        <el-menu-item index="3">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">-->
-    <!--            公司-->
-    <!--            </span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-    <!--        <el-menu-item index="4">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">-->
-    <!--            简历-->
-    <!--            </span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-    <!--        <el-menu-item index="5">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">-->
-    <!--            求职-->
-    <!--            </span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-    <!--        <el-menu-item index="6">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">-->
-    <!--            招聘-->
-    <!--            </span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-    <!--        <el-menu-item index="7">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">-->
-    <!--            招聘会-->
-    <!--            </span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-    <!--        <el-menu-item index="8">-->
-    <!--          <a href="">-->
-    <!--            <span class="model-a">-->
-    <!--            简历中心-->
-    <!--            </span>-->
-    <!--          </a>-->
-    <!--        </el-menu-item>-->
-
-    <!--      </el-menu>-->
-    <!--    </div>-->
     <div class="model-head">
       <div class="nav-left">
         <ul class="nav-left-ul">
@@ -1398,45 +1339,45 @@
       </div>
       <div class="foot-right">
         <Tabs style="float: left; position: relative; top: -20px;">
-            <TabPane label="热点资讯">
-              <ul>
-                <li class="nav-right-li">
-                  <img class="nav-right-li-img"
-                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
-                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
-                </li>
-                <li class="nav-right-li">
-                  <img class="nav-right-li-img"
-                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
-                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
-                </li>
-                <li class="nav-right-li">
-                  <img class="nav-right-li-img"
-                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
-                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
-                </li>
-                <li class="nav-right-li">
-                  <img class="nav-right-li-img"
-                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
-                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
-                </li>
-                <li class="nav-right-li">
-                  <img class="nav-right-li-img"
-                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
-                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
-                </li>
-                <li class="nav-right-li">
-                  <img class="nav-right-li-img"
-                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
-                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
-                </li>
-                <li class="nav-right-li">
-                  <img class="nav-right-li-img"
-                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
-                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
-                </li>
-              </ul>
-            </TabPane>
+          <TabPane label="热点资讯">
+            <ul>
+              <li class="nav-right-li">
+                <img class="nav-right-li-img"
+                     src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+              </li>
+              <li class="nav-right-li">
+                <img class="nav-right-li-img"
+                     src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+              </li>
+              <li class="nav-right-li">
+                <img class="nav-right-li-img"
+                     src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+              </li>
+              <li class="nav-right-li">
+                <img class="nav-right-li-img"
+                     src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+              </li>
+              <li class="nav-right-li">
+                <img class="nav-right-li-img"
+                     src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+              </li>
+              <li class="nav-right-li">
+                <img class="nav-right-li-img"
+                     src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+              </li>
+              <li class="nav-right-li">
+                <img class="nav-right-li-img"
+                     src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+              </li>
+            </ul>
+          </TabPane>
         </Tabs>
       </div>
     </div>
@@ -2169,3 +2110,64 @@
   }
 
 </style>
+
+
+<!--    <div class="model-top">-->
+<!--      <el-menu class="el-menu-demo" mode="horizontal" style="background: #f1f1f1;">-->
+<!--        <el-menu-item index="1">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">首页</span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="2">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">-->
+<!--            职位-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="3">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">-->
+<!--            公司-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="4">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">-->
+<!--            简历-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="5">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">-->
+<!--            求职-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="6">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">-->
+<!--            招聘-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="7">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">-->
+<!--            招聘会-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="8">-->
+<!--          <a href="">-->
+<!--            <span class="model-a">-->
+<!--            简历中心-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </el-menu-item>-->
+
+<!--      </el-menu>-->
+<!--    </div>-->
