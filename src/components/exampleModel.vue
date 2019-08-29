@@ -1,16 +1,18 @@
 <template lang="html">
   <div class="model">
+<!--    -->
     <job-nav></job-nav>
+<!--<job-info></job-info>-->
 <!--    <model-1></model-1>-->
   </div>
 </template>
-
 <script>
     import JobNav from "./jobNav";
+    import JobInfo from "./jobInfo";
 
     export default {
         name: "exampleModel",
-        components: {JobNav},
+        components: {JobInfo, JobNav},
         data() {
             return {
                 items: []

@@ -108,7 +108,6 @@
           </TabPane>
         </Tabs>
       </div>
-
       <div class="hidden-div" ref="hide_div" @mouseover="showarrow($event)" @mouseout="hidearrow($event)">
         <div class="hidden-div-center">
           <div class="hidden-div-model">
@@ -515,7 +514,6 @@
         </div>
       </div>
     </div>
-
     <div class="nav-bottom">
       <ul class="nav-bottom-ul">
         <li class="nav-bottom-li">
@@ -540,7 +538,6 @@
 
       </ul>
     </div>
-
     <div class="model-div">
       <div class="model-div-title">
         <i class="row-left"></i>
@@ -846,7 +843,6 @@
         </ul>
       </div>
     </div>
-
     <div class="model-div">
       <div class="model-div-title">
         <i class="row-left"></i>
@@ -1268,9 +1264,7 @@
         </ul>
       </div>
     </div>
-
     <br>
-
     <div class="model-foot">
       <div class="foot-left">
         <Button shape="circle" style="position: relative; top: 370px;">查看更多</Button>
@@ -2068,6 +2062,15 @@
   .work-w-img {
     width: 112px;
     height: 75px;
+  }
+
+  .work-w-img:hover {
+    -webkit-transition: All 0.4s ease-in-out;
+     transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    -o-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    -moz-transform: scale(1.08);
   }
 
   .work-w-left {
