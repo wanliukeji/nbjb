@@ -1398,7 +1398,45 @@
       </div>
       <div class="foot-right">
         <Tabs style="float: left; position: relative; top: -20px;">
-          <TabPane label="热点资讯"></TabPane>
+            <TabPane label="热点资讯">
+              <ul>
+                <li class="nav-right-li">
+                  <img class="nav-right-li-img"
+                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+                </li>
+                <li class="nav-right-li">
+                  <img class="nav-right-li-img"
+                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+                </li>
+                <li class="nav-right-li">
+                  <img class="nav-right-li-img"
+                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+                </li>
+                <li class="nav-right-li">
+                  <img class="nav-right-li-img"
+                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+                </li>
+                <li class="nav-right-li">
+                  <img class="nav-right-li-img"
+                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+                </li>
+                <li class="nav-right-li">
+                  <img class="nav-right-li-img"
+                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+                </li>
+                <li class="nav-right-li">
+                  <img class="nav-right-li-img"
+                       src="https://uploads.ihuoniao.cn/job/thumb/large/2018/10/12/15393062609845.jpg" alt=""/>
+                  <span class="nav-right-li-span">多地今年高考报名人数在减少北京连续多地今年高考报名人数在减少北京连续</span>
+                </li>
+              </ul>
+            </TabPane>
         </Tabs>
       </div>
     </div>
@@ -1662,6 +1700,7 @@
     white-space: normal;
     height: 50px;
     text-align: left;
+    padding-left: 10px;
   }
 
   .nav-right-li-span:hover {
@@ -1874,6 +1913,7 @@
     -moz-box-shadow: 5px 5px 5px #cfcfcf;
     box-shadow: 5px 5px 5px #cfcfcf;
     margin-left: -5px;
+    overflow-y: scroll;
   }
 
   .hot-jop {
