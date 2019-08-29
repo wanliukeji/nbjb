@@ -126,7 +126,7 @@
 <style scoped>
   .model {
     position: relative;
-    width: 80%;
+    width: 78%;
     min-width: 1200px;
     height: auto;
     vertical-align: center;
@@ -185,6 +185,5 @@
     border-bottom: 1px #78bb09 solid;
     position: absolute;
   }
-
 
 </style>
