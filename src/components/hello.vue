@@ -9,7 +9,7 @@
               <input type="text" placeholder="请填写公司名称..." name="company_name" id="company_name" required
                      class="input-text"/>
               <ul class="hide-select"></ul>
-              <span><i style="color: red;">*</i> 此行为必填项</span>
+              <span id="company_name_font"><i style="color: red;">*</i> 此行为必填项</span>
             </td>
           </tr>
           <tr>
@@ -17,19 +17,21 @@
             <td>
               <input type="text" placeholder="请填写税号..." name="invoice_code" id="invoice_code" required
                      class="input-text"/>
-              <span><i style="color: red;">*</i> 此行为必填项</span>
+              <span id="invoice_code_font"><i style="color: red;">*</i> 此行为必填项</span>
             </td>
           </tr>
           <tr>
             <td align="right"><b>开户号:</b></td>
             <td>
               <input type="text" placeholder="请填写开户号码..." name="bank_code" id="bank_code" class="input-text"/>
+              <span id="bank_code_font"></span>
             </td>
           </tr>
           <tr>
             <td align="right"><b>开户行:</b></td>
             <td>
               <input type="text" placeholder="请填写开户银行..." name="bank" id="bank" class="input-text"/>
+              <span id="bank_span"></span>
             </td>
           </tr>
           <tr>
@@ -39,12 +41,14 @@
                      οnkeyup="this.value=this.value.replace(/[^\d.]/g,'')"
                      onafterpaste="this.value=this.value.replace(/[^\d.]/g,'')"
                      value="0.0"/>
+              <span id="amount_font"></span>
             </td>
           </tr>
           <tr>
             <td align="right"><b>联系人:</b></td>
             <td>
               <input type="text" placeholder="请填写联系人..." name="contact_name" id="contact_name" class="input-text"/>
+              <span id="contact_name_font"></span>
             </td>
           </tr>
           <tr>
@@ -53,6 +57,7 @@
             <td>
               <input type="text" placeholder="请填写公司地址..." name="company_address" id="company_address"
                      class="input-text"/>
+              <span id="company_address_font"></span>
             </td>
           </tr>
           <tr>
@@ -152,8 +157,12 @@
             // var company_name_reg = /^[a-z0-9A-Z\u4e00-\u9fa5]+$/gi;
             var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
             var invoice_code_reg = /^[A-Za-z0-9]+$/u;
+            var regNumber = /\d+/;
+            var regString = /[a-zA-Z]+/;
+            var regNumStrAbc = '';
             var company_address_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
             var contact_name_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
+
             var company_name = $('#company_name').val();
             var invoice_code = $('#invoice_code').val();
             var bank_code = $('#bank_code').val();
@@ -166,7 +175,7 @@
 
             //正则判断
             exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
-                , bank_code, bank, company_address, amount, contact_name);
+                , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc);
 
         });
 
@@ -185,56 +194,64 @@
 
         }
 
-        function exec(company_name_reg, invoice_code_reg, company_address_reg, company_name, invoice_code
-            , bank_code, bank, company_address, amount, contact_name) {
+        function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+            , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc) {
 
-            if (reg_test(company_name_reg, company_name)) {
-                alert('公司名只能由汉字组成-A');
+            //SUCCESS
+            if (!reg_test(company_name_reg, company_name)) {
+                $('#company_name_font').html('<i style="color: red;">*</i> 此行为必填项');
+                alert('公司名只能由汉字组成和中文符号组成');
                 return;
             }
             ;
 
-            if (reg_test(invoice_code_reg, invoice_code)) {
-                alert('税号只能由字母和数字组成=B');
-                return;
-            }
-            ;
+            //SUCCESS
+            // if (!regNumber.test(invoice_code_reg) && regString.test(invoice_code_reg)) {
+            //     alert('开户行账号只能由字母和数字组成');
+            //     return;
+            // }
+            // ;
 
-            if (reg_test(invoice_code_reg, bank_code)) {
-                alert('开户行账号只能由字母和数字组成');
-                return;
-            }
-            ;
+            //SUCCESS
+            // if (!regNumber.test(bank_code) && regString.test(bank_code)) {
+            //     alert('开户行账号只能由字母和数字组成');
+            //     return;
+            // }
+            // ;
 
-            if (reg_test(invoice_code_reg, bank)) {
+
+            if (reg_test(regNumStrAbc, bank)) {
                 alert('开户行只能由汉字、字母、数字组成');
                 return;
             }
             ;
 
-            if (reg_test(company_address_reg, company_address)) {
-                alert('公司地址只能由汉字、字母、数字组成');
-                return;
-            }
-            ;
-
-            if (reg_test(contact_name_reg, contact_name)) {
-                alert('联系人姓名只能由汉字、字母组成');
-                return;
-            }
-            ;
-
-            var count = parseFloat(amount);
-            var duceapp_all_amount = 0;//充值总金额
-            if (reg_test(count > duceapp_all_amount)) {
-                alert('开票金额必须小于等于充值总金额');
-                return;
-            }
-            ;
+            //
+            // if (reg_test(company_address_reg, company_address)) {
+            //     alert('公司地址只能由汉字、字母、数字组成');
+            //     return;
+            // }
+            // ;
+            //
+            // if (reg_test(contact_name_reg, contact_name)) {
+            //     alert('联系人姓名只能由汉字、字母组成');
+            //     return;
+            // }
+            // ;
+            //
+            // var count = parseFloat(amount);
+            // var duceapp_all_amount = 0;//充值总金额
+            // if (reg_test(count > duceapp_all_amount)) {
+            //     alert('开票金额必须小于等于充值总金额');
+            //     return;
+            // }
+            // ;
         }
 
         function reg_test(reg, text) {
-            console.log(reg.test(text));
+            console.log('\n'
+                + 'text = ' + text +
+                '\n' + 'reg = ' + reg + '\n' + reg.test(text));
             if (reg.test(text)) {
                 return true;
             }
