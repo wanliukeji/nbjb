@@ -1,18 +1,20 @@
 <template lang="html">
   <div class="model">
-<!--    -->
-    <job-nav></job-nav>
+<!---->
+<!--    <job-nav></job-nav>-->
 <!--<job-info></job-info>-->
-<!--    <model-1></model-1>-->
+    <hello>
+    </hello>
   </div>
 </template>
 <script>
     import JobNav from "./jobNav";
     import JobInfo from "./jobInfo";
+    import Hello from "./hello";
 
     export default {
         name: "exampleModel",
-        components: {JobInfo, JobNav},
+        components: {Hello, JobInfo, JobNav},
         data() {
             return {
                 items: []
@@ -49,7 +51,7 @@
     margin: 0 auto;
     vertical-align: center;
     display: block;
-    top: 0px;
+    font-size: 20px;
   }
 
 </style>

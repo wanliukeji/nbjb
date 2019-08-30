@@ -1,33 +1,21 @@
 [
   {
-    "name": "吕布"
+    "company_name": "KK科技",
+    "invoice_code": "XD2019001122",
+    "bank": "宁波银行",
+    "bank_code": "NBBK",
+    "contact_name": "陈育",
+    "company_address": "宁波市北仑区博地影视",
+    "amount": "100.1"
   },
   {
-    "name": "赵云"
-  },
-  {
-    "name": "张飞"
-  },
-  {
-    "name": "关羽"
-  },
-  {
-    "name": "曹操"
-  },
-  {
-    "name": "刘备"
-  },
-  {
-    "name": "马超"
-  },
-  {
-    "name": "孔明"
-  },
-  {
-    "name": "周瑜"
-  },
-  {
-    "name": "黄忠"
+    "company_name": "TT科技",
+    "invoice_code": "XD2019001123",
+    "bank": "温州银行",
+    "bank_code": "WZBK",
+    "contact_name": "陈忆",
+    "company_address": "宁波市北仑区银泰",
+    "amount": "200.05"
   }
 ]
 
