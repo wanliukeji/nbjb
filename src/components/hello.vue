@@ -203,17 +203,19 @@
             }
 
             var html = '<i style="color: red;">*</i> 此行为必填项';
-            var style = 'style="color: red; position: absolute; font-size: 14px; margin-left: -40px;"';
+            var style = 'style="color: red; position: absolute; font-size: 14px; margin-left: 0px;"';
+            var success = '<svg style="margin-top: 10px;" t="1567221340551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2070" width="20" height="20"><path d="M511 69C267.4 69 69.9 266.5 69.9 510.1c0 243.6 197.5 441.1 441.1 441.1 243.6 0 441.1-197.5 441.1-441.1C952.2 266.5 754.7 69 511 69z m282 292.7L463.4 691.3l-18.6 18.6c-19.6 19.6-51.4 19.6-71 0l-18.6-18.6-126.8-126.8c-16.3-16.3-14.8-43.9 4.6-58.1 15.4-11.2 36.9-8.7 50.3 4.8l125.9 125.9 330.3-330.3c16.3-16.3 43.9-14.8 58.1 4.6 11.4 15.4 8.8 36.9-4.6 50.3z" p-id="2071" fill="#1afa29"></path></svg>';
+            var error = '<svg style=" margin-top: 10px;" t="1567221892863" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2845" width="20" height="20"><path d="M664.96 630.4a32 32 0 0 1-22.4 54.72 32 32 0 0 1-22.72-9.28L506.56 562.56 393.6 675.84a32 32 0 0 1-22.72 9.28 32 32 0 0 1-22.72-9.28 32 32 0 0 1 0-45.44l113.28-112.96-113.28-113.28a32 32 0 0 1 0-45.12 32 32 0 0 1 45.44 0L506.56 472l113.28-112.96a32 32 0 1 1 45.12 45.12L552 517.44zM512 64a448 448 0 1 0 448 448A448 448 0 0 0 512 64z" p-id="2846" fill="#d81e06"></path></svg>';
 
             function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
                 , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc) {
 
                 //SUCCESS
                 if (!reg_test(company_name_reg, company_name)) {
-                    $('#company_name_font').html('<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+                    $('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
                     return;
                 } else {
-                    $('#company_name_font').html(html);
+                    $('#company_name_font').html(success);
                 }
                 ;
 
@@ -223,7 +225,7 @@
                         $('#invoice_code_font').html('<em ' + style + ' >税号只能由字母和数字组成</em>');
                         return;
                     } else {
-                        $('#invoice_code_font').html(html);
+                        $('#invoice_code_font').html(success);
                     }
                     ;
                 }
@@ -235,7 +237,7 @@
                         $('#bank_code_font').html('<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
                         return;
                     } else {
-                        $('#bank_code_font').html('');
+                        $('#bank_code_font').html(success);
                     }
                     ;
                 }
@@ -243,11 +245,11 @@
 
                 //ERROR
                 if (!is_Empty(bank)) {
-                    if (!reg_test(regNumStrAbc, bank)) {
+                    if (reg_test(regNumStrAbc, bank)) {
                         $('#bank_font').html('<em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
                         return;
                     } else {
-                        $('#bank_font').html('');
+                        $('#bank_font').html(success);
                     }
                     ;
                 }
@@ -258,7 +260,7 @@
                         $('#contact_name_font').html('<em ' + style + ' >联系人姓名只能由汉字、字母组成</em>');
                         return;
                     } else {
-                        $('#contact_name_font').html('');
+                        $('#contact_name_font').html(success);
                     }
                     ;
                 }
@@ -269,7 +271,7 @@
                         $('#company_address_font').html('<em ' + style + ' >公司地址只能由汉字、字母、数字组成</em>');
                         return;
                     } else {
-                        $('#company_address_font').html('');
+                        $('#company_address_font').html(success);
                     }
                     ;
                 }
@@ -280,7 +282,7 @@
                     $('#amount_font').html('<em ' + style + ' >开票金额必须小于等于充值总金额</em>');
                     return;
                 } else {
-                    $('#amount_font').html();
+                    $('#amount_font').html(success);
                 }
                 ;
             }
