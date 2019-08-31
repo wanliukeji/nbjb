@@ -1,12 +1,12 @@
 [
   {
-    "company_name": "KK科技",
+    "company_name": "科技",
     "invoice_code": "XD2019001122",
     "bank": "宁波银行",
-    "bank_code": "NBBK",
+    "bank_code": "NBBK001",
     "contact_name": "陈育",
     "company_address": "宁波市北仑区博地影视",
-    "amount": "100.1"
+    "amount": "100"
   },
   {
     "company_name": "TT科技",

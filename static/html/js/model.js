@@ -2,13 +2,13 @@
 var $jq = jQuery.noConflict(true);
 $jq(function () {
   var myMap = new Map();
-  var items = getList();
+  var items = getList(); //测试数据 可删除
   $jq('#company_name').focus(function () {
     var $parent = $jq(this);
     var $dom = $parent.next();
     $dom.html('');
     $jq.ajax({
-      url: "http://localhost:8080/static/data/demo.json",
+      url: "http://localhost:8080/static/data/demo.json",  //请求路径
       dataType: "json",
       async: true,
       // data: {"id": "value"},
@@ -20,12 +20,13 @@ $jq(function () {
         selectHover();
         selected($parent, myMap);
       },
-      error: function (res) {
-        appendToHtml(res, $dom);
+      error: function (err) {
+        //异常函数内调用函数 测试使用 可删除
+        appendToHtml(err, $dom);
         showChilden($parent);
         selectHover();
         selected($parent, myMap);
-        console.log('获取数据失败!');
+        console.log(err);
       }
     });
 
@@ -211,7 +212,7 @@ $jq(function () {
     var count = Number(amount);//输入金额
     var duceapp_all_amount = 0;//充值总金额
     if (count > duceapp_all_amount) {
-      $jq('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额</em>');
+      $jq('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = '+duceapp_all_amount +' </em>');
       return false;
     } else {
       $jq('#amount_font').html(success);
