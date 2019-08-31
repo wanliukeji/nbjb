@@ -1,0 +1,50 @@
+form {
+  padding-top: 20px;
+}
+
+.input-text {
+  border: #e7e7e7 solid 1px;
+  width: 300px;
+  height: 24px;
+  padding-left: 10px;
+  float: left;
+  margin-top: 10px;
+}
+
+tr {
+  line-height: 40px;
+}
+
+.hide-select {
+  display: none;
+  width: 300px;
+  position: absolute;
+  margin-top: 34px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: none;
+  text-align: left;
+  background: #FFFFFF;
+  /*overflow-y:scroll;*/
+}
+
+.hide-li-selected {
+  cursor: pointer;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.pn {
+  border: none;
+  padding: 1px;
+  width: 50px;
+}
+
+.ta-right {
+  width: 260px;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-left: 10px;
+}
