@@ -39,7 +39,7 @@
               <input type="text" placeholder="请填写开户银行..." name="bank" id="bank" class="input-text"/>
             </td>
             <td align="left" class="ta-right">
-              <span id="bank_span"></span>
+              <span id="bank_font"></span>
             </td>
           </tr>
           <tr>
@@ -253,9 +253,10 @@
                 }
 
 
-                //ERROR
+                //SUCCESS
+                console.log(regNumStrAbc.test(bank) + '\n' + bank);
                 if (!is_Empty(bank)) {
-                    if (reg_test(regNumStrAbc, bank)) {
+                    if (reg_test(/^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$/u, bank)) {
                         $('#bank_font').html(error + '<em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
                         return;
                     } else {
