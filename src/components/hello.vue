@@ -88,35 +88,20 @@
 
 <script TYPE="text/javascript" CHARSET="UTF-8">
     $(function () {
-            $('#company_name').focus(function () {
+        var items = [];
+        var myMap = new Map();
+        $('#company_name').focus(function () {
                 var $parent = $(this);
-                var items = [];
                 var $dom = $parent.next();
                 $dom.html('');
-                var myMap = new Map();
                 $.ajax({
-                    url: "/static/data/demo.json",
+                    url: "/static/data/demo.json", //
                     dataType: "json",
                     async: true,
                     type: "GET", //请求方式
                     contentType: "application/json;charset=UTF-8",
-                    complete: function () {
-                        console.log(this.headers);
-                    },
                     success: function (res) {
-                        console.log(res);
-                        items = res;
-                        for (let i = 0; i < items.length; i++) {
-                            var obj = items[i];
-                            var html = '<li value="' + obj.company_name + '" ' + '' +
-                                ' class="hide-li-selected"' +
-                                '" style="cursor: pointer;\n' +
-                                '    font-size: 14px;\n' +
-                                '    padding-left: 10px;"' +
-                                '   height: 20px;>' + obj.company_name + '</li>'
-                            $dom.append(html);
-                            myMap.set(obj.company_name, items[i]);
-                        }
+                        appendToHtml(res, $dom);
                         showChilden($parent);
                         selectHover();
                         selected($parent, myMap);
@@ -127,6 +112,21 @@
                 });
 
             });
+
+            function appendToHtml(res, $dom) {
+                items = res;
+                for (let i = 0; i < items.length; i++) {
+                    var obj = items[i];
+                    var html = '<li value="' + obj.company_name + '" ' + '' +
+                        ' class="hide-li-selected"' +
+                        '" style="cursor: pointer;\n' +
+                        '    font-size: 14px;\n' +
+                        '    padding-left: 10px;"' +
+                        '   height: 20px;>' + obj.company_name + '</li>'
+                    $dom.append(html);
+                    myMap.set(obj.company_name, items[i]);
+                }
+            }
 
             function showChilden($parent) {
                 try {
@@ -298,9 +298,9 @@
                 }
 
                 var count = Number(amount);//输入金额
-                var duceapp_all_amount = 0;//充值总金额
+                var duceapp_all_amount = 100;//充值总金额
                 if (count > duceapp_all_amount) {
-                    $('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额</em>');
+                    $('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 当前充值总金额 = '+duceapp_all_amount +' </em>');
                     return false;
                 } else {
                     $('#amount_font').html(success);
