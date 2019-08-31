@@ -20,7 +20,7 @@
       if (!is_float($forum_data['amount']) || $forum_data['amount'] > $_G['duceapp_all_amount']) {
           showmessage('开票金额填写错误，必须小于等于充值总金额');
       }
-      if (!preg_match('/^[\x{4e00}-\x{9fa5}A-Za-z]+$/u', $forum_data['contact_name'])) {
+      if (!preg_match('', $forum_data['contact_name'])) {
           showmessage('联系人姓名只能由汉字、字母组成');
       }
 

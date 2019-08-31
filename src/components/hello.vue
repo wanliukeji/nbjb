@@ -77,195 +77,225 @@
 
 <script TYPE="text/javascript" CHARSET="UTF-8">
     $(function () {
-        $('#company_name').focus(function () {
-            var $parent = $(this);
-            var items = [];
-            var $dom = $parent.next();
-            $dom.html('');
-            var myMap = new Map();
-            $.ajax({
-                url: "/static/data/demo.json",
-                dataType: "json",
-                async: true,
-                data: {"id": "value"},
-                type: "GET", //请求方式
-                success: function (res) {
-                    items = res;
-                    for (let i = 0; i < items.length; i++) {
-                        var obj = items[i];
-                        var html = '<li value="' + obj.company_name + '" ' + '' +
-                            ' class="hide-li-selected"' +
-                            '" style="cursor: pointer;\n' +
-                            '    font-size: 13px;\n' +
-                            '    padding-left: 10px;"' +
-                            '>' + obj.company_name + '</li>'
-                        $dom.append(html);
-                        myMap.set(obj.company_name, items[i]);
+            $('#company_name').focus(function () {
+                var $parent = $(this);
+                var items = [];
+                var $dom = $parent.next();
+                $dom.html('');
+                var myMap = new Map();
+                $.ajax({
+                    url: "/static/data/demo.json",
+                    dataType: "json",
+                    async: true,
+                    data: {"id": "value"},
+                    type: "GET", //请求方式
+                    success: function (res) {
+                        items = res;
+                        for (let i = 0; i < items.length; i++) {
+                            var obj = items[i];
+                            var html = '<li value="' + obj.company_name + '" ' + '' +
+                                ' class="hide-li-selected"' +
+                                '" style="cursor: pointer;\n' +
+                                '    font-size: 13px;\n' +
+                                '    padding-left: 10px;"' +
+                                '>' + obj.company_name + '</li>'
+                            $dom.append(html);
+                            myMap.set(obj.company_name, items[i]);
+                        }
+                        showli($parent);
+                        selectHover();
+                        selected($parent, myMap);
+                    },
+                    error: function (res) {
+                        showMessage('获取数据失败!');
                     }
-                    showli($parent);
-                    selectHover();
-                    selected($parent, myMap);
-                },
-                error: function (res) {
-                    showMessage('获取数据失败!');
+                });
+
+            });
+
+            function showli($parent) {
+                var $dom = $parent.next().slideDown();
+                $('.hide-li-selected').click(function () {
+                    var $son = $(this);
+                    var f = $son.text();
+                    $parent.val(f);
+                    $dom.slideUp(500);
+                });
+            }
+
+            function selectHover() {
+                $(".hide-li-selected").hover(
+                    function () {
+                        $(this).css({'background': '#0a67fb'});
+                    },
+                    function () {
+                        $(this).css({'background': '#FFFFFF'});
+                    }
+                );
+            }
+
+            function selected($parent, myMap) {
+                $('.hide-li-selected').click(function () {
+                    var $son = $(this);
+                    var f = $son.text();
+                    $parent.val(f);
+                    var obj = myMap.get(f);
+                    $('[name="invoice_code"]').val(obj.invoice_code);
+                    $('[name="bank"]').val(obj.bank);
+                    $('[name="bank_code"]').val(obj.bank_code);
+                    $('[name="contact_name"]').val(obj.contact_name);
+                    $('[name="company_address"]').val(obj.company_address);
+                    $('[name="amount"]').val(obj.amount);
+                    $('.hide-select').hide();
+                });
+            }
+
+            //提交
+            $('#cy_success').click(function () {
+                var flag = new Boolean(false);
+                var msg = '输入格式有误！';
+                // var company_name_reg = /^[a-z0-9A-Z\u4e00-\u9fa5]+$/gi;
+                var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
+                var invoice_code_reg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,23}$/;
+                var regNumber = /\d+/;
+                var regString = /[a-zA-Z]+/;
+                var regNumStrAbc = /^[\\/x{4e00}\-\/x{9fa5}/A-Za-z0-9]+$/u;
+                var company_address_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
+                var contact_name_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
+
+                var company_name = $('#company_name').val();
+                var invoice_code = $('#invoice_code').val();
+                var bank_code = $('#bank_code').val();
+                var bank = $('#bank').val();
+                var company_address = $('#company_address').val();
+                var amount = $('#amount').val();
+                var contact_name = $('#contact_name').val();
+                //空值判断
+                // is_Null();
+
+                //正则判断
+                exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                    , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc);
+
+            });
+
+            function is_Null() {
+                if (is_Empty(company_name)) {
+                    alert('公司名称不能为空！');
+                    return ;
                 }
-            });
+                ;
 
-        });
-
-        function showli($parent) {
-            var $dom = $parent.next().slideDown();
-            $('.hide-li-selected').click(function () {
-                var $son = $(this);
-                var f = $son.text();
-                $parent.val(f);
-                $dom.slideUp(500);
-            });
-        }
-
-        function selectHover() {
-            $(".hide-li-selected").hover(
-                function () {
-                    $(this).css({'background': '#0a67fb'});
-                },
-                function () {
-                    $(this).css({'background': '#FFFFFF'});
+                if (is_Empty(invoice_code)) {
+                    alert('开户号码不能为空！');
+                    return ;
                 }
-            );
-        }
+                ;
 
-        function selected($parent, myMap) {
-            $('.hide-li-selected').click(function () {
-                var $son = $(this);
-                var f = $son.text();
-                $parent.val(f);
-                var obj = myMap.get(f);
-                $('[name="invoice_code"]').val(obj.invoice_code);
-                $('[name="bank"]').val(obj.bank);
-                $('[name="bank_code"]').val(obj.bank_code);
-                $('[name="contact_name"]').val(obj.contact_name);
-                $('[name="company_address"]').val(obj.company_address);
-                $('[name="amount"]').val(obj.amount);
-                $('.hide-select').hide();
-            });
-        }
+            }
 
-        //提交
-        $('#cy_success').click(function () {
-            var flag = new Boolean(false);
-            var msg = '输入格式有误！';
-            // var company_name_reg = /^[a-z0-9A-Z\u4e00-\u9fa5]+$/gi;
-            var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
-            var invoice_code_reg = /^[A-Za-z0-9]+$/u;
-            var regNumber = /\d+/;
-            var regString = /[a-zA-Z]+/;
-            var regNumStrAbc = '';
-            var company_address_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
-            var contact_name_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
+            var html = '<i style="color: red;">*</i> 此行为必填项';
+            var style = 'style="color: red; position: absolute; font-size: 14px; margin-left: -40px;"';
 
-            var company_name = $('#company_name').val();
-            var invoice_code = $('#invoice_code').val();
-            var bank_code = $('#bank_code').val();
-            var bank = $('#bank').val();
-            var company_address = $('#company_address').val();
-            var amount = $('#amount').val();
-            var contact_name = $('#contact_name').val();
-            //空值判断
-            is_Null();
+            function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc) {
 
-            //正则判断
-            exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
-                , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc);
+                //SUCCESS
+                if (!reg_test(company_name_reg, company_name)) {
+                    $('#company_name_font').html('<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+                    return;
+                } else {
+                    $('#company_name_font').html(html);
+                }
+                ;
 
-        });
+                //SUCCESS
+                if (!is_Empty(invoice_code)) {
+                    if (!reg_test(invoice_code_reg, invoice_code)) {
+                        $('#invoice_code_font').html('<em ' + style + ' >税号只能由字母和数字组成</em>');
+                        return;
+                    } else {
+                        $('#invoice_code_font').html(html);
+                    }
+                    ;
+                }
+                ;
 
-        function is_Null() {
-            if (is_Empty(company_name)) {
-                alert('公司名称不能为空！');
+                //SUCCESS
+                if (!is_Empty(bank_code)) {
+                    if (!reg_test(invoice_code_reg, bank_code)) {
+                        $('#bank_code_font').html('<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
+                        return;
+                    } else {
+                        $('#bank_code_font').html('');
+                    }
+                    ;
+                }
+
+
+                //ERROR
+                if (!is_Empty(bank)) {
+                    if (!reg_test(regNumStrAbc, bank)) {
+                        $('#bank_font').html('<em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
+                        return;
+                    } else {
+                        $('#bank_font').html('');
+                    }
+                    ;
+                }
+
+                //SUCCESS
+                if (!is_Empty(contact_name)) {
+                    if (!reg_test(/^[a-zA-Z\u4e00-\u9fa5]+$/, contact_name)) {
+                        $('#contact_name_font').html('<em ' + style + ' >联系人姓名只能由汉字、字母组成</em>');
+                        return;
+                    } else {
+                        $('#contact_name_font').html('');
+                    }
+                    ;
+                }
+
+                //SUCCESS
+                if (!is_Empty(company_address)) {
+                    if (reg_test(regNumStrAbc, company_address)) {
+                        $('#company_address_font').html('<em ' + style + ' >公司地址只能由汉字、字母、数字组成</em>');
+                        return;
+                    } else {
+                        $('#company_address_font').html('');
+                    }
+                    ;
+                }
+
+                var count = Number(amount);
+                var duceapp_all_amount = 0;//充值总金额
+                if (count > duceapp_all_amount) {
+                    $('#amount_font').html('<em ' + style + ' >开票金额必须小于等于充值总金额</em>');
+                    return;
+                } else {
+                    $('#amount_font').html();
+                }
+                ;
+            }
+
+            function reg_test(reg, text) {
+                // console.log('\n'
+                //     + 'text = ' + text +
+                //     '\n' + 'reg = ' + reg + '\n' + reg.test(text));
+                if (reg.test(text)) {
+                    return true;
+                }
                 return false;
             }
-            ;
 
-            if (is_Empty(invoice_code)) {
-                alert('开户号码不能为空！');
+            function is_Empty(val) {
+                if (val == '' || val == null) {
+                    return true;
+                }
                 return false;
             }
-            ;
 
         }
-
-        function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
-            , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc) {
-
-            //SUCCESS
-            if (!reg_test(company_name_reg, company_name)) {
-                $('#company_name_font').html('<i style="color: red;">*</i> 此行为必填项');
-                alert('公司名只能由汉字组成和中文符号组成');
-                return;
-            }
-            ;
-
-            //SUCCESS
-            // if (!regNumber.test(invoice_code_reg) && regString.test(invoice_code_reg)) {
-            //     alert('开户行账号只能由字母和数字组成');
-            //     return;
-            // }
-            // ;
-
-            //SUCCESS
-            // if (!regNumber.test(bank_code) && regString.test(bank_code)) {
-            //     alert('开户行账号只能由字母和数字组成');
-            //     return;
-            // }
-            // ;
-
-
-            if (reg_test(regNumStrAbc, bank)) {
-                alert('开户行只能由汉字、字母、数字组成');
-                return;
-            }
-            ;
-
-            //
-            // if (reg_test(company_address_reg, company_address)) {
-            //     alert('公司地址只能由汉字、字母、数字组成');
-            //     return;
-            // }
-            // ;
-            //
-            // if (reg_test(contact_name_reg, contact_name)) {
-            //     alert('联系人姓名只能由汉字、字母组成');
-            //     return;
-            // }
-            // ;
-            //
-            // var count = parseFloat(amount);
-            // var duceapp_all_amount = 0;//充值总金额
-            // if (reg_test(count > duceapp_all_amount)) {
-            //     alert('开票金额必须小于等于充值总金额');
-            //     return;
-            // }
-            // ;
-        }
-
-        function reg_test(reg, text) {
-            console.log('\n'
-                + 'text = ' + text +
-                '\n' + 'reg = ' + reg + '\n' + reg.test(text));
-            if (reg.test(text)) {
-                return true;
-            }
-            return false;
-        }
-
-        function is_Empty(val) {
-            if (val == '' || val == null) {
-                return true;
-            }
-            return false;
-        }
-
-    });
+    );
 
 </script>
 
