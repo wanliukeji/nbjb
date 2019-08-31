@@ -8,7 +8,7 @@
             <td>
               <input type="text" placeholder="请填写公司名称..." name="company_name" id="company_name" required
                      class="input-text"/>
-              <ul class="hide-select"></ul>
+              <ul class="hide-select" id="hide-select"></ul>
               <span id="company_name_font"><i style="color: red;">*</i> 此行为必填项</span>
             </td>
           </tr>
@@ -96,9 +96,9 @@
                             var html = '<li value="' + obj.company_name + '" ' + '' +
                                 ' class="hide-li-selected"' +
                                 '" style="cursor: pointer;\n' +
-                                '    font-size: 13px;\n' +
+                                '    font-size: 14px;\n' +
                                 '    padding-left: 10px;"' +
-                                '>' + obj.company_name + '</li>'
+                                '   height: 20px;>' + obj.company_name + '</li>'
                             $dom.append(html);
                             myMap.set(obj.company_name, items[i]);
                         }
@@ -150,11 +150,20 @@
                 });
             }
 
+            $(document).bind('click', function (event) {
+                event.stopPropagation();
+                var tar = event.target;
+                console.log(tar + 'dom:' + $(tar).closest('#company_name').length);
+                if ($(tar).closest('#company_name').length == 0 ) {
+                    $('#hide-select').slideUp();
+                }else {
+                    $('#hide-select').slideDown();
+                }
+            });
+
             //提交
             $('#cy_success').click(function () {
                 var flag = new Boolean(false);
-                var msg = '输入格式有误！';
-                // var company_name_reg = /^[a-z0-9A-Z\u4e00-\u9fa5]+$/gi;
                 var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
                 var invoice_code_reg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,23}$/;
                 var regNumber = /\d+/;
@@ -182,16 +191,15 @@
             function is_Null() {
                 if (is_Empty(company_name)) {
                     alert('公司名称不能为空！');
-                    return ;
+                    return;
                 }
                 ;
 
                 if (is_Empty(invoice_code)) {
                     alert('开户号码不能为空！');
-                    return ;
+                    return;
                 }
                 ;
-
             }
 
             var html = '<i style="color: red;">*</i> 此行为必填项';
