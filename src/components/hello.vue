@@ -9,6 +9,8 @@
               <input type="text" placeholder="请填写公司名称..." name="company_name" id="company_name" required
                      class="input-text"/>
               <ul class="hide-select" id="hide-select"></ul>
+            </td>
+            <td align="left" class="ta-right">
               <span id="company_name_font"><i style="color: red;">*</i> 此行为必填项</span>
             </td>
           </tr>
@@ -17,6 +19,8 @@
             <td>
               <input type="text" placeholder="请填写税号..." name="invoice_code" id="invoice_code" required
                      class="input-text"/>
+            </td>
+            <td align="left" class="ta-right">
               <span id="invoice_code_font"><i style="color: red;">*</i> 此行为必填项</span>
             </td>
           </tr>
@@ -24,6 +28,8 @@
             <td align="right"><b>开户号:</b></td>
             <td>
               <input type="text" placeholder="请填写开户号码..." name="bank_code" id="bank_code" class="input-text"/>
+            </td>
+            <td align="left" class="ta-right">
               <span id="bank_code_font"></span>
             </td>
           </tr>
@@ -31,16 +37,19 @@
             <td align="right"><b>开户行:</b></td>
             <td>
               <input type="text" placeholder="请填写开户银行..." name="bank" id="bank" class="input-text"/>
+            </td>
+            <td align="left" class="ta-right">
               <span id="bank_span"></span>
             </td>
           </tr>
           <tr>
             <td align="right"><b>金额:</b></td>
             <td>
-              <input type="number" placeholder="请填写开票金额..." name="amount" id="amount" class="input-text"
-                     οnkeyup="this.value=this.value.replace(/[^\d.]/g,'')"
-                     onafterpaste="this.value=this.value.replace(/[^\d.]/g,'')"
+              <input placeholder="请填写开票金额..." name="amount" id="amount" class="input-text"
+                     onkeyup = "value=value.replace(/[^\d.]/g,'')"
                      value="0.0"/>
+            </td>
+            <td align="left" class="ta-right">
               <span id="amount_font"></span>
             </td>
           </tr>
@@ -48,6 +57,8 @@
             <td align="right"><b>联系人:</b></td>
             <td>
               <input type="text" placeholder="请填写联系人..." name="contact_name" id="contact_name" class="input-text"/>
+            </td>
+            <td align="left" class="ta-right">
               <span id="contact_name_font"></span>
             </td>
           </tr>
@@ -57,13 +68,15 @@
             <td>
               <input type="text" placeholder="请填写公司地址..." name="company_address" id="company_address"
                      class="input-text"/>
+            </td>
+            <td align="left" class="ta-right">
               <span id="company_address_font"></span>
             </td>
           </tr>
           <tr>
             <td></td>
             <td align="left">
-              <button type="button" id="cy_success" class="pn" name="submit" value="true"><strong>开票</strong></button>
+              <button type="submit" id="cy_success" class="pn" name="submit" value="true"><strong>开票</strong></button>
               <button type="submit" id="cy_edit" class="pn" name="search" value="true"><strong>编辑</strong></button>
             </td>
           </tr>
@@ -150,19 +163,20 @@
                 });
             }
 
-            $(document).bind('click', function (event) {
+            $(document).bind('focus', function (event) {
                 event.stopPropagation();
                 var tar = event.target;
                 console.log(tar + 'dom:' + $(tar).closest('#company_name').length);
-                if ($(tar).closest('#company_name').length == 0 ) {
+                if ($(tar).closest('#company_name').length == 0) {
                     $('#hide-select').slideUp();
-                }else {
+                } else {
                     $('#hide-select').slideDown();
                 }
             });
 
             //提交
-            $('#cy_success').click(function () {
+            $('#cy_success').submit(function () {
+                alert('正在提交');
                 var flag = new Boolean(false);
                 var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
                 var invoice_code_reg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,23}$/;
@@ -203,8 +217,8 @@
             }
 
             var html = '<i style="color: red;">*</i> 此行为必填项';
-            var style = 'style="color: red; position: absolute; font-size: 14px; margin-left: 0px;"';
-            var success = '<svg style="margin-top: 10px;" t="1567221340551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2070" width="20" height="20"><path d="M511 69C267.4 69 69.9 266.5 69.9 510.1c0 243.6 197.5 441.1 441.1 441.1 243.6 0 441.1-197.5 441.1-441.1C952.2 266.5 754.7 69 511 69z m282 292.7L463.4 691.3l-18.6 18.6c-19.6 19.6-51.4 19.6-71 0l-18.6-18.6-126.8-126.8c-16.3-16.3-14.8-43.9 4.6-58.1 15.4-11.2 36.9-8.7 50.3 4.8l125.9 125.9 330.3-330.3c16.3-16.3 43.9-14.8 58.1 4.6 11.4 15.4 8.8 36.9-4.6 50.3z" p-id="2071" fill="#1afa29"></path></svg>';
+            var style = 'style="color: red; font-size: 14px; margin-left: 0px;"';
+            var success = '<svg style="position: relative; margin-top: 10px;" t="1567221340551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2070" width="20" height="20"><path d="M511 69C267.4 69 69.9 266.5 69.9 510.1c0 243.6 197.5 441.1 441.1 441.1 243.6 0 441.1-197.5 441.1-441.1C952.2 266.5 754.7 69 511 69z m282 292.7L463.4 691.3l-18.6 18.6c-19.6 19.6-51.4 19.6-71 0l-18.6-18.6-126.8-126.8c-16.3-16.3-14.8-43.9 4.6-58.1 15.4-11.2 36.9-8.7 50.3 4.8l125.9 125.9 330.3-330.3c16.3-16.3 43.9-14.8 58.1 4.6 11.4 15.4 8.8 36.9-4.6 50.3z" p-id="2071" fill="#1afa29"></path></svg>';
             var error = '<svg style=" margin-top: 10px;" t="1567221892863" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2845" width="20" height="20"><path d="M664.96 630.4a32 32 0 0 1-22.4 54.72 32 32 0 0 1-22.72-9.28L506.56 562.56 393.6 675.84a32 32 0 0 1-22.72 9.28 32 32 0 0 1-22.72-9.28 32 32 0 0 1 0-45.44l113.28-112.96-113.28-113.28a32 32 0 0 1 0-45.12 32 32 0 0 1 45.44 0L506.56 472l113.28-112.96a32 32 0 1 1 45.12 45.12L552 517.44zM512 64a448 448 0 1 0 448 448A448 448 0 0 0 512 64z" p-id="2846" fill="#d81e06"></path></svg>';
 
             function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
@@ -245,6 +259,7 @@
 
                 //ERROR
                 if (!is_Empty(bank)) {
+                    console.log(regNumStrAbc.test(bank));
                     if (reg_test(regNumStrAbc, bank)) {
                         $('#bank_font').html('<em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
                         return;
@@ -368,5 +383,10 @@
     border: none;
     padding: 1px;
     width: 50px;
+  }
+
+  .ta-right {
+    width: 260px;
+    white-space: nowrap;
   }
 </style>
