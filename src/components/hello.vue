@@ -384,5 +384,6 @@
     width: 260px;
     white-space: nowrap;
     vertical-align: middle;
+    padding-left: 10px;
   }
 </style>
