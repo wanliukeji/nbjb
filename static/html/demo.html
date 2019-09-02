@@ -706,9 +706,14 @@ checkBlind();</script>
             //SUCCESS
             if (!reg_test(company_name_reg, company_name)) {
                 $jq('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+                CY_ERROR_CSS();
             } else {
                 $jq('#company_name_font').html(success);
                 flag_a = true;
+                if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                    , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                    CY_SUCCESS_CSS();
+                }
             }
             ;
         });
@@ -718,9 +723,14 @@ checkBlind();</script>
             //SUCCESS
             if (!reg_test(company_name_reg, company_name)) {
                 $jq('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+                CY_ERROR_CSS();
             } else {
                 $jq('#company_name_font').html(success);
                 flag_a = true;
+                if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                    , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                    CY_SUCCESS_CSS();
+                }
             }
             ;
         });
@@ -731,9 +741,14 @@ checkBlind();</script>
             if (!is_Empty(invoice_code)) {
                 if (!reg_test(invoice_code_reg, invoice_code)) {
                     $jq('#invoice_code_font').html(error + '<em ' + style + ' >税号只能由字母和数字组成</em>');
+                    CY_ERROR_CSS();
                 } else {
                     $jq('#invoice_code_font').html(success);
                     flag_b = true;
+                    if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                        , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                        CY_SUCCESS_CSS();
+                    }
                 }
                 ;
             }
@@ -746,9 +761,14 @@ checkBlind();</script>
             if (!is_Empty(bank_code)) {
                 if (!reg_test(invoice_code_reg, bank_code)) {
                     $jq('#bank_code_font').html(error + '<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
+                    CY_ERROR_CSS();
                 } else {
                     $jq('#bank_code_font').html(success);
                     flag_c = true;
+                    if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                        , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                        CY_SUCCESS_CSS();
+                    }
                 }
                 ;
             }
@@ -760,9 +780,14 @@ checkBlind();</script>
             if (!is_Empty(bank)) {
                 if (reg_test(/^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$/u, bank)) {
                     $jq('#bank_font').html(error + '<em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
+                    CY_ERROR_CSS();
                 } else {
                     $jq('#bank_font').html(success);
                     flag_d = true;
+                    if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                        , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                        CY_SUCCESS_CSS();
+                    }
                 }
                 ;
             }
@@ -774,9 +799,14 @@ checkBlind();</script>
             if (!is_Empty(company_address)) {
                 if (reg_test(regNumStrAbc, company_address)) {
                     $jq('#company_address_font').html(error + '<em ' + style + ' >公司地址只能由汉字、字母、数字组成</em>');
+                    CY_ERROR_CSS();
                 } else {
                     $jq('#company_address_font').html(success);
                     flag_e = true;
+                    if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                        , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                        CY_SUCCESS_CSS();
+                    }
                 }
                 ;
             }
@@ -788,9 +818,14 @@ checkBlind();</script>
             if (!is_Empty(contact_name)) {
                 if (!reg_test(/^[a-zA-Z\u4e00-\u9fa5]+$/, contact_name)) {
                     $jq('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名只能由汉字、字母组成</em>');
+                    CY_ERROR_CSS();
                 } else {
                     $jq('#contact_name_font').html(success);
                     flag_f = true;
+                    if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                        , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                        CY_SUCCESS_CSS();
+                    }
                 }
                 ;
             }
@@ -803,9 +838,14 @@ checkBlind();</script>
             var duceapp_all_amount = 100;//充值总金额
             if (count > duceapp_all_amount) {
                 $jq('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
+                CY_ERROR_CSS();
             } else {
                 $jq('#amount_font').html(success);
                 flag_g = true;
+                if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                    , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                    CY_SUCCESS_CSS();
+                }
             }
             ;
         });
@@ -836,6 +876,10 @@ checkBlind();</script>
                 } else {
                     $jq('#company_name_font').html(success);
                     flag_a = true;
+                    if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                        , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc)) {
+                        CY_SUCCESS_CSS();
+                    }
                 }
                 ;
                 $dom.hide();
@@ -1071,6 +1115,11 @@ checkBlind();</script>
         function CY_SUCCESS_CSS() {
             $jq('#cy_success').css({'background': '#f2f2f2'});
             $jq('#cy_success').attr('disabled', false);
+        }
+
+        function CY_ERROR_CSS() {
+            $jq('#cy_success').css({'background': '#666666'});
+            $jq('#cy_success').attr('disabled', true);
         }
     });
 </script>
