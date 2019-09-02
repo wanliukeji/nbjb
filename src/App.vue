@@ -1,14 +1,19 @@
 <template lang="html">
   <div class="container-body">
-    <top></top>
-    <example></example>
-    <menu-nav></menu-nav>
-    <table-nav></table-nav>
+<!--    -->
+<!--    <login></login>-->
+<!--<model-firt></model-firt>-->
+<cy-home></cy-home>
+<!--    -->
+<!--    <top></top>-->
+<!--    <example></example>-->
+<!--    <menu-nav></menu-nav>-->
+<!--    <table-nav></table-nav>-->
 <!--    <img-model></img-model>-->
 
-    <example-model></example-model>
-    <footer-table></footer-table>
-    <footer-nav></footer-nav>
+<!--    <example-model></example-model>-->
+<!--    <footer-table></footer-table>-->
+<!--    <footer-nav></footer-nav>-->
   </div>
 </template>
 <script>
@@ -20,6 +25,9 @@
     import Top from "./components/top";
     import FooterTable from "./components/footerTable";
     import ExampleModel from "./components/exampleModel";
+    import Login from "./components/iview/login";
+    import ModelFirt from "./components/iview/model-firt";
+    import CyHome from "./components/iview/Cy-home";
 
     export default {
         data() {
@@ -29,6 +37,9 @@
             };
         },
         components: {
+            CyHome,
+            ModelFirt,
+            Login,
             ExampleModel,
             Top,
             example,
@@ -66,7 +77,7 @@
     position: relative;
     text-align: center;
     min-height: 100%;
-    background-color: #f3f3f3;
+    background-color: #FFFFFF;
     width: 100%;
     min-width: 1200px;
   }
@@ -94,7 +105,7 @@
     width: 100%;
     /*padding: 2rem 0;*/
     position: relative;
-    background: #f2f2f2;
+    background: #FFFFFF;
     /*top: 0px;*/
     /*min-height: 1800px;*/
     height: 100%;
