@@ -698,7 +698,6 @@ checkBlind();</script>
 
         $jq('#company_name').blur(function () {
             var company_name = $jq('#company_name').val();
-            alert('blur:' + company_name);
             //SUCCESS
             if (!reg_test(company_name_reg, company_name)) {
                 $jq('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
@@ -711,7 +710,6 @@ checkBlind();</script>
 
         $jq('#company_name').change(function () {
             var company_name = $jq('#company_name').val();
-            alert('change:' + company_name);
             //SUCCESS
             if (!reg_test(company_name_reg, company_name)) {
                 $jq('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
