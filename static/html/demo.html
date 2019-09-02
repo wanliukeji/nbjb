@@ -105,6 +105,10 @@
       vertical-align: middle;
     }
 
+    #cy_success {
+      background-color: #666666;
+    }
+
   </style>
 </head>
 
@@ -500,7 +504,8 @@
               <tr>
                 <td></td>
                 <td align="left">
-                  <button type="submit" id="cy_success" class="pn" name="submit" value="true"><strong>开票</strong>
+                  <button type="submit" id="cy_success" class="pn" name="submit" value="true" disabled>
+                    <strong>开票</strong>
                   </button>
                   <button type="submit" id="cy_edit" class="pn" name="search" value="true"><strong>编辑</strong></button>
                 </td>
@@ -850,6 +855,7 @@ checkBlind();</script>
 
         function selected($parent, myMap) {
             $jq('.hide-li-selected').click(function () {
+                var result = false;
                 var $son = $jq(this);
                 var f = $son.text();
                 $parent.val(f);
@@ -861,6 +867,15 @@ checkBlind();</script>
                 $jq('[name="company_address"]').val(obj.company_address);
                 $jq('[name="amount"]').val(obj.amount);
                 $jq('.hide-select').hide();
+
+                //正则判断
+                result = exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
+                    , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc);
+
+                if (result) {
+                    CY_SUCCESS_CSS();
+                }
+
             });
         }
 
@@ -1053,6 +1068,10 @@ checkBlind();</script>
             ];
         }
 
+        function CY_SUCCESS_CSS() {
+            $jq('#cy_success').css({'background': '#f2f2f2'});
+            $jq('#cy_success').attr('disabled', false);
+        }
     });
 </script>
 
