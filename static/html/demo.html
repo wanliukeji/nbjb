@@ -896,6 +896,7 @@ checkBlind();</script>
 
         function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
             , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc) {
+            var bool = new Boolean(false);
             var company_name = $jq('#company_name').val();
             var invoice_code = $jq('#invoice_code').val();
             var bank_code = $jq('#bank_code').val();
@@ -908,9 +909,10 @@ checkBlind();</script>
             if (!is_Empty(invoice_code)) {
                 if (!reg_test(invoice_code_reg, invoice_code)) {
                     $jq('#invoice_code_font').html(error + '<em ' + style + ' >税号只能由字母和数字组成</em>');
-                    return false;
+                    bool = false;
                 } else {
                     $jq('#invoice_code_font').html(success);
+                    bool = true;
                 }
                 ;
             }
@@ -920,9 +922,10 @@ checkBlind();</script>
             if (!is_Empty(bank_code)) {
                 if (!reg_test(invoice_code_reg, bank_code)) {
                     $jq('#bank_code_font').html(error + '<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
-                    return false;
+                    bool = false;
                 } else {
                     $jq('#bank_code_font').html(success);
+                    bool = true;
                 }
                 ;
             }
@@ -931,9 +934,10 @@ checkBlind();</script>
             if (!is_Empty(bank)) {
                 if (reg_test(/^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$/u, bank)) {
                     $jq('#bank_font').html(error + '<&lt;>em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
-                    return false;
+                    bool = false;
                 } else {
                     $jq('#bank_font').html(success);
+                    bool = true;
                 }
                 ;
             }
@@ -942,9 +946,10 @@ checkBlind();</script>
             if (!is_Empty(contact_name)) {
                 if (!reg_test(/^[a-zA-Z\u4e00-\u9fa5]+$/, contact_name)) {
                     $jq('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名只能由汉字、字母组成</em>');
-                    return false;
+                    bool = false;
                 } else {
                     $jq('#contact_name_font').html(success);
+                    bool = true;
                 }
                 ;
             }
@@ -953,9 +958,10 @@ checkBlind();</script>
             if (!is_Empty(company_address)) {
                 if (reg_test(regNumStrAbc, company_address)) {
                     $jq('#company_address_font').html(error + '<em ' + style + ' >公司地址只能由汉字、字母、数字组成</em>');
-                    return false;
+                    bool = false;
                 } else {
                     $jq('#company_address_font').html(success);
+                    bool = true;
                 }
                 ;
             }
@@ -964,11 +970,14 @@ checkBlind();</script>
             var duceapp_all_amount = 0;//充值总金额
             if (count > duceapp_all_amount) {
                 $jq('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
-                return false;
+                bool = false;
             } else {
                 $jq('#amount_font').html(success);
+                bool = true;
             }
             ;
+
+            return bool;
 
         }
 
