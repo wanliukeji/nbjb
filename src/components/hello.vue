@@ -132,7 +132,8 @@
 
             });
 
-            $('#company_name').blur(function () {
+            $('#company_name').change(function () {
+                $(this).css("background-color","#FFFFCC");
                 var company_name = $('#company_name').val();
                 //SUCCESS
                 if (!reg_test(company_name_reg, company_name)) {
@@ -301,7 +302,14 @@
 
             //提交
             $('#cy_form').submit(function () {
-                alert(1.1);
+
+                var company_name = $('#company_name').val();
+                var invoice_code = $('#invoice_code').val();
+                var bank_code = $('#bank_code').val();
+                var bank = $('#bank').val();
+                var contact_name = $('#contact_name').val();
+                var company_address = $('#company_address').val();
+                var amount = $('#amount').val();
 
                 //空值判断
                 is_Null();
@@ -347,13 +355,15 @@
 
             function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
                 , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc) {
-
+                console.log(1.1);
                 //SUCCESS
                 if (!is_Empty(invoice_code)) {
                     if (!reg_test(invoice_code_reg, invoice_code)) {
                         $jq('#invoice_code_font').html(error + '<em ' + style + ' >税号只能由字母和数字组成</em>');
+                        console.log(1.2);
                         return false;
                     } else {
+                        console.log(1.3);
                         $jq('#invoice_code_font').html(success);
                     }
                     ;
