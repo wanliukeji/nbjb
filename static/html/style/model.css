@@ -13,9 +13,9 @@
 
 .hide-select {
   display: none;
-  width: 300px;
+  width: 310px;
   position: absolute;
-  margin-top: 34px;
+  margin-top: 24px;
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -28,8 +28,12 @@
 
 .hide-li-selected {
   cursor: pointer;
-  font-size: 12px;
   padding-left: 10px;
+  font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+  color: #999;
+  clear: both;
+  margin: 5px 0;
+  color: #999;
 }
 
 .pn {
@@ -48,4 +52,20 @@
 
 .td-center {
   width: 310px;
+}
+
+.td-left-span {
+  font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+  color: #999;
+  clear: both;
+  margin: 5px 0;
+  color: #999;
+}
+
+.td-left-span-i {
+  color: red;
+  /*margin: 0 auto;*/
+  /*top: 3px;*/
+  /*line-height: 10px;*/
+  vertical-align: middle;
 }
