@@ -825,7 +825,6 @@ checkBlind();</script>
                 var $son = $jq(this);
                 var f = $son.text();
                 $parent.val(f);
-                alert(f);
                 //SUCCESS
                 if (!reg_test(company_name_reg, f)) {
                     $jq('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
