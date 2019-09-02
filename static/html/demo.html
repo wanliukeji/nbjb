@@ -635,8 +635,7 @@
 checkBlind();</script>
 <!-- 使用CDN 引入高版本 -->
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js" type="text/javascript"></script>
-<!-- 以下 可删除单独放入js文件引入 <script src="#" type="text/javascript"></script>-->
-<!--<script src="js/jquery3.4.1.js"></script>-->
+<!-- 以下 可删除单独放入js文件引入 <script src="js/jquery3.4.1.js" type="text/javascript"></script>-->
 <script type="text/javascript" charset="utf-8">
     /* 兼容高版本jquery */
     var $jq = jQuery.noConflict(true);
@@ -693,7 +692,6 @@ checkBlind();</script>
         });
 
         $jq('#company_name').blur(function () {
-            alert(1.4);
             var company_name = $jq('#company_name').val();
             //SUCCESS
             if (!reg_test(company_name_reg, company_name)) {
@@ -706,7 +704,6 @@ checkBlind();</script>
         });
 
         $jq('#company_name').change(function () {
-            alert(1.5);
             var company_name = $jq('#company_name').val();
             //SUCCESS
             if (!reg_test(company_name_reg, company_name)) {
@@ -899,14 +896,13 @@ checkBlind();</script>
 
         function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, company_name, invoice_code
             , bank_code, bank, company_address, amount, contact_name, regNumber, regString, regNumStrAbc) {
-
-            var company_name = $('#company_name').val();
-            var invoice_code = $('#invoice_code').val();
-            var bank_code = $('#bank_code').val();
-            var bank = $('#bank').val();
-            var contact_name = $('#contact_name').val();
-            var company_address = $('#company_address').val();
-            var amount = $('#amount').val();
+            var company_name = $jq('#company_name').val();
+            var invoice_code = $jq('#invoice_code').val();
+            var bank_code = $jq('#bank_code').val();
+            var bank = $jq('#bank').val();
+            var contact_name = $jq('#contact_name').val();
+            var company_address = $jq('#company_address').val();
+            var amount = $jq('#amount').val();
 
             //SUCCESS
             if (!is_Empty(invoice_code)) {
@@ -930,7 +926,6 @@ checkBlind();</script>
                 }
                 ;
             }
-
 
             //SUCCESS
             if (!is_Empty(bank)) {
@@ -974,6 +969,7 @@ checkBlind();</script>
                 $jq('#amount_font').html(success);
             }
             ;
+
         }
 
         function reg_test(reg, text) {
