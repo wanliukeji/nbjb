@@ -860,7 +860,6 @@ checkBlind();</script>
         });
 
 
-
         function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc) {
             var bool_b, bool_d, bool_e, bool_f, bool_g = false;
             var bool_a = false;
@@ -909,7 +908,10 @@ checkBlind();</script>
                     bool_c = true;
                 }
                 ;
+            } else {
+                $jq('#bank_code_font').html('');
             }
+            ;
 
             //SUCCESS
             if (!is_Empty(bank)) {
@@ -921,7 +923,10 @@ checkBlind();</script>
                     bool_d = true;
                 }
                 ;
+            } else {
+                $jq('#bank_font').html('');
             }
+            ;
 
             //SUCCESS
             if (!is_Empty(contact_name)) {
@@ -933,7 +938,10 @@ checkBlind();</script>
                     bool_e = true;
                 }
                 ;
+            } else {
+                $jq('#contact_name_font').html('');
             }
+            ;
 
             //SUCCESS
             if (!is_Empty(company_address)) {
@@ -945,7 +953,10 @@ checkBlind();</script>
                     bool_f = true;
                 }
                 ;
+            } else {
+                $jq('#contact_name_font').html('');
             }
+            ;
 
             var count = Number(amount);//输入金额
             var duceapp_all_amount = 0;//充值总金额
@@ -963,7 +974,7 @@ checkBlind();</script>
             if (bool_a && bool_b && bool_c && bool_d && bool_e && bool_f && bool_g) {
                 return true;
             } else {
-                return  false;
+                return false;
             }
         }
 
@@ -1010,6 +1021,7 @@ checkBlind();</script>
         function CY_SUCCESS_CSS() {
             $jq('#cy_success').css({'background': '#f2f2f2'});
             $jq('#cy_success').attr('disabled', false);
+            $jq('#cy_success').attr('title', '可以提交啦!');
         }
 
         function CY_ERROR_CSS() {
