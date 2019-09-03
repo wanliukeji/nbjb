@@ -1,11 +1,10 @@
 <template lang="html">
   <div class="container-body">
     <!--    -->
-    <!-- <login></login>-->
+     <login></login>
     <!--<model-firt></model-firt>-->
     <!--<cy-home></cy-home>-->
     <!--    <mine></mine>-->
-
     <!--    <class></class>-->
     <!--    <me></me>-->
     <!--            <good></good>-->
@@ -14,8 +13,7 @@
     <!--        <img></img>-->
     <!--    <wallet></wallet>-->
     <!--    <team></team>-->
-
-    <shop></shop>
+    <!--    <shop></shop>-->
 
 
     <!--    -->

@@ -2,7 +2,7 @@
   <div class="model">
     <i class="close-left">
       <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-           p-id="1729" width="20" height="20">
+           p-id="1729" width="16" height="16">
         <path
           d="M583.168 523.776L958.464 148.48c18.944-18.944 18.944-50.176 0-69.12l-2.048-2.048c-18.944-18.944-50.176-18.944-69.12 0L512 453.12 136.704 77.312c-18.944-18.944-50.176-18.944-69.12 0l-2.048 2.048c-19.456 18.944-19.456 50.176 0 69.12l375.296 375.296L65.536 899.072c-18.944 18.944-18.944 50.176 0 69.12l2.048 2.048c18.944 18.944 50.176 18.944 69.12 0L512 594.944 887.296 970.24c18.944 18.944 50.176 18.944 69.12 0l2.048-2.048c18.944-18.944 18.944-50.176 0-69.12L583.168 523.776z"
           p-id="1730" fill="#8a8a8a"></path>
@@ -10,13 +10,13 @@
     </i>
     <h1>登录</h1>
     <div class="modal-body">
-      <input placeholder="输入手机号" class="username-input"/>
-      <input placeholder="输入密码" class="password-input"/>
+      <input placeholder="输入手机号" type="text" class="username-input"/>
+      <input placeholder="输入密码" type="password" class="password-input"/>
       <p>
         <span class="password-input-p-left">没有账号? 去注册</span>
         <span class="password-input-p-right">忘记密码</span>
       </p>
-      <router-link to="{name:'home', params: {id:1}}" class="login-btn">
+      <router-link to="{name:'home', params: {id:1}}">
         <button class="login-btn">登录</button>
       </router-link>
     </div>
@@ -51,7 +51,6 @@
     font-size: 2em;
     font-family: 楷体;
     position: relative;
-    margin-top: 10%;
   }
 
   .modal-body {
@@ -67,7 +66,7 @@
     background: none;
     font-size: 1em;
     margin-top: 20%;
-    border-bottom: 4px #a8a8a8 solid;
+    border-bottom: 1px #a8a8a8 solid;
     padding: 20px;
     color: black;
     font-weight: lighter;
@@ -77,14 +76,16 @@
     height: auto;
     width: 100%;
     margin-top: 30%;
-    font-size: 0.8em;
+    font-size: 2.2em;
     background: #FFFFFF;
-    border: 1px black solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /*border: 1px black solid;*/
+    padding-top: 7px;
+    padding-bottom: 7px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
+    border: none;
+    border: black 1px solid;
   }
 
   p {
@@ -108,6 +109,5 @@
   input:hover {
     cursor: auto;
   }
-
 
 </style>
