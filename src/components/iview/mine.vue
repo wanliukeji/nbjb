@@ -13,9 +13,7 @@
         <div class="model-div-row-right">
           <p><span class="model-div-row-right-span">邀请码:</span> <a> 5438900</a></p>
         </div>
-
       </div>
-
     </div>
     <div class="model-div-row">
           <span class="model-div-row-span">

@@ -26,8 +26,7 @@
       </span>
 
       <div class="model-div-row-text">
-        超喜欢 超级赞 物流很快 电脑很棒 是正品
-        很很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞很赞
+        说明：购买此商品即可成为会员
       </div>
     </div>
 
@@ -71,7 +70,6 @@
   .login-btn {
     height: auto;
     width: 80%;
-    margin-top: 5%;
     font-size: 0.8em;
     background: #FFFFFF;
     border: 1px black solid;
@@ -93,7 +91,7 @@
     min-height: 200px;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding-left: 10%;
     padding-right: 10%;
     margin-bottom: 10px;
@@ -115,12 +113,14 @@
   .model-div-row-text {
     height: auto;
     width: 100%;
-    min-height: 300px;
+    min-height: 100px;
     padding: 10px;
     /*white-space: nowrap;*/
     font-size: 12px;
-    text-indent: 2em;
+    /*text-indent: 2em;*/
     line-height: 20px;
+    text-align: left;
+    left: 0;
   }
 
 </style>
