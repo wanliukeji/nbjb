@@ -1031,15 +1031,6 @@ checkBlind();</script>
             $jq('#cy_success').attr('title', '输入不合法，请检查！');
         }
 
-        //识别浏览器品牌
-        if ("\v" == "v") {//true为IE浏览器
-
-
-        } else {
-
-
-        }
-
         //实时监听用户输入值
         $jq("#company_name").bind('input porpertychange', function (e) {
            var lastTime = e.timeStamp;
@@ -1066,7 +1057,6 @@ checkBlind();</script>
             var company_name = $jq('#company_name').val();
             var $parent = $jq('#company_name');
             var $dom = $parent.next();
-            console.log(company_name);
             $dom.html('');
             $jq.ajax({
                 //url: "http://localhost:8080/static/data/demo.json",  //请求路径
@@ -1087,10 +1077,17 @@ checkBlind();</script>
                     // showChilden($parent);
                     // selectHover();
                     // selected($parent, myMap);
-                    // console.log(err);
+                    console.log(err);
                 }
             });
         }
+
+        //识别浏览器品牌
+        // if ("\v" == "v") {//true为IE浏览器
+        //
+        // } else {
+        //
+        // }
     })
     ;
 </script>
