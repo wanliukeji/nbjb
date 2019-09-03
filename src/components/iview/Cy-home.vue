@@ -284,6 +284,8 @@
     margin: 0 auto;
   }
 
+
+
   .model-div-row-img {
     display: inline-block;
     width: 80%;

@@ -3,7 +3,8 @@
 <!--    -->
 <!--    <login></login>-->
 <!--<model-firt></model-firt>-->
-<cy-home></cy-home>
+<!--<cy-home></cy-home>-->
+    <mine></mine>
 <!--    -->
 <!--    <top></top>-->
 <!--    <example></example>-->
@@ -28,6 +29,7 @@
     import Login from "./components/iview/login";
     import ModelFirt from "./components/iview/model-firt";
     import CyHome from "./components/iview/Cy-home";
+    import Mine from "./components/iview/mine";
 
     export default {
         data() {
@@ -37,6 +39,7 @@
             };
         },
         components: {
+            Mine,
             CyHome,
             ModelFirt,
             Login,
