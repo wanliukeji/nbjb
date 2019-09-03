@@ -13,7 +13,9 @@
     <!--    <order></order>-->
     <!--        <img></img>-->
     <!--    <wallet></wallet>-->
-    <team></team>
+    <!--    <team></team>-->
+
+    <shop></shop>
 
 
     <!--    -->
@@ -49,6 +51,7 @@
     import Img from "./components/iview/img";
     import Wallet from "./components/iview/wallet";
     import Team from "./components/iview/team";
+    import shop from "./components/iview/shop";
 
     export default {
         data() {
@@ -58,6 +61,7 @@
             };
         },
         components: {
+            shop,
             Team,
             Wallet,
             Img,
