@@ -15,12 +15,11 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: () => import('@/components/iview/Cy-home')
-    }
-    // ,
-    // {
-    //   path: '/home',
-    //   name: 'home',
-    //   component: resolve => require(['@/components/home'], resolve)
-    // }
+    },
+    {
+      path: '/model-firt',
+      name: 'model-firt',
+      component: () => import('@/components/iview/model-firt')
+     }
   ]
 })

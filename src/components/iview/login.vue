@@ -1,8 +1,8 @@
 <template>
-  <div class="model">
+  <div class="model" v-show="num == 1">
     <i class="close-left">
       <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-           p-id="1729" width="16" height="16">
+           p-id="1729" width="13" height="13">
         <path
           d="M583.168 523.776L958.464 148.48c18.944-18.944 18.944-50.176 0-69.12l-2.048-2.048c-18.944-18.944-50.176-18.944-69.12 0L512 453.12 136.704 77.312c-18.944-18.944-50.176-18.944-69.12 0l-2.048 2.048c-19.456 18.944-19.456 50.176 0 69.12l375.296 375.296L65.536 899.072c-18.944 18.944-18.944 50.176 0 69.12l2.048 2.048c18.944 18.944 50.176 18.944 69.12 0L512 594.944 887.296 970.24c18.944 18.944 50.176 18.944 69.12 0l2.048-2.048c18.944-18.944 18.944-50.176 0-69.12L583.168 523.776z"
           p-id="1730" fill="#8a8a8a"></path>
@@ -16,16 +16,29 @@
         <span class="password-input-p-left">没有账号? 去注册</span>
         <span class="password-input-p-right">忘记密码</span>
       </p>
-      <router-link to="{name:'home', params: {id:1}}">
-        <button class="login-btn">登录</button>
-      </router-link>
     </div>
+    <button class="login-btn" @click="go();">登录</button>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
     export default {
-        name: "login"
+        name: "login",
+        data() {
+            return {
+                num: 1
+            }
+        },
+        created() {
+            this.mum = 1;
+        },
+        methods: {
+            go: function () {
+                this.num = 2;
+                this.$router.push({path: '/model-firt', params: {num: this.num}})
+            }
+        }
     }
 </script>
 
@@ -74,9 +87,9 @@
 
   .login-btn {
     height: auto;
-    width: 100%;
+    width: 80%;
     margin-top: 30%;
-    font-size: 2.2em;
+    font-size: 1.2em;
     background: #FFFFFF;
     /*border: 1px black solid;*/
     padding-top: 7px;

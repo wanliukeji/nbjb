@@ -1,29 +1,30 @@
 <template lang="html">
   <div class="container-body">
     <!--    -->
-    <!--         <login></login>-->
-    <!--<model-firt></model-firt>-->
-    <!--<cy-home></cy-home>-->
+        <login></login>
+    <!--    <model-firt></model-firt>-->
+    <!--    <cy-home></cy-home>-->
     <!--    <mine></mine>-->
     <!--    <class></class>-->
     <!--    <me></me>-->
-    <!--            <good></good>-->
+    <!--    <good></good>-->
     <!--    <Address></Address>-->
     <!--    <order></order>-->
-    <!--        <img></img>-->
+    <!--    <img></img>-->
     <!--    <wallet></wallet>-->
     <!--    <team></team>-->
     <!--    <shop></shop>-->
 
 
     <!-- -------------------------------------------------------- -->
-    <a href="" @click.prevent="comName='login'" >登录</a>
-    <a href="" @click.prevent="comName='ModelFirt'">注册</a>
+
+    <!--    <a href="" @click.prevent="comName='login'" v-if="comName == 'ModelFirt'">登录</a>-->
+    <!--    <a href="" @click.prevent="comName='ModelFirt'" v-if="comName == 'login'">注册</a>-->
 
     <!-- 通过 mode 属性,设置组件切换时候的 模式 -->
-    <transition mode="out-in">
-      <component :is="comName"></component>
-    </transition>
+    <!--    <transition mode="out-in">-->
+    <!--      <component :is="comName"></component>-->
+    <!--    </transition>-->
     <!-- -------------------------------------------------------- -->
 
 
@@ -67,8 +68,7 @@
         data() {
             return {
                 navTitle: '',
-                nowTab: 1,
-                comName: 'Login' // 当前 component 中的 :is 绑定的组件的名称
+                nowTab: 1
             };
         },
         components: {
@@ -93,6 +93,9 @@
             tableNav,
             FooterTable,
             footerNav
+        },
+        created() {
+            this.comName = 'login';
         },
         mounted() {
         },

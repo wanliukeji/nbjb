@@ -1,5 +1,5 @@
 <template>
-  <div class="model">
+  <div class="model" v-show="num == 1 ">
     <i class="close-left">
       <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
            p-id="1729" width="16" height="16">
@@ -20,7 +20,7 @@
         <span class="password-input-p-left">已有账号? 去登录</span>
         <span class="password-input-p-right">忘记密码</span>
       </p>
-      <button class="login-btn">注册</button>
+      <button class="login-btn" @click="black()">注册</button>
     </div>
     <div class="model-foot">
       <p class="model-foot-p">注册即代表你已经统一云上商城用户协议
@@ -32,7 +32,20 @@
 
 <script>
     export default {
-        name: "model-firt"
+        name: "model-firt",
+        data() {
+            return {
+                num: this.$route.params.num
+            }
+        },
+        created() {
+            alert(this.num);
+        },
+        methods: {
+            black: function () {
+                this.$router.push({path: '/login'})
+            }
+        }
     }
 </script>
 
@@ -43,6 +56,7 @@
     padding-left: 10%;
     padding-right: 10%;
     position: relative;
+    padding-top: 10px;
   }
 
   .close-left {
@@ -137,7 +151,7 @@
     height: auto;
     width: 30%;
     margin-top: -50px;
-    font-size:1em;
+    font-size: 1em;
     background: #FFFFFF;
     border: 1px black solid;
     padding-top: 5px;
