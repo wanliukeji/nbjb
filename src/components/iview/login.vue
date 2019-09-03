@@ -110,4 +110,8 @@
     cursor: auto;
   }
 
+  input {
+    background-color: #FFFFFF;
+  }
+
 </style>

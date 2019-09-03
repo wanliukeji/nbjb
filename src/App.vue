@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="container-body">
     <!--    -->
-     <login></login>
+    <!--     <login></login>-->
     <!--<model-firt></model-firt>-->
     <!--<cy-home></cy-home>-->
     <!--    <mine></mine>-->
@@ -14,6 +14,7 @@
     <!--    <wallet></wallet>-->
     <!--    <team></team>-->
     <!--    <shop></shop>-->
+
 
 
     <!--    -->

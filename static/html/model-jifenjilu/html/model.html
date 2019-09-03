@@ -917,7 +917,7 @@ checkBlind();</script>
             //SUCCESS
             if (!is_Empty(bank)) {
                 if (reg_test(/^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$/u, bank)) {
-                    $jq('#bank_font').html(error + '<&lt;>em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
+                    $jq('#bank_font').html(error + '<em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
                     CY_ERROR_CSS();
                 } else {
                     $jq('#bank_font').html(success);
