@@ -1,7 +1,7 @@
 <template>
   <div class="model">
     <Header style="background: #FFFFFF; height: 40px; text-align: center; max-width: 100%;">
-      <el-button type="primary" size="mini" style="float: left; border-radius: 25px; position: absolute; left: 20px; ">
+      <el-button type="primary" size="mini" style="float: left; border-radius: 25px; position: absolute; left: 15px; ">
         返回
       </el-button>
     </Header>

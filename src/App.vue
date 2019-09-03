@@ -11,6 +11,7 @@
     <!--            <good></good>-->
     <!--    <Address></Address>-->
     <order></order>
+<!--        <img></img>-->
     <!--    -->
     <!--    <top></top>-->
     <!--    <example></example>-->
@@ -41,6 +42,7 @@
     import Good from "./components/iview/good";
     import Address from "./components/iview/Address";
     import Order from "./components/iview/order";
+    import Img from "./components/iview/img";
 
     export default {
         data() {
@@ -50,6 +52,7 @@
             };
         },
         components: {
+            Img,
             Order,
             Address,
             Good,
