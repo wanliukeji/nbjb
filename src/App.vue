@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="container-body">
     <!--    -->
-    <!--     <login></login>-->
+    <!--         <login></login>-->
     <!--<model-firt></model-firt>-->
     <!--<cy-home></cy-home>-->
     <!--    <mine></mine>-->
@@ -15,6 +15,16 @@
     <!--    <team></team>-->
     <!--    <shop></shop>-->
 
+
+    <!-- -------------------------------------------------------- -->
+    <a href="" @click.prevent="comName='login'" >登录</a>
+    <a href="" @click.prevent="comName='ModelFirt'">注册</a>
+
+    <!-- 通过 mode 属性,设置组件切换时候的 模式 -->
+    <transition mode="out-in">
+      <component :is="comName"></component>
+    </transition>
+    <!-- -------------------------------------------------------- -->
 
 
     <!--    -->
@@ -38,6 +48,7 @@
     import Top from "./components/top";
     import FooterTable from "./components/footerTable";
     import ExampleModel from "./components/exampleModel";
+    ////////////////////////////////////////////////////////////
     import Login from "./components/iview/login";
     import ModelFirt from "./components/iview/model-firt";
     import CyHome from "./components/iview/Cy-home";
@@ -57,6 +68,7 @@
             return {
                 navTitle: '',
                 nowTab: 1,
+                comName: 'Login' // 当前 component 中的 :is 绑定的组件的名称
             };
         },
         components: {
