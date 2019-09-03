@@ -11,10 +11,16 @@ export default new Router({
     //   name: 'hello',
     //   component: hello
     // },
+    {
+      path: '/home',
+      name: 'home',
+      component: () => import('@/components/iview/Cy-home')
+    }
+    // ,
     // {
     //   path: '/home',
     //   name: 'home',
-    //   component: () => import('@/view/home.vue')
+    //   component: resolve => require(['@/components/home'], resolve)
     // }
   ]
 })

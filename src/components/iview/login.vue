@@ -16,7 +16,9 @@
         <span class="password-input-p-left">没有账号? 去注册</span>
         <span class="password-input-p-right">忘记密码</span>
       </p>
-      <button class="login-btn">登录</button>
+      <router-link to="{name:'home', params: {id:1}}" class="login-btn">
+        <button class="login-btn">登录</button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -49,7 +51,7 @@
     font-size: 2em;
     font-family: 楷体;
     position: relative;
-    margin-top: 20%;
+    margin-top: 10%;
   }
 
   .modal-body {
@@ -75,7 +77,7 @@
     height: auto;
     width: 100%;
     margin-top: 30%;
-    font-size: 1.3em;
+    font-size: 0.8em;
     background: #FFFFFF;
     border: 1px black solid;
     padding-top: 10px;
