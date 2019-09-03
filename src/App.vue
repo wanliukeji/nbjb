@@ -66,6 +66,9 @@
     font-family: Tahoma, "Microsoft YaHei", SimSun;
   }
 
+  html {
+    max-width: 100%;
+  }
 
   blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul {
     margin: 0;
@@ -77,9 +80,9 @@
     position: relative;
     text-align: center;
     min-height: 100%;
-    background-color: #FFFFFF;
+    background-color: #f6f6f6;
     width: 100%;
-    min-width: 1200px;
+    /*min-width: 1200px;*/
   }
 
   ul, ol {

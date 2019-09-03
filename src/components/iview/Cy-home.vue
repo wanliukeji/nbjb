@@ -1,53 +1,297 @@
 <template>
   <div class="model">
-    <div class="container">
-      <ul class="tabs">
-        <li class="active"><a href="#tab1">导航菜单</a></li>
-        <li><a href="#tab4">TAB标签</a></li>
-      </ul>
-      <div class="tab_container">
-        <div id="tab1" class="tab_content" style="display: block; ">
+    <Layout>
+      <Header style="background: #FFFFFF; height: 40px; text-align: center; max-width: 100%;">
 
-          <h3><a href="http://www.freejs.net/article_daohangcaidan_13.html">jquery css多级下拉菜单</a></h3>
-          <p id="">多级菜单，理论上支持无限多的层级，文件结构非常简单的，具体的请看下面的内容</p>
-        </div>
+      </Header>
+      <Content style=" height: auto; margin-bottom: 10px;">
+        <Carousel autoplay loop>
+          <CarouselItem>
+            <div class="demo-carousel">
+              <img src="/static/image/timg.jpg" alt="" class="model-div-row-img">
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div class="demo-carousel">
+              <img src="/static/image/timg.jpg" alt="" class="model-div-row-img">
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div class="demo-carousel">
+              <img src="/static/image/timg.jpg" alt="" class="model-div-row-img">
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div class="demo-carousel">
+              <img src="/static/image/timg.jpg" alt="" class="model-div-row-img">
+            </div>
+          </CarouselItem>
+        </Carousel>
+      </Content>
 
-        <div id="tab4" class="tab_content" style="display: none; ">
-          <h2>各种tab标签选项卡</h2>
-          <h3><a href="http://www.freejs.net/article_tabbiaoqian_17.html">tab标签页面,ajax载入</a></h3>
-
-          <p> tab标签，jquery ajax载入数据库的内容</p>
-        </div>
+      <div class="model-div-row" style="margin-bottom: 10px;">
+        <video-player class="video-player vjs-custom-skin model-div-row-img" style="width: 80%; margin: 0 auto;"
+                      ref="videoPlayer"
+                      :playsinline="true"
+                      :options="playerOptions">
+        </video-player>
+<!--        <img src="/static/image/timg.jpg" alt="" class="model-div-row-img">-->
       </div>
+
+      <div class="model-div-row">
+        <div class="model-div-row-center">
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
+
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
+
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
+
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
+
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
+
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
+
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+        </div>
+        <div class="model-div-row">
+
+        </div>
+
+      </div>
+
+
+    </Layout>
+
+    <div class="footer_guide">
+      <a href="javascript:;" class="guide_item" :class="{on : '/msite'===$route.path}" @click="goTo('/msite')">
+	      	<span class="item_icon">
+	        	<i class="iconfont icon-home"></i>
+	      	</span>
+        <span>首页</span>
+      </a>
+      <a href="javascript:;" class="guide_item" :class="{on : $route.path.indexOf('/search')!=-1}"
+         @click="goTo('/search')">
+	      	<span class="item_icon">
+	        	<i class="iconfont icon-fenlei"></i>
+	      	</span>
+        <span>分类</span>
+      </a>
+      <a href="javascript:;" class="guide_item" :class="{on : '/profile'===$route.path}" @click="goTo('/profile')">
+	      	<span class="item_icon">
+	        	<i class="iconfont icon-mine"></i>
+	      	</span>
+        <span>我的</span>
+      </a>
     </div>
   </div>
+
 </template>
 
-<script>
-    $(function () {
-        //默认active
-        $(".tab_content").hide(); //隐藏全部的tab菜单内容
-        $("ul.tabs li:first").addClass("active").show(); //对第一个li标签添加class="active属性"
-        $(".tab_content:first").show(); //显示第一个tab内容
-
-        //点击事件
-        $("ul.tabs li").click(function () {
-            $("ul.tabs li").removeClass("active"); //移除class="active"属性
-            $(this).addClass("active"); //添加class="active"到选择标签中
-            $(".tab_content").hide(); //隐藏全部标签内容
-            var activeTab = $(this).find("a").attr("href"); //找到所属属性值来识别活跃选项卡和内容
-            $(activeTab).fadeIn(); //使内容消失
-            return false;
-        });
-    });
+<script type="text/javascript">
+    export default {
+        name: 'cy-home',
+        props: ['idx'],
+        data() {
+            return {
+                lists: [{
+                    cls: "home",
+                    name: "首页",
+                    push: "/home",
+                    icon: "../static/home.png",
+                    iconSelect: "../static/home_select.png"
+                },
+                    {
+                        cls: "shares",
+                        name: "股票",
+                        push: "/shares",
+                        icon: "../static/home.png",
+                        iconSelect: "../static/home_select.png"
+                    },
+                    {
+                        cla: "community",
+                        name: "社区",
+                        push: "/community",
+                        icon: "/static/home.png",
+                        iconSelect: "../static/home_select.png"
+                    },
+                    {
+                        cla: "mine",
+                        name: "我的",
+                        push: "/mine",
+                        icon: "../static/home.png",
+                        iconSelect: "../static/home_select.png"
+                    }],
+                playerOptions: {
+                    //播放速度
+                    playbackRates: [0.5, 1.0, 1.5, 2.0],
+                    //如果true,浏览器准备好时开始回放。
+                    autoplay: false,
+                    // 默认情况下将会消除任何音频。
+                    muted: false,
+                    // 导致视频一结束就重新开始。
+                    loop: false,
+                    // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+                    preload: 'auto',
+                    language: 'zh-CN',
+                    // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+                    aspectRatio: '16:9',
+                    // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+                    fluid: true,
+                    sources: [{
+                        //类型
+                        type: "video/mp4",
+                        //url地址
+                        src: '/static/video/wechatLove.mp4'
+                    }],
+                    //你的封面地址
+                    poster: '',
+                    //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+                    notSupportedMessage: '此视频暂无法播放，请稍后再试',
+                    controlBar: {
+                        timeDivider: true,
+                        durationDisplay: true,
+                        remainingTimeDisplay: false,
+                        //全屏按钮
+                        fullscreenToggle: true
+                    }
+                }
+            }
+        },
+        methods: {
+            goTo(path) {
+                this.$router.replace(path)
+            }
+        }
+    }
 
 </script>
 
 <style scoped>
   .model {
-    background: #FFFFFF;
     width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .footer_guide {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    z-index: 10;
+  }
+
+  .guide_item {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    color: #999999;
+  }
+
+  .on {
+    color: #02a774
+  }
+
+  span {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .iconfont {
+    font-size: 22px;
+  }
+
+  .model-div-row {
+    position: relative;
+    /*margin-top: 50px;*/
+    min-height: 200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    /*padding-left: 10%;*/
+    /*padding-right: 10%;*/
+  }
+
+  .model-div-row-div {
+    width: 33.3%;
+    height: 100px;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+  }
+
+  .model-div-row-center {
+    width: 80%;
+    position: relative;
     height: auto;
+    margin: 0 auto;
+  }
+
+  .model-div-row-img {
+    display: inline-block;
+    width: 80%;
+  }
+  .model-div-row-center-span{
+    display: block;
+    font-family: 楷体;
+    margin-top: 10px;
   }
 
 

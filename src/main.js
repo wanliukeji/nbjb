@@ -17,6 +17,9 @@ import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'  //引用 ivew 全局样式
 
+import VueVideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
+
 //页面跳转
 
 
@@ -31,6 +34,7 @@ Vue.use(ElementUI) //使用elementUI
 Vue.use(iView);
 Vue.use(VueRouter);
 
+Vue.use(VueVideoPlayer)
 // Vue.use(axios);
 // Vue.prototype.$http=axios;
 // Vue.prototype.$http.get=VueResource;
