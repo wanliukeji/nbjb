@@ -1033,7 +1033,8 @@ checkBlind();</script>
 
         //实时监听用户输入值
         $jq("#company_name").bind('input porpertychange', function (e) {
-           var lastTime = e.timeStamp;
+            var lastTime = e.timeStamp;
+            console.log('已过: 0.5秒' );
             setTimeout(function () {
                 if (lastTime - e.timeStamp == 0) {
                     // alert("0.5秒内没有修改了，可以发送请求了");
@@ -1043,7 +1044,8 @@ checkBlind();</script>
         });
 
         $jq('#company_name').keyup(function (e) {
-           var lastTime = e.timeStamp;
+            var lastTime = e.timeStamp;
+            console.log('已过: 0.5秒' );
             setTimeout(function () {
                 if (lastTime - e.timeStamp == 0) {
                     // alert("0.5秒内没再输入，可以发送请求了");
