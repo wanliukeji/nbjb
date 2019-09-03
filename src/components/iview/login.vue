@@ -2,7 +2,7 @@
   <div class="model">
     <i class="close-left">
       <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-           p-id="1729" width="32" height="32">
+           p-id="1729" width="20" height="20">
         <path
           d="M583.168 523.776L958.464 148.48c18.944-18.944 18.944-50.176 0-69.12l-2.048-2.048c-18.944-18.944-50.176-18.944-69.12 0L512 453.12 136.704 77.312c-18.944-18.944-50.176-18.944-69.12 0l-2.048 2.048c-19.456 18.944-19.456 50.176 0 69.12l375.296 375.296L65.536 899.072c-18.944 18.944-18.944 50.176 0 69.12l2.048 2.048c18.944 18.944 50.176 18.944 69.12 0L512 594.944 887.296 970.24c18.944 18.944 50.176 18.944 69.12 0l2.048-2.048c18.944-18.944 18.944-50.176 0-69.12L583.168 523.776z"
           p-id="1730" fill="#8a8a8a"></path>
@@ -29,24 +29,24 @@
 
 <style scoped>
   .model {
-    margin-top: 20%;
-    height: auto;
+    height: 100%;
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
     position: relative;
+    top: 0;
+    padding-top: 20px;
   }
 
   .close-left {
-    width: 50px;
-    height: 50px;
+    width: 10px;
+    height: 10px;
     position: absolute;
     left: 10%;
-    top: -50px;
   }
 
   h1 {
-    font-size: 8em;
+    font-size: 2em;
     font-family: 楷体;
     position: relative;
     margin-top: 20%;
@@ -63,7 +63,7 @@
     white-space: nowrap;
     width: 100%;
     background: none;
-    font-size: 3em;
+    font-size: 1em;
     margin-top: 20%;
     border-bottom: 4px #a8a8a8 solid;
     padding: 20px;
@@ -75,7 +75,7 @@
     height: auto;
     width: 100%;
     margin-top: 30%;
-    font-size: 5em;
+    font-size: 1.3em;
     background: #FFFFFF;
     border: 1px black solid;
     padding-top: 10px;
@@ -90,7 +90,7 @@
   }
 
   .password-input-p-left, .password-input-p-right {
-    font-size: 3em;
+    font-size: 0.8em;
   }
 
   .password-input-p-left {

@@ -1,20 +1,25 @@
 <template lang="html">
   <div class="container-body">
-<!--    -->
-<!--    <login></login>-->
-<!--<model-firt></model-firt>-->
-<!--<cy-home></cy-home>-->
-    <mine></mine>
-<!--    -->
-<!--    <top></top>-->
-<!--    <example></example>-->
-<!--    <menu-nav></menu-nav>-->
-<!--    <table-nav></table-nav>-->
-<!--    <img-model></img-model>-->
+    <!--    -->
+<!--        <login></login>-->
+    <!--<model-firt></model-firt>-->
+    <!--<cy-home></cy-home>-->
+    <!--    <mine></mine>-->
 
-<!--    <example-model></example-model>-->
-<!--    <footer-table></footer-table>-->
-<!--    <footer-nav></footer-nav>-->
+    <!--    <class></class>-->
+    <me></me>
+
+
+    <!--    -->
+    <!--    <top></top>-->
+    <!--    <example></example>-->
+    <!--    <menu-nav></menu-nav>-->
+    <!--    <table-nav></table-nav>-->
+    <!--    <img-model></img-model>-->
+
+    <!--    <example-model></example-model>-->
+    <!--    <footer-table></footer-table>-->
+    <!--    <footer-nav></footer-nav>-->
   </div>
 </template>
 <script>
@@ -30,6 +35,8 @@
     import ModelFirt from "./components/iview/model-firt";
     import CyHome from "./components/iview/Cy-home";
     import Mine from "./components/iview/mine";
+    import Class from "./components/iview/class";
+    import Me from "./components/iview/me";
 
     export default {
         data() {
@@ -39,6 +46,8 @@
             };
         },
         components: {
+            Me,
+            Class,
             Mine,
             CyHome,
             ModelFirt,
@@ -54,9 +63,7 @@
         },
         mounted() {
         },
-        methods: {
-
-        }
+        methods: {}
     };
 </script>
 
@@ -83,7 +90,7 @@
     position: relative;
     text-align: center;
     min-height: 100%;
-    background-color: #f6f6f6;
+    /*background-color: #f6f6f6;*/
     width: 100%;
     /*min-width: 1200px;*/
   }
@@ -111,7 +118,7 @@
     width: 100%;
     /*padding: 2rem 0;*/
     position: relative;
-    background: #FFFFFF;
+    /*background: #FFFFFF;*/
     /*top: 0px;*/
     /*min-height: 1800px;*/
     height: 100%;
