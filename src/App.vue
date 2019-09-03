@@ -1,14 +1,14 @@
 <template lang="html">
   <div class="container-body">
     <!--    -->
-<!--        <login></login>-->
+    <!--        <login></login>-->
     <!--<model-firt></model-firt>-->
     <!--<cy-home></cy-home>-->
     <!--    <mine></mine>-->
 
     <!--    <class></class>-->
-    <me></me>
-
+    <!--    <me></me>-->
+    <good></good>
 
     <!--    -->
     <!--    <top></top>-->
@@ -37,6 +37,7 @@
     import Mine from "./components/iview/mine";
     import Class from "./components/iview/class";
     import Me from "./components/iview/me";
+    import Good from "./components/iview/good";
 
     export default {
         data() {
@@ -46,6 +47,7 @@
             };
         },
         components: {
+            Good,
             Me,
             Class,
             Mine,
