@@ -15,13 +15,6 @@
   <base href="https://bbs.cnnb.com/"/>
   <link rel="stylesheet" type="text/css" href="data/cache/style_13_common.css?Kb0"/>
   <link rel="stylesheet" type="text/css" href="data/cache/style_13_home_spacecp.css?Kb0"/>
-
-  <!--  IE 8以上-->
-<!--  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js" type="text/javascript"></script>-->
-
-  <!--  IE 8以下-->
-  <script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
-
   <script type="text/javascript">var STYLEID = '13', STATICURL = 'static/', IMGDIR = 'template/weixia_cms/weixia/src/',
       VERHASH = 'Kb0', charset = 'utf-8', discuz_uid = '8', cookiepre = 'oYZ9_3477_', cookiedomain = '.cnnb.com',
       cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread',
@@ -646,7 +639,6 @@
 });
 
 checkBlind();</script>
-
 <script type="text/javascript" charset="utf-8">
     //识别浏览器版本
     var browser = function myBrowser() {
@@ -721,10 +713,8 @@ checkBlind();</script>
         var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
         var invoice_code_reg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,23}$/;
         var regNumber = /\d+/;
-        var regString = /[a-zA-Z]+/;
-        var regNumStrAbc = /^[\\/x{4e00}\-\/x{9fa5}/A-Za-z0-9]+$/u;
-        var company_address_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
-        var contact_name_reg = /^[x{4e00}x{9fa5}A-Za-z0-9]+$/u;
+        var regStringAbc = /^[a-zA-Z\u4e00-\u9fa5]+$/;
+        var regNumStrAbc = /^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$u/;
 
         var myMap = new Map();
         var items = getList(); //测试数据 可删除
@@ -735,7 +725,7 @@ checkBlind();</script>
 
         jQuery('#company_name').blur(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -744,7 +734,7 @@ checkBlind();</script>
 
         jQuery('#company_name').change(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -753,7 +743,7 @@ checkBlind();</script>
 
         jQuery('#invoice_code').blur(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -762,7 +752,7 @@ checkBlind();</script>
 
         jQuery('#bank_code').blur(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -771,7 +761,7 @@ checkBlind();</script>
 
         jQuery('#bank').blur(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -780,7 +770,7 @@ checkBlind();</script>
 
         jQuery('#company_address').blur(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -789,7 +779,7 @@ checkBlind();</script>
 
         jQuery('#contact_name').blur(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -798,7 +788,7 @@ checkBlind();</script>
 
         jQuery('#amount').blur(function () {
             //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
             } else {
                 CY_ERROR_CSS;
@@ -831,7 +821,7 @@ checkBlind();</script>
                 } else {
                     jQuery('#company_name_font').html(success);
                     flag_a = true;
-                    if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+                    if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                         CY_SUCCESS_CSS();
                     }
                 }
@@ -866,7 +856,7 @@ checkBlind();</script>
                 jQuery('.hide-select').hide();
 
                 //正则判断
-                if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+                if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                     CY_SUCCESS_CSS();
                 }
 
@@ -885,14 +875,14 @@ checkBlind();</script>
 
         //提交
         jQuery('#cy_form').submit(function () {
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 return true;
             }
             return false;
         });
 
 
-        function exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc) {
+        function exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc) {
             var bool_b, bool_d, bool_e, bool_f, bool_g = false;
             var bool_a = false;
             var bool_c = false;
@@ -945,10 +935,10 @@ checkBlind();</script>
             }
             ;
 
-            //SUCCESS
+            // SUCCESS
             if (!is_Empty(bank)) {
-                if (reg_test(/^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$/u, bank)) {
-                    jQuery('#bank_font').html(error + '<em ' + style + ' >开户行只能由汉字、字母、数字组成</em>');
+                if (reg_test(regNumStrAbc, bank)) {
+                    jQuery('#bank_font').html(error + '<em ' + style + ' >开户行由汉字、字母、数字组成</em>');
                     CY_ERROR_CSS();
                 } else {
                     jQuery('#bank_font').html(success);
@@ -962,8 +952,8 @@ checkBlind();</script>
 
             //SUCCESS
             if (!is_Empty(contact_name)) {
-                if (!reg_test(/^[a-zA-Z\u4e00-\u9fa5]+$/, contact_name)) {
-                    jQuery('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名只能由汉字、字母组成</em>');
+                if (!reg_test(regStringAbc, contact_name)) {
+                    jQuery('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名由汉字、字母组成</em>');
                     CY_ERROR_CSS();
                 } else {
                     jQuery('#contact_name_font').html(success);
@@ -978,7 +968,7 @@ checkBlind();</script>
             //SUCCESS
             if (!is_Empty(company_address)) {
                 if (reg_test(regNumStrAbc, company_address)) {
-                    jQuery('#company_address_font').html(error + '<em ' + style + ' >公司地址只能由汉字、字母、数字组成</em>');
+                    jQuery('#company_address_font').html(error + '<em ' + style + ' >公司地址由汉字、字母、数字组成</em>');
                     CY_ERROR_CSS();
                 } else {
                     jQuery('#company_address_font').html(success);
@@ -1064,9 +1054,8 @@ checkBlind();</script>
         jQuery("#company_name").bind('input porpertychange', function (e) {
             var lastTime = e.timeStamp;
             console.log('已过: 0.5秒');
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
-                alert(11);
                 setTimeout(function () {
                     if (lastTime - e.timeStamp == 0) {
                         // alert("0.5秒内没有修改了，可以发送请求了");
@@ -1082,9 +1071,8 @@ checkBlind();</script>
         jQuery('#company_name').keyup(function (e) {
             var lastTime = e.timeStamp;
             console.log('已过: 0.5秒');
-            if (exec(company_name_reg, invoice_code_reg, company_address_reg, contact_name_reg, regNumber, regString, regNumStrAbc)) {
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
                 CY_SUCCESS_CSS();
-                alert(22);
                 setTimeout(function () {
                     if (lastTime - e.timeStamp == 0) {
                         // alert("0.5秒内没再输入，可以发送请求了");
