@@ -25,7 +25,7 @@
     </div>
 
     <span style="height: 2px; background: #bcbcbc;"></span>
-    <button class="login-btn">去付款</button>
+    <button class="login-btn" @click="buyTo">去付款</button>
   </div>
 </template>
 
@@ -35,6 +35,9 @@
         methods: {
             goTo: function () {
                 window.history.back();
+            },
+            buyTo: function () {
+                this.$router.push({name:'address'});
             }
         }
     }

@@ -62,6 +62,14 @@ export default new Router({
         title: "个人中心"
       },
       component: () => import("@/components/iview/mine")
+    },
+    {
+      path: '/address',
+      name: 'address',
+      meta: {
+        title: "送货地址"
+      },
+      component: () => import("@/components/iview/Address")
     }
   ],
   beforeEach:function () {

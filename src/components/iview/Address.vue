@@ -1,19 +1,15 @@
 <template>
   <div class="model">
-    <i class="close-left">
-      <svg t="1567426263402" class="icon" style="position: absolute;" viewBox="0 0 1024 1024" version="1.1"
-           xmlns="http://www.w3.org/2000/svg"
-           p-id="1729" width="13" height="13">
+    <i class="close-left" @click="goTo">
+      <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+           p-id="1713" width="16" height="16">
         <path
-          d="M583.168 523.776L958.464 148.48c18.944-18.944 18.944-50.176 0-69.12l-2.048-2.048c-18.944-18.944-50.176-18.944-69.12 0L512 453.12 136.704 77.312c-18.944-18.944-50.176-18.944-69.12 0l-2.048 2.048c-19.456 18.944-19.456 50.176 0 69.12l375.296 375.296L65.536 899.072c-18.944 18.944-18.944 50.176 0 69.12l2.048 2.048c18.944 18.944 50.176 18.944 69.12 0L512 594.944 887.296 970.24c18.944 18.944 50.176 18.944 69.12 0l2.048-2.048c18.944-18.944 18.944-50.176 0-69.12L583.168 523.776z"
-          p-id="1730" fill="#8a8a8a"></path>
+          d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z"
+          fill="#d81e06" p-id="1714"></path>
       </svg>
     </i>
-
     <h1>地址管理</h1>
-
     <hr>
-
     <div class="model-div-row">
       <span class="model-text">江苏省
         &nbsp;南京市
@@ -22,7 +18,7 @@
         &nbsp;201单元303号</span>
     </div>
 
-    <div class="model-div-row">
+    <div class="model-div-row"  @click="dialogFormVisible = true">
       <span class="model-div-row-span">添加地址</span>
       <div class="model-div-row-btn">
         <svg t="1567483051512" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -34,13 +30,85 @@
       </div>
     </div>
 
+    <!-- Form -->
+    <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
+      <el-form :model="form">
+        <el-form-item label="省份:" :label-width="formLabelWidth">
+          <el-select v-model="form.region" placeholder="请选择活动区域">
+            <el-option label="北京市" value="shanghai"></el-option>
+            <el-option label="上海市" value="beijing"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="城市:" :label-width="formLabelWidth">
+          <el-select v-model="form.region" placeholder="请选择活动区域">
+            <el-option label="东城区" value="shanghai"></el-option>
+            <el-option label="海淀区" value="beijing"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="乡镇:" :label-width="formLabelWidth">
+          <el-select v-model="form.region" placeholder="请选择活动区域">
+            <el-option label="东城区" value="shanghai"></el-option>
+            <el-option label="海淀区" value="beijing"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="门牌号:" :label-width="formLabelWidth">
+          <el-input v-model="form.name" ></el-input>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+      </div>
+    </el-dialog>
 
   </div>
+
 </template>
 
 <script>
     export default {
-        name: "Address"
+        name: "Address",
+        data () {
+            return {
+                value: '',
+                ridData: [{
+                    date: '2016-05-02',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }, {
+                    date: '2016-05-04',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }, {
+                    date: '2016-05-01',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }, {
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1518 弄'
+                }],
+                dialogTableVisible: false,
+                dialogFormVisible: false,
+                form: {
+                    name: '',
+                    region: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: ''
+                },
+                formLabelWidth: '120px'
+            }
+        },
+        methods: {
+            goTo: function () {
+                alert(11);
+                window.history.back();
+            }
+        }
     }
 </script>
 
