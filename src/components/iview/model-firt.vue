@@ -1,5 +1,5 @@
 <template>
-  <div class="model" v-show="num == 1 ">
+  <div class="model" v-if="num == 2">
     <i class="close-left">
       <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
            p-id="1729" width="16" height="16">
@@ -27,6 +27,7 @@
         <input type="checkbox" class="input-checkbox">
       </p>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -35,15 +36,15 @@
         name: "model-firt",
         data() {
             return {
-                num: this.$route.params.num
+                num: this.$route.query.num
             }
         },
         created() {
-            alert(this.num);
+            console.log(this.$route.query);
         },
         methods: {
             black: function () {
-                this.$router.push({path: '/login'})
+                this.$router.go(-1);
             }
         }
     }

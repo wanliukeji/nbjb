@@ -429,7 +429,7 @@
           <li class="a"><a href="https://bbs.cnnb.com/home.php?mod=spacecp&amp;ac=credit&amp;op=log">发票开户</a></li>
         </ul>
         <script src="data/cache/calendar.js?Kb0" type="text/javascript"></script>
-        <form method="post" id="cy_form" action="#">
+        <form method="post" id="cy_form" action="#" autocomplete="off">
           <div class="exfm" style="margin-top: 0;">
             <table cellspacing="0" cellpadding="0" class="cy-table-div">
               <tr>
@@ -674,32 +674,7 @@ checkBlind();</script>
         var items = getList(); //测试数据 可删除
 
         $jq('#company_name').focus(function () {
-            var $parent = $jq(this);
-            var $dom = $parent.next();
-            $dom.html('');
-            $jq.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                dataType: "json",
-                async: true,
-                // data: {"id": "value"},
-                type: "GET", //请求方式
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    appendToHtml(res, $dom);
-                    showChilden($parent);
-                    selectHover();
-                    selected($parent, myMap);
-                },
-                error: function (err) {
-                    //异常函数内调用函数 测试使用 可删除
-                    appendToHtml(err, $dom);
-                    showChilden($parent);
-                    selectHover();
-                    selected($parent, myMap);
-                    console.log(err);
-                }
-            });
-
+            ajax_http();
         });
 
         $jq('#company_name').blur(function () {
@@ -980,9 +955,6 @@ checkBlind();</script>
         }
 
         function reg_test(reg, text) {
-            // console.log('\n'
-            //     + 'text = ' + text +
-            //     '\n' + 'reg = ' + reg + '\n' + reg.test(text));
             if (reg.test(text)) {
                 return true;
             }
@@ -1032,9 +1004,10 @@ checkBlind();</script>
         }
 
         //实时监听用户输入值
+        //输入框值实时更改后停顿0.5秒触发
         $jq("#company_name").bind('input porpertychange', function (e) {
             var lastTime = e.timeStamp;
-            console.log('已过: 0.5秒' );
+            console.log('已过: 0.5秒');
             setTimeout(function () {
                 if (lastTime - e.timeStamp == 0) {
                     // alert("0.5秒内没有修改了，可以发送请求了");
@@ -1042,10 +1015,10 @@ checkBlind();</script>
                 }
             }, 500);
         });
-
+        //键盘敲击停顿0.5秒触发
         $jq('#company_name').keyup(function (e) {
             var lastTime = e.timeStamp;
-            console.log('已过: 0.5秒' );
+            console.log('已过: 0.5秒');
             setTimeout(function () {
                 if (lastTime - e.timeStamp == 0) {
                     // alert("0.5秒内没再输入，可以发送请求了");
@@ -1075,10 +1048,10 @@ checkBlind();</script>
                 },
                 error: function (err) {
                     //异常函数内调用函数 测试使用 可删除
-                    // appendToHtml(err, $dom);
-                    // showChilden($parent);
-                    // selectHover();
-                    // selected($parent, myMap);
+                    appendToHtml(err, $dom);
+                    showChilden($parent);
+                    selectHover();
+                    selected($parent, myMap);
                     console.log(err);
                 }
             });

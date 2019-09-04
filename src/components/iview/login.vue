@@ -36,7 +36,7 @@
         methods: {
             go: function () {
                 this.num = 2;
-                this.$router.push({path: '/model-firt', params: {num: this.num}})
+                this.$router.push({path: '/model-firt', query: {num: this.num}})
             }
         }
     }
