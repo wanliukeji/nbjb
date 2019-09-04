@@ -108,6 +108,16 @@
 </script>
 
 <style lang="css">
+  .v-enter,
+  .v-leave-to{
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  .v-enter-active,
+  .v-leave-active{
+    transition: all 0.5s ease;
+  }
+
   * {
     word-break: break-word;
     margin: 0 auto;
