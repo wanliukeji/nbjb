@@ -19,7 +19,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -36,7 +36,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -53,7 +53,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -75,7 +75,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -92,7 +92,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -109,7 +109,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -130,7 +130,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -147,7 +147,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -164,7 +164,7 @@
           <div class="model-div-row">
             <div class="model-div-row-center">
               <div class="model-div-row-left">
-                <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+                <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
                 <span style="margin-left: 50px;">CHENYU</span>
               </div>
               <div class="model-div-row-right">
@@ -197,6 +197,10 @@
 </script>
 
 <style scoped>
+
+  * {
+    background-color: #FFFFFF;
+  }
   .model {
     height: 100%;
     width: 100%;
@@ -237,6 +241,10 @@
     margin: 0 auto;
     height: auto;
     padding: 10px;
+    display: block;
+    float: left;
+    background-color: #FFFFFF;
+
   }
 
   .model-div-row-center {
@@ -279,10 +287,6 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-  }
-
-  .model-div-row-left {
-
   }
 
   .model-div-row-right {

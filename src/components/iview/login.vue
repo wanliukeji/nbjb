@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="model" v-show="component_name == 'login'">
     <div class="modal-body">
-      <img src="http://pxasartjo.bkt.clouddn.com/Snipaste_2019-09-04_16-25-19.png" alt="" width="150" height="150">
+      <img class="modal-body-logo" src="http://pxasartjo.bkt.clouddn.com/Snipaste_2019-09-04_16-25-19.png" alt="" width="180" height="150">
       <input placeholder="输入手机号" type="text" class="username-input"/>
       <input placeholder="输入密码" type="password" class="password-input"/>
       <p>
@@ -84,12 +84,12 @@
   .login-btn {
     height: auto;
     width: 85%;
-    margin-top: 30%;
+    margin-top: 20%;
     font-size: 1.2em;
     background: #FFFFFF;
     /*border: 1px black solid;*/
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
@@ -123,4 +123,7 @@
     background-color: #FFFFFF;
   }
 
+  .modal-body-logo {
+    margin-bottom: -30px;
+  }
 </style>
