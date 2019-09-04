@@ -36,8 +36,8 @@
                       :options="playerOptions">
         </video-player>
       </div>
-      <div class="model-div-row">
-        <div class="model-div-row-center">
+      <div class="model-div-row" @click="buyTo">
+        <div class="model-div-row-center" >
           <div class="model-div-row-div">
             <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                  p-id="2847" width="40" height="40">
@@ -181,7 +181,7 @@
                         desc:"分类"
                     },
                     {
-                        router:"/personal",
+                        router:"/mine",
                         desc:"个人中心"
                     },
                 ]
@@ -193,6 +193,9 @@
         methods: {
             route: function () {
 
+            },
+            buyTo: function () {
+                this.$router.push({name: 'good'});
             }
         }
     }

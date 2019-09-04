@@ -46,6 +46,22 @@ export default new Router({
         title: "个人中心"
       },
       component: () => import("@/components/iview/personal")
+    },
+    {
+      path: '/good',
+      name: 'good',
+      meta: {
+        title: "商品"
+      },
+      component: () => import("@/components/iview/good")
+    },
+    {
+      path: '/mine',
+      name: 'mine',
+      meta: {
+        title: "个人中心"
+      },
+      component: () => import("@/components/iview/mine")
     }
   ],
   beforeEach:function () {

@@ -8,7 +8,7 @@
       <div class="model-div-row">
         <div class="model-div-row-center">
           <h4 style="font-family: 楷体; margin-bottom: 20px;">日用品</h4>
-          <div class="model-div-row-div">
+          <div class="model-div-row-div" @click="goTo">
             <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                  p-id="2847" width="40" height="40">
               <path
@@ -202,7 +202,7 @@
                         desc: "分类"
                     },
                     {
-                        router: "/personal",
+                        router: "/mine",
                         class: "icon-personal",
                         desc: "个人中心"
                     },
@@ -210,8 +210,8 @@
             }
         },
         methods: {
-            goTo(path) {
-                this.$router.replace(path)
+            goTo: function () {
+                    this.$router.push({name: 'good'});
             }
         }
     }

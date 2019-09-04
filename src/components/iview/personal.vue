@@ -2,7 +2,10 @@
   <div class="model">
     <Layout>
       <Header class="model-head-span">
-        个人中心
+        <i class="close-left" @click="goTo">
+          <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1713" width="16" height="16"><path d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z" fill="#d81e06" p-id="1714"></path></svg>
+        </i>
+        设置
       </Header>
       <div class="model-div-row">
         <div class="model-div-row-center">
@@ -88,11 +91,6 @@
         </div>
       </div>
     </Layout>
-    <nav class="model-nav">
-      <router-link v-for="item in nav" :to=item.router active-class="active" class="tab">
-        <div class="nav_item">{{item.desc}}</div>
-      </router-link>
-    </nav>
   </div>
 </template>
 
@@ -124,6 +122,9 @@
             route: function () {
                 this.component_name = 'home';
                 this.$router.push({name: 'login', query: {component_name: 'login'}});
+            },
+            goTo: function () {
+                window.history.back();
             }
         }
     }
@@ -272,14 +273,12 @@
     border-top:1px #f4f4f4 solid ;
   }
 
-  .nav_item {
-    display: flex;
-    flex: 1;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 5px;
-    /*color: #999999;*/
+  .close-left {
+    width: 10px;
+    height: 10px;
+    margin-top: 25px;
+    position: absolute;
+    left: 20%;
   }
 
 </style>
