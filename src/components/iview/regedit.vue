@@ -1,6 +1,6 @@
 <template>
-  <div class="model" v-if="num == 2">
-    <i class="close-left">
+  <div class="model" v-show="component_name == 'regedit'">
+    <i class="close-left" @click="go">
       <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
            p-id="1729" width="16" height="16">
         <path
@@ -20,31 +20,30 @@
         <span class="password-input-p-left">已有账号? 去登录</span>
         <span class="password-input-p-right">忘记密码</span>
       </p>
-      <button class="login-btn" @click="black()">注册</button>
+      <button class="login-btn" @click="route()">注册</button>
     </div>
     <div class="model-foot">
       <p class="model-foot-p">注册即代表你已经统一云上商城用户协议
         <input type="checkbox" class="input-checkbox">
       </p>
     </div>
-    <router-view></router-view>
   </div>
 </template>
 
 <script>
     export default {
-        name: "model-firt",
+        name: "regedit",
         data() {
             return {
-                num: this.$route.query.num
+                component_name : ''
             }
         },
         created() {
-            console.log(this.$route.query);
+            this.component_name = '';
         },
         methods: {
-            black: function () {
-                this.$router.go(-1);
+            route: function () {
+                this.$router.push({name: 'home'});
             }
         }
     }

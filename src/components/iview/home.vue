@@ -1,10 +1,19 @@
 <template>
   <div class="model">
+<!--    v-show="component_name == 'home'"-->
     <Layout>
-      <Header style="background: #FFFFFF; height: 40px; text-align: center; max-width: 100%;">
-
+      <Header class="model-head-span">
+        首页
       </Header>
-      <Content style=" height: auto; margin-bottom: 10px;">
+
+      <div class="model-div-row" style="margin-bottom: 10px;">
+        <video-player class="video-player vjs-custom-skin model-div-row-img" style="width: 80%; margin: 0 auto;"
+                      ref="videoPlayer"
+                      :playsinline="true"
+                      :options="playerOptions">
+        </video-player>
+      </div>
+      <div class="model-div-row" style="margin-bottom: 10px;">
         <Carousel autoplay loop>
           <CarouselItem>
             <div class="demo-carousel">
@@ -27,15 +36,6 @@
             </div>
           </CarouselItem>
         </Carousel>
-      </Content>
-
-      <div class="model-div-row" style="margin-bottom: 10px;">
-        <video-player class="video-player vjs-custom-skin model-div-row-img" style="width: 80%; margin: 0 auto;"
-                      ref="videoPlayer"
-                      :playsinline="true"
-                      :options="playerOptions">
-        </video-player>
-<!--        <img src="/static/image/timg.jpg" alt="" class="model-div-row-img">-->
       </div>
 
       <div class="model-div-row">
@@ -100,75 +100,45 @@
 
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
-        </div>
-        <div class="model-div-row">
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
 
-        </div>
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+          <div class="model-div-row-div">
+            <svg t="1567470857434" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="2847" width="40" height="40">
+              <path
+                d="M1021.7472 356.5568 1019.392 358.8096 525.7216 1017.1392 521.1136 1021.7472 518.8608 1021.7472C517.3248 1023.2832 515.072 1024 512 1024c-3.072 0-5.3248-0.7168-6.8608-2.2528L502.8864 1021.7472 498.2784 1017.1392 4.608 358.8096c-1.536 0-2.2528-0.7168-2.2528-2.2528L2.3552 354.304C0.7168 352.768 0 351.232 0 349.696L0 347.4432 0 342.8352l2.2528-2.2528c0-1.4336 0.7168-3.072 2.2528-4.608L4.5056 333.7216l256-256c3.072-1.4336 5.3248-2.2528 6.8608-2.2528 1.536-1.4336 3.7888-2.2528 6.8608-2.2528l475.4432 0c3.072 0 5.3248 0.8192 6.8608 2.2528 1.536 0 3.072 0.8192 4.608 2.2528l2.2528 0 256 256c1.536 3.072 2.2528 5.3248 2.2528 6.8608L1024 342.8352l0 4.608 0 2.2528L1021.7472 354.304 1021.7472 356.5568zM54.8864 365.6704 452.608 896 260.608 365.6704 54.8864 365.6704zM256 134.8608 61.7472 329.1136 256 329.1136 256 134.8608zM470.8352 109.6704 292.5568 109.6704l0 192L470.8352 109.6704zM299.4176 365.6704 512 950.8864l212.5824-585.1136L299.4176 365.7728zM708.608 329.1136 512 118.8864 315.392 329.1136 708.608 329.1136zM731.4432 109.6704 553.1648 109.6704l178.2784 192L731.4432 109.6704zM571.392 896l397.7216-530.3296L763.392 365.6704 571.392 896zM962.2528 329.1136 768 134.8608l0 194.2528L962.2528 329.1136z"
+                p-id="2848" fill="#d81e06"></path>
+            </svg>
 
+            <span class="model-div-row-center-span">红钻会员</span>
+          </div>
+        </div>
+        <div class="model-div-row" >
+        </div>
       </div>
-
-
     </Layout>
-
-    <div class="footer_guide">
-      <a href="javascript:;" class="guide_item" :class="{on : '/msite'===$route.path}" @click="goTo('/msite')">
-	      	<span class="item_icon">
-	        	<i class="iconfont icon-home"></i>
-	      	</span>
-        <span>首页</span>
-      </a>
-      <a href="javascript:;" class="guide_item" :class="{on : $route.path.indexOf('/search')!=-1}"
-         @click="goTo('/search')">
-	      	<span class="item_icon">
-	        	<i class="iconfont icon-fenlei"></i>
-	      	</span>
-        <span>分类</span>
-      </a>
-      <a href="javascript:;" class="guide_item" :class="{on : '/profile'===$route.path}" @click="goTo('/profile')">
-	      	<span class="item_icon">
-	        	<i class="iconfont icon-mine"></i>
-	      	</span>
-        <span>我的</span>
-      </a>
-    </div>
+    <nav class="model-nav">
+      <router-link v-for="item in nav" :to=item.router active-class="active" class="tab">
+        <div  class="nav_item">{{item.desc}}</div>
+      </router-link>
+    </nav>
   </div>
-
 </template>
-
 <script type="text/javascript">
     export default {
-        name: 'cy-home',
+        name: 'home',
         props: ['idx'],
         data() {
             return {
-                lists: [{
-                    cls: "home",
-                    name: "首页",
-                    push: "/home",
-                    icon: "../static/home.png",
-                    iconSelect: "../static/home_select.png"
-                },
-                    {
-                        cls: "shares",
-                        name: "股票",
-                        push: "/shares",
-                        icon: "../static/home.png",
-                        iconSelect: "../static/home_select.png"
-                    },
-                    {
-                        cla: "community",
-                        name: "社区",
-                        push: "/community",
-                        icon: "/static/home.png",
-                        iconSelect: "../static/home_select.png"
-                    },
-                    {
-                        cla: "mine",
-                        name: "我的",
-                        push: "/mine",
-                        icon: "../static/home.png",
-                        iconSelect: "../static/home_select.png"
-                    }],
+                component_name: this.$route.query.component_name,
                 playerOptions: {
                     //播放速度
                     playbackRates: [0.5, 1.0, 1.5, 2.0],
@@ -202,12 +172,31 @@
                         //全屏按钮
                         fullscreenToggle: true
                     }
-                }
+                },
+                nav:[
+                    {
+                        router:"/home",
+                        class:"icon-home",
+                        desc:"首页"
+                    },
+                    {
+                        router:"/class",
+                        class:"icon-service",
+                        desc:"分类"
+                    },
+                    {
+                        router:"/personal",
+                        class:"icon-personal",
+                        desc:"个人中心"
+                    },
+                ]
             }
         },
+        created() {
+        },
         methods: {
-            goTo(path) {
-                this.$router.replace(path)
+            route: function () {
+                // this.$router.push({name: 'home', query: {component_name: 'home'}})
             }
         }
     }
@@ -221,7 +210,19 @@
     margin: 0 auto;
   }
 
-  .footer_guide {
+  .model-head-span {
+    background-color: #FFFFFF;
+    height: auto;
+    vertical-align: middle;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 100%;
+    font-size: 24px;
+    font-family: 楷体;
+  }
+
+  .model-nav {
     position: fixed;
     z-index: 100;
     left: 0;
@@ -232,9 +233,11 @@
     height: 50px;
     display: flex;
     z-index: 10;
+    padding-top: 8px;
+    border-top:1px #f4f4f4 solid ;
   }
 
-  .guide_item {
+  .nav_item {
     display: flex;
     flex: 1;
     text-align: center;
@@ -244,18 +247,10 @@
     color: #999999;
   }
 
-  .on {
-    color: #02a774
-  }
-
   span {
     font-size: 12px;
     margin-top: 2px;
     margin-bottom: 2px;
-  }
-
-  .iconfont {
-    font-size: 22px;
   }
 
   .model-div-row {
@@ -264,7 +259,7 @@
     min-height: 200px;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
     /*padding-left: 10%;*/
     /*padding-right: 10%;*/
   }
@@ -285,15 +280,16 @@
   }
 
 
-
   .model-div-row-img {
     display: inline-block;
     width: 80%;
   }
-  .model-div-row-center-span{
+
+  .model-div-row-center-span {
     display: block;
+    font-size: 16px;
     font-family: 楷体;
-    margin-top: 10px;
+    margin-top: 16px;
   }
 
 

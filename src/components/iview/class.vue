@@ -1,26 +1,6 @@
 <template>
   <div class="model">
-    <div class="footer_guide">
-      <a href="javascript:;" class="guide_item" :class="{on : '/msite'===$route.path}" @click="goTo('/msite')">
-	      	<span class="item_icon">
-	        	<i class="iconfont icon-home"></i>
-	      	</span>
-        <span>首页</span>
-      </a>
-      <a href="javascript:;" class="guide_item" :class="{on : $route.path.indexOf('/search')!=-1}"
-         @click="goTo('/search')">
-	      	<span class="item_icon">
-	        	<i class="iconfont icon-fenlei"></i>
-	      	</span>
-        <span>分类</span>
-      </a>
-      <a href="javascript:;" class="guide_item" :class="{on : '/profile'===$route.path}" @click="goTo('/profile')">
-	      	<span class="item_icon">
-	        	<i class="iconfont icon-mine"></i>
-	      	</span>
-        <span>我的</span>
-      </a>
-    </div>
+
   </div>
 </template>
 

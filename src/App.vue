@@ -1,7 +1,11 @@
 <template lang="html">
   <div class="container-body">
+
     <!--    -->
-        <login></login>
+
+    <login></login>
+    <router-view></router-view>
+
     <!--    <model-firt></model-firt>-->
     <!--    <cy-home></cy-home>-->
     <!--    <mine></mine>-->
@@ -15,18 +19,17 @@
     <!--    <team></team>-->
     <!--    <shop></shop>-->
 
-
     <!-- -------------------------------------------------------- -->
 
     <!--    <a href="" @click.prevent="comName='login'" v-if="comName == 'ModelFirt'">登录</a>-->
     <!--    <a href="" @click.prevent="comName='ModelFirt'" v-if="comName == 'login'">注册</a>-->
 
-    <!-- 通过 mode 属性,设置组件切换时候的 模式 -->
+    <!--    通过 mode 属性,设置组件切换时候的 模式   -->
     <!--    <transition mode="out-in">-->
     <!--      <component :is="comName"></component>-->
     <!--    </transition>-->
-    <!-- -------------------------------------------------------- -->
 
+    <!-- -------------------------------------------------------- -->
 
     <!--    -->
     <!--    <top></top>-->
@@ -34,7 +37,6 @@
     <!--    <menu-nav></menu-nav>-->
     <!--    <table-nav></table-nav>-->
     <!--    <img-model></img-model>-->
-
     <!--    <example-model></example-model>-->
     <!--    <footer-table></footer-table>-->
     <!--    <footer-nav></footer-nav>-->
@@ -51,11 +53,11 @@
     import ExampleModel from "./components/exampleModel";
     ////////////////////////////////////////////////////////////
     import Login from "./components/iview/login";
-    import ModelFirt from "./components/iview/model-firt";
-    import CyHome from "./components/iview/Cy-home";
+    import Regedit from "./components/iview/regedit";
+    import Home from "./components/iview/home";
     import Mine from "./components/iview/mine";
     import Class from "./components/iview/class";
-    import Me from "./components/iview/me";
+    import Personal from "./components/iview/personal";
     import Good from "./components/iview/good";
     import Address from "./components/iview/Address";
     import Order from "./components/iview/order";
@@ -79,11 +81,10 @@
             Order,
             Address,
             Good,
-            Me,
+            Personal,
             Class,
             Mine,
-            CyHome,
-            ModelFirt,
+            Home,
             Login,
             ExampleModel,
             Top,
@@ -95,16 +96,18 @@
             footerNav
         },
         created() {
-            this.comName = 'login';
+
         },
         mounted() {
+
         },
-        methods: {}
+        methods: {
+
+        }
     };
 </script>
 
 <style lang="css">
-  /*@import "/static/css/index.css"; 引入样式*/
   * {
     word-break: break-word;
     margin: 0 auto;

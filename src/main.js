@@ -21,7 +21,7 @@ import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
 
 //页面跳转
-
+// import global from './components/Global.vue'
 
 // Vue.use(layer);
 // Vue.prototype.$layer = layer(Vue);
@@ -41,6 +41,8 @@ Vue.use(VueVideoPlayer)
 
 // Vue.prototype.$http=axios;
 
+// Vue.prototype.GLOBAL = public;
+
 Vue.config.productionTip = false;
 
 // The routing configuration  备注
@@ -53,7 +55,6 @@ const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
-
 
 /* eslint-disable no-new */
 new Vue({

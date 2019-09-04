@@ -1,5 +1,5 @@
-<template>
-  <div class="model" v-show="num == 1">
+<template lang="html">
+  <div class="model" v-show="component_name == 'login'">
     <i class="close-left">
       <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
            p-id="1729" width="13" height="13">
@@ -17,8 +17,7 @@
         <span class="password-input-p-right">忘记密码</span>
       </p>
     </div>
-    <button class="login-btn" @click="go();">登录</button>
-    <router-view></router-view>
+    <button class="login-btn" @click="route();">登录</button>
   </div>
 </template>
 
@@ -27,16 +26,16 @@
         name: "login",
         data() {
             return {
-                num: 1
+                component_name: 'login'
             }
         },
         created() {
-            this.mum = 1;
+
         },
         methods: {
-            go: function () {
-                this.num = 2;
-                this.$router.push({path: '/model-firt', query: {num: this.num}})
+            route: function () {
+                this.component_name = 'home';
+                this.$router.push({name: 'home', query: {component_name: 'home'}});
             }
         }
     }
@@ -64,6 +63,8 @@
     font-size: 2em;
     font-family: 楷体;
     position: relative;
+    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .modal-body {
@@ -87,7 +88,7 @@
 
   .login-btn {
     height: auto;
-    width: 80%;
+    width: 85%;
     margin-top: 30%;
     font-size: 1.2em;
     background: #FFFFFF;
