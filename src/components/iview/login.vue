@@ -1,16 +1,7 @@
 <template lang="html">
   <div class="model" v-show="component_name == 'login'">
-<!--    -->
-<!--    <i class="close-left">-->
-<!--      <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"-->
-<!--           p-id="1729" width="13" height="13">-->
-<!--        <path-->
-<!--          d="M583.168 523.776L958.464 148.48c18.944-18.944 18.944-50.176 0-69.12l-2.048-2.048c-18.944-18.944-50.176-18.944-69.12 0L512 453.12 136.704 77.312c-18.944-18.944-50.176-18.944-69.12 0l-2.048 2.048c-19.456 18.944-19.456 50.176 0 69.12l375.296 375.296L65.536 899.072c-18.944 18.944-18.944 50.176 0 69.12l2.048 2.048c18.944 18.944 50.176 18.944 69.12 0L512 594.944 887.296 970.24c18.944 18.944 50.176 18.944 69.12 0l2.048-2.048c18.944-18.944 18.944-50.176 0-69.12L583.168 523.776z"-->
-<!--          p-id="1730" fill="#8a8a8a"></path>-->
-<!--      </svg>-->
-<!--    </i>-->
-    <h1>登录</h1>
     <div class="modal-body">
+      <img src="http://pxasartjo.bkt.clouddn.com/Snipaste_2019-09-04_16-25-19.png" alt="" width="150" height="150">
       <input placeholder="输入手机号" type="text" class="username-input"/>
       <input placeholder="输入密码" type="password" class="password-input"/>
       <p>
