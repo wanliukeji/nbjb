@@ -126,7 +126,7 @@
       </div>
     </Layout>
     <nav class="model-nav">
-      <router-link v-for="item in nav" :to=item.router active-class="active" class="tab">
+      <router-link v-for="item in nav" :to=item.router  class="tab">
         <div  class="nav_item">{{item.desc}}</div>
       </router-link>
     </nav>
@@ -176,17 +176,14 @@
                 nav:[
                     {
                         router:"/home",
-                        class:"icon-home",
                         desc:"首页"
                     },
                     {
                         router:"/class",
-                        class:"icon-service",
                         desc:"分类"
                     },
                     {
                         router:"/personal",
-                        class:"icon-personal",
                         desc:"个人中心"
                     },
                 ]
