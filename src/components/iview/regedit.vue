@@ -35,11 +35,11 @@
         name: "regedit",
         data() {
             return {
-                component_name : ''
+                component_name : 'regedit'
             }
         },
         created() {
-            this.component_name = '';
+            this.component_name = 'regedit';
         },
         methods: {
             route: function () {

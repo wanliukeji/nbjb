@@ -1,18 +1,9 @@
 <template>
-  <div class="model">
-<!--    v-show="component_name == 'home'"-->
+  <div class="model" v-show="component_name == 'home'">
     <Layout>
       <Header class="model-head-span">
         首页
       </Header>
-
-      <div class="model-div-row" style="margin-bottom: 10px;">
-        <video-player class="video-player vjs-custom-skin model-div-row-img" style="width: 80%; margin: 0 auto;"
-                      ref="videoPlayer"
-                      :playsinline="true"
-                      :options="playerOptions">
-        </video-player>
-      </div>
       <div class="model-div-row" style="margin-bottom: 10px;">
         <Carousel autoplay loop>
           <CarouselItem>
@@ -38,6 +29,13 @@
         </Carousel>
       </div>
 
+      <div class="model-div-row" style="margin-bottom: 10px;">
+        <video-player class="video-player vjs-custom-skin model-div-row-img" style="width: 80%; margin: 0 auto;"
+                      ref="videoPlayer"
+                      :playsinline="true"
+                      :options="playerOptions">
+        </video-player>
+      </div>
       <div class="model-div-row">
         <div class="model-div-row-center">
           <div class="model-div-row-div">
@@ -138,7 +136,7 @@
         props: ['idx'],
         data() {
             return {
-                component_name: this.$route.query.component_name,
+                component_name: 'home',
                 playerOptions: {
                     //播放速度
                     playbackRates: [0.5, 1.0, 1.5, 2.0],
@@ -190,10 +188,11 @@
             }
         },
         created() {
+            this.component_name = 'home';
         },
         methods: {
             route: function () {
-                // this.$router.push({name: 'home', query: {component_name: 'home'}})
+
             }
         }
     }

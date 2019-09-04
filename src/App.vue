@@ -4,7 +4,7 @@
     <!--    -->
 
     <login></login>
-    <router-view></router-view>
+    <router-view  :key="activeDate"></router-view>
 
     <!--    <model-firt></model-firt>-->
     <!--    <cy-home></cy-home>-->
@@ -96,7 +96,7 @@
             footerNav
         },
         created() {
-
+            this.activeDate = (new Date()).toString();
         },
         mounted() {
 
