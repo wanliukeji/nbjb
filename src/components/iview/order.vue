@@ -1,15 +1,20 @@
 <template>
   <div class="model">
     <Header style="background: #FFFFFF; height: 30px; text-align: center; max-width: 100%;">
-      <el-button type="primary" size="mini" style="float: left; border-radius: 25px; position: absolute; left: 15px; ">
-        返回
-      </el-button>
+      <i class="close-left" @click="goTo">
+        <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             p-id="1713" width="16" height="16">
+          <path
+            d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z"
+            fill="#d81e06" p-id="1714"></path>
+        </svg>
+      </i>
     </Header>
     <Tabs :animated="true">
       <TabPane label="待付款">
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -31,7 +36,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -53,7 +58,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -75,7 +80,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -99,7 +104,7 @@
       <TabPane label="待发货">
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -121,7 +126,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -143,7 +148,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -165,7 +170,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -189,7 +194,7 @@
       <TabPane label="待收货">
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -211,7 +216,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -233,7 +238,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -255,7 +260,7 @@
         </div>
         <div class="model-row">
           <div class="model-row-div">
-            <img src="/static/image/timg.jpg" class="model-row-div-img" alt="">
+            <img src="/static/image/mainmo.jpg" class="model-row-div-img" alt="">
             <p>
               <span class="model-row-div-title">霸王洗发露</span>
               <span class="model-row-div-much">
@@ -282,7 +287,12 @@
 
 <script>
     export default {
-        name: "order"
+        name: "order",
+        methods : {
+            goTo: function () {
+                window.history.back();
+            }
+        }
     }
 </script>
 
@@ -337,6 +347,13 @@
     color: #bcbcbc;
     margin-top: 17px;
     float: right;
+  }
+
+  .close-left {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 5%;
   }
 
   .model-row-div {

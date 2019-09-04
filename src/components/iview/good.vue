@@ -5,7 +5,7 @@
     </i>
 
     <div class="model-div-row">
-      <img src="/static/image/timg.jpg" alt="" class="model-div-row-img">
+      <img src="/static/image/mianmo02.jpg" alt="" class="model-div-row-img">
     </div>
 
     <div class="model-div-row-hr" style="text-align: left;">

@@ -1,14 +1,18 @@
 <template>
   <div class="model">
-    <i class="close-left">
-      <svg t="1567426263402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-           p-id="1729" width="15" height="15">
-        <path
-          d="M583.168 523.776L958.464 148.48c18.944-18.944 18.944-50.176 0-69.12l-2.048-2.048c-18.944-18.944-50.176-18.944-69.12 0L512 453.12 136.704 77.312c-18.944-18.944-50.176-18.944-69.12 0l-2.048 2.048c-19.456 18.944-19.456 50.176 0 69.12l375.296 375.296L65.536 899.072c-18.944 18.944-18.944 50.176 0 69.12l2.048 2.048c18.944 18.944 50.176 18.944 69.12 0L512 594.944 887.296 970.24c18.944 18.944 50.176 18.944 69.12 0l2.048-2.048c18.944-18.944 18.944-50.176 0-69.12L583.168 523.776z"
-          p-id="1730" fill="#8a8a8a"></path>
-      </svg>
-    </i>
+    <Layout>
+      <Header class="model-head-span">
+        <i class="close-left" @click="goTo">
+          <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               p-id="1713" width="16" height="16">
+            <path
+              d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z"
+              fill="#d81e06" p-id="1714"></path>
+          </svg>
+        </i>
+
     <h1>我的团队</h1>
+      </Header>
     <Tabs :animated="true">
       <TabPane label="我的上级">
         <div class="model-row">
@@ -177,13 +181,18 @@
         </div>
       </TabPane>
     </Tabs>
-
+    </Layout>
   </div>
 </template>
 
 <script>
     export default {
-        name: "team"
+        name: "team",
+        methods : {
+            goTo: function () {
+                window.history.back();
+            }
+        }
     }
 </script>
 
@@ -284,6 +293,18 @@
     margin-top: 33px;
     right: 0px;
     vertical-align: middle;
+  }
+
+  .model-head-span {
+    background-color: #FFFFFF;
+    height: auto;
+    vertical-align: middle;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 100%;
+    font-size: 24px;
+    font-family: 楷体;
   }
 
 </style>

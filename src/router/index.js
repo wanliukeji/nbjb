@@ -70,6 +70,38 @@ export default new Router({
         title: "送货地址"
       },
       component: () => import("@/components/iview/Address")
+    },
+    {
+      path: '/wallet',
+      name: 'wallet',
+      meta: {
+        title: "我的钱包"
+      },
+      component: () => import("@/components/iview/wallet")
+    },
+    {
+      path: '/order',
+      name: 'order',
+      meta: {
+        title: "我的钱包"
+      },
+      component: () => import("@/components/iview/order")
+    },
+    {
+      path: '/team',
+      name: 'team',
+      meta: {
+        title: "我的团队"
+      },
+      component: () => import("@/components/iview/team")
+    },
+    {
+      path: '/shop',
+      name: 'shop',
+      meta: {
+        title: "领取面膜"
+      },
+      component: () => import("@/components/iview/shop")
     }
   ],
   beforeEach:function () {
