@@ -549,6 +549,7 @@
                 //定时器
                 setTimeout(function () {
                     if (number == 1000) {
+                        console.log('距离最后发生事件已过1秒正在执行....................................................');
                         ajax_http();
                         local = false;
                         return;
