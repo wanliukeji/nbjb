@@ -3,8 +3,8 @@
 
     <!--    -->
 
-    <login></login>
-    <router-view  :key="activeDate"></router-view>
+    <!--    <login></login>-->
+    <!--    <router-view  :key="activeDate"></router-view>-->
 
     <!--    <model-firt></model-firt>-->
     <!--    <cy-home></cy-home>-->
@@ -28,7 +28,9 @@
     <!--    <transition mode="out-in">-->
     <!--      <component :is="comName"></component>-->
     <!--    </transition>-->
-
+    <!-- 测试 -->
+<!--    <cnnb-model></cnnb-model>-->
+    <hello></hello>
     <!-- -------------------------------------------------------- -->
 
     <!--    -->
@@ -65,6 +67,8 @@
     import Wallet from "./components/iview/wallet";
     import Team from "./components/iview/team";
     import shop from "./components/iview/shop";
+    import CnnbModel from "./components/cnnb/cnnb-model";
+    import hello from "./components/hello";
 
     export default {
         data() {
@@ -74,6 +78,8 @@
             };
         },
         components: {
+            hello,
+            CnnbModel,
             shop,
             Team,
             Wallet,
@@ -101,20 +107,19 @@
         mounted() {
 
         },
-        methods: {
-
-        }
+        methods: {}
     };
 </script>
 
 <style lang="css">
   .v-enter,
-  .v-leave-to{
+  .v-leave-to {
     opacity: 0;
     transform: translateX(150px);
   }
+
   .v-enter-active,
-  .v-leave-active{
+  .v-leave-active {
     transition: all 0.5s ease;
   }
 

@@ -103,26 +103,26 @@ export default new Router({
       },
       component: () => import("@/components/iview/shop")
     }
-  ],
-  beforeEach:function () {
-    //  路由发生变化修改页面title
-    if (to.meta.title) {
-      document.title = to.meta.title;
-    }
+  ]
+  // beforeEach:function () {
+  //   //  路由发生变化修改页面title
+  //   if (to.meta.title) {
+  //     document.title = to.meta.title;
+  //   }
 
     //  是否需要登录
-    if (to.matched.some(record => record.meta.requiresAuth)) {
-      if (!localStorage.Authorization) {
-        next({
-          path: '/login'
-        })
-      } else {
-        next();
-      }
-    } else {
-      next();
-    }
-  }
+    // if (to.matched.some(record => record.meta.requiresAuth)) {
+    //   if (!localStorage.Authorization) {
+    //     next({
+    //       path: '/login'
+    //     })
+    //   } else {
+    //     next();
+    //   }
+    // } else {
+    //   next();
+    // }
+  // }
 });
 
 
