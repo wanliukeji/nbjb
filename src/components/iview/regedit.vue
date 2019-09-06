@@ -7,7 +7,7 @@
       <input v-model="info.check_code" placeholder="输入验证码" class="input-text"/>
       <input v-model="info.invit_code" placeholder="输入邀请码" class="input-text"/>
       <input v-model="info.st_pwd" placeholder="创建密码" class="input-text"/>
-      <input v-model="info.sec_pwd" placeholder="确认密码" class="input-text"/>
+      <input v-model="info.sec_pwd" placeholder="确认密码" class="input-text" />
       <p>
         <span class="password-input-p-left">已有账号? 去登录</span>
         <span class="password-input-p-right">忘记密码</span>
