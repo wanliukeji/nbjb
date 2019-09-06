@@ -62,7 +62,8 @@
 <body class="bg">
 <div class="duceapp_body">
   <div id="duceapp_head">
-    <div class="headfixed duceapp_head fff hc" style="background-color: #333; background-color:rgba(0,0,0,1);">
+    <div class="headfixed duceapp_head fff hc"
+         style="background-color: #333; background-color:rgba(0,0,0,1); height: 45px;">
       <div class="head_z z"><a href="javascript:;" onclick="history.go(-1)"><i class="duceapp_font f22">
         <svg t="1567736386791" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
              p-id="1713" width="20" height="20">
@@ -83,77 +84,83 @@
         </svg>
         <!--        &#xe932;-->
       </i></a></div>
-      <h2>兑换</h2>
+      <span style="vertical-align: middle; font-size: 15px; ">积分记录</span>
     </div>
   </div>
   <div class="creditslog" style="padding-left: 10%; padding-right: 10%;">
-    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">
+    <form method="post" id="cy_form" action="plugin.php?id=duceapp_scorebuy:tradelog">
       <ul class="pagelazy">
         <!--    bga  bh_e-->
         <li class="f14" style=" rgba(255,255,255,0.1); background-color:rgba(0,0,0,0)">
           <div class="input-control has-icon-left has-icon-right ">
             <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;"><strong>当前威望值:</strong></p>
-            <input id="inputEmailExample1" style="font-size: 1.2em; height: 30px;" type="text" value="241"
+            <input id="prestige_score" style="font-size: 1.2em; height: 30px;" type="text" value="241"
                    class="form-control" readonly/>
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
             <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;"><strong>当前财富值:</strong></p>
-            <input id="inputEmailExample2" style="font-size: 1.2em; height: 30px;" type="text" value="3497"
+            <input id="money_score" style="font-size: 1.2em; height: 30px;" type="text" value="3497"
                    class="form-control" readonly>
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
             <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;"><strong>当前甬钻数:</strong></p>
-            <input id="inputEmailExample3" style="font-size: 1.2em; height: 30px;" type="text" value="3995"
+            <input id="jewel_score" style="font-size: 1.2em; height: 30px;" type="text" value="3995"
                    class="form-control" readonly>
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;"><strong>兑换:</strong></p>
-            <input id="inputEmailExample4" style="font-size: 1.2em; height: 30px;" type="text"
-                   placeholder="财富 允许兑换1次，每次最多兑换200;"
+            <p class="lead" type="number" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;">
+              <strong>兑换:</strong>
+              <span id="exchange_num_span"></span>
+            </p>
+            <input id="exchange_num" style="font-size: 1em; height: 30px;" type="text"
+                   placeholder="甬钻 允许兑换，每次最多兑换200"
                    class="form-control">
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <select id="inputEmailExample5" type="text" class="form-control" style="font-size: 1em; height: 30px;">
+            <select id="jewel" type="text" class="form-control" style="font-size: 1em; height: 30px;">
               <option value="">请选择</option>
-              <option value="甬钻">甬钻</option>
+              <option value="甬钻" selected>甬钻</option>
             </select>
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;"><strong>所需:</strong></p>
-            <input id="inputEmailExample6" style="font-size: 1.2em; height: 30px;" type="text"
-                   placeholder="甬钻 允许兑换1次，每次最多兑换2000;"
+            <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;">
+              <strong>所需:</strong>
+              <span id="need_num_span"></span>
+            </p>
+            <input id="need_num" style="font-size: 1em; height: 30px;" type="text"
+                   placeholder="财富 允许兑换，每次最多兑换200"
                    class="form-control">
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <select id="inputEmailExample7" class="form-control" style="font-size: 1em; height: 30px;">
+            <select id="money" class="form-control" style="font-size: 1em; height: 30px;">
               <option value="">请选择</option>
-              <option value="财富">财富</option>
+              <option value="财富" selected>财富</option>
             </select>
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
             <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;"><strong>登录密码:</strong></p>
-            <input id="inputEmailExample8" type="password" style="font-size: 1.2em; height: 30px;" type="text"
+            <input id="login_pwd" type="password" style="font-size: 1.2em; height: 30px;" type="text"
                    value="241"
                    class="form-control" disabled>
           </div>
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <button class="btn btn-block " style="background-color: #3280fc; color: #FFFFFF;" type="button">兑换</button>
+            <button class="btn btn-block " style="background-color: #3280fc; color: #FFFFFF;" type="submit">兑换</button>
           </div>
         </li>
       </ul>
@@ -163,5 +170,52 @@
   <div class="maskmenu" style="display:none;"></div>
 </div>
 <div id="mask" style="display:none;"></div>
+<script type="text/javascript">
+    var _jQuery = jQuery.noConflict();
+    _jQuery(function () {
+        _jQuery('#cy_form').submit(function () {
+            var _prestige_score = _jQuery('#prestige_score').val();
+            var _money_score = _jQuery('#money_score').val();
+            var _jewel_score = _jQuery('#jewel_score').val();
+            var _exchange_num = _jQuery('#exchange_num').val();
+            var _jewel = _jQuery('#jewel option:selected').val();
+            var _need_num = _jQuery('#need_num').val();
+            var _money = _jQuery('#money option:selected').val();
+
+            _prestige_score = Number(_prestige_score);
+            _money_score = Number(_money_score);
+            _jewel_score = Number(_jewel_score);
+            _exchange_num = Number(_exchange_num);
+            _need_num = Number(_need_num);
+
+            console.log('_prestige_score:' + _prestige_score + typeof _prestige_score);
+            console.log('_money_score:' + _money_score + typeof _money_score);
+            console.log('_jewel_score:' + _jewel_score + typeof _jewel_score);
+            console.log('_exchange_num:' + _exchange_num + typeof _exchange_num);
+            console.log('_jewel:' + _jewel + typeof _jewel);
+            console.log('_need_num:' + _need_num + typeof _need_num);
+            console.log('_money:' + _money + typeof _money);
+
+            console.log(!(_exchange_num < 200 && _exchange_num < _jewel_score));
+
+            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
+            if (!(_exchange_num < 200 && _exchange_num < _jewel_score)) {
+                _jQuery('#exchange_num_span').html('<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于甬钻拥有总数及每次最多兑换数量</em>');
+            } else {
+                _jQuery('#exchange_num_span').html('');
+            }
+
+            //不得大于每次兑换的最大数量 且 不得大于 所拥有的财富值
+            if (!(_need_num < 200 && _need_num < _money_score)) {
+                _jQuery('#need_num_span').html('<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于现有的财富值及每次最多兑换数量</em>');
+            } else {
+                _jQuery('#need_num_span').html('');
+            }
+
+            return false;
+        });
+
+    });
+</script>
 </body>
 </html>
