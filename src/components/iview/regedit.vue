@@ -184,25 +184,23 @@
             //验证手机号码部分
             sendcode() {
                 var reg = 11 && /^((13|14|15|17|18)[0-9]{1}\d{8})$/;
-                var url = "http://www.gzysxc.cn:8888/api/user/send_check_code";
-                if (this.info.phone == '') {
-                    alert("请输入手机号码");
-                } else if (reg.test(this.phone)) {
-                    alert("手机格式不正确");
-                } else {
-                    this.time = 60;
-                    this.disabled = true;
-                    this.timer();
-                    console.log(url);
-                    this.$http.post(url, {
-                            phone: this.info.phone
-                        },
-                        {
-                            emulateJSON: true
-                        }).then(res => {
-                        console.log(JSON.stringify(res));
-                    })
-                }
+                var url = 'http://www.gzysxc.cn:8888/api/user/send_check_code';
+                // if (this.info.phone == '') {
+                //     alert("请输入手机号码");
+                // } else if (reg.test(this.phone)) {
+                //     alert("手机格式不正确");
+                // } else {
+                //     this.time = 60;
+                //     this.disabled = true;
+                //     this.timer();
+                //     console.log(url);
+                //     this.$http.post(url, {
+                //             phone: this.info.phone
+                //         },
+                //         { emulateJSON: true }).then(res => {
+                //         console.log(JSON.stringify(res));
+                //     })
+                // }
 
                 // 并且响应成功以后会执行then方法中的回调函数
 
@@ -217,29 +215,29 @@
                 //     console.log(JSON.stringify(err));
                 // });
 
-                // $.ajax({
-                //     url: url,
-                //     type: 'get',
-                //     dataType: 'JSONP',  // 处理Ajax跨域问题
-                //     async: true,
-                //     jsonp:"callback",//请求类型是回调
-                //     jsonpCallback:"callbackFunction",//数据请求成功时回调的方法
-                //     headers: {
-                //         "content-type": "application/x-www-form-urlencoded",
-                //         "cache-control": "no-cache",
-                //         "postman-token": "790bc9ac-1215-ff3e-2293-ecc3d6eb0c0a"
-                //     },
-                //     timeout: 1000,
-                //     crossDomain: true,
-                //     success: function (data) {
-                //         console.log(JSON.stringify(data))
-                //     },
-                //     complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
-                //         if (status == 'timeout') {//超时,status还有success,error等值的情况
-                //             ajaxTimeOut.abort(); //取消请求
-                //         }
-                //     }
-                // });
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    dataType: 'jsonp',  // 处理Ajax跨域问题
+                    async: true,
+                    jsonp:"callback",//请求类型是回调
+                    jsonpCallback:"callbackFunction",//数据请求成功时回调的方法
+                    headers: {
+                        "content-type": "application/x-www-form-urlencoded",
+                        "cache-control": "no-cache",
+                        "postman-token": "790bc9ac-1215-ff3e-2293-ecc3d6eb0c0a"
+                    },
+                    timeout: 1000,
+                    crossDomain: true,
+                    success: function (data) {
+                        console.log(JSON.stringify(data))
+                    },
+                    complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
+                        if (status == 'timeout') {//超时,status还有success,error等值的情况
+                            ajaxTimeOut.abort(); //取消请求
+                        }
+                    }
+                });
 
             }
             ,
@@ -270,6 +268,13 @@
     padding-right: 10%;
     position: relative;
     padding-top: 10px;
+
+  }
+
+  .model {
+    background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567751267688&di=de16fa21bf5a3a8f8b61b097d49c131f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201411%2F01%2F20141101045119_wa8CW.jpeg") top center no-repeat;
+    background-size: 100% 100%;
+    color: #FFFFFF;
   }
 
   .close-left {
@@ -282,11 +287,16 @@
     font-size: 2em;
     font-family: 楷体;
     position: relative;
+    top: 10px;
   }
 
   .modal-body {
     width: 100%;
     margin-top: -8%;
+    bottom: 0;
+    margin-bottom: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .input-text {
@@ -296,8 +306,8 @@
     width: 100%;
     background: none;
     font-size: 1em;
-    margin-top: 20%;
-    border-bottom: 1px #a8a8a8 solid;
+    margin-top: 20px;
+    border-bottom: 1px #FFFFFF solid;
     padding: 20px;
     color: black;
     font-weight: lighter;
@@ -308,13 +318,13 @@
     width: 100%;
     margin-top: 20%;
     font-size: 1em;
-    background: #FFFFFF;
-    border: 1px black solid;
+    border: 1px #d3d3d3 solid;
     padding-top: 7px;
     padding-bottom: 7px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
+    background-color:rgba(0,0,0,0);
   }
 
   p {
@@ -350,6 +360,7 @@
   .model-foot-p {
     font-size: 1em;
     margin-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   .input-checkbox {
@@ -362,7 +373,7 @@
 
   .send-btn {
     height: auto;
-    width: 30%;
+    width: 130px;
     margin-top: -50px;
     font-size: 1em;
     padding-top: 7px;
@@ -371,11 +382,18 @@
     -moz-border-radius: 38px;
     border-radius: 38px;
     position: absolute;
-    right: 15px;
-    background-color: #4246ff;
-    color: #FFFFFF;
+    right: 10%;
+    background-color:rgba(0,0,0,0);
     border: none;
+    font-weight: 500;
+    border: #FFFFFF 1px solid;
   }
 
+  input {
+    color: #FFFFFF;
+  }
+  .modal-body-logo {
+    background-color:rgba(0,0,0,0);
+  }
 
 </style>
