@@ -2,12 +2,12 @@
   <div class="model" v-show="component_name == 'regedit'">
     <h1>注册账户</h1>
     <div class="modal-body">
-      <input placeholder="输入手机号" class="input-text"/>
-      <button class="send-btn">发送验证码</button>
-      <input placeholder="输入验证码" class="input-text"/>
-      <input placeholder="输入邀请码" class="input-text"/>
-      <input placeholder="创建密码" class="input-text"/>
-      <input placeholder="确认密码" class="input-text"/>
+      <input v-model="info.phone" placeholder="输入手机号" class="input-text"/>
+      <button class="send-btn" :disabled="disabled" @click="sendcode">{{btntxt}}</button>
+      <input v-model="info.check_code" placeholder="输入验证码" class="input-text"/>
+      <input v-model="info.invit_code" placeholder="输入邀请码" class="input-text"/>
+      <input v-model="info.st_pwd" placeholder="创建密码" class="input-text"/>
+      <input v-model="info.sec_pwd" placeholder="确认密码" class="input-text"/>
       <p>
         <span class="password-input-p-left">已有账号? 去登录</span>
         <span class="password-input-p-right">忘记密码</span>
@@ -16,7 +16,7 @@
     </div>
     <div class="model-foot">
       <p class="model-foot-p">注册即代表你已经统一云上商城用户协议
-        <input type="checkbox" class="input-checkbox">
+        <input type="checkbox" v-model="info.is_agree" class="input-checkbox">
       </p>
     </div>
   </div>
@@ -27,7 +27,21 @@
         name: "regedit",
         data() {
             return {
-                component_name : 'regedit'
+                component_name: 'regedit',
+                info: {
+                    phone: '15957408879',
+                    check_code: '',
+                    invit_code: '',
+                    st_pwd: '',
+                    sec_pwd: '',
+                    is_agree: false
+                },
+                disabled: false,
+                time: 0,
+                btntxt: "获取验证码",
+                formMess: {
+                    phone: this.phone
+                }
             }
         },
         created() {
@@ -35,7 +49,183 @@
         },
         methods: {
             route: function () {
-                this.$router.push({name: 'home'});
+                var param = {
+                    phone: this.info.phone,
+                    check_code: this.info.check_code,
+                    invit_code: this.info.invit_code,
+                    st_pwd: this.info.st_pwd,
+                    sec_pwd: this.info.sec_pwd,
+                    is_agree: this.info.is_agree
+                }
+                if (this.exec()) {
+                    console.log(param);
+                    this.$http.post('http://www.gzysxc.cn:8888/api/user/register', param, {emulateJSON: true}).then(function (res) {
+                        console.log(res);
+                        if (res.status == 200) {
+
+                        } else {
+
+                        }
+                        console.log(res);
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
+            },
+            //统一验证
+            exec: function () {
+                var phone_flag = false;
+                var check_code_flag = false;
+                var invit_code_flag = false;
+                var pwd_flag = false;
+                var is_agree_flag = false;
+
+                console.log(!this.info.phone);
+
+                if (this.info.phone != '' || this.info.phone != null) {
+                    if ((/^1[34578]\d{9}$/.test(this.info.phone))) {
+                        phone_flag = true;
+                    } else {
+                        this.$notify.error({
+                            title: '操作失败',
+                            message: '手机格式输入有误，请重新输入',
+                            type: 'ERROR'
+                        })
+                        return;
+                    }
+                } else {
+                    this.$notify.error({
+                        title: '操纵失败',
+                        message: '请输入手机号码',
+                        type: 'ERROR'
+                    })
+                    return;
+                }
+
+                var new_check_code = 0;
+                if (this.info.check_code != '' || this.info.check_code != null) {
+                    if (new_check_code == this.info.check_code) {
+                        check_code_flag = true;
+                    } else {
+                        this.$notify.error({
+                            title: '验证失败',
+                            message: '验证码输入有误',
+                            type: 'ERROR'
+                        })
+                        return;
+                    }
+                } else {
+                    this.$notify.error({
+                        title: '验证码输入有误，请重新输入',
+                        message: '',
+                        type: 'ERROR'
+                    })
+                    return;
+                }
+
+                if (this.info.invit_code != '' || this.info.invit_code != null) {
+                    if ('2K1Zheap' == this.info.check_code) {
+                        invit_code_flag = true;
+                    } else {
+                        this.$notify.error({
+                            title: '操作失败',
+                            message: '邀请码输入有误，请重新输入',
+                            type: 'ERROR'
+                        })
+                        return;
+                    }
+                } else {
+                    this.$notify.error({
+                        title: '操作失败',
+                        message: '请输入邀请码',
+                        type: 'ERROR'
+                    })
+                    return;
+                }
+
+                if (this.info.st_pwd == '' || this.info.st_pwd == null) {
+                    this.$notify.error({
+                        title: '操作失败',
+                        message: '请输入登录密码',
+                        type: 'ERROR'
+                    })
+                    return;
+                }
+
+                if (this.info.sec_pwd == '' || this.info.sec_pwd == null) {
+                    this.$notify.error({
+                        title: '操作失败',
+                        message: '请输入确认密码',
+                        type: 'ERROR'
+                    })
+                }
+
+                if (this.info.st_pwd == this.info.sec_pwd) {
+                    pwd_flag = true;
+                } else {
+                    this.$notify.error({
+                        title: '操作失败',
+                        message: '两次密码不匹配',
+                        type: 'ERROR'
+                    })
+
+                    if (is_agree == true) {
+                        is_agree_flag = true;
+                    }
+                }
+
+                if (phone_flag && check_code_flag && invit_code_flag && pwd_flag && is_agree_flag) {
+                    return true;
+                }
+            }
+            ,
+            //验证手机号码部分
+            sendcode() {
+                var reg = 11 && /^((13|14|15|17|18)[0-9]{1}\d{8})$/;
+                var url = "http://www.gzysxc.cn:8888/api/user/send_check_code";
+                if (this.info.phone == '') {
+                    alert("请输入手机号码");
+                } else if (reg.test(this.phone)) {
+                    alert("手机格式不正确");
+                } else {
+                    this.time = 60;
+                    this.disabled = true;
+                    this.timer();
+                    console.log(url);
+                    // this.$http.post(url, {
+                    //     phone: this.info.phone
+                    // }, {
+                    //     headers: {"Content-Type": "application/x-www-form-urlencoded;charset=utf-8"}
+                    // }).then(res => {
+                    //     console.log(JSON.stringify(res));
+                    // })
+
+                    // 并且响应成功以后会执行then方法中的回调函数
+
+                    this.$http.post(url).then(function (result) {
+                        // result是所有的返回回来的数据
+                        // 包括了响应报文行
+                        // 响应报文头
+                        // 响应报文体
+                        console.log(result.data.message[0]);
+                        // _this.name = result.data.message[0].name;
+                    });
+                }
+
+            },
+            timer() {
+                if (this.time > 0) {
+                    this.time--;
+                    this.btntxt = this.time + "s后重新获取";
+                    setTimeout(this.timer, 1000);
+                } else {
+                    this.time = 0;
+                    this.btntxt = "获取验证码";
+                    this.disabled = false;
+                }
+            },
+            goTo: function () {
+                this.$router.push({name: 'login'})
             }
         }
     }
@@ -144,15 +334,16 @@
     width: 30%;
     margin-top: -50px;
     font-size: 1em;
-    background: #FFFFFF;
-    border: 1px black solid;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     -webkit-border-radius: 38px;
     -moz-border-radius: 38px;
     border-radius: 38px;
     position: absolute;
     right: 15px;
+    background-color: #4246ff;
+    color: #FFFFFF;
+    border: none;
   }
 
 

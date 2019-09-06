@@ -3,8 +3,7 @@
 
     <!--    -->
 
-    <!--    <login></login>-->
-    <!--    <router-view  :key="activeDate"></router-view>-->
+    <router-view></router-view>
 
     <!--    <model-firt></model-firt>-->
     <!--    <cy-home></cy-home>-->
@@ -29,8 +28,8 @@
     <!--      <component :is="comName"></component>-->
     <!--    </transition>-->
     <!-- 测试 -->
-<!--    <cnnb-model></cnnb-model>-->
-    <hello></hello>
+    <!--    <cnnb-model></cnnb-model>-->
+    <!--    <hello></hello>-->
     <!-- -------------------------------------------------------- -->
 
     <!--    -->
@@ -103,6 +102,7 @@
         },
         created() {
             this.activeDate = (new Date()).toString();
+            this.$router.push({name: 'login'})
         },
         mounted() {
 

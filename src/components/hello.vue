@@ -1,6 +1,12 @@
 <template>
   <div class="model">
     <form method="post" id="cy_form" action="#">
+      <p class="tbmu bw0">
+      <span class="pipe a">总计充值 <font color='red' id='total_amount'>17</font> 元，
+        已开票金额<font color='blue' id='invoice_amount'>2</font> 元， 开票最低金额为<font
+          id='min_amount' color='blue'>10</font>元，请仔细填写公司抬头和税号。</span>
+      </p>
+      <br>
       <div class="exfm" style="margin-top: 0;">
         <table cellspacing="0" cellpadding="0" class="cy-table-div">
           <tr>
@@ -427,16 +433,10 @@
             }
             ;
 
-            var count = Number(amount);//输入金额
-            var duceapp_all_amount = 0;//充值总金额
-            if (count > duceapp_all_amount) {
-                jQuery('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
-                CY_ERROR_CSS();
-            } else {
-                jQuery('#amount_font').html(success);
-                bool_g = true;
-            }
-            ;
+            //SUCCESS
+            recharge();
+
+
             // console.log('bool_a:' + bool_a + '\nbool_b:' + bool_b + '\nbool_c:' + bool_c
             //     + '\nbool_d:' + bool_d + '\nbool_e:' + bool_e + '\nbool_f:' + bool_f + '\nbool_g:' + bool_g);
 
@@ -544,19 +544,20 @@
                 time();
             }
             number = 0;
+
             function time() {
                 local = true;
                 //定时器
                 setTimeout(function () {
-                    if (number == 1000) {
+                    if (number == 500) {
                         console.log('距离最后发生事件已过1秒正在执行....................................................');
                         ajax_http();
                         local = false;
                         return;
                     }
-                    number = number + 1000;
+                    number = number + 500;
                     time();
-                }, 1000)
+                }, 500)
             }
         });
 
@@ -580,9 +581,34 @@
                 },
                 error: function (err) {
                     //异常函数内调用函数 测试使用 可删除
+                    appendToHtml(res, $dom);
+                    showChilden($parent);
+                    selectHover();
+                    selected($parent, myMap);
                     console.log(err);
                 }
             });
+        }
+
+        function recharge() {
+            var $total_amount = jQuery('#total_amount').text();
+            var $invoice_amount = jQuery('#invoice_amount').text();
+            var $min_amount = jQuery('#min_amount').text();
+
+            var total_amount = Number($total_amount);
+            var invoice_amount = Number($invoice_amount);
+            var min_amount = Number($min_amount);
+            var price_difference = total_amount- invoice_amount;
+            var amount = Number(amount);//输入金额
+
+            if (!(amount < price_difference && amount > min_amount)) {
+                jQuery('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于可充值金额且不能小于最低充值金额 ' + '</em>');
+                CY_ERROR_CSS();
+            } else {
+                jQuery('#amount_font').html(success);
+                bool_g = true;
+            }
+            ;
         }
 
     })
