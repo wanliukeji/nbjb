@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="model" v-show="component_name == 'login'">
+  <div class="model">
+    <h1>登录</h1>
     <div class="modal-body">
-      <img class="modal-body-logo" src="http://pxasartjo.bkt.clouddn.com/Snipaste_2019-09-04_16-25-19.png" alt="" width="180" height="150">
       <input placeholder="输入手机号" type="text" class="username-input"/>
       <input placeholder="输入密码" type="password" class="password-input"/>
       <p>
@@ -47,6 +47,20 @@
     padding-top: 20px;
   }
 
+  .model {
+    background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567751267688&di=de16fa21bf5a3a8f8b61b097d49c131f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201411%2F01%2F20141101045119_wa8CW.jpeg") top center no-repeat;
+    background-size: 100% 100%;
+    color: #FFFFFF;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    /*position: absolute;*/
+    /*top:0px;*/
+    /*left:0px;*/
+    /*right:0px;*/
+    /*bottom:0px;*/
+  }
+
   .close-left {
     width: 10px;
     height: 10px;
@@ -60,6 +74,7 @@
     position: relative;
     margin-top: 10px;
     margin-top: 20px;
+    color: #FFFFFF;
   }
 
   .modal-body {
@@ -84,7 +99,7 @@
   .login-btn {
     height: auto;
     width: 85%;
-    margin-top: 20%;
+    /*margin-top: 20%;*/
     font-size: 1.2em;
     background: #FFFFFF;
     /*border: 1px black solid;*/
@@ -95,6 +110,9 @@
     border-radius: 30px;
     border: none;
     border: black 1px solid;
+    background: rgba(0,0,0,0);
+    margin-bottom: 10px;
+    bottom: 0;
   }
 
   p {

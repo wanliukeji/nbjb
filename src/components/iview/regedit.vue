@@ -6,8 +6,8 @@
       <button class="send-btn" :disabled="disabled" @click="sendcode">{{btntxt}}</button>
       <input v-model="info.check_code" placeholder="输入验证码" class="input-text"/>
       <input v-model="info.invit_code" placeholder="输入邀请码" class="input-text"/>
-      <input v-model="info.st_pwd" placeholder="创建密码" class="input-text"/>
-      <input v-model="info.sec_pwd" placeholder="确认密码" class="input-text" />
+      <input v-model="info.st_pwd" type="password" placeholder="创建密码" class="input-text"/>
+      <input v-model="info.sec_pwd" type="password" placeholder="确认密码" class="input-text" />
       <p>
         <span class="password-input-p-left">已有账号? 去登录</span>
         <span class="password-input-p-right">忘记密码</span>
@@ -16,7 +16,7 @@
     </div>
     <div class="model-foot">
       <p class="model-foot-p">注册即代表你已经统一云上商城用户协议
-        <input type="checkbox" v-model="info.is_agree" class="input-checkbox">
+        <input type="checkbox" id="input-checkbox" v-model="info.is_agree" class="input-checkbox">
       </p>
     </div>
   </div>
@@ -32,11 +32,11 @@
                 component_name: 'regedit',
                 info: {
                     phone: '15957408879',
-                    check_code: '',
-                    invit_code: '',
-                    st_pwd: '',
-                    sec_pwd: '',
-                    is_agree: false
+                    check_code: '22654',
+                    invit_code: '2K1Zheap',
+                    st_pwd: 'bbc123good',
+                    sec_pwd: 'bbc123good',
+                    is_agree: true
                 },
                 disabled: false,
                 time: 0,
@@ -59,19 +59,30 @@
                     sec_pwd: this.info.sec_pwd,
                     is_agree: this.info.is_agree
                 }
+                var url = 'http://www.gzysxc.cn:8888/api/user/register';
                 if (this.exec()) {
                     console.log(param);
-                    this.$http.post('http://www.gzysxc.cn:8888/api/user/register', param, {emulateJSON: true}).then(function (res) {
+                    this.$http.post(url, param, {emulateJSON: true}).then(function (res) {
                         console.log(res);
                         if (res.status == 200) {
-
+                            this.$notify.success({
+                                title: '操作成功',
+                                message: '恭喜您注册成功',
+                                type: 'success'
+                            })
+                            this.$router.push({name: 'home'})
                         } else {
-
+                            this.$notify.error({
+                                title: '注册',
+                                message: '抱歉,注册失败',
+                                type: 'error'
+                            })
                         }
-                        console.log(res);
                     }).catch(function (error) {
                         console.log(error);
                     });
+                } else {
+                    // alert(2);
                 }
             },
             //统一验证
@@ -81,8 +92,6 @@
                 var invit_code_flag = false;
                 var pwd_flag = false;
                 var is_agree_flag = false;
-
-                console.log(!this.info.phone);
 
                 if (this.info.phone != '' || this.info.phone != null) {
                     if ((/^1[34578]\d{9}$/.test(this.info.phone))) {
@@ -104,21 +113,11 @@
                     return;
                 }
 
-                var new_check_code = 0;
                 if (this.info.check_code != '' || this.info.check_code != null) {
-                    if (new_check_code == this.info.check_code) {
                         check_code_flag = true;
-                    } else {
-                        this.$notify.error({
-                            title: '验证失败',
-                            message: '验证码输入有误',
-                            type: 'ERROR'
-                        })
-                        return;
-                    }
                 } else {
                     this.$notify.error({
-                        title: '验证码输入有误，请重新输入',
+                        title: '请输入验证码',
                         message: '',
                         type: 'ERROR'
                     })
@@ -126,7 +125,7 @@
                 }
 
                 if (this.info.invit_code != '' || this.info.invit_code != null) {
-                    if ('2K1Zheap' == this.info.check_code) {
+                    if ('2K1Zheap' == this.info.invit_code) {
                         invit_code_flag = true;
                     } else {
                         this.$notify.error({
@@ -170,10 +169,16 @@
                         message: '两次密码不匹配',
                         type: 'ERROR'
                     })
+                }
 
-                    if (is_agree == true) {
-                        is_agree_flag = true;
-                    }
+                is_agree_flag = $("input[type='checkbox']").is(':checked');
+
+                if (!is_agree_flag) {
+                    this.$notify.error({
+                        title: '操作失败',
+                        message: '您尚未同意本公司的用户协议,请先同意本公司用户协议',
+                        type: 'ERROR'
+                    })
                 }
 
                 if (phone_flag && check_code_flag && invit_code_flag && pwd_flag && is_agree_flag) {
@@ -185,26 +190,22 @@
             sendcode() {
                 var reg = 11 && /^((13|14|15|17|18)[0-9]{1}\d{8})$/;
                 var url = 'http://www.gzysxc.cn:8888/api/user/send_check_code';
-                // if (this.info.phone == '') {
-                //     alert("请输入手机号码");
-                // } else if (reg.test(this.phone)) {
-                //     alert("手机格式不正确");
-                // } else {
-                //     this.time = 60;
-                //     this.disabled = true;
-                //     this.timer();
-                //     console.log(url);
-                //     this.$http.post(url, {
-                //             phone: this.info.phone
-                //         },
-                //         { emulateJSON: true }).then(res => {
-                //         console.log(JSON.stringify(res));
-                //     })
-                // }
+                if (this.exec()) {
+                    this.time = 60;
+                    this.disabled = true;
+                    this.timer();
+                    console.log(url);
+                    this.$http.post(url, {
+                            phone: this.info.phone
+                        },
+                        { emulateJSON: true }).then(res => {
+                        console.log(JSON.stringify(res));
+                    })
+                } else {
+
+                }
 
                 // 并且响应成功以后会执行then方法中的回调函数
-
-
                 // axios({
                 //     method: 'POST',
                 //     url: url,
@@ -215,29 +216,29 @@
                 //     console.log(JSON.stringify(err));
                 // });
 
-                $.ajax({
-                    url: url,
-                    type: 'get',
-                    dataType: 'jsonp',  // 处理Ajax跨域问题
-                    async: true,
-                    jsonp:"callback",//请求类型是回调
-                    jsonpCallback:"callbackFunction",//数据请求成功时回调的方法
-                    headers: {
-                        "content-type": "application/x-www-form-urlencoded",
-                        "cache-control": "no-cache",
-                        "postman-token": "790bc9ac-1215-ff3e-2293-ecc3d6eb0c0a"
-                    },
-                    timeout: 1000,
-                    crossDomain: true,
-                    success: function (data) {
-                        console.log(JSON.stringify(data))
-                    },
-                    complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
-                        if (status == 'timeout') {//超时,status还有success,error等值的情况
-                            ajaxTimeOut.abort(); //取消请求
-                        }
-                    }
-                });
+                // $.ajax({
+                //     url: url,
+                //     type: 'get',
+                //     dataType: 'jsonp',  // 处理Ajax跨域问题
+                //     async: true,
+                //     jsonp:"callback",//请求类型是回调
+                //     jsonpCallback:"callbackFunction",//数据请求成功时回调的方法
+                //     headers: {
+                //         "content-type": "application/x-www-form-urlencoded",
+                //         "cache-control": "no-cache",
+                //         "postman-token": "790bc9ac-1215-ff3e-2293-ecc3d6eb0c0a"
+                //     },
+                //     timeout: 1000,
+                //     crossDomain: true,
+                //     success: function (data) {
+                //         console.log(JSON.stringify(data))
+                //     },
+                //     complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
+                //         if (status == 'timeout') {//超时,status还有success,error等值的情况
+                //             ajaxTimeOut.abort(); //取消请求
+                //         }
+                //     }
+                // });
 
             }
             ,
@@ -284,10 +285,12 @@
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 1.6em;
     font-family: 楷体;
     position: relative;
     top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   .modal-body {
@@ -316,7 +319,7 @@
   .login-btn {
     height: auto;
     width: 100%;
-    margin-top: 20%;
+    margin-top: 15%;
     font-size: 1em;
     border: 1px #d3d3d3 solid;
     padding-top: 7px;
@@ -374,10 +377,10 @@
   .send-btn {
     height: auto;
     width: 130px;
-    margin-top: -50px;
-    font-size: 1em;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    margin-top: -40px;
+    font-size: 0.8em;
+    padding-top: 4px;
+    padding-bottom: 4px;
     -webkit-border-radius: 38px;
     -moz-border-radius: 38px;
     border-radius: 38px;
