@@ -66,7 +66,7 @@
 <body class="bg">
 <div class="duceapp_body">
   <div id="duceapp_head">
-    <div class="headfixed duceapp_head fff hc" style="background-color: #333; background-color:rgba(0,0,0,0);">
+    <div class="headfixed duceapp_head fff hc" style="background-color: #333; background-color:rgba(0,0,0,1);">
       <div class="head_z z"><a href="javascript:;" onclick="history.go(-1)"><i class="duceapp_font f22">
         <svg t="1567736386791" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
              p-id="1713" width="20" height="20">
@@ -76,7 +76,7 @@
         </svg>
         <!--      &#xe95d; -->
       </i></a></div>
-      <div class="head_y y"><a href="home.php?mod=space&amp;uid=8&amp;do=profile&amp;mycenter=1&amp;mobile=2"><i
+      <div class="head_y y" style="z-index: 100;"><a href="home.php?mod=space&amp;uid=8&amp;do=profile&amp;mycenter=1&amp;mobile=2"><i
         class="duceapp_font f22">
         <svg t="1567736481330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
              p-id="2547" width="20" height="22">
@@ -123,7 +123,8 @@
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <select id="inputEmailExample5" type="text" class="form-control">
+            <select id="inputEmailExample5" type="text" class="form-control" style="font-size: 1em; height: 30px;">
+              <option value="">请选择</option>
               <option value="甬钻">甬钻</option>
             </select>
           </div>
@@ -137,7 +138,8 @@
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <select id="inputEmailExample7" type="text" class="form-control">
+            <select id="inputEmailExample7" class="form-control"  style="font-size: 1em; height: 30px;">
+              <option value="">请选择</option>
               <option value="财富">财富</option>
             </select>
           </div>
