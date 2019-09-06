@@ -3,7 +3,7 @@
 import Vue from 'vue'  /* 这里是引入vue文件 */
 import App from './App'  /* 这里是引入同目录下的App.vue模块 */
 import Vuex from 'vuex'
-import axios from 'axios'
+// import axios from 'axios'
 import router from './router'  /* 这里是引入vue的路由 */
 import VueRouter from 'vue-router'
 import Vant from 'vant'
@@ -60,7 +60,7 @@ VueRouter.prototype.push = function push(location) {
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {App},
   template: '<App/>'
   // render: h => h(App)
 })

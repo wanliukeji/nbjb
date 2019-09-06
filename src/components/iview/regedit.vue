@@ -23,6 +23,8 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
         name: "regedit",
         data() {
@@ -192,27 +194,55 @@
                     this.disabled = true;
                     this.timer();
                     console.log(url);
-                    // this.$http.post(url, {
-                    //     phone: this.info.phone
-                    // }, {
-                    //     headers: {"Content-Type": "application/x-www-form-urlencoded;charset=utf-8"}
-                    // }).then(res => {
-                    //     console.log(JSON.stringify(res));
-                    // })
-
-                    // 并且响应成功以后会执行then方法中的回调函数
-
-                    this.$http.post(url).then(function (result) {
-                        // result是所有的返回回来的数据
-                        // 包括了响应报文行
-                        // 响应报文头
-                        // 响应报文体
-                        console.log(result.data.message[0]);
-                        // _this.name = result.data.message[0].name;
-                    });
+                    this.$http.post(url, {
+                            phone: this.info.phone
+                        },
+                        {
+                            emulateJSON: true
+                        }).then(res => {
+                        console.log(JSON.stringify(res));
+                    })
                 }
 
-            },
+                // 并且响应成功以后会执行then方法中的回调函数
+
+
+                // axios({
+                //     method: 'POST',
+                //     url: url,
+                //     header:'Access-Control-Allow-Origin'
+                // }).then(function (res) {
+                //     console.log(JSON.stringify(res));
+                // }).catch(err => {
+                //     console.log(JSON.stringify(err));
+                // });
+
+                // $.ajax({
+                //     url: url,
+                //     type: 'get',
+                //     dataType: 'JSONP',  // 处理Ajax跨域问题
+                //     async: true,
+                //     jsonp:"callback",//请求类型是回调
+                //     jsonpCallback:"callbackFunction",//数据请求成功时回调的方法
+                //     headers: {
+                //         "content-type": "application/x-www-form-urlencoded",
+                //         "cache-control": "no-cache",
+                //         "postman-token": "790bc9ac-1215-ff3e-2293-ecc3d6eb0c0a"
+                //     },
+                //     timeout: 1000,
+                //     crossDomain: true,
+                //     success: function (data) {
+                //         console.log(JSON.stringify(data))
+                //     },
+                //     complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
+                //         if (status == 'timeout') {//超时,status还有success,error等值的情况
+                //             ajaxTimeOut.abort(); //取消请求
+                //         }
+                //     }
+                // });
+
+            }
+            ,
             timer() {
                 if (this.time > 0) {
                     this.time--;
@@ -223,7 +253,8 @@
                     this.btntxt = "获取验证码";
                     this.disabled = false;
                 }
-            },
+            }
+            ,
             goTo: function () {
                 this.$router.push({name: 'login'})
             }
