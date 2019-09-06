@@ -63,7 +63,7 @@
 <div class="duceapp_body">
   <div id="duceapp_head">
     <div class="headfixed duceapp_head fff hc"
-         style="background-color: #333; background-color:rgba(0,0,0,1); height: 45px;">
+         style="background-color: #1C8CE9; height: 45px;">
       <div class="head_z z"><a href="javascript:;" onclick="history.go(-1)"><i class="duceapp_font f22">
         <svg t="1567736386791" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
              p-id="1713" width="20" height="20">
@@ -84,7 +84,7 @@
         </svg>
         <!--        &#xe932;-->
       </i></a></div>
-      <span style="vertical-align: middle; font-size: 15px; ">积分记录</span>
+      <span style="vertical-align: middle; font-size: 20px; ">积分兑换</span>
     </div>
   </div>
   <div class="creditslog" style="padding-left: 10%; padding-right: 10%;">
@@ -182,6 +182,9 @@
             var _need_num = _jQuery('#need_num').val();
             var _money = _jQuery('#money option:selected').val();
 
+            var j_flag = new Boolean(false);
+            var m_flag = new Boolean(false);
+
             _prestige_score = Number(_prestige_score);
             _money_score = Number(_money_score);
             _jewel_score = Number(_jewel_score);
@@ -195,13 +198,13 @@
             console.log('_jewel:' + _jewel + typeof _jewel);
             console.log('_need_num:' + _need_num + typeof _need_num);
             console.log('_money:' + _money + typeof _money);
-
             console.log(!(_exchange_num < 200 && _exchange_num < _jewel_score));
 
             //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
             if (!(_exchange_num < 200 && _exchange_num < _jewel_score)) {
                 _jQuery('#exchange_num_span').html('<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于甬钻拥有总数及每次最多兑换数量</em>');
             } else {
+                j_flag = true;
                 _jQuery('#exchange_num_span').html('');
             }
 
@@ -209,7 +212,12 @@
             if (!(_need_num < 200 && _need_num < _money_score)) {
                 _jQuery('#need_num_span').html('<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于现有的财富值及每次最多兑换数量</em>');
             } else {
+                m_flag = true;
                 _jQuery('#need_num_span').html('');
+            }
+
+            if (j_flag && m_flag) {
+                return true;
             }
 
             return false;
