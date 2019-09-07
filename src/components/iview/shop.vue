@@ -7,10 +7,10 @@
                p-id="1713" width="16" height="16">
             <path
               d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z"
-              fill="#d81e06" p-id="1714"></path>
+              fill="#FFFFFF" p-id="1714"></path>
           </svg>
         </i>
-        <h1>已领取面膜</h1>
+        <span class="model-head-font">已领取面膜</span>
       </Header>
 
       <div class="model-div-row">
@@ -40,11 +40,8 @@
   .model {
     height: 100%;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
     position: relative;
     top: 0;
-    padding-top: 20px;
     /*background: #151515;*/
   }
 
@@ -59,7 +56,7 @@
     font-size: 1em;
     font-family: 楷体;
     position: relative;
-    margin-bottom: 50px;
+    vertical-align: middle;;
   }
 
   p {
@@ -123,26 +120,48 @@
 
   .model-div-row-btn {
     padding: 5px;
-    background: #FFFFFF;
-    border: black 1px solid;
+    background:red;
+    border: none;
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     width: 80%;
     margin-top: 30px;
     margin-bottom: 20px;
+    color: #FFFFFF;
   }
 
   .model-head-span {
-    background-color: #FFFFFF;
-    height: auto;
+    background-color: #1C8CE9;
     vertical-align: middle;
     text-align: center;
     max-width: 100%;
     margin: 0 auto;
     min-width: 100%;
-    font-size: 24px;
+    font-size: 22px;
+    font-family: 楷体;
+    color: #FFFFFF;
+    font-weight: bolder;
+    max-height: 58px;
+  }
+
+  .model-head-font {
+    vertical-align: middle;
+    margin-bottom: 20px;
+    font-size: 22px;
     font-family: 楷体;
   }
+
+  .close-left {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    float: left;
+    left: 10px;
+    vertical-align: middle;
+    margin-top: 19px;
+    background: rgba(0, 0, 0, 0);
+  }
+
 
 </style>
