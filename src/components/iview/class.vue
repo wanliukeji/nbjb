@@ -1,7 +1,7 @@
 <template>
   <div class="model">
     <Layout>
-      <Header class="model-head-span" style=" margin-bottom: 10px;">
+      <Header class="model-head-span">
         商品分类
       </Header>
 
@@ -9,35 +9,35 @@
         <div class="model-div-row-center">
           <h4 style="font-family: 楷体; margin-bottom: 20px;">日用品</h4>
           <div class="model-div-row-div" @click="goTo">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
         </div>
@@ -46,35 +46,35 @@
         <div class="model-div-row-center">
           <h4 style="font-family: 楷体; margin-bottom: 20px;">电器</h4>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
           <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40" >
+            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
             <span class="model-div-row-center-span">红钻会员</span>
           </div>
         </div>
@@ -148,12 +148,39 @@
                         class: "icon-personal",
                         desc: "个人中心"
                     },
-                ]
+                ],
+                cate: [],
+                goods_info: '',
+                goods_img: ''
             }
+        },
+        created() {
+            this.$http.post(
+                'http://www.gzysxc.cn:8888/api/goods/get_cate',
+                {
+                    cate_id: 1
+                },
+                {
+                    emulateJSON: true
+                }
+            ).then(res => {
+                var _json = res.body;
+                console.log(_json);
+                var logo = res.logo;
+                if (res.status == 200) {
+                    console.log(_json.goods_info);
+                } else {
+                    this.$notify.error({
+                        title: '连接服务器失败',
+                        message: _json.errmsg,
+                        type: "error"
+                    });
+                }
+            });
         },
         methods: {
             goTo: function () {
-                    this.$router.push({name: 'good'});
+                this.$router.push({name: 'good'});
             }
         }
     }
@@ -167,15 +194,18 @@
   }
 
   .model-head-span {
-    background-color: #FFFFFF;
+    background-color: #1C8CE9;
     height: auto;
     vertical-align: middle;
     text-align: center;
     max-width: 100%;
     margin: 0 auto;
     min-width: 100%;
-    font-size: 24px;
+    font-size: 22px;
     font-family: 楷体;
+    color: #FFFFFF;
+    font-weight: bolder;
+    max-height: 58px;
   }
 
   .model-nav {
@@ -247,5 +277,7 @@
     font-family: 楷体;
     margin-top: 16px;
   }
+
+
 
 </style>

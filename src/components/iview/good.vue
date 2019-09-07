@@ -1,14 +1,23 @@
 <template>
   <div class="model">
-    <i class="close-left" @click="goTo">
-      <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1713" width="16" height="16"><path d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z" fill="#d81e06" p-id="1714"></path></svg>
-    </i>
+    <Layout>
+      <Header class="model-head-span">
+        <span class="model-head-font">商品</span>
+      </Header>
+      <i class="close-left" @click="goTo">
+        <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             p-id="1713" width="16" height="16">
+          <path
+            d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z"
+            fill="#FFFFFF" p-id="1714"></path>
+        </svg>
+      </i>
 
-    <div class="model-div-row">
-      <img src="/static/image/mianmo02.jpg" alt="" class="model-div-row-img">
-    </div>
+      <div class="model-div-row">
+        <img src="/static/image/mianmo02.jpg" alt="" class="model-div-row-img">
+      </div>
 
-    <div class="model-div-row-hr" style="text-align: left;">
+      <div class="model-div-row-hr" style="text-align: left;">
       <span>
       <svg t="1567478430914" style="margin-top: -3px" class="icon" viewBox="0 0 1024 1024" version="1.1"
            xmlns="http://www.w3.org/2000/svg"
@@ -19,13 +28,14 @@
         368
       </span>
 
-      <div class="model-div-row-text">
-        说明：购买此商品即可成为会员
+        <div class="model-div-row-text">
+          说明：购买此商品即可成为会员
+        </div>
       </div>
-    </div>
 
-    <span style="height: 2px; background: #bcbcbc;"></span>
-    <button class="login-btn" @click="buyTo">去付款</button>
+      <span style="height: 2px; background: #bcbcbc;"></span>
+      <button class="login-btn" @click="buyTo">去付款</button>
+    </Layout>
   </div>
 </template>
 
@@ -37,16 +47,13 @@
                 window.history.back();
             },
             buyTo: function () {
-                this.$router.push({name:'address'});
+                this.$router.push({name: 'address'});
             }
         }
     }
 </script>
 
 <style scoped>
-  * {
-    color: red;
-  }
   .model {
     height: 100%;
     width: 100%;
@@ -54,36 +61,40 @@
     /*padding-right: 10%;*/
     position: relative;
     top: 0;
-    padding-top: 20px;
   }
 
   .close-left {
     width: 10px;
     height: 10px;
     position: absolute;
-    left: 10%;
+    float: left;
+    left: 10px;
+    vertical-align: middle;
+    margin-top: 19px;
+    background: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
   }
 
   h1 {
     font-size: 1.5em;
     font-family: 楷体;
     position: relative;
-    margin-top: 20%;
   }
 
 
   .login-btn {
+    margin: 0 auto;
     height: auto;
     width: 80%;
     font-size: 0.8em;
-    background: #FFFFFF;
-    border: 1px black solid;
+    background: red;
     padding-top: 8px;
     padding-bottom: 8px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
     margin-bottom: 20px;
+    color: #FFFFFF;
   }
 
   p {
@@ -126,7 +137,20 @@
     line-height: 20px;
     text-align: left;
     left: 0;
-    color: red;
   }
 
+  .model-head-span {
+    background-color: #1C8CE9;
+    height: auto;
+    vertical-align: middle;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 100%;
+    font-size: 22px;
+    font-family: 楷体;
+    color: #FFFFFF;
+    font-weight: bolder;
+    max-height: 58px;
+  }
 </style>

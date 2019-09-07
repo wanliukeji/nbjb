@@ -196,7 +196,7 @@
       :mask-closable="false"
       :styles="styles"
     >
-      <Form :model="formData">
+      <Form :model="cus_info">
         <Row :gutter="32">
           <Col span="32">
             <FormItem label="微信号码" label-position="top">

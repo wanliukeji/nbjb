@@ -1,5 +1,5 @@
 <template>
-  <div class="model" v-show="component_name == 'home'">
+  <div class="model">
     <Layout>
       <Header class="model-head-span">
         <span class="model-head-font">首页</span>
@@ -38,7 +38,6 @@
           </CarouselItem>
         </Carousel>
       </div>
-
       <div class="model-div-row" style="margin-bottom: 10px;">
         <video-player class="video-player vjs-custom-skin model-div-row-img" style="width: 80%; margin: 0 auto;"
                       ref="videoPlayer"
@@ -48,52 +47,10 @@
       </div>
       <div class="model-div-row" @click="buyTo">
         <div class="model-div-row-center">
-          <div class="model-div-row-div" @click="buyTo">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
+          <div class="model-div-row-div" @click="buyTo" v-for="(item , index) in banner">
+            <img :src="item.img_url" alt="" width="60" height="70">
+<!--            <span class="model-div-row-center-span">保湿面膜</span>-->
           </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
-
-            <span class="model-div-row-center-span">保湿面膜</span>
-          </div>
-
         </div>
         <div class="model-div-row">
         </div>
@@ -150,7 +107,11 @@
         props: ['idx'],
         data() {
             return {
-                component_name: 'home',
+                banner: [],
+                info: {
+                    video_url: '',
+                    logo_url: ''
+                },
                 playerOptions: {
                     //播放速度
                     playbackRates: [0.5, 1.0, 1.5, 2.0],
@@ -202,11 +163,32 @@
             }
         },
         created() {
-            this.component_name = 'home';
+            this.$http.get(
+                'http://www.gzysxc.cn:8888/api/index/get_index', {emulateJSON: true}
+            ).then(res => {
+                var _json = res.body;
+                var video = JSON.stringify(res.video);
+                var logo = res.logo;
+                if (res.status == 200) {
+                    // console.log(_json.video[0].video_url);
+                    // console.log(_json.logo[0].logo_url);
+                    this.playerOptions.sources.src = _json.video[0].video_url;
+                    this.banner = _json.banner;
+                    console.log(this.banner);
+                    for (var i = 0; i < this.banner.length; i++) {
+                        console.log(this.banner[i]);
+                    }
+                } else {
+                    this.$notify.error({
+                        title: '连接服务器失败',
+                        message: _json.errmsg,
+                        type: "error"
+                    });
+                }
+            });
         },
         methods: {
             route: function () {
-
             },
             buyTo: function () {
                 this.$router.push({name: 'good'});
@@ -282,7 +264,7 @@
     min-height: 200px;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     /*padding-left: 10%;*/
     /*padding-right: 10%;*/
   }

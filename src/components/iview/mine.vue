@@ -305,11 +305,11 @@
     max-width: 100%;
     margin: 0 auto;
     min-width: 100%;
-    font-size: 24px;
+    font-size: 22px;
     font-family: 楷体;
-    padding-bottom: 10px;
-    height: 45px;
     color: #FFFFFF;
+    font-weight: bolder;
+    max-height: 58px;
   }
 
   span {
@@ -329,7 +329,7 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
-    border-bottom: 1px silver solid;
+    border-bottom: 1px #dcdcdc solid;
     height: auto;
     padding: 0px;
   }
