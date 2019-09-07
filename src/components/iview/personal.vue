@@ -7,7 +7,8 @@
                p-id="1726" width="23" height="23">
             <path
               d="M683.2 958.4c-6.4 0-12.8-1.6-17.6-6.4l-414.4-416c-6.4-6.4-9.6-16-9.6-24s3.2-17.6 9.6-24l414.4-416c9.6-9.6 24-9.6 33.6 0 9.6 9.6 9.6 24 0 33.6L294.4 512l406.4 406.4c9.6 9.6 9.6 24 0 33.6-6.4 3.2-12.8 6.4-17.6 6.4z"
-              fill="#ffffff" p-id="1727"></path>
+              fill="#ffffff" p-id="1727">
+            </path>
           </svg>
         </i>
         设置
@@ -143,6 +144,7 @@
           <Col span="32">
             <FormItem label="手机号码" label-position="top">
               <Input v-model="cus_info.phone" placeholder="请输入新的手机号码....."/>
+              <button class="send-btn" :disabled="disabled" @click="sendcode">{{btntxt}}</button>
             </FormItem>
           </Col>
         </Row>
@@ -156,7 +158,7 @@
       </Form>
       <div class="demo-drawer-footer">
         <Button style="margin-right: 8px" @click="value4 = false">取消</Button>
-        <Button type="primary" @click="value4 = false">确定</Button>
+        <Button type="primary" @click="updata_phone">确定</Button>
       </div>
     </Drawer>
     <Drawer
@@ -184,7 +186,7 @@
       </Form>
       <div class="demo-drawer-footer">
         <Button style="margin-right: 8px" @click="value6 = false">取消</Button>
-        <Button type="primary" @click="value6 = false">确定</Button>
+        <Button type="primary" @click="updata_pwd">确定</Button>
       </div>
     </Drawer>
     <Drawer
@@ -198,14 +200,14 @@
         <Row :gutter="32">
           <Col span="32">
             <FormItem label="微信号码" label-position="top">
-              <Input v-model="formData.name" placeholder="请输入新的微信号码....."/>
+              <Input v-model="cus_info.new_wechat" placeholder="请输入新的微信号码....."/>
             </FormItem>
           </Col>
         </Row>
       </Form>
       <div class="demo-drawer-footer">
         <Button style="margin-right: 8px" @click="value5 = false">取消</Button>
-        <Button type="primary" @click="value5 = false">确定</Button>
+        <Button type="primary" @click="updata_wechat">确定</Button>
       </div>
     </Drawer>
   </div>
@@ -256,10 +258,14 @@
                     cus_id: 0,
                     new_name: '',
                     check_code: '',
-                    phone: '',
+                    phone: '15957408879',
                     last_pwd: '',
-                    new_pwd: ''
-                }
+                    new_pwd: '',
+                    new_wechat: ''
+                },
+                disabled: false,
+                time: 0,
+                btntxt: "获取验证码",
             }
         },
         methods: {
@@ -288,7 +294,6 @@
                                     title: '修改成功',
                                     message: _json.errmsg
                                 });
-
                             } else {
                                 _this.$notify.error({
                                     title: '修改失败',
@@ -299,6 +304,174 @@
                     }
                 }
             },
+            updata_pwd() {
+                var _this = this;
+                _this.value6 = false;
+                var url = 'http://www.gzysxc.cn:8888/api/user/update_password';
+                if (_this.cus_info.last_pwd != '' || _this.cus_info.new_pwd != '') {
+                    var info = JSON.stringify(localStorage.getItem('cus_info'));
+                    if (null != info) {
+                        var cus_id = Number(info.cus_id);
+                        _this.$http.post(url, {
+                            cus_id: 3,
+                            last_pwd: _this.cus_info.last_pwd,
+                            new_pwd: _this.cus_info.new_pwd,
+                        }, {emulateJSON: true}).then(res => {
+                            var _json = JSON.stringify(res.body);
+                            if (_json.errcode == 0) {
+                                _this.$notify.success({
+                                    title: '修改成功',
+                                    message: _json.errmsg
+                                });
+                            } else {
+                                _this.$notify.error({
+                                    title: '修改失败',
+                                    message: _json.errmsg
+                                });
+                            }
+                        });
+                    }
+                }
+            },
+            updata_phone() {
+                var _this = this;
+                _this.value4 = false;
+                var url = 'http://www.gzysxc.cn:8888/api/user/update_phone';
+                if (this.exec_phone() && this.exec_code()) {
+                    var info = JSON.stringify(localStorage.getItem('cus_info'));
+                    if (null != info) {
+                        var cus_id = Number(info.cus_id);
+                        _this.$http.post(url, {
+                            cus_id: 3,
+                            new_name: _this.cus_info.new_name
+                        }, {emulateJSON: true}).then(res => {
+                            var _json = JSON.stringify(res.body);
+                            if (_json.errcode == 0) {
+                                _this.$notify.success({
+                                    title: '修改成功',
+                                    message: _json.errmsg,
+                                    type: "success"
+                                });
+                            } else {
+                                _this.$notify.error({
+                                    title: '修改失败',
+                                    message: _json.errmsg,
+                                    type: "error"
+                                });
+                            }
+                        });
+                    }
+                } else {
+                    _this.$notify.error({
+                        title: '修改失败',
+                        message: '',
+                        type: "error"
+                    });
+                }
+            },
+            updata_wechat() {
+                var _this = this;
+                _this.value5 = false;
+                var url = 'http://www.gzysxc.cn:8888/api/user/update_wechat';
+                if (this.cus_info.new_wechat != '' || this.cus_info.new_wechat != null) {
+                    var info = JSON.stringify(localStorage.getItem('cus_info'));
+                    if (null != info) {
+                        var cus_id = Number(info.cus_id);
+                        _this.$http.post(url, {
+                            cus_id: 3,
+                            new_wechat: _this.cus_info.new_wechat
+                        }, {emulateJSON: true}).then(res => {
+                            var _json = JSON.stringify(res.body);
+                            if (_json.errcode == 0) {
+                                _this.$notify.success({
+                                    title: '修改成功',
+                                    message: _json.errmsg,
+                                    type: "success"
+                                });
+                            } else {
+                                _this.$notify.error({
+                                    title: '修改失败',
+                                    message: _json.errmsg,
+                                    type: "error"
+                                });
+                            }
+                        });
+                    }
+                } else {
+                    _this.$notify.error({
+                        title: '修改失败',
+                        message: '',
+                        type: "error"
+                    });
+                }
+            },
+            //验证手机号码部分
+            sendcode() {
+                var url = 'http://www.gzysxc.cn:8888/api/user/send_check_code';
+                if (this.exec_phone()) {
+                    this.time = 60;
+                    this.disabled = true;
+                    this.timer();
+                    this.$http.post(url, {
+                            phone: this.cus_info.phone,
+                            check_code: this.info.check_code
+                        },
+                        {emulateJSON: true}).then(res => {
+                        console.log(JSON.stringify(res));
+                    })
+                } else {
+                    return;
+                }
+            }
+            ,
+            timer() {
+                if (this.time > 0) {
+                    this.time--;
+                    this.btntxt = this.time + "s后重新获取";
+                    setTimeout(this.timer, 1000);
+                } else {
+                    this.time = 0;
+                    this.btntxt = "获取验证码";
+                    this.disabled = false;
+                }
+            },
+            //手机验证
+            exec_phone: function () {
+                var phone_flag = false;
+                if (this.cus_info.phone != '' || this.cus_info.phone != null) {
+                    if ((/^1[34578]\d{9}$/.test(this.cus_info.phone))) {
+                        phone_flag = true;
+                    } else {
+                        this.$notify.error({
+                            title: '操作失败',
+                            message: '手机格式输入有误，请重新输入',
+                            type: 'ERROR'
+                        })
+                        return phone_flag;
+                    }
+                } else {
+                    this.$notify.error({
+                        title: '操作失败',
+                        message: '请输入正确的手机号码',
+                        type: 'ERROR'
+                    })
+                    return phone_flag;
+                }
+                return phone_flag;
+            },
+            exec_code() {
+                var check_code_flag = false;
+                if (this.cus_info.check_code != '' || this.cus_info.check_code != null) {
+                    check_code_flag = true;
+                } else {
+                    this.$notify.error({
+                        title: '请输入验证码',
+                        message: '',
+                        type: 'ERROR'
+                    })
+                    return check_code_flag;
+                }
+            }
         }
     }
 </script>
@@ -463,4 +636,22 @@
     background: rgba(0, 0, 0, 0);
   }
 
+  .send-btn {
+    height: 30px;
+    width: 100px;
+    margin-top: -40px;
+    font-size: 0.8em;
+    -webkit-border-radius: 38px;
+    -moz-border-radius: 38px;
+    border-radius: 38px;
+    position: absolute;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-weight: 500;
+    border: none;
+    /*margin-bottom: 30px;*/
+    background: #0a6beb;
+    color: #FFFFFF;
+  }
 </style>
