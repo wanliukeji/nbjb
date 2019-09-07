@@ -19,7 +19,7 @@ import 'iview/dist/styles/iview.css'  //引用 ivew 全局样式
 
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
-
+import storage from 'good-storage'
 //页面跳转
 // import global from './components/Global.vue'
 
@@ -33,6 +33,7 @@ Vue.use(VueResource);
 Vue.use(ElementUI) //使用elementUI
 Vue.use(iView);
 Vue.use(VueRouter);
+Vue.use(storage)
 
 Vue.use(VueVideoPlayer)
 // Vue.use(axios);

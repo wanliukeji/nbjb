@@ -2,33 +2,38 @@
   <div class="model" v-show="component_name == 'home'">
     <Layout>
       <Header class="model-head-span">
-        首页
+        <span class="model-head-font">首页</span>
       </Header>
       <div class="model-div-row" style="margin-bottom: 10px;">
         <Carousel autoplay loop>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180320.jpg" alt="" class="model-div-row-img">
+              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180320.jpg" alt=""
+                   class="model-div-row-img">
             </div>
           </CarouselItem>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180358.jpg" alt="" class="model-div-row-img">
+              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180358.jpg" alt=""
+                   class="model-div-row-img">
             </div>
           </CarouselItem>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180432.jpg" alt="" class="model-div-row-img">
+              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180432.jpg" alt=""
+                   class="model-div-row-img">
             </div>
           </CarouselItem>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180340.jpg" alt="" class="model-div-row-img">
+              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180340.jpg" alt=""
+                   class="model-div-row-img">
             </div>
           </CarouselItem>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180418.jpg" alt="" class="model-div-row-img">
+              <img src="http://px94uvtwb.bkt.clouddn.com/Screenshot_20190829_180418.jpg" alt=""
+                   class="model-div-row-img">
             </div>
           </CarouselItem>
         </Carousel>
@@ -41,7 +46,7 @@
                       :options="playerOptions">
         </video-player>
       </div>
-      <div class="model-div-row"  @click="buyTo">
+      <div class="model-div-row" @click="buyTo">
         <div class="model-div-row-center">
           <div class="model-div-row-div" @click="buyTo">
             <img src="/static/image/mainmo.jpg" alt="" width="50" height="60">
@@ -219,7 +224,7 @@
   }
 
   .model-head-span {
-    background-color: #FFFFFF;
+    background-color: #1C8CE9;
     height: auto;
     vertical-align: middle;
     text-align: center;
@@ -228,9 +233,16 @@
     min-width: 100%;
     font-size: 22px;
     font-family: 楷体;
-    color: red;
+    color: #FFFFFF;
     font-weight: bolder;
-    border-bottom: #d0e0f1 1px solid;
+    max-height: 58px;
+  }
+
+  .model-head-font {
+    vertical-align: middle;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-family: 楷体;
   }
 
   .model-nav {

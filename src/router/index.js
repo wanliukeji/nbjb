@@ -102,6 +102,24 @@ export default new Router({
         title: "领取面膜"
       },
       component: () => import("@/components/iview/shop")
+    },
+    ,
+    {
+      path: '/upload_head',
+      name: 'upload_head',
+      meta: {
+        title: "上传头像"
+      },
+      component: () => import("@/components/iview/upload_head")
+    }
+    ,
+    {
+      path: '/upload_qr',
+      name: 'upload_qr',
+      meta: {
+        title: "上传二维码"
+      },
+      component: () => import("@/components/iview/upload_qr")
     }
   ],
   beforeEach: function () {

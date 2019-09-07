@@ -3,11 +3,16 @@
     <Layout>
       <Header class="model-head-span">
         <i class="close-left" @click="goTo">
-          <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1713" width="16" height="16"><path d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z" fill="#d81e06" p-id="1714"></path></svg>
+          <svg t="1567775293857" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               p-id="1726" width="23" height="23">
+            <path
+              d="M683.2 958.4c-6.4 0-12.8-1.6-17.6-6.4l-414.4-416c-6.4-6.4-9.6-16-9.6-24s3.2-17.6 9.6-24l414.4-416c9.6-9.6 24-9.6 33.6 0 9.6 9.6 9.6 24 0 33.6L294.4 512l406.4 406.4c9.6 9.6 9.6 24 0 33.6-6.4 3.2-12.8 6.4-17.6 6.4z"
+              fill="#ffffff" p-id="1727"></path>
+          </svg>
         </i>
         设置
       </Header>
-      <div class="model-div-row">
+      <div class="model-div-row" @click="route('upload_head')">
         <div class="model-div-row-center">
           <div class="model-div-row-left">
             <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
@@ -20,11 +25,10 @@
                 fill="#8a8a8a" p-id="1729"></path>
             </svg>
           </div>
-
         </div>
       </div>
-      <div class="model-div-row" style="margin-top: 20px;">
-        <div class="model-div-row-center" style="margin-bottom: 20px;">
+      <div class="model-div-row" @click="value3 = true">
+        <div class="model-div-row-center">
           <p><span class="model-div-row-center-left-span">昵称</span>
             <span class="model-div-row-center-right-span">
           <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +41,7 @@
         </div>
       </div>
       <br>
-      <div class="model-div-row" style="margin-top: -40px;">
+      <div class="model-div-row" style="margin-top: -40px;" @click="value4 = true">
         <div class="model-div-row-center">
           <p><span class="model-div-row-center-left-span">修改手机号码</span>
             <span class="model-div-row-center-right-span">
@@ -51,7 +55,21 @@
         </div>
       </div>
       <br>
-      <div class="model-div-row" style="margin-top: -40px;">
+      <div class="model-div-row" style="margin-top: -40px;" @click="value6 = true">
+        <div class="model-div-row-center">
+          <p><span class="model-div-row-center-left-span">修改密码</span>
+            <span class="model-div-row-center-right-span">
+          <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               p-id="1728" width="17" height="10">
+            <path
+              d="M719.969 493.984L298.307 72.323c-9.417-9.418-23.192-10.912-30.767-3.337-7.575 7.574-6.08 21.349 3.337 30.767l411.91 411.908-412.412 412.408c-9.418 9.418-10.912 23.194-3.337 30.769 7.574 7.575 21.35 6.08 30.767-3.337l421.663-421.663a29.523 29.523 0 0 0 4.589-5.937c6.68-7.718 4.994-20.835-4.088-29.917z"
+              fill="#8a8a8a" p-id="1729"></path>
+          </svg>
+        </span></p>
+        </div>
+      </div>
+      <br>
+      <div class="model-div-row" style="margin-top: -40px;" @click="value5 = true">
         <div class="model-div-row-center">
           <p><span class="model-div-row-center-left-span">绑定微信号</span>
             <span class="model-div-row-center-right-span">
@@ -64,7 +82,7 @@
         </span></p>
         </div>
       </div>
-      <div class="model-div-row" style="margin-top: -20px;">
+      <div class="model-div-row" style="margin-top: -20px;" @click="route('upload_qr')">
         <div class="model-div-row-center">
           <p><span class="model-div-row-center-left-span">上传收款码</span>
             <span class="model-div-row-center-right-span">
@@ -77,9 +95,9 @@
         </span></p>
         </div>
       </div>
-      <div class="model-div-row" style="margin-top: -20px;" @click="route">
+      <div class="model-div-row" style="margin-top: -20px;" @click="route('login')">
         <div class="model-div-row-center">
-          <p><span class="model-div-row-center-left-span" >注销</span>
+          <p><span class="model-div-row-center-left-span">注销</span>
             <span class="model-div-row-center-right-span">
           <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                p-id="1728" width="17" height="10">
@@ -91,6 +109,105 @@
         </div>
       </div>
     </Layout>
+
+
+    <Drawer
+      title="修改昵称"
+      v-model="value3"
+      width="80%"
+      :mask-closable="false"
+      :styles="styles">
+      <Form :model="cus_info">
+        <Row :gutter="32">
+          <Col span="32">
+            <FormItem label="用户名" label-position="top">
+              <Input v-model="cus_info.new_name" placeholder="请输入新的用户名....."/>
+            </FormItem>
+          </Col>
+        </Row>
+      </Form>
+      <div class="demo-drawer-footer">
+        <Button style="margin-right: 8px" @click="value3 = false">取消</Button>
+        <Button type="primary" @click="updata_name">确定</Button>
+      </div>
+    </Drawer>
+    <Drawer
+      title="修改手机号码"
+      v-model="value4"
+      width="80%"
+      :mask-closable="false"
+      :styles="styles"
+    >
+      <Form :model="cus_info">
+        <Row :gutter="32">
+          <Col span="32">
+            <FormItem label="手机号码" label-position="top">
+              <Input v-model="cus_info.phone" placeholder="请输入新的手机号码....."/>
+            </FormItem>
+          </Col>
+        </Row>
+        <Row :gutter="32">
+          <Col span="32">
+            <FormItem label="验证码" label-position="top">
+              <Input v-model="cus_info.check_code" placeholder="请输入验证码....."/>
+            </FormItem>
+          </Col>
+        </Row>
+      </Form>
+      <div class="demo-drawer-footer">
+        <Button style="margin-right: 8px" @click="value4 = false">取消</Button>
+        <Button type="primary" @click="value4 = false">确定</Button>
+      </div>
+    </Drawer>
+    <Drawer
+      title="修改密码"
+      v-model="value6"
+      width="80%"
+      :mask-closable="false"
+      :styles="styles"
+    >
+      <Form :model="cus_info">
+        <Row :gutter="32">
+          <Col span="32">
+            <FormItem label="旧密码" label-position="top">
+              <Input type="password" v-model="cus_info.last_pwd" placeholder="请输入旧密码....."/>
+            </FormItem>
+          </Col>
+        </Row>
+        <Row :gutter="32">
+          <Col span="32">
+            <FormItem label="新密码" label-position="top">
+              <Input type="password" v-model="cus_info.new_pwd" placeholder="请输入新密码....."/>
+            </FormItem>
+          </Col>
+        </Row>
+      </Form>
+      <div class="demo-drawer-footer">
+        <Button style="margin-right: 8px" @click="value6 = false">取消</Button>
+        <Button type="primary" @click="value6 = false">确定</Button>
+      </div>
+    </Drawer>
+    <Drawer
+      title="绑定微信号"
+      v-model="value5"
+      width="80%"
+      :mask-closable="false"
+      :styles="styles"
+    >
+      <Form :model="formData">
+        <Row :gutter="32">
+          <Col span="32">
+            <FormItem label="微信号码" label-position="top">
+              <Input v-model="formData.name" placeholder="请输入新的微信号码....."/>
+            </FormItem>
+          </Col>
+        </Row>
+      </Form>
+      <div class="demo-drawer-footer">
+        <Button style="margin-right: 8px" @click="value5 = false">取消</Button>
+        <Button type="primary" @click="value5 = false">确定</Button>
+      </div>
+    </Drawer>
   </div>
 </template>
 
@@ -115,17 +232,73 @@
                         class: "icon-personal",
                         desc: "个人中心"
                     },
-                ]
+                ],
+                value3: false,
+                value4: false,
+                value5: false,
+                value6: false,
+                styles: {
+                    height: 'calc(100% - 55px)',
+                    overflow: 'auto',
+                    paddingBottom: '53px',
+                    position: 'static'
+                },
+                formData: {
+                    name: '',
+                    url: '',
+                    owner: '',
+                    type: '',
+                    approver: '',
+                    date: '',
+                    desc: ''
+                },
+                cus_info: {
+                    cus_id: 0,
+                    new_name: '',
+                    check_code: '',
+                    phone: '',
+                    last_pwd: '',
+                    new_pwd: ''
+                }
             }
         },
         methods: {
-            route: function () {
-                this.component_name = 'home';
-                this.$router.push({name: 'login', query: {component_name: 'login'}});
+            route: function (val) {
+                this.$router.push({name: val});
             },
             goTo: function () {
                 window.history.back();
-            }
+            },
+            updata_name() {
+                var _this = this;
+                _this.value3 = false;
+                var url = 'http://www.gzysxc.cn:8888/api/user/update_name';
+                if (_this.cus_info.new_name != '' || _this.cus_info.new_name != null) {
+                    alert(_this.cus_info.new_name);
+                    var info = JSON.stringify(localStorage.getItem('cus_info'));
+                    if (null != info) {
+                        var cus_id = Number(info.cus_id);
+                        _this.$http.post(url, {
+                            cus_id: 3,
+                            new_name: _this.cus_info.new_name
+                        }, {emulateJSON: true}).then(res => {
+                            var _json = JSON.stringify(res.body);
+                            if (_json.errcode == 0) {
+                                _this.$notify.success({
+                                    title: '修改成功',
+                                    message: _json.errmsg
+                                });
+
+                            } else {
+                                _this.$notify.error({
+                                    title: '修改失败',
+                                    message: _json.errmsg
+                                });
+                            }
+                        });
+                    }
+                }
+            },
         }
     }
 </script>
@@ -134,12 +307,19 @@
   .model {
     height: 100%;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
     position: relative;
     top: 0;
-    padding-top: 20px;
-    /*background: #151515;*/
+  }
+
+  .demo-drawer-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 16px;
+    text-align: right;
+    background: #fff;
   }
 
   h1 {
@@ -159,14 +339,11 @@
 
   .model-div-row {
     position: relative;
-    min-height: 60px;
     width: 100%;
     margin: 0 auto;
     height: auto;
-    padding: 10px;
+    padding-bottom: 25px;
     background-color: #FFFFFF;
-    margin-bottom: 10px;
-
   }
 
   .model-div-row-center {
@@ -217,8 +394,9 @@
   p > a {
     font-size: 12px;
   }
+
   * {
-    background-color: #FFFFFF;
+    /*background-color: #FFFFFF;*/
   }
 
   .model-div-row-center-left-span {
@@ -234,7 +412,7 @@
   }
 
   .model-head-span {
-    background-color: #FFFFFF;
+    background-color: #1C8CE9;
     height: auto;
     vertical-align: middle;
     text-align: center;
@@ -243,6 +421,7 @@
     min-width: 100%;
     font-size: 24px;
     font-family: 楷体;
+    color: #FFFFFF;
   }
 
   .model-foot-span {
@@ -270,15 +449,18 @@
     display: flex;
     z-index: 10;
     padding-top: 8px;
-    border-top:1px #f4f4f4 solid ;
+    border-top: 1px #f4f4f4 solid;
   }
 
   .close-left {
     width: 10px;
     height: 10px;
-    margin-top: 25px;
     position: absolute;
-    left: 20%;
+    float: left;
+    left: 10px;
+    vertical-align: middle;
+    margin-top: 19px;
+    background: rgba(0, 0, 0, 0);
   }
 
 </style>

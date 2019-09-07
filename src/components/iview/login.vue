@@ -1,9 +1,10 @@
 <template lang="html">
-  <div class="model">
-    <h1>登录</h1>
+  <div class="model" v-show="component_name == 'login'">
     <div class="modal-body">
-      <input placeholder="输入手机号" type="text" class="username-input"/>
-      <input placeholder="输入密码" type="password" class="password-input"/>
+      <img class="modal-body-logo" src="http://pxasartjo.bkt.clouddn.com/Snipaste_2019-09-04_16-25-19.png" alt=""
+           width="100" height="100">
+      <input placeholder="输入手机号" v-model="info.phone" type="text" class="username-input" autocomplete="off"/>
+      <input placeholder="输入密码" v-model="info.cus_pwd" type="password" class="password-input"/>
       <p>
         <span class="password-input-p-left" @click="goTo">没有账号? 去注册</span>
         <span class="password-input-p-right">忘记密码</span>
@@ -14,11 +15,17 @@
 </template>
 
 <script>
+    import storage from 'good-storage'
     export default {
         name: "login",
         data() {
             return {
-                component_name: 'login'
+                component_name: 'login',
+                info: {
+                    cus_pwd: 'bbc123good',
+                    cus_id: '',
+                    phone: '15957408879'
+                }
             }
         },
         created() {
@@ -26,11 +33,51 @@
         },
         methods: {
             route: function () {
-                this.component_name = 'home';
-                this.$router.push({name: 'home'});
+                if (this.is_flag(this.info.phone) && this.is_flag(this.info.cus_pwd)) {
+                    var url = 'http://www.gzysxc.cn:8888/api/user/login';
+                    this.$http.post(url, {
+                            cus_pwd: this.info.cus_pwd,
+                            phone: this.info.phone
+                        },
+                        {sync: true},
+                        {emulateJSON: true}
+                    ).then(res => {
+                        var data = JSON.stringify(res.body);
+                        var cus_info = data.cus_info;
+                        console.log(JSON.stringify(res.body));
+                        if (res.status == 200) {
+                            localStorage.setItem('cus_info', cus_info)
+                            // storage.setItem('cus_info', cus_info);
+                            console.log('缓存用户信息:' + localStorage.getItem('cus_info'));
+                            // this.$notify.success({
+                            //     title: '登录成功',
+                            //     message: '欢迎进入云上商城',
+                            //     type: 'success'
+                            // })
+                            this.$router.push({name: 'home'})
+                        } else {
+                            console.log(JSON.stringify(res));
+                            this.$notify.error({
+                                title: '登录失败',
+                                message: '请输入正确的账号密码',
+                                type: 'error'
+                            })
+                            return;
+                            // window.history.go(0);
+                        }
+                    }).catch(err => {
+
+                    });
+                }
             },
             goTo: function () {
                 this.$router.push({name: 'regedit'});
+            },
+            is_flag(val) {
+                if (val != '' || val != null) {
+                    return true;
+                }
+                return false;
             }
         }
     }
@@ -42,23 +89,14 @@
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
-    position: relative;
+    position: page;
     top: 0;
     padding-top: 20px;
-  }
-
-  .model {
-    background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567751267688&di=de16fa21bf5a3a8f8b61b097d49c131f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201411%2F01%2F20141101045119_wa8CW.jpeg") top center no-repeat;
-    background-size: 100% 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
     color: #FFFFFF;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    /*position: absolute;*/
-    /*top:0px;*/
-    /*left:0px;*/
-    /*right:0px;*/
-    /*bottom:0px;*/
+
   }
 
   .close-left {
@@ -74,7 +112,6 @@
     position: relative;
     margin-top: 10px;
     margin-top: 20px;
-    color: #FFFFFF;
   }
 
   .modal-body {
@@ -99,20 +136,16 @@
   .login-btn {
     height: auto;
     width: 85%;
-    /*margin-top: 20%;*/
+    margin-top: 20%;
     font-size: 1.2em;
-    background: #FFFFFF;
-    /*border: 1px black solid;*/
+    background: #1f1fe9;
     padding-top: 5px;
     padding-bottom: 5px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
     border: none;
-    border: black 1px solid;
-    background: rgba(0,0,0,0);
-    margin-bottom: 10px;
-    bottom: 0;
+    color: #FFFFFF;
   }
 
   p {
@@ -139,6 +172,8 @@
 
   input {
     background-color: #FFFFFF;
+    border-radius: 30px;
+    height: 35px;
   }
 
   .modal-body-logo {

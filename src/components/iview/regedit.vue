@@ -1,5 +1,5 @@
 <template>
-  <div class="model" v-show="component_name == 'regedit'">
+  <div class="model" >
     <h1>注册账户</h1>
     <div class="modal-body">
       <input v-model="info.phone" placeholder="输入手机号" class="input-text"/>
@@ -7,7 +7,7 @@
       <input v-model="info.check_code" placeholder="输入验证码" class="input-text"/>
       <input v-model="info.invit_code" placeholder="输入邀请码" class="input-text"/>
       <input v-model="info.st_pwd" type="password" placeholder="创建密码" class="input-text"/>
-      <input v-model="info.sec_pwd" type="password" placeholder="确认密码" class="input-text" />
+      <input v-model="info.sec_pwd" type="password" placeholder="确认密码" class="input-text"/>
       <p>
         <span class="password-input-p-left">已有账号? 去登录</span>
         <span class="password-input-p-right">忘记密码</span>
@@ -114,7 +114,7 @@
                 }
 
                 if (this.info.check_code != '' || this.info.check_code != null) {
-                        check_code_flag = true;
+                    check_code_flag = true;
                 } else {
                     this.$notify.error({
                         title: '请输入验证码',
@@ -198,7 +198,7 @@
                     this.$http.post(url, {
                             phone: this.info.phone
                         },
-                        { emulateJSON: true }).then(res => {
+                        {emulateJSON: true}).then(res => {
                         console.log(JSON.stringify(res));
                     })
                 } else {
@@ -327,7 +327,7 @@
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
-    background-color:rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
   }
 
   p {
@@ -386,17 +386,19 @@
     border-radius: 38px;
     position: absolute;
     right: 10%;
-    background-color:rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
     font-weight: 500;
     border: #FFFFFF 1px solid;
+    margin-bottom: 20px;
   }
 
   input {
     color: #FFFFFF;
   }
+
   .modal-body-logo {
-    background-color:rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
   }
 
 </style>
