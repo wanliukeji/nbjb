@@ -41,7 +41,7 @@
       :visible.sync="centerDialogVisible"
       width="80%"
       center>
-      <img src="/static/image/app.png" alt="" width="100%" height="300">
+      <img src="http://pxex9tb52.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720190906214847.png" alt="" width="100%" height="300">
       <p align="center" style="color: red;">
         <svg t="1567478430914" style="margin-top: -3px" class="icon" viewBox="0 0 1024 1024" version="1.1"
              xmlns="http://www.w3.org/2000/svg"
