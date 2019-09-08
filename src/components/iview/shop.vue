@@ -45,11 +45,11 @@
                 'http://www.gzysxc.cn:8888/api/user/mask', {cus_id: this.cus_id}, {emulateJSON: true}
             ).then(res => {
                 var _json = res.body;
-                if (res.status == 200) {
+                if (_json.errcode == 0) {
                     this.mask_number = _json.mask_number;
                 } else {
                     this.$notify.error({
-                        title: '连接服务器失败',
+                        title: '状态',
                         message: _json.errmsg,
                         type: "error"
                     });
@@ -64,7 +64,7 @@
                 this.$http.post(
                     'http://www.gzysxc.cn:8888/api/order/send_mask', {
                         cus_id: this.cus_id,
-                        mask_number: 0,
+                        mask_number: this.mask_number,
                         total: 20,
                         goods_id: null
                     }, {emulateJSON: true}
