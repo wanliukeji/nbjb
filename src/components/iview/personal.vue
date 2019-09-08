@@ -300,7 +300,7 @@
                             cus_id: 3,
                             new_name: _this.cus_info.new_name
                         }, {emulateJSON: true}).then(res => {
-                            var _json = JSON.stringify(res.body);
+                            var _json = res.body;
                             if (_json.errcode == 0) {
                                 _this.$notify.success({
                                     title: '修改成功',
