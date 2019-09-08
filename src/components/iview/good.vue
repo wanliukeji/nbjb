@@ -80,7 +80,7 @@
                 window.history.back();
             },
             buyTo: function () {
-                this.centerDialogVisible = true
+                this.centerDialogVisible = true;
                 // this.$router.push({name: 'address'});
             }
         }

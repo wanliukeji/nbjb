@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <div class="model-div-row">
+      <div class="model-div-row" @click="buy_vip">
           <span class="model-div-row-span">
              <svg t="1567591903260" v-if="cus_info.is_vip" class="icon" viewBox="0 0 1024 1024" version="1.1"
                   xmlns="http://www.w3.org/2000/svg" p-id="12069" width="20" height="20"><path
@@ -302,6 +302,32 @@
             },
             back() {
                 window.history.back()
+            },
+            buy_vip : function () {
+                this.$http.post(
+                    'http://www.gzysxc.cn:8888/api/order/create_order', {
+                        cus_id: this.cus_id,
+                        mask_number: 0,
+                        total: 20,
+                        goods_id: null
+                    }, {emulateJSON: true}
+                ).then(res => {
+                    var _json = res.body;
+                    if (_json.errcode == 0) {
+                        this.brokerage = _json.brokerage;
+                        this.$notify.success({
+                            title: '状态',
+                            message: _json.errmsg,
+                            type: "success"
+                        });
+                    } else {
+                        this.$notify.warning({
+                            title: '连接服务器失败',
+                            message: _json.errmsg,
+                            type: "warning"
+                        });
+                    }
+                });
             }
         }
     }

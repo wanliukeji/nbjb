@@ -142,8 +142,8 @@
 
                 if (res.status == 200) {
                 } else {
-                    this.$notify.error({
-                        title: '连接服务器失败',
+                    this.$notify.warning({
+                        title: '状态',
                         message: _json.errmsg,
                         type: "error"
                     });
@@ -164,8 +164,8 @@
                 if (_json.errcode == 0) {
                     console.log(_json);
                 } else {
-                    this.$notify.error({
-                        title: '连接服务器失败',
+                    this.$notify.warning({
+                        title: '状态',
                         message: _json.errmsg,
                         type: "error"
                     });
@@ -193,7 +193,7 @@
                         }
                     } else {
                         this.$notify.error({
-                            title: '连接服务器失败',
+                            title: '状态',
                             message: _json.errmsg,
                             type: "error"
                         });
@@ -217,7 +217,7 @@
                         }
                     } else {
                         this.$notify.error({
-                            title: '连接服务器失败',
+                            title: '状态',
                             message: _json.errmsg,
                             type: "error"
                         });
@@ -277,7 +277,7 @@
 
                     } else {
                         this.$notify.error({
-                            title: '连接服务器失败',
+                            title: '状态',
                             message: _json.errmsg,
                             type: "error"
                         });
@@ -303,7 +303,7 @@
                     if (res.status == 200) {
                     } else {
                         this.$notify.error({
-                            title: '连接服务器失败',
+                            title: '状态',
                             message: _json.errmsg,
                             type: "error"
                         });

@@ -16,10 +16,21 @@
       <div class="model-div-row">
         <h6 class="model-div-row-title">当前可用余额</h6>
         <span class="model-div-row-munch">{{brokerage}} &nbsp;元</span>
-        <button class="model-div-row-btn" @click="withdraw">
+        <button class="model-div-row-btn" @click="centerDialogVisible = true">
           提现
         </button>
       </div>
+      <el-dialog
+        title="提现"
+        :visible.sync="centerDialogVisible"
+        width="80%"
+        center>
+        <el-input v-model="money" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入提现金额....." ></el-input>
+        <span slot="footer" class="dialog-footer">
+    <el-button @click="centerDialogVisible = false" size="mini">取 消</el-button>
+    <el-button type="primary"@click="withdraw" size="mini">确 定</el-button>
+  </span>
+      </el-dialog>
     </Layout>
   </div>
 </template>
@@ -30,7 +41,9 @@
         data() {
             return {
                 brokerage: 0,
-                cus_id: null
+                cus_id: null,
+                centerDialogVisible: false,
+                money: 0
             }
         },
         created() {
@@ -59,12 +72,22 @@
                 window.history.back();
             },
             withdraw: function () {
-                var money = Number(this.brokerage);
-                console.log(this.brokerage + '\n' + this.cus_id);
+                var money = Number(this.money);
+                var brokerage = Number(this.brokerage);
+
+                if(money > brokerage){
+                    this.$notify.warning({
+                        title: '状态',
+                        message: "提现金额不能大于可提现金额",
+                        type: "warning"
+                    });
+                    return;
+                }
+
                 this.$http.post(
                     'http://www.gzysxc.cn:8888/api/user/withdraw', {
                         cus_id: this.cus_id,
-                        money: money
+                        money: this.money
                     }, {emulateJSON: true}
                 ).then(res => {
                     var _json = res.body;
@@ -78,12 +101,13 @@
                         });
                     } else {
                         this.$notify.warning({
-                            title: '连接服务器失败',
+                            title: '状态',
                             message: _json.errmsg,
                             type: "warning"
                         });
                     }
                 });
+                this.centerDialogVisible = false;
             }
         }
     }
