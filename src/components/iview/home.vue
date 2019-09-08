@@ -45,11 +45,11 @@
                       :options="playerOptions">
         </video-player>
       </div>
-      <div class="model-div-row" @click="buyTo">
+      <div class="model-div-row">
         <div class="model-div-row-center">
-          <div class="model-div-row-div" @click="buyTo" v-for="(item , index) in banner">
-            <img :src="item.img_url" alt="" width="60" height="70">
-<!--            <span class="model-div-row-center-span">保湿面膜</span>-->
+          <div class="model-div-row-div" @click="buyTo(item)" v-for="(item , index) in banner">
+            <img :src="item.img_url" width="60" height="70">
+            <!--            <span class="model-div-row-center-span">保湿面膜</span>-->
           </div>
         </div>
         <div class="model-div-row">
@@ -170,8 +170,6 @@
                 var video = JSON.stringify(res.video);
                 var logo = res.logo;
                 if (res.status == 200) {
-                    // console.log(_json.video[0].video_url);
-                    // console.log(_json.logo[0].logo_url);
                     this.playerOptions.sources.src = _json.video[0].video_url;
                     this.banner = _json.banner;
                     console.log(this.banner);
@@ -190,8 +188,9 @@
         methods: {
             route: function () {
             },
-            buyTo: function () {
-                this.$router.push({name: 'good'});
+            buyTo: function (info) {
+                alert(1);
+                this.$router.push({name: 'good', params: {sub: info}});
             }
         }
     }
@@ -275,7 +274,6 @@
     display: inline-block;
     float: left;
     padding: 10px;
-    z-index: 100;
   }
 
   .model-div-row-center {
