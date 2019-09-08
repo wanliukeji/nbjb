@@ -17,6 +17,7 @@
         <el-upload
           action="http://www.gzysxc.cn:8888/api/user/update_avatar"
           list-type="picture-card"
+          :http-request="upload"
           :on-preview="handlePictureCardPreview"
           :on-remove="handleRemove">
           <i class="el-icon-plus"></i>
@@ -24,15 +25,6 @@
         <el-dialog :visible.sync="dialogVisible" size="tiny">
           <img width="100%" :src="dialogImageUrl" alt="">
         </el-dialog>
-<!--        <Upload-->
-<!--          multiple-->
-<!--          type="drag"-->
-<!--          action="http://www.gzysxc.cn:8888/api/user/update_avatar">-->
-<!--          <div style="padding: 20px 0">-->
-<!--            <Icon type="ios-cloud-upload" size="52" style="color: #3399ff;"></Icon>-->
-<!--            <p>点击这里上传</p>-->
-<!--          </div>-->
-<!--        </Upload>-->
       </div>
     </layout>
   </div>

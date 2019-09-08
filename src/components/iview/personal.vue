@@ -16,7 +16,7 @@
       <div class="model-div-row" @click="route('upload_head')">
         <div class="model-div-row-center">
           <div class="model-div-row-left">
-            <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
+            <img :src="cus_info.avatar_url" class="model-div-row-img" alt="">
           </div>
           <div class="model-div-row-right">
             <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -265,11 +265,18 @@
                 },
                 disabled: false,
                 time: 0,
-                btntxt: "获取验证码",
+                btntxt: "获取验证码"
             }
+        },
+        created() {
+            var info = localStorage.getItem('cus_info');
+            this.cus_info = JSON.parse(info);
         },
         methods: {
             route: function (val) {
+                if ('login' == val) {
+                    localStorage.removeItem('cus_info')
+                }
                 this.$router.push({name: val});
             },
             goTo: function () {
@@ -520,7 +527,7 @@
   }
 
   .model-div-row-center {
-    width: 80%;
+    width: 90%;
     position: relative;
     height: auto;
     margin: 0 auto;

@@ -91,16 +91,10 @@
         created() {
             this.$http.get(
                 'http://www.gzysxc.cn:8888/api/goods/get_cate',
-                {
-                    cate_id: 1
-                },
-                {
-                    emulateJSON: true
-                }
+                {cate_id: 1},
+                {emulateJSON: true}
             ).then(res => {
                 var _json = res.body;
-                console.log(_json.cate_list);
-                // console.log(_json.cate_list[0].goods_list);
                 var logo = res.logo;
                 if (res.status == 200) {
                     this.cate_list = _json.cate_list;

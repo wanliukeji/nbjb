@@ -377,7 +377,7 @@
   .send-btn {
     height: auto;
     width: 130px;
-    margin-top: -40px;
+    margin-top: -50px;
     font-size: 0.8em;
     padding-top: 4px;
     padding-bottom: 4px;

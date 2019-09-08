@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="model" v-show="component_name == 'login'">
+  <div class="model">
     <div class="modal-body">
       <img class="modal-body-logo" src="http://pxasartjo.bkt.clouddn.com/Snipaste_2019-09-04_16-25-19.png" alt=""
            width="100" height="100">
@@ -10,12 +10,13 @@
         <span class="password-input-p-right">忘记密码</span>
       </p>
     </div>
-    <button class="login-btn" @click="route();">登录</button>
+    <button class="login-btn" @click="login();">登录</button>
   </div>
 </template>
 
 <script>
     import storage from 'good-storage'
+
     export default {
         name: "login",
         data() {
@@ -29,31 +30,52 @@
             }
         },
         created() {
-            this.component_name = 'login';
         },
         methods: {
-            route: function () {
-                if (this.is_flag(this.info.phone) && this.is_flag(this.info.cus_pwd)) {
-                    var url = 'http://www.gzysxc.cn:8888/api/user/login';
+            login: function () {
+                var user_info = localStorage.getItem('cus_info');
+                var url = 'http://www.gzysxc.cn:8888/api/user/login';
+                if (user_info == '' || user_info == null) {
+                    if (this.is_flag(this.info.phone) && this.is_flag(this.info.cus_pwd)) {
+                        this.$http.post(url, {
+                                cus_pwd: this.info.cus_pwd,
+                                phone: this.info.phone
+                            },
+                            {sync: true},
+                            {emulateJSON: true}
+                        ).then(res => {
+                            var data = res.body;
+                            var cus_info = data.cus_info;
+                            if (res.status == 200) {
+                                localStorage.setItem('cus_info', JSON.stringify(cus_info));
+                                var info = localStorage.getItem('cus_info');
+                                this.$router.push({name: 'home'})
+                            } else {
+                                console.log(JSON.stringify(res));
+                                this.$notify.error({
+                                    title: '登录失败',
+                                    message: '请输入正确的账号密码',
+                                    type: 'error'
+                                })
+                                return;
+                            }
+                        }).catch(err => {
+                            console.log(err);
+                        });
+                    }
+                } else {
+                    var json = JSON.parse(user_info);
                     this.$http.post(url, {
-                            cus_pwd: this.info.cus_pwd,
-                            phone: this.info.phone
+                            cus_id: json.id
                         },
                         {sync: true},
                         {emulateJSON: true}
                     ).then(res => {
-                        var data = JSON.stringify(res.body);
+                        var data = res.body;
                         var cus_info = data.cus_info;
-                        console.log(JSON.stringify(res.body));
                         if (res.status == 200) {
-                            localStorage.setItem('cus_info', cus_info)
-                            // storage.setItem('cus_info', cus_info);
-                            console.log('缓存用户信息:' + localStorage.getItem('cus_info'));
-                            // this.$notify.success({
-                            //     title: '登录成功',
-                            //     message: '欢迎进入云上商城',
-                            //     type: 'success'
-                            // })
+                            localStorage.setItem('cus_info', JSON.stringify(cus_info));
+                            var info = localStorage.getItem('cus_info');
                             this.$router.push({name: 'home'})
                         } else {
                             console.log(JSON.stringify(res));
@@ -63,11 +85,11 @@
                                 type: 'error'
                             })
                             return;
-                            // window.history.go(0);
                         }
                     }).catch(err => {
-
+                        console.log(err);
                     });
+
                 }
             },
             goTo: function () {
@@ -91,19 +113,18 @@
     padding-right: 10%;
     position: page;
     top: 0;
-    padding-top: 20px;
+    padding-top: 30px;
     bottom: 0;
     left: 0;
     right: 0;
-    color: #FFFFFF;
-
+    color: #080808;
+    min-height: 668px;
   }
 
-  .close-left {
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    left: 10%;
+  .model {
+    background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567751267688&di=de16fa21bf5a3a8f8b61b097d49c131f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201411%2F01%2F20141101045119_wa8CW.jpeg") top center no-repeat;
+    background-size: 100% 100%;
+    color: #FFFFFF;
   }
 
   h1 {
@@ -126,7 +147,7 @@
     width: 100%;
     background: none;
     font-size: 1em;
-    margin-top: 20%;
+    margin-top: 35%;
     border-bottom: 1px #a8a8a8 solid;
     padding: 20px;
     color: black;
@@ -136,7 +157,6 @@
   .login-btn {
     height: auto;
     width: 85%;
-    margin-top: 20%;
     font-size: 1.2em;
     background: #1f1fe9;
     padding-top: 5px;
@@ -146,6 +166,9 @@
     border-radius: 30px;
     border: none;
     color: #FFFFFF;
+    position: fixed;
+    bottom: 30px;
+    left: 10%;
   }
 
   p {
