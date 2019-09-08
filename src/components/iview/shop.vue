@@ -15,7 +15,7 @@
 
       <div class="model-div-row">
         <h6 class="model-div-row-title">当前已领取面膜</h6>
-        <span class="model-div-row-munch">0张</span>
+        <span class="model-div-row-munch">{{mask_number}}&nbsp;张</span>
         <button class="model-div-row-btn">
           通知商家发货
         </button>
@@ -27,7 +27,29 @@
 
 <script>
     export default {
-        name: "wallet",
+        name: "shop",
+        data() {
+            return {
+                mask_number: 0,
+                cus_id: 0
+            }
+        },
+        created() {
+            this.$http.post(
+                'http://www.gzysxc.cn:8888/api/user/mask', {cus_id: 3}, {emulateJSON: true}
+            ).then(res => {
+                var _json = res.body;
+                if (res.status == 200) {
+                    this.mask_number = _json.mask_number;
+                } else {
+                    this.$notify.error({
+                        title: '连接服务器失败',
+                        message: _json.errmsg,
+                        type: "error"
+                    });
+                }
+            });
+        },
         methods: {
             goTo: function () {
                 window.history.back();
@@ -120,7 +142,7 @@
 
   .model-div-row-btn {
     padding: 5px;
-    background:red;
+    background: red;
     border: none;
     border-radius: 20px;
     -moz-border-radius: 20px;

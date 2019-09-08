@@ -2,18 +2,23 @@
   <div class="model">
     <Layout>
       <Header class="model-head-span">
-    <i class="close-left" @click="goTo">
-      <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1713" width="16" height="16"><path d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z" fill="#d81e06" p-id="1714"></path></svg>
-    </i>
-    <h1>我的钱包</h1>
+        <i class="close-left" @click="goTo">
+          <svg t="1567585969191" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               p-id="1713" width="16" height="16">
+            <path
+              d="M209.92 988.16c-15.36 0-30.72-15.36-30.72-30.72s15.36-30.72 30.72-30.72h471.04c153.6 0 281.6-128 281.6-281.6s-128-281.6-281.6-281.6H102.4l220.16 220.16c5.12 5.12 10.24 10.24 10.24 20.48 0 5.12-5.12 15.36-10.24 20.48-5.12 5.12-10.24 10.24-20.48 10.24-5.12 0-15.36-5.12-20.48-10.24L10.24 353.28c-5.12-5.12-10.24-10.24-10.24-20.48 0-5.12 5.12-15.36 10.24-20.48L281.6 40.96c5.12-5.12 10.24-10.24 20.48-10.24 5.12 0 15.36 5.12 20.48 10.24 0 10.24 5.12 15.36 5.12 25.6 0 5.12-5.12 15.36-10.24 20.48L97.28 307.2h583.68a343.04 343.04 0 0 1 0 686.08H209.92z"
+              fill="#ffffff" p-id="1714"></path>
+          </svg>
+        </i>
+        <span class="model-head-font">我的钱包</span>
       </Header>
-    <div class="model-div-row">
-      <h6 class="model-div-row-title">当前可用余额</h6>
-      <span class="model-div-row-munch">0.00元</span>
-      <button class="model-div-row-btn">
-        提现
-      </button>
-    </div>
+      <div class="model-div-row">
+        <h6 class="model-div-row-title">当前可用余额</h6>
+        <span class="model-div-row-munch">{{brokerage}} &nbsp;元</span>
+        <button class="model-div-row-btn">
+          提现
+        </button>
+      </div>
     </Layout>
   </div>
 </template>
@@ -21,7 +26,29 @@
 <script>
     export default {
         name: "wallet",
-        methods : {
+        data() {
+            return {
+                brokerage: 0,
+                cus_id: 0
+            }
+        },
+        created() {
+            this.$http.post(
+                'http://www.gzysxc.cn:8888/api/user/brokerage', {cus_id: 3}, {emulateJSON: true}
+            ).then(res => {
+                var _json = res.body;
+                if (res.status == 200) {
+                    this.brokerage = _json.brokerage;
+                } else {
+                    this.$notify.error({
+                        title: '连接服务器失败',
+                        message: _json.errmsg,
+                        type: "error"
+                    });
+                }
+            });
+        },
+        methods: {
             goTo: function () {
                 window.history.back();
             }
@@ -33,11 +60,8 @@
   .model {
     height: 100%;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
     position: relative;
     top: 0;
-    padding-top: 20px;
     /*background: #151515;*/
   }
 
@@ -45,7 +69,11 @@
     width: 10px;
     height: 10px;
     position: absolute;
-    left: 10%;
+    float: left;
+    left: 10px;
+    vertical-align: middle;
+    margin-top: 19px;
+    background: rgba(0, 0, 0, 0);
   }
 
   h1 {
@@ -117,24 +145,36 @@
   .model-div-row-btn {
     padding: 5px;
     background: #FFFFFF;
-    border: black 1px solid;
+    border: none;
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     width: 80%;
     margin-top: 30px;
     margin-bottom: 20px;
+    background-color: red;
+    color: #FFFFFF;
   }
 
   .model-head-span {
-    background-color: #FFFFFF;
-    height: auto;
+    background-color: #1C8CE9;
     vertical-align: middle;
     text-align: center;
     max-width: 100%;
     margin: 0 auto;
     min-width: 100%;
-    font-size: 24px;
+    font-size: 22px;
+    font-family: 楷体;
+    color: #FFFFFF;
+    font-weight: bolder;
+    max-height: 58px;
+  }
+
+  .model-head-font {
+    vertical-align: middle;
+    margin-bottom: 20px;
+    font-size: 22px;
     font-family: 楷体;
   }
+
 </style>

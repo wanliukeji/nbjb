@@ -16,7 +16,7 @@
       <div class="model-div-row" @click="route('upload_head')">
         <div class="model-div-row-center">
           <div class="model-div-row-left">
-            <img src="/static/image/timg.jpg" class="model-div-row-img" alt="">
+            <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
           </div>
           <div class="model-div-row-right">
             <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
