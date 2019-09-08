@@ -4,77 +4,12 @@
       <Header class="model-head-span">
         商品分类
       </Header>
-      <div class="model-div-row">
+      <div class="model-div-row" v-for="item,index in cate_list">
         <div class="model-div-row-center">
-          <h4 style="font-family: 楷体; margin-bottom: 20px;">日用品</h4>
-          <div class="model-div-row-div" @click="goTo">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-        </div>
-      </div>
-      <div class="model-div-row">
-        <div class="model-div-row-center">
-          <h4 style="font-family: 楷体; margin-bottom: 20px;">电器</h4>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
-          </div>
-          <div class="model-div-row-div">
-            <img src="/static/image/mainmo.jpg" alt="" width="40" height="40">
-            <span class="model-div-row-center-span">红钻会员</span>
+          <h4 style="font-family: 楷体; margin-bottom: 20px;">{{item.cate_name}}</h4>
+          <div class="model-div-row-div" v-for="sub in item.goods_list">
+            <img :src="sub.goods_img" @click="goTo(sub)" alt="" width="60" height="60">
+            <span class="model-div-row-center-span">{{sub.name.substr(0,4)}}</span>
           </div>
         </div>
       </div>
@@ -148,13 +83,13 @@
                         desc: "个人中心"
                     },
                 ],
-                cate: [],
+                cate_list: [],
                 goods_info: '',
                 goods_img: ''
             }
         },
         created() {
-            this.$http.post(
+            this.$http.get(
                 'http://www.gzysxc.cn:8888/api/goods/get_cate',
                 {
                     cate_id: 1
@@ -164,10 +99,11 @@
                 }
             ).then(res => {
                 var _json = res.body;
-                console.log(_json);
+                console.log(_json.cate_list);
+                // console.log(_json.cate_list[0].goods_list);
                 var logo = res.logo;
                 if (res.status == 200) {
-                    console.log(_json.goods_info);
+                    this.cate_list = _json.cate_list;
                 } else {
                     this.$notify.error({
                         title: '连接服务器失败',
@@ -178,8 +114,12 @@
             });
         },
         methods: {
-            goTo: function () {
-                this.$router.push({name: 'good'});
+            goTo: function (sub) {
+                this.$router.push({
+                    name: 'good', params: {
+                        name: sub
+                    }
+                });
             }
         }
     }
@@ -256,7 +196,7 @@
   }
 
   .model-div-row-div {
-    width: 33.3%;
+    max-width: 33.3%;
     height: 100px;
     display: inline-block;
     float: left;
@@ -275,8 +215,8 @@
     font-size: 16px;
     font-family: 楷体;
     margin-top: 16px;
+    white-space: nowrap;
   }
-
 
 
 </style>
