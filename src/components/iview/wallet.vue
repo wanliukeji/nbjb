@@ -16,7 +16,7 @@
       <div class="model-div-row">
         <h6 class="model-div-row-title">当前可用余额</h6>
         <span class="model-div-row-munch">{{brokerage}} &nbsp;元</span>
-        <button class="model-div-row-btn">
+        <button class="model-div-row-btn" @click="withdraw">
           提现
         </button>
       </div>
@@ -30,12 +30,17 @@
         data() {
             return {
                 brokerage: 0,
-                cus_id: 0
+                cus_id: null
             }
         },
         created() {
+            var info = localStorage.getItem('cus_info');
+            var _info = JSON.parse(info);
+            if (_info != null) {
+                this.cus_id = _info.id;
+            }
             this.$http.post(
-                'http://www.gzysxc.cn:8888/api/user/brokerage', {cus_id: 3}, {emulateJSON: true}
+                'http://www.gzysxc.cn:8888/api/user/brokerage', {cus_id: this.cus_id}, {emulateJSON: true}
             ).then(res => {
                 var _json = res.body;
                 if (res.status == 200) {
@@ -52,6 +57,33 @@
         methods: {
             goTo: function () {
                 window.history.back();
+            },
+            withdraw: function () {
+                var money = Number(this.brokerage);
+                console.log(this.brokerage + '\n' + this.cus_id);
+                this.$http.post(
+                    'http://www.gzysxc.cn:8888/api/user/withdraw', {
+                        cus_id: this.cus_id,
+                        money: money
+                    }, {emulateJSON: true}
+                ).then(res => {
+                    var _json = res.body;
+                    console.log(res);
+                    if (_json.errcode == 0) {
+                        this.brokerage = _json.brokerage;
+                        this.$notify.success({
+                            title: '状态',
+                            message: _json.errmsg,
+                            type: "success"
+                        });
+                    } else {
+                        this.$notify.warning({
+                            title: '连接服务器失败',
+                            message: _json.errmsg,
+                            type: "warning"
+                        });
+                    }
+                });
             }
         }
     }
