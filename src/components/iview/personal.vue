@@ -265,12 +265,17 @@
                 },
                 disabled: false,
                 time: 0,
-                btntxt: "获取验证码"
+                btntxt: "获取验证码",
+                info: {
+                    phone: '',
+                    check_code: ''
+                }
             }
         },
         created() {
             var info = localStorage.getItem('cus_info');
             this.cus_info = JSON.parse(info);
+            console.log(this.cus_info);
         },
         methods: {
             route: function (val) {
@@ -388,7 +393,8 @@
                             cus_id: 3,
                             new_wechat: _this.cus_info.new_wechat
                         }, {emulateJSON: true}).then(res => {
-                            var _json = JSON.stringify(res.body);
+                            var _json = res.body;
+                            console.log(_json);
                             if (_json.errcode == 0) {
                                 _this.$notify.success({
                                     title: '修改成功',
@@ -424,7 +430,12 @@
                             check_code: this.info.check_code
                         },
                         {emulateJSON: true}).then(res => {
-                        console.log(JSON.stringify(res));
+                        var data = JSON.stringify(res.data);
+                          this.$notify.warning({
+                              title:'状态',
+                              message:data.errmsg,
+                              type:"warning"
+                          })
                     })
                 } else {
                     return;

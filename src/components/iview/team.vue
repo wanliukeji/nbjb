@@ -13,7 +13,7 @@
         <span class="model-head-font">我的团队</span>
       </Header>
       <Tabs :animated="true" style="background-color: #FFFFFF;">
-        <TabPane label="我的上级">
+        <TabPane label="总代理">
           <div class="model-row">
             <div class="model-div-row">
               <div class="model-div-row-center">
@@ -32,51 +32,15 @@
                 </div>
               </div>
             </div>
-          </div >
+          </div>
         </TabPane>
-        <TabPane label="一级下属">
+        <TabPane label="区代理">
           <div class="model-row">
-            <div class="model-div-row">
+            <div class="model-div-row" v-for="item,index in my_sub1">
               <div class="model-div-row-center">
                 <div class="model-div-row-left">
-                  <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
-                  <span style="margin-left: 50px;">CHENYU</span>
-                </div>
-                <div class="model-div-row-right">
-                  <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                       xmlns="http://www.w3.org/2000/svg"
-                       p-id="1728" width="17" height="10">
-                    <path
-                      d="M719.969 493.984L298.307 72.323c-9.417-9.418-23.192-10.912-30.767-3.337-7.575 7.574-6.08 21.349 3.337 30.767l411.91 411.908-412.412 412.408c-9.418 9.418-10.912 23.194-3.337 30.769 7.574 7.575 21.35 6.08 30.767-3.337l421.663-421.663a29.523 29.523 0 0 0 4.589-5.937c6.68-7.718 4.994-20.835-4.088-29.917z"
-                      fill="#8a8a8a" p-id="1729"></path>
-                  </svg>
-                </div>
-
-              </div>
-            </div>
-            <div class="model-div-row">
-              <div class="model-div-row-center">
-                <div class="model-div-row-left">
-                  <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
-                  <span style="margin-left: 50px;">CHENYU</span>
-                </div>
-                <div class="model-div-row-right">
-                  <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                       xmlns="http://www.w3.org/2000/svg"
-                       p-id="1728" width="17" height="10">
-                    <path
-                      d="M719.969 493.984L298.307 72.323c-9.417-9.418-23.192-10.912-30.767-3.337-7.575 7.574-6.08 21.349 3.337 30.767l411.91 411.908-412.412 412.408c-9.418 9.418-10.912 23.194-3.337 30.769 7.574 7.575 21.35 6.08 30.767-3.337l421.663-421.663a29.523 29.523 0 0 0 4.589-5.937c6.68-7.718 4.994-20.835-4.088-29.917z"
-                      fill="#8a8a8a" p-id="1729"></path>
-                  </svg>
-                </div>
-
-              </div>
-            </div>
-            <div class="model-div-row">
-              <div class="model-div-row-center">
-                <div class="model-div-row-left">
-                  <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
-                  <span style="margin-left: 50px;">CHENYU</span>
+                  <img :src="item.src" class="model-div-row-img" alt="">
+                  <span style="margin-left: 50px;">{{item.name}}</span>
                 </div>
                 <div class="model-div-row-right">
                   <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -92,49 +56,13 @@
             </div>
           </div>
         </TabPane>
-        <TabPane label="二级下属">
+        <TabPane label="顾客">
           <div class="model-row">
-            <div class="model-div-row">
+            <div class="model-div-row" v-for="item, index in my_sub2">
               <div class="model-div-row-center">
                 <div class="model-div-row-left">
-                  <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
-                  <span style="margin-left: 50px;">CHENYU</span>
-                </div>
-                <div class="model-div-row-right">
-                  <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                       xmlns="http://www.w3.org/2000/svg"
-                       p-id="1728" width="17" height="10">
-                    <path
-                      d="M719.969 493.984L298.307 72.323c-9.417-9.418-23.192-10.912-30.767-3.337-7.575 7.574-6.08 21.349 3.337 30.767l411.91 411.908-412.412 412.408c-9.418 9.418-10.912 23.194-3.337 30.769 7.574 7.575 21.35 6.08 30.767-3.337l421.663-421.663a29.523 29.523 0 0 0 4.589-5.937c6.68-7.718 4.994-20.835-4.088-29.917z"
-                      fill="#8a8a8a" p-id="1729"></path>
-                  </svg>
-                </div>
-
-              </div>
-            </div>
-            <div class="model-div-row">
-              <div class="model-div-row-center">
-                <div class="model-div-row-left">
-                  <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
-                  <span style="margin-left: 50px;">CHENYU</span>
-                </div>
-                <div class="model-div-row-right">
-                  <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                       xmlns="http://www.w3.org/2000/svg"
-                       p-id="1728" width="17" height="10">
-                    <path
-                      d="M719.969 493.984L298.307 72.323c-9.417-9.418-23.192-10.912-30.767-3.337-7.575 7.574-6.08 21.349 3.337 30.767l411.91 411.908-412.412 412.408c-9.418 9.418-10.912 23.194-3.337 30.769 7.574 7.575 21.35 6.08 30.767-3.337l421.663-421.663a29.523 29.523 0 0 0 4.589-5.937c6.68-7.718 4.994-20.835-4.088-29.917z"
-                      fill="#8a8a8a" p-id="1729"></path>
-                  </svg>
-                </div>
-
-              </div>
-            </div>
-            <div class="model-div-row">
-              <div class="model-div-row-center">
-                <div class="model-div-row-left">
-                  <img src="/static/image/wechat.jpg" class="model-div-row-img" alt="">
-                  <span style="margin-left: 50px;">CHENYU</span>
+                  <img :src="item.src" class="model-div-row-img" alt="">
+                  <span style="margin-left: 50px;">{{item.name}}</span>
                 </div>
                 <div class="model-div-row-right">
                   <svg t="1567476046283" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -158,37 +86,38 @@
 <script>
     export default {
         name: "team",
-        data () {
+        data() {
             return {
-                my_super_info : '',
+                my_super_info: {
+                    avatar_url: '',
+                    name: ''
+                },
                 my_sub1: [],
                 my_sub2: [],
-                value1 : false
+                value1: false
             }
         },
         created() {
+            var info = localStorage.getItem('cus_info');
+            var json = JSON.parse(info);
+            var cus_id;
+            if (json != null) {
+                cus_id = json.id;
+            }
             this.$http.post(
-                'http://www.gzysxc.cn:8888/api/user/my_super', {cus_id: 3}, {emulateJSON: true}
+                'http://www.gzysxc.cn:8888/api/user/my_super', {cus_id: cus_id}, {emulateJSON: true}
             ).then(res => {
-                var _json = res.body ;
+                var _json = res.body;
                 if (res.status == 200) {
-                    this.my_super_info = _json.my_super_info;
-                } else {
-                    this.$notify.error({
-                        title: '连接服务器失败',
-                        message: _json.errmsg,
-                        type: "error"
-                    });
-                }
-            });
-            this.$http.post(
-                'http://www.gzysxc.cn:8888/api/usre/mysub1', {cus_id: 3}, {emulateJSON: true}
-            ).then(res => {
-                var _json = res.body ;
-                console.log(res.body);
-                if (res.status == 200) {
-                    console.log(_json.my_sub1);
-                    this.my_sub1 = _json.my_sub1;
+                    if (_json.my_super_info != null) {
+                        this.my_super_info = _json.my_super_info;
+                    } else {
+                        this.$notify.warning({
+                            title: '状态',
+                            message: _json.errmsg,
+                            type: "error"
+                        });
+                    }
                 } else {
                     this.$notify.error({
                         title: '连接服务器失败',
@@ -199,13 +128,42 @@
             });
 
             this.$http.post(
-                'http://www.gzysxc.cn:8888/api/usre/mysub2', {cus_id: 3}, {emulateJSON: true}
+                'http://www.gzysxc.cn:8888/api/user/mysub1', {cus_id: cus_id}, {emulateJSON: true}
             ).then(res => {
-                var _json = res.body ;
                 console.log(res.body);
-                if (res.status == 200) {
-                    console.log(_json.my_sub2);
+                var _json = res.body;
+                if (_json.errcode == 0) {
+                    this.my_sub1 = _json.my_sub1;
+                    if (this.my_sub1 == null) {
+                        this.$notify.warning({
+                            title: '状态',
+                            message: _json.errmsg,
+                            type: "error"
+                        });
+                    }
+                } else {
+                    this.$notify.error({
+                        title: '连接服务器失败',
+                        message: _json.errmsg,
+                        type: "error"
+                    });
+                }
+            });
+
+            this.$http.post(
+                'http://www.gzysxc.cn:8888/api/user/mysub2', {cus_id: 3}, {emulateJSON: true}
+            ).then(res => {
+                var _json = res.body;
+                console.log(res.body);
+                if (_json.errcode == 0) {
                     this.my_sub2 = _json.my_sub2;
+                    if (this.my_sub2 == null) {
+                        this.$notify.warning({
+                            title: '状态',
+                            message: _json.errmsg,
+                            type: "error"
+                        });
+                    }
                 } else {
                     this.$notify.error({
                         title: '连接服务器失败',
@@ -228,6 +186,7 @@
   .model {
     background-color: #FFFFFF;
   }
+
   .model {
     height: 100%;
     width: 100%;

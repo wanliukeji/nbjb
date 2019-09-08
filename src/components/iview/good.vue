@@ -36,6 +36,26 @@
       <span style="height: 2px; background: #bcbcbc;"></span>
       <button class="login-btn" @click="buyTo">去付款</button>
     </Layout>
+    <el-dialog
+      title="支付"
+      :visible.sync="centerDialogVisible"
+      width="80%"
+      center>
+      <img src="/static/image/app.png" alt="" width="100%" height="300">
+      <p align="center" style="color: red;">
+        <svg t="1567478430914" style="margin-top: -3px" class="icon" viewBox="0 0 1024 1024" version="1.1"
+             xmlns="http://www.w3.org/2000/svg"
+             p-id="2760"
+             width="16" height="16"><path
+          d="M228.677632 136.922112 250.308608 123.259904 504.19712 490.998784 520.136704 490.998784 774.024192 123.259904 795.656192 137.491456 551.44448 490.998784 823.703552 490.998784 823.703552 517.184512 533.228544 517.184512 526.190592 528.572416 526.190592 657.219584 823.703552 657.219584 823.703552 682.267648 526.190592 682.267648 526.190592 901.434368 499.073024 901.434368 499.073024 683.410432 200.948736 683.410432 200.948736 656.084992 499.073024 656.084992 499.073024 529.711104 490.677248 516.614144 200.948736 516.614144 200.948736 490.99776 472.887296 490.99776Z"
+          p-id="2761" fill="red"></path></svg>
+        168
+      </p>
+      <span slot="footer" class="dialog-footer">
+    <el-button @click="centerDialogVisible = false" size="mini">取 消</el-button>
+    <el-button type="primary" @click="centerDialogVisible = false" size="mini">确 定</el-button>
+  </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -44,19 +64,24 @@
         name: "good",
         data() {
             return {
-                info: this.$router.history.current.params.name
+                info: {
+                    goods_img: '',
+                    price: 0,
+                    describe: ''
+                },
+                centerDialogVisible: false
             }
         },
         created() {
-
-            console.log(this.info);
+            this.info = this.$router.history.current.params.name
         },
         methods: {
             goTo: function () {
                 window.history.back();
             },
             buyTo: function () {
-                this.$router.push({name: 'address'});
+                this.centerDialogVisible = true
+                // this.$router.push({name: 'address'});
             }
         }
     }
