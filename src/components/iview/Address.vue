@@ -229,13 +229,27 @@
             },
             submit: function () {
                 var user_info = localStorage.getItem('cus_info');
+                var user;
                 if (user_info != null) {
-                    this.info.cus_id = user_info.id;
+                    user = JSON.parse(user_info);
+                    console.log(user.id);
+                    this.info.cus_id = user.id;
                 }
 
                 if (this.exec()) {
                     return;
                 }
+                var user_ = {
+                    cus_id: this.info.cus_id,
+                    province: this.pro_name,
+                    city: this.city_name,
+                    district: this.dis_name,
+                    deteail: this.info.detail,
+                    phone: this.info.phone,
+                    recv_name: this.info.recv_name
+                };
+                console.log(user_);
+
 
                 this.$http.post(
                     'http://www.gzysxc.cn:8888/api/user/add_addr',
@@ -404,7 +418,9 @@
   }
 
   .model-text {
-    font-size: 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: 楷体;
   }
 
   .model-div-row-span {
@@ -423,8 +439,8 @@
     position: fixed;
     right: 10%;
     margin: 0 auto;
-    margin-bottom: 10px;
-    top: 80%;
+    /*margin-bottom: 5px;*/
+    top: 85%;
     background-color: #0a6beb;
   }
 
