@@ -228,21 +228,25 @@
                 this.dis_name = e;
             },
             submit: function () {
+                var user_info = localStorage.getItem('cus_info');
+                if (user_info != null) {
+                    this.info.cus_id = user_info.id;
+                }
 
                 if (this.exec()) {
-                    return ;
+                    return;
                 }
 
                 this.$http.post(
                     'http://www.gzysxc.cn:8888/api/user/add_addr',
                     {
-                        cus_id:this.cus_id,
-                        province:this.pro_name,
-                        city:this.city_name,
-                        district:this.dis_name,
-                        deteail:this.info.detail,
-                        phone:this.info.phone,
-                        recv_name:this.info.recv_name
+                        cus_id: this.info.cus_id,
+                        province: this.pro_name,
+                        city: this.city_name,
+                        district: this.dis_name,
+                        deteail: this.info.detail,
+                        phone: this.info.phone,
+                        recv_name: this.info.recv_name
                     },
                     {
                         emulateJSON: true
