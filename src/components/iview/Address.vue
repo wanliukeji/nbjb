@@ -36,23 +36,23 @@
         v-model="value3"
         width="80%"
         :mask-closable="false"
-        >
+      >
         <Form :v-model="info">
           <Row :gutter="32">
             <Col span="32">
               <FormItem label="省份" label-position="top">
                 <Select v-model="info.province" remote :remote-method="prvselect" placeholder="请选择">
-                  <Option v-for="item in proList" :value="item.ID" :key="item.ID">{{ item.AddName }}</Option>
+                  <Option v-for="item in proList" :value="item.ID">{{ item.AddName }}</Option>
                 </Select>
               </FormItem>
               <FormItem label="市" label-position="top">
                 <Select v-model="info.city" remote :remote-method="citselect" placeholder="请选择">
-                  <Option v-for="item in cityList" :value="item.ID" :key="item.ID">{{ item.AddName }}</Option>
+                  <Option v-for="item in cityList" :value="item.ID">{{ item.AddName }}</Option>
                 </Select>
               </FormItem>
               <FormItem label="区/县" label-position="top">
-                <Select v-model="info.district" placeholder="请选择">
-                  <Option v-for="item in disList" :value="item.ID" :key="item.ID">{{ item.AddName }}</Option>
+                <Select v-model="info.district" remote :remote-method="ditselect" placeholder="请选择">
+                  <Option v-for="item in disList" :value="item.ID">{{ item.AddName }}</Option>
                 </Select>
               </FormItem>
               <FormItem label="详细地址" label-position="top">
@@ -84,32 +84,18 @@
         data() {
             return {
                 info: {
-                    cus_id :3,
-                    province:'',
-                    city:'',
-                    district:'',
-                    detail:'',
-                    phone:'',
-                    recv_name:''
+                    cus_id: null,
+                    province: '',
+                    city: '',
+                    district: '',
+                    detail: '',
+                    phone: '',
+                    recv_name: ''
                 },
+                pro_name: '',
+                city_name: '',
+                dist_name: '',
                 value3: false,
-                ridData: [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }],
                 dialogTableVisible: false,
                 dialogFormVisible: false,
                 form: {
@@ -124,32 +110,19 @@
                     recv_name: ''
                 },
                 formLabelWidth: '120px',
-                proList : [],
-                cityList : [],
-                disList : []
+                proList: [],
+                cityList: [],
+                disList: []
             }
         },
-        created () {
-            this.$http.post(
-                'http://www.gzysxc.cn:8888/api/user/add_addr',
-                {
-                    info: this.info
-                },
-                {
-                    emulateJSON: true
-                }
-            ).then(res => {
-                var _json = res.body;
-                if (res.status == 200) {
+        created() {
+            var user_info = localStorage.getItem('cus_info');
+            var _user = JSON.parse(user_info);
+            var _user_id;
+            if (_user != null) {
+                _user_id = _user.id;
+            }
 
-                } else {
-                    this.$notify.error({
-                        title: '连接服务器失败',
-                        message: _json.errmsg,
-                        type: "error"
-                    });
-                }
-            });
             this.$http.get(
                 '/static/data/address.json',
                 {
@@ -162,12 +135,34 @@
                 var _json = res.body;
                 for (var i = 0; i < _json.length; i++) {
                     var obj = _json[i];
-                  if (0 == obj.TopID ){
-                      this.proList.push(obj);
-                  }
+                    if (0 == obj.TopID) {
+                        this.proList.push(obj);
+                    }
                 }
 
                 if (res.status == 200) {
+                } else {
+                    this.$notify.error({
+                        title: '连接服务器失败',
+                        message: _json.errmsg,
+                        type: "error"
+                    });
+                }
+            });
+
+            this.$http.post(
+                'http://www.gzysxc.cn:8888/api/user/get_addr',
+                {
+                    cus_id: _user_id,
+                },
+                {
+                    emulateJSON: true
+                }
+            ).then(res => {
+                var _json = res.body;
+                console.log(_json);
+                if (_json.errcode == 0) {
+                    console.log(_json);
                 } else {
                     this.$notify.error({
                         title: '连接服务器失败',
@@ -181,31 +176,8 @@
             goTo: function () {
                 window.history.back();
             },
-            prvselect: function () {
-                    this.$http.get(
-                        '/static/data/address.json', {
-                            emulateJSON: true
-                        }
-                    ).then(res => {
-                        if (res.status == 200) {
-                            var _json = res.body;
-                            for (var i = 0; i < _json.length; i++) {
-                                var obj = _json[i];
-                                if (this.info.province == obj.TopID ){
-                                    this.cityList.push(obj);
-                                }
-                            }
-                            console.log(this.cityList);
-                        } else {
-                            this.$notify.error({
-                                title: '连接服务器失败',
-                                message: _json.errmsg,
-                                type: "error"
-                            });
-                        }
-                    });
-            },
-            citselect: function () {
+            prvselect: function (e) {
+                this.pro_name = e;
                 this.$http.get(
                     '/static/data/address.json', {
                         emulateJSON: true
@@ -215,7 +187,31 @@
                         var _json = res.body;
                         for (var i = 0; i < _json.length; i++) {
                             var obj = _json[i];
-                            if (this.info.city == obj.TopID ){
+                            if (this.info.province == obj.TopID) {
+                                this.cityList.push(obj);
+                            }
+                        }
+                    } else {
+                        this.$notify.error({
+                            title: '连接服务器失败',
+                            message: _json.errmsg,
+                            type: "error"
+                        });
+                    }
+                });
+            },
+            citselect: function (e) {
+                this.city_name = e;
+                this.$http.get(
+                    '/static/data/address.json', {
+                        emulateJSON: true
+                    }
+                ).then(res => {
+                    if (res.status == 200) {
+                        var _json = res.body;
+                        for (var i = 0; i < _json.length; i++) {
+                            var obj = _json[i];
+                            if (this.info.city == obj.TopID) {
                                 this.disList.push(obj);
                             }
                         }
@@ -228,17 +224,37 @@
                     }
                 });
             },
+            ditselect: function (e) {
+                this.dis_name = e;
+            },
             submit: function () {
+
+                if (this.exec()) {
+                    return ;
+                }
+
                 this.$http.post(
                     'http://www.gzysxc.cn:8888/api/user/add_addr',
                     {
-                        info: this.info
+                        cus_id:this.cus_id,
+                        province:this.pro_name,
+                        city:this.city_name,
+                        district:this.dis_name,
+                        deteail:this.info.detail,
+                        phone:this.info.phone,
+                        recv_name:this.info.recv_name
                     },
                     {
                         emulateJSON: true
                     }
                 ).then(res => {
                     var _json = res.body;
+                    console.log(_json);
+                    this.$notify.warning({
+                        title: '状态',
+                        message: _json.errmsg,
+                        type: "warning"
+                    });
                     if (res.status == 200) {
 
                     } else {
@@ -261,7 +277,7 @@
                     var _json = res.body;
                     for (var i = 0; i < _json.length; i++) {
                         var obj = _json[i];
-                        if (0 == obj.TopID ){
+                        if (0 == obj.TopID) {
                             this.proList.push(obj);
                         }
                     }
@@ -275,6 +291,70 @@
                         });
                     }
                 });
+            },
+            exec: function () {
+                if (this.is_Null(this.pro_name)) {
+                    this.$notify.warning({
+                        title: '状态',
+                        message: '请选择省份',
+                        type: "warning"
+                    });
+                    return false;
+                }
+                if (this.is_Null(this.city_name)) {
+                    this.$notify.warning({
+                        title: '状态',
+                        message: '请选择城市',
+                        type: "warning"
+                    });
+                    return false;
+                }
+                if (this.is_Null(this.dis_name)) {
+                    this.$notify.warning({
+                        title: '状态',
+                        message: '请选择县区',
+                        type: "warning"
+                    });
+                    return false;
+                }
+                if (this.is_Null(this.info.detail)) {
+                    this.$notify.warning({
+                        title: '状态',
+                        message: '请填写详细地址',
+                        type: "warning"
+                    });
+                    return false;
+                }
+                if (this.is_Null(this.info.phone)) {
+                    this.$notify.warning({
+                        title: '状态',
+                        message: '请填写收货人电话',
+                        type: "warning"
+                    });
+                    return false;
+                }
+                if (!(/^1[34578]\d{9}$/.test(this.info.phone))) {
+                    this.$notify.warning({
+                        title: '操作失败',
+                        message: '手机格式输入有误，请重新输入',
+                        type: 'ERROR'
+                    })
+                    return false;
+                }
+                if (this.is_Null(this.info.recv_name)) {
+                    this.$notify.warning({
+                        title: '状态',
+                        message: '请填写收货人姓名',
+                        type: "warning"
+                    });
+                    return false;
+                }
+            },
+            is_Null: function (val) {
+                if ("" == val || val == null) {
+                    return true
+                }
+                return false;
             }
         }
     }
@@ -337,7 +417,7 @@
     border: none;
     border-radius: 50%;
     position: fixed;
-    right: 20%;
+    right: 10%;
     margin: 0 auto;
     margin-bottom: 10px;
     top: 80%;
