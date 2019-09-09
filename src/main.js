@@ -1,5 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+// npm install --save good-storage
 import Vue from 'vue'  /* 这里是引入vue文件 */
 import App from './App'  /* 这里是引入同目录下的App.vue模块 */
 import Vuex from 'vuex'
@@ -19,7 +20,7 @@ import 'iview/dist/styles/iview.css'  //引用 ivew 全局样式
 
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
-import storage from 'good-storage'
+// import storage from 'good-storage'
 //页面跳转
 // import global from './components/Global.vue'
 
@@ -33,7 +34,7 @@ Vue.use(VueResource);
 Vue.use(ElementUI) //使用elementUI
 Vue.use(iView);
 Vue.use(VueRouter);
-Vue.use(storage)
+// Vue.use(storage)
 
 Vue.use(VueVideoPlayer)
 // Vue.use(axios);

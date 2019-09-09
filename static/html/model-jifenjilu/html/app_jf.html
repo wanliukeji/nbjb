@@ -56,6 +56,7 @@
     body {
       background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567751267688&di=de16fa21bf5a3a8f8b61b097d49c131f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201411%2F01%2F20141101045119_wa8CW.jpeg") top center no-repeat;
       background-size: 100% 100%;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -88,7 +89,8 @@
     </div>
   </div>
   <div class="creditslog" style="padding-left: 10%; padding-right: 10%;">
-    <form method="post" id="cy_form" action="plugin.php?id=duceapp_scorebuy:tradelog">
+    <form method="post" id="cy_form">
+      <!--      action="plugin.php?id=duceapp_scorebuy:tradelog"-->
       <ul class="pagelazy">
         <!--    bga  bh_e-->
         <li class="f14" style=" rgba(255,255,255,0.1); background-color:rgba(0,0,0,0)">
@@ -116,7 +118,9 @@
           <div class="input-control has-icon-left has-icon-right ">
             <p class="lead" type="number" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;">
               <strong>兑换:</strong>
-              <span id="exchange_num_span"></span>
+              <span id="exchange_num_span">
+                <em style="color: #48ff8d;font-size: 15px; font-family: Tahoma, " Microsoft YaHei", SimSun;">&nbsp;&nbsp;每次最多兑换200个</em>
+              </span>
             </p>
             <input id="exchange_num" style="font-size: 1em; height: 30px;" type="text"
                    placeholder="甬钻 允许兑换，每次最多兑换200"
@@ -160,7 +164,9 @@
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <button class="btn btn-block " style="background-color: #3280fc; color: #FFFFFF;" type="submit">兑换</button>
+            <button class="btn btn-block " style="background-color: #3280fc; color: #FFFFFF;" type="button" id="submit">
+              兑换
+            </button>
           </div>
         </li>
       </ul>
@@ -173,55 +179,97 @@
 <script type="text/javascript">
     var _jQuery = jQuery.noConflict();
     _jQuery(function () {
-        _jQuery('#cy_form').submit(function () {
-            var _prestige_score = _jQuery('#prestige_score').val();
-            var _money_score = _jQuery('#money_score').val();
-            var _jewel_score = _jQuery('#jewel_score').val();
+        var j_flag = new Boolean(false);
+        var m_flag = new Boolean(false);
+        var flag_j = new Boolean(false);
+        var flag_m = new Boolean(false);
+        _jQuery('#exchange_num').blur(function () {
             var _exchange_num = _jQuery('#exchange_num').val();
-            var _jewel = _jQuery('#jewel option:selected').val();
-            var _need_num = _jQuery('#need_num').val();
-            var _money = _jQuery('#money option:selected').val();
-
-            var j_flag = new Boolean(false);
-            var m_flag = new Boolean(false);
-
-            _prestige_score = Number(_prestige_score);
-            _money_score = Number(_money_score);
+            var _jewel_score = _jQuery('#jewel_score').val();
             _jewel_score = Number(_jewel_score);
             _exchange_num = Number(_exchange_num);
+            j_flag = exec_change_num(_exchange_num, _jewel_score);
+        });
+
+        _jQuery('#need_num').blur(function () {
+            var _need_num = _jQuery('#need_num').val();//prestige_score
+            var _money_score = _jQuery('#_money_score').val();
+            _money_score = Number(_money_score);
             _need_num = Number(_need_num);
+            m_flag = exec_need_num(_need_num, _money_score);
+        });
 
-            console.log('_prestige_score:' + _prestige_score + typeof _prestige_score);
-            console.log('_money_score:' + _money_score + typeof _money_score);
-            console.log('_jewel_score:' + _jewel_score + typeof _jewel_score);
-            console.log('_exchange_num:' + _exchange_num + typeof _exchange_num);
-            console.log('_jewel:' + _jewel + typeof _jewel);
-            console.log('_need_num:' + _need_num + typeof _need_num);
-            console.log('_money:' + _money + typeof _money);
-            console.log(!(_exchange_num < 200 && _exchange_num < _jewel_score));
 
-            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
-            if (!(_exchange_num < 200 && _exchange_num < _jewel_score)) {
-                _jQuery('#exchange_num_span').html('<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于甬钻拥有总数及每次最多兑换数量</em>');
+        _jQuery('#submit').click(function () {
+
+            var _exchange_num = _jQuery('#exchange_num').val();
+            var _jewel_score = _jQuery('#jewel_score').val();
+            _jewel_score = Number(_jewel_score);
+            _exchange_num = Number(_exchange_num);
+            j_flag = exec_change_num(_exchange_num, _jewel_score);
+
+            var _need_num = _jQuery('#need_num').val();//prestige_score
+            var _money_score = _jQuery('#_money_score').val();
+            _money_score = Number(_money_score);
+            _need_num = Number(_need_num);
+            m_flag = exec_need_num(_need_num, _money_score);
+
+            var _jewel = _jQuery('#jewel option:selected').val();
+            var _money = _jQuery('#money option:selected').val();
+            if (is_NotEmpty(_jewel)) {
+                flag_j = true;
             } else {
-                j_flag = true;
-                _jQuery('#exchange_num_span').html('');
+                alert('请选择兑换商品');
+            }
+            if (is_NotEmpty(_money)) {
+                flag_j = true;
+            } else {
+                alert('请选择兑换商品');
             }
 
-            //不得大于每次兑换的最大数量 且 不得大于 所拥有的财富值
-            if (!(_need_num < 200 && _need_num < _money_score)) {
-                _jQuery('#need_num_span').html('<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于现有的财富值及每次最多兑换数量</em>');
-            } else {
-                m_flag = true;
-                _jQuery('#need_num_span').html('');
-            }
-
-            if (j_flag && m_flag) {
+            if (j_flag && m_flag && flag_j && flag_j){
                 return true;
             }
-
-            return false;
         });
+
+        var html1 = '<em style="color: red;font-size: 16px;">&nbsp;&nbsp;兑换数量不能大于每次最多兑换数量</em>';
+        var html2 = '<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于可兑换数量</em>';
+        var html3 = '<em style="color: #48ff8d;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;每次最多兑换200个</em>';
+
+        function exec_change_num(_exchange_num, _jewel_score) {
+            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
+            if (_exchange_num > 200) {
+                _jQuery('#exchange_num_span').html(html1);
+                return false;
+            } else if (_exchange_num > _jewel_score) {
+                _jQuery('#exchange_num_span').html(html2);
+                return false;
+            } else {
+                _jQuery('#exchange_num_span').html(html3);
+                return true;
+            }
+        }
+
+        function exec_need_num(_need_num, _money_score) {
+            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
+            if (_need_num > 200) {
+                _jQuery('#need_num_span').html(html1);
+                return false;
+            } else if (_need_num > _money_score) {
+                _jQuery('#need_num_span').html(html2);
+                return false;
+            } else {
+                _jQuery('#need_num_span').html(html3);
+                return true;
+            }
+        }
+
+        function is_NotEmpty(value) {
+            if (value != '' && value != null) {
+                return true;
+            }
+            return false;
+        }
 
     });
 </script>
