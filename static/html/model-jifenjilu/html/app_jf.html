@@ -130,7 +130,7 @@
         </li>
         <li class=" f14">
           <div class="input-control has-icon-left has-icon-right ">
-            <select id="jewel" type="text" class="form-control" style="font-size: 1em; height: 30px;">
+            <select id="jewel" type="text" class="form-control" style="font-size: 1em; height: 30px; ">
               <option value="">请选择</option>
               <option value="甬钻" selected>甬钻</option>
             </select>
@@ -224,13 +224,13 @@
                 flag_j = true;
             } else {
                 alert('请选择兑换商品');
-                return ;
+                return;
             }
             if (is_NotEmpty(_money)) {
                 flag_j = true;
             } else {
                 alert('请选择兑换商品');
-                return ;
+                return;
             }
 
             if (j_flag && m_flag && flag_j && flag_j) {
@@ -240,7 +240,6 @@
 
         var html1 = '<em style="color: red;font-size: 16px;">&nbsp;&nbsp;<b>兑换数量不能大于每次最多兑换数量</b></em>';
         var html2 = '<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>兑换数量不能大于可兑换数量</b></em>';
-        var html3 = '<em style="color: #48ff8d;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>每次最多兑换200个</b></em>';
 
         function exec_change_num(_exchange_num, _jewel_score) {
             //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
@@ -251,7 +250,7 @@
                 _jQuery('#exchange_num_span').html(html2);
                 return false;
             } else {
-                _jQuery('#exchange_num_span').html(html3);
+                _jQuery('#exchange_num_span').html('');
                 return true;
             }
         }
@@ -265,7 +264,7 @@
                 _jQuery('#need_num_span').html(html2);
                 return false;
             } else {
-                _jQuery('#need_num_span').html(html3);
+                _jQuery('#need_num_span').html('');
                 return true;
             }
         }
