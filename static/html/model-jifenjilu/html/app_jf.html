@@ -124,7 +124,8 @@
             </p>
             <input id="exchange_num" style="font-size: 1em; height: 30px;" type="text"
                    placeholder="甬钻 允许兑换，每次最多兑换200"
-                   class="form-control">
+                   class="form-control"
+                   onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
           </div>
         </li>
         <li class=" f14">
@@ -139,11 +140,14 @@
           <div class="input-control has-icon-left has-icon-right ">
             <p class="lead" style="font-size: 1.2em; font-weight: 500; color: #FFFFFF;">
               <strong>所需:</strong>
-              <span id="need_num_span"></span>
+              <span id="need_num_span">
+                <em style="color: #48ff8d;font-size: 15px; font-family: Tahoma, " Microsoft YaHei", SimSun;">&nbsp;&nbsp;每次最多兑换200个</em>
+              </span>
             </p>
             <input id="need_num" style="font-size: 1em; height: 30px;" type="text"
                    placeholder="财富 允许兑换，每次最多兑换200"
-                   class="form-control">
+                   class="form-control"
+                   onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
           </div>
         </li>
         <li class=" f14">
@@ -220,21 +224,23 @@
                 flag_j = true;
             } else {
                 alert('请选择兑换商品');
+                return ;
             }
             if (is_NotEmpty(_money)) {
                 flag_j = true;
             } else {
                 alert('请选择兑换商品');
+                return ;
             }
 
-            if (j_flag && m_flag && flag_j && flag_j){
+            if (j_flag && m_flag && flag_j && flag_j) {
                 return true;
             }
         });
 
-        var html1 = '<em style="color: red;font-size: 16px;">&nbsp;&nbsp;兑换数量不能大于每次最多兑换数量</em>';
-        var html2 = '<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;兑换数量不能大于可兑换数量</em>';
-        var html3 = '<em style="color: #48ff8d;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;每次最多兑换200个</em>';
+        var html1 = '<em style="color: red;font-size: 16px;">&nbsp;&nbsp;<b>兑换数量不能大于每次最多兑换数量</b></em>';
+        var html2 = '<em style="color: red;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>兑换数量不能大于可兑换数量</b></em>';
+        var html3 = '<em style="color: #48ff8d;font-size: 15px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>每次最多兑换200个</b></em>';
 
         function exec_change_num(_exchange_num, _jewel_score) {
             //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
