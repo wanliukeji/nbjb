@@ -40,6 +40,11 @@
       }, DUCEAPP_LANG = {confirms: '确定', cancel: '取消'}, DUCEAPP_BASE = 'duceapp_base';</script>
   <script src="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/js/common.js?FKK" type="text/javascript"
           charset="utf-8"></script>
+  <style type="text/css">
+    html {
+      background-color: #FFFFFF;
+    }
+  </style>
 </head>
 <body class="bg">
 <div class="duceapp_body">
@@ -90,19 +95,22 @@
       <div class="bform tform sjno">
         <ul class="with optinit in65">
           <li>
-            <span class="ipp" style="width: 30%; text-align: left; font-weight: bolder;"><b>威望:</b>&nbsp;243</span>
-            <span class="ipp" style="width: 30%; text-align: left; font-weight: bolder;"><b>财富:</b>&nbsp;3497</span>
-            <span class="ipp" style="width: 30%; text-align: left; font-weight: bolder;"><b>甬钻:</b>&nbsp;4015</span>
+            <span class="ipp" style="width: 30%; text-align: left;"><b>威望:</b>&nbsp;<a
+              id="prestige_score">243</a></span>
+            <span class="ipp" style="width: 30%; text-align: left;"><b>财富:</b>&nbsp;<a
+              id="money_score">3497</a></span>
+            <span class="ipp" style="width: 30%; text-align: left;"><b>甬钻:</b>&nbsp;<a
+              id="jewel_score">4015</a></span>
           </li>
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">兑换</span>
-              <div class="ipt"><input type="text" class="px" name="orderid" value=""></div>
+              <div class="ipt"><input type="number" class="px" id="exchange_num" name="orderid" value=""></div>
             </div>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">请选择</span>
               <div class="ipt">
-                <select id="paytype" name="paytype" class="ps">
+                <select id="jewel" name="paytype" class="ps">
                   <option value="甬钻">甬钻</option>
                 </select>
               </div>
@@ -110,13 +118,13 @@
           </li>
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp">需要</span>
-              <div class="ipt"><input type="text" class="px" name="orderid" value=""></div>
+              <span class="ipp">所需</span>
+              <div class="ipt"><input type="text" id="need_num" class="px" name="orderid" value=""></div>
             </div>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">请选择</span>
               <div class="ipt">
-                <select id="status" name="status" class="ps">
+                <select id="money" name="status" class="ps">
                   <option value="财富">财富</option>
                 </select>
               </div>
@@ -125,6 +133,11 @@
           <li>
             <span class="ipp">密码</span>
             <div class="ipt"><input type="password" class="px" name="orderid" value=""></div>
+          </li>
+          <li>
+            <span class="ipp" style="text-align: left; font-size: 12px; white-space: nowrap; color: #999;" id="show_span">
+                【财富】允许兑换1次，每次最多兑换200;【财富】允许兑换1次，每次最多兑换200;
+            </span>
           </li>
           <li class="pnfm">
             <div class="w cl">
@@ -142,96 +155,109 @@
       </div>
     </form>
   </div>
-  <div class="creditslog">
-    <ul class="pagelazy">
-      <li class="bga bh_e f14">
-        <a href="plugin.php?id=duceapp_scorebuy:tradelog&orderid=20190829091253621624428868&amp;mobile=2">
-          <div class="cl">
-            <span class="f13 ff9" style="white-space:nowarp"><i class="duceapp_font f17 vm3">&#xe907;</i> 20190829091253621624428868</span>
-            <strong class="status">
-              待支付
-            </strong></div>
-          <dl class="cl">
-            <dt><cite style="color:"><i class="duceapp_font f15">&#xe99d;</i> 甬钻 <span class="ff9">&#x00d7; 20000</span></cite>&nbsp;
-              <i class="dgift"></i> 赠送 3000
-            </dt>
-            <dd>&#xffe5;200.00</dd>
-          </dl>
-          <dl class="cl mt6">
-            <dt class="f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3">&#xe90a;</i> 2019-08-29
-              09:12:53
-            </dt>
-            <dd>合计:&#xffe5;<strong class="f16" style="line-height:22px;">200.00</strong></dd>
-          </dl>
-        </a>
-      </li>
-      <li class="bga bh_e f14">
-        <a href="plugin.php?id=duceapp_scorebuy:tradelog&orderid=20190613145328246434737414&amp;mobile=2">
-          <div class="cl">
-            <span class="f13 ff9" style="white-space:nowarp"><i class="duceapp_font f17 vm3">&#xe907;</i> 20190613145328246434737414</span>
-            <strong class="status">
-              待支付
-            </strong></div>
-          <dl class="cl">
-            <dt><cite style="color:"><i class="duceapp_font f15">&#xe99d;</i> 甬钻 <span
-              class="ff9">&#x00d7; 300</span></cite></dt>
-            <dd>&#xffe5;3.00</dd>
-          </dl>
-          <dl class="cl mt6">
-            <dt class="f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3">&#xe90a;</i> 2019-06-13
-              14:53:28
-            </dt>
-            <dd>合计:&#xffe5;<strong class="f16" style="line-height:22px;">3.00</strong></dd>
-          </dl>
-        </a>
-      </li>
-      <li class="bga bh_e f14">
-        <a href="plugin.php?id=duceapp_scorebuy:tradelog&orderid=20190613145127114442642912&amp;mobile=2">
-          <div class="cl">
-            <span class="f13 ff9" style="white-space:nowarp"><i class="duceapp_font f17 vm3">&#xe907;</i> 20190613145127114442642912</span>
-            <strong class="status">
-              待支付
-            </strong></div>
-          <dl class="cl">
-            <dt><cite style="color:"><i class="duceapp_font f15">&#xe99d;</i> 甬钻 <span
-              class="ff9">&#x00d7; 300</span></cite></dt>
-            <dd>&#xffe5;3.00</dd>
-          </dl>
-          <dl class="cl mt6">
-            <dt class="f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3">&#xe90a;</i> 2019-06-13
-              14:51:27
-            </dt>
-            <dd>合计:&#xffe5;<strong class="f16" style="line-height:22px;">3.00</strong></dd>
-          </dl>
-        </a>
-      </li>
-      <li class="bga bh_e f14">
-        <a href="plugin.php?id=duceapp_scorebuy:tradelog&orderid=20190507203722084886045714&amp;mobile=2">
-          <div class="cl">
-            <span class="f13 ff9" style="white-space:nowarp"><i class="duceapp_font f17 vm3">&#xe907;</i> 20190507203722084886045714</span>
-            <strong class="status">
-              待支付
-            </strong></div>
-          <dl class="cl">
-            <dt><cite style="color:"><i class="duceapp_font f15">&#xe99d;</i> 财富 <span
-              class="ff9">&#x00d7; 30</span></cite></dt>
-            <dd>&#xffe5;3.00</dd>
-          </dl>
-          <dl class="cl mt6">
-            <dt class="f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3">&#xe90a;</i> 2019-05-07
-              20:37:22
-            </dt>
-            <dd>合计:&#xffe5;<strong class="f16" style="line-height:22px;">3.00</strong></dd>
-          </dl>
-        </a>
-      </li>
-    </ul>
-  </div>
-
 
   <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
   <div class="maskmenu" style="display:none;"></div>
 </div>
 <div id="mask" style="display:none;"></div>
+<script type="text/javascript">
+    $(function () {
+        var j_flag = new Boolean(false);
+        var m_flag = new Boolean(false);
+        var flag_j = new Boolean(false);
+        var flag_m = new Boolean(false);
+        $('#exchange_num').blur(function () {
+            var _exchange_num = $('#exchange_num').val();
+            var _jewel_score = $('#jewel_score').text();
+            _jewel_score = Number(_jewel_score);
+            _exchange_num = Number(_exchange_num);
+            j_flag = exec_change_num(_exchange_num, _jewel_score);
+        });
+
+        $('#need_num').blur(function () {
+            var _need_num = $('#need_num').val();//prestige_score
+            var _money_score = $('#_money_score').text();
+            _money_score = Number(_money_score);
+            _need_num = Number(_need_num);
+            m_flag = exec_need_num(_need_num, _money_score);
+        });
+
+
+        $('#submit').click(function () {
+
+            var _exchange_num = $('#exchange_num').val();
+            var _jewel_score = $('#jewel_score').val();
+            _jewel_score = Number(_jewel_score);
+            _exchange_num = Number(_exchange_num);
+            j_flag = exec_change_num(_exchange_num, _jewel_score);
+
+            var _need_num = $('#need_num').val();//prestige_score
+            var _money_score = $('#_money_score').val();
+            _money_score = Number(_money_score);
+            _need_num = Number(_need_num);
+            m_flag = exec_need_num(_need_num, _money_score);
+
+            var _jewel = $('#jewel option:selected').val();
+            var _money = $('#money option:selected').val();
+            if (is_NotEmpty(_jewel)) {
+                flag_j = true;
+            } else {
+                alert('请选择兑换商品');
+                return;
+            }
+            if (is_NotEmpty(_money)) {
+                flag_j = true;
+            } else {
+                alert('请选择兑换商品');
+                return;
+            }
+
+            if (j_flag && m_flag && flag_j && flag_j) {
+                return true;
+            }
+        });
+
+        var html1 = '<em style="color: red;font-size: 12px;">&nbsp;&nbsp;<b>*兑换数量不能大于每次最多兑换数量</b></em>';
+        var html2 = '<em style="color: red;font-size: 12px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>兑换数量不能大于可兑换数量</b></em>';
+        var text = '【财富】允许兑换1次，每次最多兑换200;【财富】允许兑换1次，每次最多兑换200;';
+
+        function exec_change_num(_exchange_num, _jewel_score) {
+            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
+            if (_exchange_num > 200) {
+                $('#show_span').html(html1);
+                return false;
+            } else if (_exchange_num > _jewel_score) {
+                $('#show_span').html(html2);
+                return false;
+            } else {
+                $('#show_span').html(text);
+                return true;
+            }
+        }
+
+        function exec_need_num(_need_num, _money_score) {
+            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
+            if (_need_num > 200) {
+                $('#show_span').html(html1);
+                return false;
+            } else if (_need_num > _money_score) {
+                $('#show_span').html(html2);
+                return false;
+            } else {
+                $('#show_span').html('');
+                return true;
+            }
+        }
+
+        function is_NotEmpty(value) {
+            if (value != '' && value != null) {
+                return true;
+            }
+            return false;
+        }
+
+    });
+
+</script>
 </body>
 </html>
