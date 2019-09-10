@@ -261,6 +261,8 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 40px;
+    padding-bottom: 30px;
+    border: #0a6beb 1px solid;
     /*padding-left: 10%;*/
     /*padding-right: 10%;*/
   }
