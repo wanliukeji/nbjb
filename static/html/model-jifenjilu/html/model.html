@@ -22,6 +22,10 @@
   <link rel="stylesheet" href="http://dev.bbs.cnnb.com/data/duceapp/base/common.css?FKK" type="text/css" media="all">
   <link rel="stylesheet" href="source/plugin/duceapp_scorebuy/static/css/addfunds_mobile.css?FKK" type="text/css"
         media="all">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mescroll.js@1.4.1/mescroll.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/mescroll.js@1.4.1/mescroll.min.js" charset="utf-8"></script>
+
   <script src="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/js/jquery.min.js?FKK"
           type="text/javascript"></script>
   <script type="text/javascript">var STYLEID = '14', STATICURL = 'static/',
@@ -44,6 +48,14 @@
     html {
       background-color: #FFFFFF;
     }
+
+    .mescroll {
+      position: fixed;
+      top: 44px;
+      bottom: 0;
+      height: auto; /*如设置bottom:50px,则需height:auto才能生效*/
+    }
+
   </style>
 </head>
 <body class="bg">
@@ -168,36 +180,14 @@
     </form>
   </div>
   <div class="creditslog">
-    <ul class="pagelazy" id="page-ul">
-      <!--      <li class="bga bh_e f14">-->
-      <!--        <a href="plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">-->
-      <!--          <div class="cl">-->
-      <!--            <strong class="status ffr" style="float: left;">-->
-      <!--              购买道具-->
-      <!--            </strong>-->
+    <div class="mescroll" id="mescroll">
+      <div>
+        <ul class="pagelazy" id="page-ul">
 
-      <!--            <span class="status">-->
-      <!--              <em style="color: #8b8b8b;">甬钻-10</em>-->
-      <!--            </span>-->
-
-      <!--          </div>-->
-      <!--          <dl class="cl">-->
-      <!--            <p>购买 涂鸦板 道具</p>-->
-      <!--            <dt>-->
-      <!--            </dt>-->
-      <!--          </dl>-->
-      <!--          <dl class="cl mt6">-->
-      <!--            <dd>-->
-      <!--              <span class="status f13 ff9">-->
-      <!--              2019-08-29 09:12:53-->
-      <!--            </span>-->
-      <!--            </dd>-->
-      <!--          </dl>-->
-      <!--        </a>-->
-      <!--      </li>-->
-    </ul>
+        </ul>
+      </div>
+    </div>
   </div>
-
 </div>
 <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
 <div class="maskmenu" style="display:none;"></div>
@@ -207,31 +197,28 @@
 </html>
 <script type="text/javascript">
     $(function () {
-        appendToHTML();
+        appendToHTML(null);
         //显示的总行数
-        var currentPage = 10;
-        $(window).scroll(function () {
-
-            var scrollTop = $(this).scrollTop();
-            var scrollHeight = $(document).height();
-            var windowHeight = $(this).height();
-            if (scrollTop + windowHeight == scrollHeight) {  //滚动到底部执行事件
-                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "#">' +
-                    '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
-                    ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center;"><p>' +
-                    '正在玩命加载中' +
-                    '<img height="40" width="40" style="vertical-align: middle;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568098225730&di=652b08af535e21f07b86bc2a08551050&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20181204%2F1639e124b4bd4ceaa21887da4be365c3.gif" alt="">' +
-                    '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-                    '<span class = "status f13 ff9"></span>' +
-                    '</dd></dl></a></li>');
-                $('#page-ul').html('');
-
-
-                //scrollLoad();
-            }
-
-        });
-
+        // $(window).scroll(function () {
+        //     alert(3);
+        //     var scrollTop = $(this).scrollTop();
+        //     var scrollHeight = $(document).height();
+        //     var windowHeight = $(this).height();
+        //     if (scrollTop + windowHeight == scrollHeight) {  //滚动到底部执行事件
+        //         alert(1);
+        //         $('#page-ul').append('<li class = "bga bh_e f14"><a href = "#">' +
+        //             '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
+        //             ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center;"><p>' +
+        //             '正在玩命加载中' +
+        //             '<img height="40" width="40" style="vertical-align: middle;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568098225730&di=652b08af535e21f07b86bc2a08551050&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20181204%2F1639e124b4bd4ceaa21887da4be365c3.gif" alt="">' +
+        //             '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+        //             '<span class = "status f13 ff9"></span>' +
+        //             '</dd></dl></a></li>');
+        //         $('#page-ul').html('');
+        //         appendToHTML(10);
+        //         //scrollLoad();
+        //     }
+        // });
 
         //滚动加载
         function scrollLoad() {
@@ -251,16 +238,16 @@
             });
         }
 
-        $('#tabs').css({'position': 'static'});
+        // $('#tabs').css({'position': 'static'});
 
-        function appendToHTML() {
+        function appendToHTML(count) {
             var items = getItems();
-            // if (currentPage == null || currentPage == 'undefined' currentPage == ''){
-            //     currentPage = 0;
-            // }
+            if (count == null || count == 'undefined' || count == ''){
+                count = 0;
+            }
 
             if (items.length > 0) {
-                for (var i = 0; i < 5; i++) {
+                for (var i = 0; i < 5 + count; i++) {
                     var info = items[i];
                     $('#page-ul').append('<li class = "bga bh_e f14"><a href = "plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">' +
                         '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
@@ -289,19 +276,49 @@
                     "top_name": "积分充值",
                     "remark": "充值获得的积分",
                     "time": "2019-08-30 09:12:53",
-                    "number": 500
+                    "number": 2
                 },
                 {
                     "top_name": "积分充值",
                     "remark": "购买了涂鸦板道具",
                     "time": "2019-08-31 09:12:53",
-                    "number": 50
+                    "number": 3
                 },
                 {
                     "top_name": "购买道具",
                     "remark": "购买 刷新卡 道具",
                     "time": "2019-08-32 09:12:53",
-                    "number": 200
+                    "number": 4
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 5
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 6
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 7
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 8
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 9
                 },
                 {
                     "top_name": "购买道具",
@@ -313,22 +330,103 @@
                     "top_name": "购买道具",
                     "remark": "购买了涂鸦板道具",
                     "time": "2019-08-29 09:12:53",
-                    "number": 10
+                    "number": 11
+                },
+                ,
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 12
                 },
                 {
                     "top_name": "购买道具",
                     "remark": "购买了涂鸦板道具",
                     "time": "2019-08-29 09:12:53",
-                    "number": 10
+                    "number": 13
                 },
                 {
                     "top_name": "购买道具",
                     "remark": "购买了涂鸦板道具",
                     "time": "2019-08-29 09:12:53",
-                    "number": 70
+                    "number": 14
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 15
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 16
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 17
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 18
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 19
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 20
                 }
             ];
         }
-    })
-    ;
+
+        var mescroll = new MeScroll("mescroll", {
+            up: {
+                callback: upCallback, //上拉加载的回调
+                page: {
+                    num: 0,
+                    size: 10
+                },
+                htmlNodata: '<p class="upwarp-nodata">-- END --</p>',
+                noMoreSize: 20, //如果列表已无数据,可设置列表的总数量要大于5才显示无更多数据;
+                //避免列表数据过少(比如只有一条数据), 显示无更多数据会不好看
+                //这就是为什么无更多数据有时候不显示的原因.
+                empty: {
+                    warpId: "page-ul",
+                    tip: "暂无相关数据~" //提示
+                },
+                lazyLoad: {
+                    use: false, // 是否开启懒加载,默认false
+                }
+            }
+        });
+
+        function upCallback() {
+            setTimeout(function () {
+                appendToHTML();
+            },2000);
+            $.ajax({
+                // url: 'localhost:9191:data.json',
+                success: function (data) {
+                    mescroll.endSuccess(); //无参. 注意结束下拉刷新是无参的
+                    //设置数据
+
+                },
+                error: function (data) {
+                    //联网失败的回调,隐藏下拉刷新的状态
+                    mescroll.endErr();
+                }
+            });
+        }
+    });
 </script>
