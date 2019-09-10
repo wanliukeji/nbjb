@@ -169,32 +169,32 @@
   </div>
   <div class="creditslog">
     <ul class="pagelazy" id="page-ul">
-      <li class="bga bh_e f14">
-        <a href="plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">
-          <div class="cl">
-            <strong class="status ffr" style="float: left;">
-              购买道具
-            </strong>
+      <!--      <li class="bga bh_e f14">-->
+      <!--        <a href="plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">-->
+      <!--          <div class="cl">-->
+      <!--            <strong class="status ffr" style="float: left;">-->
+      <!--              购买道具-->
+      <!--            </strong>-->
 
-            <span class="status">
-              <em style="color: #8b8b8b;">甬钻-10</em>
-            </span>
+      <!--            <span class="status">-->
+      <!--              <em style="color: #8b8b8b;">甬钻-10</em>-->
+      <!--            </span>-->
 
-          </div>
-          <dl class="cl">
-            <p>购买 涂鸦板 道具</p>
-            <dt>
-            </dt>
-          </dl>
-          <dl class="cl mt6">
-            <dd>
-              <span class="status f13 ff9">
-              2019-08-29 09:12:53
-            </span>
-            </dd>
-          </dl>
-        </a>
-      </li>
+      <!--          </div>-->
+      <!--          <dl class="cl">-->
+      <!--            <p>购买 涂鸦板 道具</p>-->
+      <!--            <dt>-->
+      <!--            </dt>-->
+      <!--          </dl>-->
+      <!--          <dl class="cl mt6">-->
+      <!--            <dd>-->
+      <!--              <span class="status f13 ff9">-->
+      <!--              2019-08-29 09:12:53-->
+      <!--            </span>-->
+      <!--            </dd>-->
+      <!--          </dl>-->
+      <!--        </a>-->
+      <!--      </li>-->
     </ul>
   </div>
 
@@ -204,65 +204,193 @@
 </div>
 <div id="mask" style="display:none;"></div>
 <script type="text/javascript">
+
+    //获取文档高度
+    function getDocumentTop() {
+        var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+        if (document.body) {
+            bodyScrollTop = document.body.scrollTop;
+        }
+        if (document.documentElement) {
+            documentScrollTop = document.documentElement.scrollTop;
+        }
+        scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+        return scrollTop;
+    }
+
+    //可视窗口高度
+    function getWindowHeight() {
+        var windowHeight = 0;
+        if (document.compatMode == "CSS1Compat") {
+            windowHeight = document.documentElement.clientHeight;
+        } else {
+            windowHeight = document.body.clientHeight;
+        }
+        return windowHeight;
+    }
+
+    //滚动条高度
+    function getScrollHeight() {
+        var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+        if (document.body) {
+            bodyScrollHeight = document.body.scrollHeight;
+        }
+        if (document.documentElement) {
+            documentScrollHeight = document.documentElement.scrollHeight;
+        }
+        scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+        return scrollHeight;
+    }
+
+
+    //获取窗口可视范围的高度
+    function getClientHeight() {
+        var clientHeight = 0;
+        if (document.body.clientHeight && document.documentElement.clientHeight) {
+            clientHeight = (document.body.clientHeight < document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+        } else {
+            clientHeight = (document.body.clientHeight > document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+        }
+        return clientHeight;
+    }
+
+    function getScrollTop() {
+        var scrollTop = 0;
+        scrollTop = (document.body.scrollTop > document.documentElement.scrollTop) ? document.body.scrollTop : document.documentElement.scrollTop;
+        return scrollTop;
+    }
+
+    //手机屏幕滑动监听
+    window.onscroll = function () {
+
+    }
+    //监听事件内容
+    if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
+        //当滚动条到底时,这里是触发内容
+        //异步请求数据,局部刷新dom
+        // ajax_function()
+    }
+    ;
+
     $(function () {
+        appendToHTML(getItems(), null);
+        var currentPage = 5;
+        $(window).scroll(function () {
+            // console.log(getWindowHeight() + getDocumentTop());
+            if (getScrollHeight() >= (getWindowHeight() + getDocumentTop())) {
+                currentPage += currentPage;
+                appendToHTML(getItems, ++currentPage);
+                console.log(getScrollHeight());
+                console.log(getWindowHeight() + getDocumentTop());
+                console.log(currentPage);
+                // ajax_function()
+                setTimeout(function () {
+
+                },500);
+                // console.log('到底啦!');
+            };
+            var dch = getClientHeight();
+            scrollTop = getScrollTop();
+            scrollBottom = document.body.scrollHeight - scrollTop;
+            if (scrollBottom >= dch && scrollBottom <= (dch + 10)) {
+                if (pageCount == (currentPage + 1)) {
+                    $(".click-load").hide();
+                    return;
+                }
+                currentPage++;
+                showList(currentPage, pageSize);
+            }
+        });
+
+        //滚动加载
+        function scrollLoad() {
+            //可视窗口的高度
+            var scrollTop = 0;
+            var scrollBottom = 0;
+
+        }
 
         $('#tabs').css({'position': 'static'});
 
-        var items = [
-            {
-                "top_name": "购买道具",
-                "remark": "购买了涂鸦板道具",
-                "time": "2019-08-29 09:12:53",
-                "number": 100
-            },
-            {
-                "top_name": "积分充值",
-                "remark": "充值获得的积分",
-                "time": "2019-08-30 09:12:53",
-                "number": 500
-            },
-            {
-                "top_name": "积分充值",
-                "remark": "购买了涂鸦板道具",
-                "time": "2019-08-31 09:12:53",
-                "number": 50
-            },
-            {
-                "top_name": "购买道具",
-                "remark": "购买 刷新卡 道具",
-                "time": "2019-08-32 09:12:53",
-                "number": 200
-            },
-            {
-                "top_name": "购买道具",
-                "remark": "购买了涂鸦板道具",
-                "time": "2019-08-29 09:12:53",
-                "number": 10
-            },
-            {
-                "top_name": "购买道具",
-                "remark": "购买了涂鸦板道具",
-                "time": "2019-08-29 09:12:53",
-                "number": 10
+        function appendToHTML(items, count) {
+            var str = '<li class = "bga bh_e f14"><a href = "plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">' +
+                '<div class = "cl"> <strong class = "status ffr" style = "float: left;">购买道具</strong>' +
+                ' <span class = "status"><em style = "color: #8b8b8b;" >甬钻 - 10 </em></span></div><dl class = "cl"><p> 购买' +
+                '涂鸦板 道具</p><dt></dt></dl><dl class = "cl mt6"><dd><span class = "status f13 ff9">2019-08-29 09:12:53</span>' +
+                '</dd></dl></a></li>';
+            if (count == null || count == '' || count == 'undefined') {
+                count = 5;
             }
-        ];
-
-        var str = '<li class = "bga bh_e f14"><a href = "plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">' +
-            '<div class = "cl"> <strong class = "status ffr" style = "float: left;">购买道具</strong>' +
-            ' <span class = "status"><em style = "color: #8b8b8b;" >甬钻 - 10 </em></span></div><dl class = "cl"><p> 购买' +
-            '涂鸦板 道具</p><dt></dt></dl><dl class = "cl mt6"><dd><span class = "status f13 ff9">2019-08-29 09:12:53</span>' +
-            '</dd></dl></a></li>';
-
-        for (var i = 0; i < items.length; i++) {
-            var info = items[i];
-            console.log(i + ':' + info.top_name);
-            $('#page-ul').append('<li class = "bga bh_e f14"><a href = "plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">' +
-                '<div class = "cl"> <strong class = "status ffr" style = "float: left;">'+ info.top_name +'</strong>' +
-                ' <span class = "status"><em style = "color: #8b8b8b;" >甬钻 - '+ info.number +' </em></span></div><dl class = "cl"><p>'+ info.remark +'</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-                '<span class = "status f13 ff9">'+ info.time +'</span>' +
-                '</dd></dl></a></li>');
+            if (items.length > 0) {
+                for (var i = 0; i < count; i++) {
+                    var info = items[i];
+                    $('#page-ul').append('<li class = "bga bh_e f14"><a href = "plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">' +
+                        '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
+                        ' <span class = "status"><em style = "color: #8b8b8b;" >甬钻 - ' + info.number + ' </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                        '<span class = "status f13 ff9">' + info.time + '</span>' +
+                        '</dd></dl></a></li>');
+                }
+            } else {
+                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "#">' +
+                    '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
+                    ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center;"><p>' + '暂无无任何交易记录' + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                    '<span class = "status f13 ff9"></span>' +
+                    '</dd></dl></a></li>');
             }
+        }
 
+        function getItems() {
+            return [
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 1
+                },
+                {
+                    "top_name": "积分充值",
+                    "remark": "充值获得的积分",
+                    "time": "2019-08-30 09:12:53",
+                    "number": 500
+                },
+                {
+                    "top_name": "积分充值",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-31 09:12:53",
+                    "number": 50
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买 刷新卡 道具",
+                    "time": "2019-08-32 09:12:53",
+                    "number": 200
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 10
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 10
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 10
+                },
+                {
+                    "top_name": "购买道具",
+                    "remark": "购买了涂鸦板道具",
+                    "time": "2019-08-29 09:12:53",
+                    "number": 70
+                }
+            ];
+        }
     });
 </script>
 </body>
