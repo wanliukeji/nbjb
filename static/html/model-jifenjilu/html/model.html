@@ -248,106 +248,121 @@
         //显示的总行数
         var currentPage = 10;
         $(window).scroll(function () {
-            if (getScrollHeight() >= (getWindowHeight() + getDocumentTop())) {
-                // console.log(getWindowHeight() + getDocumentTop());
-                alert(getScrollHeight() >= (getWindowHeight() + getDocumentTop()));
-                currentPage += currentPage;
-                appendToHTML();
-                console.log('当前滚动条最大高度' + getScrollHeight());
-                console.log('当前文档显示最大高度' + getWindowHeight() + getDocumentTop());
-                console.log(currentPage);
-                // ajax_function()
-                console.log('到底啦!');
-                return;
-            };
+            // if (getScrollHeight() >= (getWindowHeight() + getDocumentTop())) {
+            //     // console.log(getWindowHeight() + getDocumentTop());
+            //     alert(getScrollHeight() >= (getWindowHeight() + getDocumentTop()));
+            //     currentPage += currentPage;
+            //     appendToHTML();
+            //     console.log('当前滚动条最大高度' + getScrollHeight());
+            //     console.log('当前文档显示最大高度' + getWindowHeight() + getDocumentTop());
+            //     console.log(currentPage);
+            //     // ajax_function()
+            //     console.log('到底啦!');
+            //     return;
+            // }
+            // ;
+
+            var scrollTop = $(this).scrollTop();
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            if(scrollTop + windowHeight == scrollHeight){  //滚动到底部执行事件
+                console.dir("我到底部了");
+            }
+            if(scrollTop == 0){                        //滚动到头部执行事件
+                console.dir("我到头部了");
+            }
 
         });
 
-        //滚动加载
-        function scrollLoad() {
-            //可视窗口的高度
 
 
-        }
 
-        $('#tabs').css({'position': 'static'});
+    //滚动加载
+    function scrollLoad() {
+        //可视窗口的高度
 
-        function appendToHTML() {
-            var items = getItems();
-            // if (currentPage == null || currentPage == 'undefined' currentPage == ''){
-            //     currentPage = 0;
-            // }
 
-            if (items.length > 0) {
-                for (var i = 0; i < 5; i++) {
-                    var info = items[i];
-                    $('#page-ul').append('<li class = "bga bh_e f14"><a href = "plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">' +
-                        '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
-                        ' <span class = "status"><em style = "color: #8b8b8b;" >甬钻 - ' + info.number + ' </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-                        '<span class = "status f13 ff9">' + info.time + '</span>' +
-                        '</dd></dl></a></li>');
-                }
-            } else {
-                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "#">' +
-                    '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
-                    ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center;"><p>' + '暂无无任何交易记录' + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-                    '<span class = "status f13 ff9"></span>' +
+    }
+
+    $('#tabs').css({'position': 'static'});
+
+    function appendToHTML() {
+        var items = getItems();
+        // if (currentPage == null || currentPage == 'undefined' currentPage == ''){
+        //     currentPage = 0;
+        // }
+
+        if (items.length > 0) {
+            for (var i = 0; i < 5; i++) {
+                var info = items[i];
+                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "plugin.php?id=duceapp_scorebuy:tradelog&amp;orderid=20190829091253621624428868&amp;mobile=2">' +
+                    '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
+                    ' <span class = "status"><em style = "color: #8b8b8b;" >甬钻 - ' + info.number + ' </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                    '<span class = "status f13 ff9">' + info.time + '</span>' +
                     '</dd></dl></a></li>');
             }
+        } else {
+            $('#page-ul').append('<li class = "bga bh_e f14"><a href = "#">' +
+                '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
+                ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center;"><p>' + '暂无无任何交易记录' + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                '<span class = "status f13 ff9"></span>' +
+                '</dd></dl></a></li>');
         }
+    }
 
-        function getItems() {
-            return [
-                {
-                    "top_name": "购买道具",
-                    "remark": "购买了涂鸦板道具",
-                    "time": "2019-08-29 09:12:53",
-                    "number": 1
-                },
-                {
-                    "top_name": "积分充值",
-                    "remark": "充值获得的积分",
-                    "time": "2019-08-30 09:12:53",
-                    "number": 500
-                },
-                {
-                    "top_name": "积分充值",
-                    "remark": "购买了涂鸦板道具",
-                    "time": "2019-08-31 09:12:53",
-                    "number": 50
-                },
-                {
-                    "top_name": "购买道具",
-                    "remark": "购买 刷新卡 道具",
-                    "time": "2019-08-32 09:12:53",
-                    "number": 200
-                },
-                {
-                    "top_name": "购买道具",
-                    "remark": "购买了涂鸦板道具",
-                    "time": "2019-08-29 09:12:53",
-                    "number": 10
-                },
-                {
-                    "top_name": "购买道具",
-                    "remark": "购买了涂鸦板道具",
-                    "time": "2019-08-29 09:12:53",
-                    "number": 10
-                },
-                {
-                    "top_name": "购买道具",
-                    "remark": "购买了涂鸦板道具",
-                    "time": "2019-08-29 09:12:53",
-                    "number": 10
-                },
-                {
-                    "top_name": "购买道具",
-                    "remark": "购买了涂鸦板道具",
-                    "time": "2019-08-29 09:12:53",
-                    "number": 70
-                }
-            ];
-        }
-    });
+    function getItems() {
+        return [
+            {
+                "top_name": "购买道具",
+                "remark": "购买了涂鸦板道具",
+                "time": "2019-08-29 09:12:53",
+                "number": 1
+            },
+            {
+                "top_name": "积分充值",
+                "remark": "充值获得的积分",
+                "time": "2019-08-30 09:12:53",
+                "number": 500
+            },
+            {
+                "top_name": "积分充值",
+                "remark": "购买了涂鸦板道具",
+                "time": "2019-08-31 09:12:53",
+                "number": 50
+            },
+            {
+                "top_name": "购买道具",
+                "remark": "购买 刷新卡 道具",
+                "time": "2019-08-32 09:12:53",
+                "number": 200
+            },
+            {
+                "top_name": "购买道具",
+                "remark": "购买了涂鸦板道具",
+                "time": "2019-08-29 09:12:53",
+                "number": 10
+            },
+            {
+                "top_name": "购买道具",
+                "remark": "购买了涂鸦板道具",
+                "time": "2019-08-29 09:12:53",
+                "number": 10
+            },
+            {
+                "top_name": "购买道具",
+                "remark": "购买了涂鸦板道具",
+                "time": "2019-08-29 09:12:53",
+                "number": 10
+            },
+            {
+                "top_name": "购买道具",
+                "remark": "购买了涂鸦板道具",
+                "time": "2019-08-29 09:12:53",
+                "number": 70
+            }
+        ];
+    }
+    })
+    ;
 </script>
 </html>
