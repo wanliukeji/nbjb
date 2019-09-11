@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Cache-control" content="no-cache"/>
+<head>http-equiv
+<!--  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+<!--  <meta http-equiv="Cache-control" content="no-cache"/>-->
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="format-detection" content="telephone=no"/>
@@ -70,7 +70,7 @@
     </div>
   </div>
   <div class="tbbox tbscrl tbbox2">
-    <div class="tabs" id="tabs">
+    <div class="tabs" id="tabs" style="position: fixed;min-width: 100%; top: 48px;">
       <div class="tab bi_d bga">
         <ul class="f15 tab8 ff9">
           <li>
@@ -179,12 +179,10 @@
       </div>
     </form>
   </div>
-  <div class="creditslog">
-    <div class="mescroll" id="mescroll">
-      <div>
-        <ul class="pagelazy" id="page-ul">
-
-        </ul>
+  <div class="creditslog" style="padding-top: 0px;">
+    <div class="mescroll" id="mescroll" style="position: relative; padding-top: 0px; margin-top: -60px;">
+      <div style="background: #F3F3F3;">
+      <ul class="pagelazy" id="page-ul"></ul>
       </div>
     </div>
   </div>
@@ -256,7 +254,7 @@
                         '</dd></dl></a></li>');
                 }
             } else {
-                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "#">' +
+                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
                     '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
                     ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center;"><p>' + '暂无无任何交易记录' + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
                     '<span class = "status f13 ff9"></span>' +
@@ -332,7 +330,6 @@
                     "time": "2019-08-29 09:12:53",
                     "number": 11
                 },
-                ,
                 {
                     "top_name": "购买道具",
                     "remark": "购买了涂鸦板道具",
