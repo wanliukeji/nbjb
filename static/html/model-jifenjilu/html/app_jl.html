@@ -223,7 +223,6 @@
         var pageSize = 5;
         $(document).scroll(function () {
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
-                console.log('当前页大小: ' + pageSize + '正在执行.......................');
                 finished = false;
                 // ajax_function()
                 setTimeout(function () {
