@@ -98,11 +98,10 @@
         </ul>
       </div>
     </div>
-    <div class="creditslog">
-      <ul class="pagelazy" id="page-ul">
-      </ul>
-    </div>
-
+  </div>
+  <div class="creditslog">
+    <ul class="pagelazy" id="page-ul">
+    </ul>
   </div>
   <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
   <div class="maskmenu" style="display:none;"></div>
@@ -169,22 +168,20 @@
         });
 
         var li_html = '<li class="bga bh_e f14"><a><div class="cl"><span class="status" style="float: left; color: #373cff;">' +
-            '</span><strong class="status"><em class="succ"></em></strong></div><dl class="cl"><dt>' +
-            '<P style="font-size: 14px; color: #a6a6a6; text-align: center;">往上滑动获取更多数据</P>' +
-            '</dt> <dd><cite><i class="duceapp_font f15"></i> <span class="ff9"></span></cite></dd>' +
-            '</dl><dl class="cl mt6"><dt class="f13 ff9" style="line-height:26px; float: right;"></dt></dl></a></li>';
+            '</span><strong class="status"><em class="succ"></em></strong></div>' +
+            '<dl class = "cl"><P style="font-size: 14px; color: #a6a6a6; text-align: center;">已无更多交易数据</P><dt></dt></dl><dl class="cl mt6">' +
+            '<dt class="f13 ff9" style="line-height:26px; float: right;' + ' border: 1px black solid;"></dt></dl></a></li>';
 
         function appendToHTML(items, count) {
             if (items.length > 0 && items.length > count) {
                 append_for(items, count);
-                $('#page-ul').append('<li class="bga bh_e f14" style="padding-bottom: 80px;"><a><div class="cl"><span class="status" style="float: left; color: #373cff;">' +
+                $('#page-ul').append('<li class="bga bh_e f14"><a><div class="cl"><span class="status" style="float: left; color: #373cff;">' +
                     '</span><strong class="status"><em class="succ"></em></strong></div>' +
-                    '<dl class = "cl"><P style="font-size: 14px; color: #a6a6a6; text-align: center;">往上滑动获取更多数据</P><dt></dt></dl><dl class="cl mt6"><dt class="f13 ff9" style="line-height:26px; float: right;' +
-                    ' border: 1px black solid;"></dt></dl></a></li>');
+                    '<dl class = "cl"><P style="font-size: 14px; color: #a6a6a6; text-align: center;">往上滑动获取更多数据</P><dt></dt></dl><dl class="cl mt6">' +
+                    '<dt class="f13 ff9" style="line-height:26px; float: right;' + ' border: 1px black solid;"></dt></dl></a></li>');
 
             } else if (count >= items.length) {
-                console.log('总长度:' + items.length + '\n当前页大小:' + count);
-                append_for(items, count);
+                    append_for(items, count);
                     $('#page-ul').append(li_html);
             } else {
                 $('#page-ul').append(li_html);

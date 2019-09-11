@@ -236,7 +236,6 @@
             }
             ;
         });
-
         var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
             '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
             ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center; font-size: 14px; color: #a6a6a6;"><p>' +
@@ -252,14 +251,12 @@
                     '往上滑动获取更多数据</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
                     '<span class = "status f13 ff9"></span>' +
                     '</dd></dl></a></li>');
-
             } else if (count >= items.length) {
                 append_for(items, count);
                 $('#page-ul').append(li_html);
             } else {
                 $('#page-ul').append(li_html);
             }
-
             function append_for(items, count) {
                 $('#page-ul').html('');
                 try {
@@ -278,7 +275,6 @@
                 }
             }
         }
-
         function getItems() {
             var items = [];
             for (let i = 1; i <= 20; i++) {
