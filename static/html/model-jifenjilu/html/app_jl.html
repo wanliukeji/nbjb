@@ -254,11 +254,8 @@
                     '</dd></dl></a></li>');
 
             } else if (count >= items.length) {
-                    append_for(items, count);
-                if (items.length <= count) {
-                    append_for(items, count);
-                    $('#page-ul').append(li_html);
-                }
+                append_for(items, count);
+                $('#page-ul').append(li_html);
             } else {
                 $('#page-ul').append(li_html);
             }
