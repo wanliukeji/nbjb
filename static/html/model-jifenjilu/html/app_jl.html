@@ -101,28 +101,26 @@
     </div>
   </div>
   <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
-    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">
+    <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
+    <div id="cy_form">
       <div class="bform tform sjno">
         <ul class="with optinit in65">
           <li>
             <span class="ipp">积分</span>
             <div class="ipt">
-              <select name="paytype" class="ps">
-                <option value="0">不限</option>
-                <option value="1">威望</option>
-                <option value="2">财富</option>
-                <option value="3">甬钻</option>
-              </select>
+              <select id="integral" class="ps"></select>
             </div>
           </li>
           <li>
             <span class="ipp">时间范围</span>
             <div class="ipt">
               <div class="ipt mg_n z" style="width:43%">
-                <input type="text" name="starttime" value="" class="px calendar" caltype="date" placeholder="开始时间">
+                <input type="text" name="starttime" id="startTime" value="" class="px calendar" caltype="date"
+                       placeholder="开始时间">
               </div>
               <div class="ipt mg_n y" style="width:43%">
-                <input type="text" name="endtime" value="" class="px calendar" caltype="date" placeholder="结束时间">
+                <input type="text" name="endtime" id="endTime" value="" class="px calendar" caltype="date"
+                       placeholder="结束时间">
               </div>
               <div class="ipt mg_n hc ff9">至</div>
             </div>
@@ -131,23 +129,14 @@
           <li>
             <span class="ipp">收支</span>
             <div class="ipt">
-              <select name="paytype" class="ps">
-                <option value="0">不限</option>
-                <option value="1">支出</option>
-                <option value="2">支入</option>
-              </select>
+              <select id="expenses" class="ps"></select>
             </div>
           </li>
 
           <li>
             <span class="ipp">操作</span>
             <div class="ipt">
-              <select name="paytype" class="ps">
-                <option value="0">请选择操作类型</option>
-                <option value="1">任务奖励</option>
-                <option value="2">悬赏主题</option>
-                <option value="3">最佳答案</option>
-              </select>
+              <select id="operation" class="ps"></select>
             </div>
           </li>
 
@@ -159,13 +148,13 @@
                 </button>
               </div>
               <div class="y">
-                <button type="submit" name="search" class="pn bgt pnw" id="searchsubmit" value="true">查询</button>
+                <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">查询</button>
               </div>
             </div>
           </li>
         </ul>
       </div>
-    </form>
+    </div>
   </div>
   <div class="creditslog">
     <ul class="pagelazy" id="page-ul">
@@ -233,13 +222,13 @@
 
     var finished = true;
     $(function () {
+        init();
         var totalPage = getItems().length; //总分页数
         appendToHTML(getItems(), 5);
         var pageSize = 5;
         $(window).scroll(function () {
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
                 finished = false;
-                // ajax_function()
                 setTimeout(function () {
                     finished = true;
                     pageSize += 5;
@@ -247,8 +236,25 @@
                     return;
                     console.log('到底啦!');
                 }, 2000);
-            };
+            }
+            ;
         });
+
+        $('#searchsubmit').click(function () {
+            var integral = $('#integral').val();
+            var starttime = $('#starttime').val();
+            var endtime = $('#endtime').val();
+            var expenses = $('#expenses').val();
+            var operation = $('#operation').val();
+            console.log('积分:' + integral + '\t 数据类型:' + typeof integral);
+            console.log('开始时间:' + starttime + '\t 数据类型:' + typeof starttime);
+            console.log('结束时间:' + endtime + '\t 数据类型:' + typeof endtime);
+            console.log('收支:' + expenses + '\t 数据类型:' + typeof expenses);
+            console.log('操作:' + operation + '\t 数据类型:' + typeof operation);
+
+
+        });
+
         var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
             '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
             ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center; font-size: 14px; color: #a6a6a6;"><p>' +
@@ -303,6 +309,154 @@
             }
             return items;
         }
+
+        //请求后台数据
+        function ajax_http() {
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                dataType: "json",
+                async: true,
+                // data: {"company_name": company_name },
+                type: "POST", //请求方式
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            items = data_list;
+                        }
+                    } else {
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        };
+
+
+        function init() {
+            var $integral = $('#integral');
+            var Integrals = getIntegrals();
+            var $expenses = $('#expenses');
+            var Expenses = getExpenses();
+            var $operation = $('#operation');
+            var Operations = getOperations();
+            joinToSelect(Integrals, $integral);
+            joinToSelect(Expenses, $expenses);
+            joinToSelect(Operations, $operation);
+        };
+
+        //获取积分下拉集合
+        function getIntegrals() {
+            var Integrals = [
+                {name: '不限', value: '0'},
+                {name: '威望', value: '1'},
+                {name: '财富', value: '1'},
+                {name: '甬钻', value: '1'}
+            ];
+
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                dataType: "json",
+                async: true,
+                // data: {"company_name": company_name },
+                type: "POST", //请求方式
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            Integrals = data_list;
+                        }
+                    } else {
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return Integrals;
+        };
+
+        //获取收支下拉集合
+        function getExpenses() {
+            var expenses = [
+                {name: '不限', value: '0'},
+                {name: '支出', value: '1'},
+                {name: '支入', value: '2'}
+            ];
+
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                dataType: "json",
+                async: true,
+                // data: {"company_name": company_name },
+                type: "POST", //请求方式
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            expenses = data_list;
+                        }
+                    } else {
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return expenses;
+        };
+
+        //获取操作下拉集合
+        function getOperations() {
+            var operations = [
+                {name: '请选择操作类型', value: '0'},
+                {name: '任务奖励', value: '1'},
+                {name: '悬赏主题', value: '2'},
+                {name: '最佳答案', value: '3'}
+            ];
+
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                dataType: "json",
+                async: true,
+                // data: {"company_name": company_name },
+                type: "POST", //请求方式
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            operations = data_list;
+                        }
+                    } else {
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return operations;
+        };
+
+        function joinToSelect(item, dom) {
+            try {
+                for (var i = 0; i < item.length; i++) {
+                    var info = item[i];
+                    dom.append('<option value="' + info.value + '">' + info.name + '</option>');
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
     });
 </script>
 </body>
