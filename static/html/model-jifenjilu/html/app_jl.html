@@ -224,8 +224,9 @@
             ;
         });
 
+        //查询 数据 异步刷新
         $('#searchsubmit').click(function () {
-
+            ajax_http();
         });
 
         var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
@@ -285,6 +286,7 @@
         }
 
         var items = [];
+
         //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
         function ajax_http() {
             var integral = $('#integral').val();
@@ -320,7 +322,6 @@
                 }
             });
         };
-
 
         function init() {
             var $integral = $('#integral');
