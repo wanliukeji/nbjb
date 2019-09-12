@@ -167,22 +167,6 @@
 </div>
 <div id="mask" style="display:none;"></div>
 <script type="text/javascript">
-
-    // function scrollBottomOrTop() {
-    //     var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    //     var scrollTop = document.documentElement.scrollTop;
-    //     // 这里没用body，而是用到documentElement
-    //     var wholeHeight = document.documentElement.scrollHeight;
-    //     if (clients + scrollTop >= wholeHeight) { //
-    //         console.log("我到底部了...........................");
-    //     }
-    //     if (scrollTop == 0) {
-    //         console.log("我到顶部了...........................");
-    //     }
-    // }
-    //
-    // window.onscroll = scrollBottomOrTop;
-
     //获取文档高度
     function getDocumentTop() {
         var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
@@ -241,17 +225,6 @@
         });
 
         $('#searchsubmit').click(function () {
-            var integral = $('#integral').val();
-            var starttime = $('#starttime').val();
-            var endtime = $('#endtime').val();
-            var expenses = $('#expenses').val();
-            var operation = $('#operation').val();
-            console.log('积分:' + integral + '\t 数据类型:' + typeof integral);
-            console.log('开始时间:' + starttime + '\t 数据类型:' + typeof starttime);
-            console.log('结束时间:' + endtime + '\t 数据类型:' + typeof endtime);
-            console.log('收支:' + expenses + '\t 数据类型:' + typeof expenses);
-            console.log('操作:' + operation + '\t 数据类型:' + typeof operation);
-
 
         });
 
@@ -296,6 +269,7 @@
             }
         }
 
+        //测试数据
         function getItems() {
             var items = [];
             for (let i = 1; i <= 20; i++) {
@@ -310,14 +284,26 @@
             return items;
         }
 
-        //请求后台数据
+        var items = [];
+        //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
         function ajax_http() {
+            var integral = $('#integral').val();
+            var starttime = $('#startTime').val();
+            var endtime = $('#endTime').val();
+            var expenses = $('#expenses').val();
+            var operation = $('#operation').val();
+            console.log('积分:' + integral + '\t 数据类型:' + typeof integral);
+            console.log('开始时间:' + starttime + '\t 数据类型:' + typeof starttime);
+            console.log('结束时间:' + endtime + '\t 数据类型:' + typeof endtime);
+            console.log('收支:' + expenses + '\t 数据类型:' + typeof expenses);
+            console.log('操作:' + operation + '\t 数据类型:' + typeof operation);
+
             $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                //url: "http://localhost:8080/static/data/demo.json?integral="+integral + "&starttime="+starttime +
+                // "&endtime="+endtime+"&expenses="+expenses+"&operation="+operation,  //请求路径及参数
                 dataType: "json",
                 async: true,
-                // data: {"company_name": company_name },
-                type: "POST", //请求方式
+                type: "GET", //请求方式
                 contentType: "application/json;charset=UTF-8",
                 success: function (res) {
                     var data_list = res.data;
@@ -424,10 +410,10 @@
 
             $.ajax({
                 //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                type: "POST", //请求方式
+                // data: {"company_name": company_name },
                 dataType: "json",
                 async: true,
-                // data: {"company_name": company_name },
-                type: "POST", //请求方式
                 contentType: "application/json;charset=UTF-8",
                 success: function (res) {
                     var data_list = res.data;
@@ -456,6 +442,22 @@
                 console.log(e);
             }
         }
+
+
+        // function scrollBottomOrTop() {
+        //     var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        //     var scrollTop = document.documentElement.scrollTop;
+        //     // 这里没用body，而是用到documentElement
+        //     var wholeHeight = document.documentElement.scrollHeight;
+        //     if (clients + scrollTop >= wholeHeight) { //
+        //         console.log("我到底部了...........................");
+        //     }
+        //     if (scrollTop == 0) {
+        //         console.log("我到顶部了...........................");
+        //     }
+        // }
+        //
+        // window.onscroll = scrollBottomOrTop;
 
     });
 </script>
