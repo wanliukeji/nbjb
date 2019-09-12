@@ -179,6 +179,24 @@
 <div id="mask" style="display:none;"></div>
 <script type="text/javascript">
 
+
+    // function scrollBottomOrTop() {
+    //     var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    //     var scrollTop = document.documentElement.scrollTop;
+    //     // 这里存在兼容问题，会把body当成div来处理，如果用document.body.scrollHeight就得不到正确的高度，用body时需要把doctype后面的html去掉
+    //     // 这里没用body，而是用到documentElement
+    //     var wholeHeight = document.documentElement.scrollHeight;
+    //     if (clients + scrollTop >= wholeHeight) { //
+    //         console.log("我到底部了...........................");
+    //         // 在实际应用中可以通过请求后台获取下一页的数据，然后显示到当前位置，就能达到按页加载的效果。
+    //     }
+    //     if (scrollTop == 0) {
+    //         console.log("我到顶部了...........................");
+    //     }
+    // }
+    //
+    // window.onscroll = scrollBottomOrTop;
+
     //获取文档高度
     function getDocumentTop() {
         var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
@@ -219,9 +237,9 @@
     var finished = true;
     $(function () {
         var totalPage = getItems().length; //总分页数
-        appendToHTML(getItems(), totalPage);
+        appendToHTML(getItems(), 5);
         var pageSize = 5;
-        $(document).scroll(function () {
+        $(window).scroll(function () {
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
                 finished = false;
                 // ajax_function()
@@ -232,8 +250,7 @@
                     return;
                     console.log('到底啦!');
                 }, 2000);
-            }
-            ;
+            };
         });
         var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
             '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
@@ -256,6 +273,7 @@
             } else {
                 $('#page-ul').append(li_html);
             }
+
             function append_for(items, count) {
                 $('#page-ul').html('');
                 try {
@@ -274,6 +292,7 @@
                 }
             }
         }
+
         function getItems() {
             var items = [];
             for (let i = 1; i <= 20; i++) {

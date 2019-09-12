@@ -149,7 +149,7 @@
     var finished = true;
     $(function () {
         var totalPage = getItems().length; //总分页数
-        appendToHTML(getItems(), totalPage);
+        appendToHTML(getItems(), 5);
         var pageSize = 5;
         $(document).scroll(function () {
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
