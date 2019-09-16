@@ -105,7 +105,8 @@
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">兑换</span>
-              <div class="ipt"><input class="px" id="exchange_num" name="orderid" value="0" onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
+              <div class="ipt"><input class="px" id="exchange_num" name="orderid" value="0"
+                                      onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
             </div>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">请选择</span>
@@ -135,7 +136,8 @@
             <div class="ipt"><input type="password" class="px" name="orderid" value=""></div>
           </li>
           <li>
-            <span class="ipp" style="text-align: left; font-size: 12px; white-space: nowrap; color: #999;" id="show_span">
+            <span class="ipp" style="text-align: left; font-size: 12px; white-space: nowrap; color: #999;"
+                  id="show_span">
                 【财富】允许兑换1次，每次最多兑换200;【财富】允许兑换1次，每次最多兑换200;
             </span>
           </li>
@@ -174,7 +176,7 @@
             var need = Number(_exchange_num);
 
             need == NaN ? 0 : need;
-            $('#need_num').val(need/10);
+            $('#need_num').val(need / 10);
 
             if ($('#need_num').val() == 'NaN') {
                 $('#need_num').val(0)
@@ -265,6 +267,10 @@
                 return true;
             }
             return false;
+        }
+
+        function test() {
+            // alert(2);
         }
 
     });
