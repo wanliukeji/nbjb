@@ -231,7 +231,7 @@
         });
 
         var html1 = '<em style="color: red;font-size: 12px;">&nbsp;&nbsp;<b>*兑换数量不能大于每次最多兑换数量</b></em>';
-        var html2 = '<em style="color: red;font-size: 12px; font-family: Tahoma, "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>兑换数量不能大于可兑换数量</b></em>';
+        var html2 = '<em style="color: red;font-size: 12px; font-family: Tahoma "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>兑换数量不能大于可兑换数量</b></em>';
         var text = '【财富】允许兑换1次，每次最多兑换200;【财富】允许兑换1次，每次最多兑换2000;';
 
         function exec_change_num(_exchange_num, _jewel_score) {
@@ -267,10 +267,6 @@
                 return true;
             }
             return false;
-        }
-
-        function test() {
-            // alert(2);
         }
 
     });
