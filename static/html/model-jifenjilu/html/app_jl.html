@@ -207,9 +207,11 @@
     var finished = true;
     $(function () {
         init();
-        var totalPage = getItems().length; //总分页数
-        appendToHTML(getItems(), 5);
+        var items = getItems(); //测试数据
+        // var items = getInitData(); //后台请求数据
         var pageSize = 5;
+        var totalPage = getItems().length; //测试数据
+        appendToHTML(items , pageSize);
         $(window).scroll(function () {
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
                 finished = false;
@@ -285,10 +287,9 @@
             return items;
         }
 
-        var items = [];
-
         //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
         function ajax_http() {
+            var initItems = [];
             var integral = $('#integral').val();
             var starttime = $('#startTime').val();
             var endtime = $('#endTime').val();
@@ -308,19 +309,21 @@
                 type: "GET", //请求方式
                 contentType: "application/json;charset=UTF-8",
                 success: function (res) {
+                    console.log(JSON.stringify(res));
                     var data_list = res.data;
                     if (res.status == 200) {
                         if (data_list != null && data_list != null && data_list != 'undefined') {
-                            items = data_list;
+                            initItems = data_list;
                         }
                     } else {
-
+                        console.dir(JSON.stringify(res));
                     }
                 },
                 error: function (err) {
                     console.log(err);
                 }
             });
+            return initItems;
         };
 
         function init() {
@@ -444,21 +447,9 @@
             }
         }
 
-
-        // function scrollBottomOrTop() {
-        //     var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        //     var scrollTop = document.documentElement.scrollTop;
-        //     // 这里没用body，而是用到documentElement
-        //     var wholeHeight = document.documentElement.scrollHeight;
-        //     if (clients + scrollTop >= wholeHeight) { //
-        //         console.log("我到底部了...........................");
-        //     }
-        //     if (scrollTop == 0) {
-        //         console.log("我到顶部了...........................");
-        //     }
-        // }
-        //
-        // window.onscroll = scrollBottomOrTop;
+        function getInitData() {
+          return  ajax_http();
+        }
 
     });
 </script>
