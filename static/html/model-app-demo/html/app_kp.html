@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="bookmark" href="/favicon.ico" type="image/x-icon"/>
   <base href="http://dev.bbs.cnnb.com/"/>
-  <title>提现 - 阿拉宁波网 - 手机版</title>
+  <title>开票 - 阿拉宁波网 - 手机版</title>
   <link rel="stylesheet" href="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/css/base.css" type="text/css"
         media="all">
   <link id="duceapp_style" rel="stylesheet"
@@ -54,7 +54,7 @@
       </div>
       <div class="head_y y"><a href="home.php?mod=space&amp;uid=8&amp;do=profile&amp;mycenter=1&amp;mobile=2"><i
         class="duceapp_font f22">&#xe932;</i></a></div>
-      <h2>提现记录</h2>
+      <h2>开票记录</h2>
     </div>
   </div>
   <div class="tbbox tbscrl tbbox2">
@@ -91,11 +91,11 @@
       </div>
       <div class="tbb bi_d bgb rel">
         <ul class="f14 ffb cl">
-          <li class="a"><a href="plugin.php?id=duceapp_scorebuy:tradelog&amp;mobile=1">提现记录</a>
+          <li class="a"><a href="plugin.php?id=duceapp_scorebuy:tradelog&amp;mobile=1">开票记录</a>
           <li class="b">/</li>
         </ul>
         <span onclick="$('#srchlogfm').show();$(document.body).scrollTop(0)" class="abs mg_r ffr f14"
-              style="top:8px;right:0;"><i class="duceapp_font vm2">&#xe951;</i> 提现</span></div>
+              style="top:8px;right:0;"><i class="duceapp_font vm2">&#xe951;</i> 开票</span></div>
     </div>
   </div>
   <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
@@ -103,30 +103,66 @@
     <div id="cy_form">
       <div class="bform tform sjno">
         <ul class="with optinit in65">
+
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp">兑换</span>
-              <div class="ipt">
-                <input class="px" id="exchange_num" name="orderid" value="0"
+              <span class="ipp">公司名称</span>
+              <div class="ipt"><input class="px" name="orderid"></div>
+            </div>
+          </li>
+
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">税号</span>
+              <div class="ipt"><input class="px" name="orderid"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">开户号</span>
+              <div class="ipt"><input class="px" id="exchange_num" name="orderid" value="0"
                                       onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
             </div>
+          </li>
+          <li>
             <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp"></span>
-              <div class="ipt">
-                <input id="jewel" value="甬钻" name="paytype" class="ps" readonly/>
-              </div>
+              <span class="ipp">开户行</span>
+              <div class="ipt"><input class="px" name="orderid"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">金额</span>
+              <div class="ipt"><input class="px" name="orderid" value="0"
+                                      onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">联系人</span>
+              <div class="ipt"><input class="px" name="orderid"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">公司地址</span>
+              <div class="ipt"><input class="px" name="orderid"></div>
             </div>
           </li>
 
           <li>
             <span class="ipp" style="text-align: left; font-size: 12px; white-space: nowrap; color: #999;"
                   id="show_span">
-                总计拥有 <em style="color: red;">811760</em> 甬钻， 最多可提现
-              <em style="color: #19ff35;">811760</em>
-              ,合计
-              <em style="color: #3589ff;">810.76</em>
-               元RMB，提现后最低余额
-              <em style="color: #cbcbcb;">1000</em>
+             总计充值
+              <em style="color: red;">17.51</em>元，
+              已开票金额
+              <em style="color: #3589ff;">12</em>元，
+              剩余开票金额
+              <em style="color: #cbcbcb;">5.51</em>元，
+              开票最低金额为
+              <em style="color: #cbc872;">2</em>元，
+              元， 请仔细填写公司抬头和税号。
+
             </span>
           </li>
 
@@ -134,11 +170,11 @@
             <div class="w cl">
               <div class="z">
                 <button type="button" name="search" class="pn pnw" style="background:#BBB;"
-                        onclick="$('#srchlogfm').hide()" value="true">取消
+                        onclick="$('#srchlogfm').hide()" value="true">开票
                 </button>
               </div>
               <div class="y">
-                <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">提交</button>
+                <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">编辑</button>
               </div>
             </div>
           </li>
@@ -432,7 +468,7 @@
 
                         $('#page-ul').append('<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">' +
                             '<i class="duceapp_font f17 vm3"></i> ' + info.top_name + '</span><strong class="status">' + statusHtml +  '</strong></div>' +
-                            '<dl class="cl"><dt><cite style="color:"><i class="duceapp_font f15"></i> 积分 <span class="ff9">- 100</span></cite></dt>' +
+                            '<dl class="cl"><dt><cite ><i class="duceapp_font f15"></i> 开票金额 :<span class="ff9"> 100</span></cite></dt>' +
                             '<dd>￥0.10</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3"></i> ' +
                             '2019-08-05 16:40:27</dt></dl></a></li>');
                     }
@@ -451,8 +487,8 @@
             for (let i = 1; i <= 20; i++) {
                 if (i%2 == 0) {
                     var param = {
-                        top_name: '订单号:-' + (no + i),
-                        scope: '积分-' + (i * 100) + '',
+                        top_name: '税号:-' + (no + i),
+                        scope: '开票金额-' + (i * 100) + '',
                         time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
                         number: i * 10,
                         stauts: 1,
@@ -460,8 +496,8 @@
                     }
                 } else {
                     var param = {
-                        top_name: '订单号:-' + (no + i),
-                        scope: '积分-' + (i * 10) + '',
+                        top_name: '税号:-' + (no + i),
+                        scope: '开票金额-' + (i * 10) + '',
                         time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
                         number: i * 10,
                         stauts: 0,
