@@ -151,7 +151,7 @@
           </li>
 
           <li>
-            <span class="ipp" style="text-align: left; font-size: 12px; white-space: nowrap; color: #999;"
+            <span style="text-align: left; font-size: 12px; color: #999;"
                   id="show_span">
              总计充值
               <em style="color: red;">17.51</em>元，
@@ -162,7 +162,6 @@
               开票最低金额为
               <em style="color: #cbc872;">2</em>元，
               元， 请仔细填写公司抬头和税号。
-
             </span>
           </li>
 
@@ -457,7 +456,7 @@
             function append_for(items, count) {
                 $('#page-ul').html('');
                 try {
-                    var statusHtml ;
+                    var statusHtml;
                     for (var i = 0; i < count; i++) {
                         var info = items[i];
                         if (info.stauts == 1) {
@@ -467,7 +466,7 @@
                         }
 
                         $('#page-ul').append('<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">' +
-                            '<i class="duceapp_font f17 vm3"></i> ' + info.top_name + '</span><strong class="status">' + statusHtml +  '</strong></div>' +
+                            '<i class="duceapp_font f17 vm3"></i> ' + info.top_name + '</span><strong class="status">' + statusHtml + '</strong></div>' +
                             '<dl class="cl"><dt><cite ><i class="duceapp_font f15"></i> 开票金额 :<span class="ff9"> 100</span></cite></dt>' +
                             '<dd>￥0.10</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3"></i> ' +
                             '2019-08-05 16:40:27</dt></dl></a></li>');
@@ -485,7 +484,7 @@
             var items = [];
             var no = 20190102;
             for (let i = 1; i <= 20; i++) {
-                if (i%2 == 0) {
+                if (i % 2 == 0) {
                     var param = {
                         top_name: '税号:-' + (no + i),
                         scope: '开票金额-' + (i * 100) + '',
