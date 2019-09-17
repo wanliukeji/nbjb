@@ -54,7 +54,7 @@
       </div>
       <div class="head_y y"><a href="home.php?mod=space&amp;uid=8&amp;do=profile&amp;mycenter=1&amp;mobile=2"><i
         class="duceapp_font f22">&#xe932;</i></a></div>
-      <h2>积分记录</h2>
+      <h2>提现记录</h2>
     </div>
   </div>
   <div class="tbbox tbscrl tbbox2">
@@ -104,51 +104,29 @@
       <div class="bform tform sjno">
         <ul class="with optinit in65">
           <li>
-            <span class="ipp">积分</span>
-            <div class="ipt">
-              <select id="integral" class="ps"></select>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">兑换</span>
+              <div class="ipt"><input class="px" id="exchange_num" name="orderid" value="0"
+                                      onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
             </div>
-          </li>
-          <li>
-            <span class="ipp">时间范围</span>
-            <div class="ipt">
-              <div class="ipt mg_n z" style="width:43%">
-                <input type="text" name="starttime" id="startTime" value="" class="px calendar" caltype="date"
-                       placeholder="开始时间">
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp"></span>
+              <div class="ipt">
+                <input id="jewel" value="甬钻" name="paytype" class="ps" readonly/>
               </div>
-              <div class="ipt mg_n y" style="width:43%">
-                <input type="text" name="endtime" id="endTime" value="" class="px calendar" caltype="date"
-                       placeholder="结束时间">
-              </div>
-              <div class="ipt mg_n hc ff9">至</div>
             </div>
           </li>
 
           <li>
-            <span class="ipp">收支</span>
-            <div class="ipt">
-              <select id="expenses" class="ps"></select>
-            </div>
-          </li>
-
-          <li>
-            <span class="ipp">操作</span>
-            <div class="ipt">
-              <select id="operation" class="ps"></select>
-            </div>
-          </li>
-
-          <li class="pnfm">
-            <div class="w cl">
-              <div class="z">
-                <button type="button" name="search" class="pn pnw" style="background:#BBB;"
-                        onclick="$('#srchlogfm').hide()" value="true">取消
-                </button>
-              </div>
-              <div class="y">
-                <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">提交</button>
-              </div>
-            </div>
+            <span class="ipp" style="text-align: left; font-size: 12px; white-space: nowrap; color: #999;"
+                  id="show_span">
+                总计拥有 <em style="color: red;">811760</em> 甬钻， 最多可提现
+              <em style="color: #19ff35;">811760</em>
+              ,合计
+              <em style="color: #3589ff;">810.76</em>
+               元RMB，提现后最低余额
+              <em style="color: #cbcbcb;">1000</em>
+            </span>
           </li>
         </ul>
       </div>
