@@ -112,9 +112,8 @@
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">请选择</span>
               <div class="ipt">
-                <select id="jewel" name="paytype" class="ps">
-                  <option value="12" unit="" title="甬钻" ratio="1">甬钻</option>
-                  <option value="16" unit="" title="积分" ratio="2">积分</option>
+                <select id="jewel" onclick="getRadio(this)" name="paytype" class="ps">
+                  <option value="7" unit="" title="甬钻" ratio="1">甬钻</option>
                 </select>
               </div>
             </div>
@@ -128,8 +127,7 @@
               <span class="ipp">请选择</span>
               <div class="ipt">
                 <select id="money" name="status" class="ps">
-                  <option value="10" unit="" title="财富" ratio="10">财富</option>
-                  <option value="20" unit="" title="甬币" ratio="20">甬币</option>
+                  <option value="财富">财富</option>
                 </select>
               </div>
             </div>
@@ -161,34 +159,28 @@
   </div>
 
   <!--  <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>-->
-  <script src="/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
   <div class="maskmenu" style="display:none;"></div>
-  <div style="display:none;">
-    <i id="app"></i>
-  </div>
+<div style="display:none;">
+  <i id="app"></i>
+</div>
 </div>
 <div id="mask" style="display:none;"></div>
 <script type="text/javascript">
+
+  function getRadio(e){
+      alert(e);
+  }
+
+  _select.elem(this, 'select_paytype', 0)
+
+
     $(function () {
         var j_flag = new Boolean(false);
         var m_flag = new Boolean(false);
         var flag_j = new Boolean(false);
         var flag_m = new Boolean(false);
         $('#exchange_num').bind('input porpertychange', function () {
-            var f_val = $('#jewel').val();
-            var m_val = $('#money').val();
-
-            if (f_val == '' || f_val == null || f_val == 'undefined') {
-                f_val = 0;
-            }
-
-            if (m_val == '' || m_val == null || m_val == 'undefined') {
-                f_val = 0;
-            }
-
-            var f_int = Number(f_val);
-            var m_int = Number(m_val);
-
             var _exchange_num = $('#exchange_num').val();
             var _jewel_score = $('#jewel_score').text();
             _jewel_score = Number(_jewel_score);
@@ -196,11 +188,10 @@
             _exchange_num = Number(_exchange_num);
             var need = Number(_exchange_num);
 
-            need == 'undefined' ? 0 : need;
+            need == NaN ? 0 : need;
+            $('#need_num').val(need / 10);
 
-            $('#need_num').val(need / (f_int / m_int));
-
-            if ($('#need_num').val() == 'undefined') {
+            if ($('#need_num').val() == 'NaN') {
                 $('#need_num').val(0)
             }
 
@@ -216,6 +207,12 @@
             _need_num = Number(_need_num);
             m_flag = exec_need_num(_need_num, _money_score);
         });
+
+        function getRatio(e) {
+          alert(1);
+        };
+
+
 
         $('#submit').click(function () {
 

@@ -3,7 +3,7 @@
 
     <!--    -->
 
-    <router-view></router-view>
+<!--    <router-view></router-view>-->
 
     <!--    <model-firt></model-firt>-->
     <!--    <cy-home></cy-home>-->
