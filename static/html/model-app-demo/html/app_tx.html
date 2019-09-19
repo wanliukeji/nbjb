@@ -120,23 +120,23 @@
 
           <li>
             <span style="text-align: left; font-size: 12px; white-space: initial; color: #999;">
-                合计 <em style="color: red;" id="exchange_money">100</em> 元
+                合计 <em style="color: red;" id="exchange_money">0</em> 元
               到APP钱包
             </span>
 
             <span style="float: right; font-size: 12px; white-space: initial; color: #999;" id="show_msg">
-              <em style="color: red;">最大提现额度必须大于100</em>
+              <em style="color: red;">最大提现额度必须大于2000</em>
             </span>
           </li>
 
           <li>
             <span style="text-align: left; font-size: 12px; white-space: initial; color: #999;">
-                总计拥有 <em style="color: red;" id="y_sum">4467</em> 甬钻， 最多可提现
-              <em style="color: #19ff35;" id="max_money">3467</em>
+                总计拥有 <em style="color: red;" id="y_sum">4477</em> 甬钻， 最多可提现
+              <em style="color: #19ff35;" id="max_money">3477</em>
               ,合计
-              <em style="color: #3589ff;" id="sum_money">3.47</em>
+              <em style="color: #3589ff;" id="sum_money">3.48</em>
                元RMB，提现后最低余额
-              <em style="color: #cbcbcb;">1000</em>
+              <em style="color: #cbcbcb;" id="min_money">1000</em>
             </span>
           </li>
 
@@ -164,6 +164,8 @@
 </div>
 <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+    var ratio = 1000;
+
     //获取文档高度
     function getDocumentTop() {
         var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
@@ -483,40 +485,75 @@
         var show_init_msg = '<em style="color: red;">最大提现额度必须大于于100</em>';
         var show_msg = '<em style="color: red;">最大提现额度必须小于120</em>';
         //    兑换事件
-        $('#exchange_num').bind('input porpertychange',function () {
-
-            var $exchange_num =  $(this).val();
-            var exchange_money =  Number($exchange_num) * 2;
-
+        $('#exchange_num').bind('input porpertychange', function () {
+            var $exchange_num = $(this).val();
+            var exchange_money = isNumber($exchange_num) / ratio;
             $('#exchange_money').text(exchange_money);
-
-            var $y_sum = $('#y_sum').text();
-
-            if ($y_sum == null || $y_sum == '' || $y_sum == 'undefined') {
-                $y_sum = 0;
-            }
-
-            var y_sum = Number($y_sum);
-            if ($exchange_num > y_sum) {
-                $('#show_init_msg').html(show_msg);
-            } else {
-                $('#show_msg').html(show_init_msg);
+            try {
+                exec(exchange_money);
+            } catch (e) {
+                console.log(e);
             }
         }).focus(function () {
             $(this).val(null);
         });
 
-        function  exec(exchange_money) {
-            var $y_sum = $('#y_sum').val();//总拥有甬钻
-            var $max_money = $('#max_money').val();// 最多提现数量
-            var $sum_money =  $('#sum_money').val();// 合计RMB
+        function exec(exchange_money) {
+            var $y_sum = $('#y_sum').text();//总拥有甬钻
+            var $max_money = $('#max_money').text();// 最多提现数量
+            var $sum_money = $('#sum_money').text();// 合计RMB
+            var $min_money = $('#min_money').text();// 最低余额
+            var y_sum = isNumber($y_sum);
+            var max_money = isNumber($max_money);
+            var sum_money = isNumber($sum_money);
+            var min_money = isNumber($min_money);
+            var balance = y_sum - exchange_money;
 
-            var y_sum = Number($y_sum);
-            var max_money = Number($max_money);
-            var sum_money = Number($sum_money);
+            console.log('总数：' + y_sum);
+            console.log('最大数：' + max_money);
+            console.log('合计金额：' + sum_money);
+            console.log('余额：' + balance);
+            console.log('最低余额' + min_money);
 
+            if (exchange_money % 10 != 0) {
+                $('#show_msg').html('<em style="color: red;">提现额度必须是10的倍数</em>');
+                return false;
+            } else {
+                console.log('-------------------------------');
+                $('#show_msg').html('<em style="color: red;">最低提现额度必须大于2000</em>');
+            }
+
+            if (exchange_money < 2000) {
+                $('#show_msg').html('<em style="color: red;">最低提现额度必须大于2000</em>');
+                return false;
+            } else {
+                $('#show_msg').html('<em style="color: #3FDD6C;">提现后余额' + balance + '</em>');
+            }
+
+            if (exchange_money > max_money) {
+                $('#show_msg').html('<em style="color: red;">提现额度必须小于' + y_sum + '</em>');
+                return false;
+            } else {
+                $('#show_msg').html('<em style="color: #3FDD6C;">提现后余额' + balance + '</em>');
+            }
+
+            if (balance > min_money) {
+                $('#show_msg').html('<em style="color: red;">最低余额不足' + min_money + '</em>');
+                return false;
+            } else {
+                $('#show_msg').html('<em style="color: #3FDD6C;">提现后余额' + balance + '</em>');
+            }
+
+            return true;
         }
 
+        function isNumber(value) {
+            if (value == '' || value == null || value == 'undefined') {
+               return 0;
+            } else {
+                return Number(value);
+            }
+         }
     });
 </script>
 <div class="maskmenu" style="display:none;"></div>
