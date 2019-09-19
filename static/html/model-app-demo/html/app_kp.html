@@ -231,7 +231,6 @@
     var finished = true;
 
     $(function () {
-        init(); //初始化查询下拉框选项值
         var items = getItems(); //测试数据   可删除
         // var items = getInitData(); //后台请求数据 获取集合
         var pageSize = 5;  //初始化 当页显示总行数
@@ -250,12 +249,6 @@
                 }, 2000);
             }
             ;
-        });
-
-        //查询 数据 异步实时更新显示
-        $('#searchsubmit').click(function () {
-            // items = ajax_http();
-            appendToHTML(items, 5);
         });
 
         //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
@@ -296,128 +289,6 @@
             });
             return initItems;
         };
-
-        //初始化下拉动态选项值
-        function init() {
-            var $integral = $('#integral');
-            var Integrals = getIntegrals();
-            var $expenses = $('#expenses');
-            var Expenses = getExpenses();
-            var $operation = $('#operation');
-            var Operations = getOperations();
-            joinToSelect(Integrals, $integral);
-            joinToSelect(Expenses, $expenses);
-            joinToSelect(Operations, $operation);
-        };
-
-        //获取积分下拉集合
-        function getIntegrals() {
-            var Integrals = [
-                {name: '不限', value: '0'},
-                {name: '威望', value: '1'},
-                {name: '财富', value: '1'},
-                {name: '甬钻', value: '1'}
-            ];
-
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                dataType: "json",
-                async: true,
-                // data: {"company_name": company_name },
-                type: "POST", //请求方式
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    var data_list = res.data;
-                    if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            Integrals = data_list;
-                        }
-                    } else {
-
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return Integrals;
-        };
-
-        //获取收支下拉集合
-        function getExpenses() {
-            var expenses = [
-                {name: '不限', value: '0'},
-                {name: '支出', value: '1'},
-                {name: '支入', value: '2'}
-            ];
-
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                dataType: "json",
-                async: true,
-                // data: {"company_name": company_name },
-                type: "POST", //请求方式
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    var data_list = res.data;
-                    if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            expenses = data_list;
-                        }
-                    } else {
-
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return expenses;
-        };
-
-        //获取操作下拉集合
-        function getOperations() {
-            var operations = [
-                {name: '请选择操作类型', value: '0'},
-                {name: '任务奖励', value: '1'},
-                {name: '悬赏主题', value: '2'},
-                {name: '最佳答案', value: '3'}
-            ];
-
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                type: "POST", //请求方式
-                // data: {"company_name": company_name },
-                dataType: "json",
-                async: true,
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    var data_list = res.data;
-                    if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            operations = data_list;
-                        }
-                    } else {
-
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return operations;
-        };
-
-        function joinToSelect(item, dom) {
-            try {
-                for (var i = 0; i < item.length; i++) {
-                    var info = item[i];
-                    dom.append('<option value="' + info.value + '">' + info.name + '</option>');
-                }
-            } catch (e) {
-                console.log(e);
-            }
-        }
 
         //获取初始化总参数
         function getInitData() {
