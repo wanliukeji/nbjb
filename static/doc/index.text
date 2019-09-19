@@ -1,25 +1,126 @@
-<th>兑换</th>
-<td class="pns">
-<input type="text" id="exchangeamount" name="exchangeamount" class="px" size="5" style="width: auto;" value="0" onkeyup="exchangecalcredit()" />
-<select name="tocredits" id="tocredits" class="ps" onChange="exchangecalcredit()"><option value="7" unit="" title="甬钻" ratio="1">甬钻</option>
-</select>
-&nbsp;所需&nbsp;
-<input type="text" id="exchangedesamount" class="px" size="5" style="width: auto;" value="0" disabled="disabled" />
-<select name="fromcredits" id="fromcredits_0" class="ps" style="display: none" onChange="exchangecalcredit();"><option value="2" unit="" title="财富" ratio="10">财富</option>
-</select>                                                        <div class="tbmu bw0">
-                                                                                                                            <p>
-                                                                </p>
-                                                                                                                            <p>
-                                                                    【财富】允许兑换次，每次最多兑换;
-                                                                </p>
-                                                                                                                            <p>
-                                                                    【甬钻】允许兑换次，每次最多兑换;
-                                                                </p>
-                                                                                                                    </div>
-<script type="text/javascript">
-var tocredits = $('tocredits');
-var fromcredits = $('fromcredits_0');
-if(fromcredits.length > 1 && tocredits.value == fromcredits.value) {
-fromcredits.selectedIndex = tocredits.selectedIndex + 1;
-}
-</script>
+<div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
+    <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
+    <div id="cy_form">
+      <div class="bform tform sjno">
+        <ul class="with optinit in65">
+
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">公司名称</span>
+              <div class="ipt"><input class="px" name="company_name" id="company_name"></div>
+              <ul class="hide-select" id="hide-select"></ul>
+            </div>
+
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="company_name_font" class="td-left-span"><i class="td-left-span-i">*</i> 此行为必填项</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">税号</span>
+              <div class="ipt"><input class="px" name="invoice_code" id="invoice_code"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="invoice_code_font" class="td-left-span"><i class="td-left-span-i">*</i> 此行为必填项</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">开户号</span>
+              <div class="ipt"><input class="px" name="bank_code" id="bank_code"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="bank_code_font"></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">开户行</span>
+              <div class="ipt"><input class="px" name="bank" id="bank"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="bank_font"></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">金额</span>
+              <div class="ipt"><input class="px" name="amount" id="amount"
+                                      onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="amount_font"></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">联系人</span>
+              <div class="ipt"><input class="px" name="contact_name" id="contact_name"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="contact_name_font"></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">公司地址</span>
+              <div class="ipt"><input class="px" name="company_address" id="company_address"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="company_address_font"></span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <span style="text-align: left; font-size: 12px; color: #999;"
+                  id="show_span">
+             总计充值
+              <em style="color: red;">17.51</em>元，
+              已开票金额
+              <em style="color: #3589ff;">12</em>元，
+              剩余开票金额
+              <em style="color: #cbcbcb;">5.51</em>元，
+              开票最低金额为
+              <em style="color: #cbc872;">2</em>元，
+              元， 请仔细填写公司抬头和税号。
+            </span>
+          </li>
+
+          <li>
+            <span style="text-align: left; font-size: 12px; color: #999;"
+                  id="show_msg">
+              请仔细填写公司抬头和税号。
+            </span>
+          </li>
+
+          <li class="pnfm">
+            <div class="w cl">
+              <div class="z">
+                <button type="button" name="search" class="pn pnw" style="background:#BBB;"
+                        onclick="$('#srchlogfm').hide()" value="true">开票
+                </button>
+              </div>
+              <div class="y">
+                <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">编辑</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

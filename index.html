@@ -44,6 +44,43 @@
     html {
       background-color: #FFFFFF;
     }
+
+    .td-left-span {
+      font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+      color: #999;
+      clear: both;
+      margin: 5px 0;
+      color: #999;
+    }
+
+    .td-left-span-i {
+      color: red;
+      vertical-align: middle;
+    }
+
+    .hide-select {
+      display: block;
+      width: 310px;
+      position: absolute;
+      margin-top: 24px;
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      display: none;
+      text-align: left;
+      background: #FFFFFF;
+      /*overflow-y:scroll;*/
+      z-index: 100;
+    }
+    .hide-li-selected {
+      cursor: pointer;
+      padding-left: 10px;
+      font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+      clear: both;
+      margin: 5px 0;
+      color: #444444;
+    }
   </style>
 </head>
 <body class="bg">
@@ -98,6 +135,7 @@
               style="top:8px;right:0;"><i class="duceapp_font vm2">&#xe951;</i> 开票</span></div>
     </div>
   </div>
+
   <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
     <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
     <div id="cy_form">
@@ -107,7 +145,14 @@
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">公司名称</span>
-              <div class="ipt"><input class="px" name="company_name" id="company_name" ></div>
+              <div class="ipt"><input class="px" name="company_name" id="company_name"></div>
+              <ul class="hide-select" id="hide-select"></ul>
+            </div>
+
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="company_name_font" class="td-left-span"><i class="td-left-span-i">*</i> 此行为必填项</span>
+              </div>
             </div>
           </li>
 
@@ -116,17 +161,32 @@
               <span class="ipp">税号</span>
               <div class="ipt"><input class="px" name="invoice_code" id="invoice_code"></div>
             </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="invoice_code_font" class="td-left-span"><i class="td-left-span-i">*</i> 此行为必填项</span>
+              </div>
+            </div>
           </li>
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">开户号</span>
               <div class="ipt"><input class="px" name="bank_code" id="bank_code"></div>
             </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="bank_code_font"></span>
+              </div>
+            </div>
           </li>
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">开户行</span>
               <div class="ipt"><input class="px" name="bank" id="bank"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="bank_font"></span>
+              </div>
             </div>
           </li>
           <li>
@@ -135,17 +195,32 @@
               <div class="ipt"><input class="px" name="amount" id="amount"
                                       onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
             </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="amount_font"></span>
+              </div>
+            </div>
           </li>
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">联系人</span>
               <div class="ipt"><input class="px" name="contact_name" id="contact_name"></div>
             </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="contact_name_font"></span>
+              </div>
+            </div>
           </li>
           <li>
             <div style="width: 50%; display: inline-block; float: left;">
               <span class="ipp">公司地址</span>
               <div class="ipt"><input class="px" name="company_address" id="company_address"></div>
+            </div>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <div class="ipt">
+                <span id="company_address_font"></span>
+              </div>
             </div>
           </li>
 
@@ -163,14 +238,6 @@
               元， 请仔细填写公司抬头和税号。
             </span>
           </li>
-
-          <li>
-            <span style="text-align: left; font-size: 12px; color: #999;"
-                  id="show_msg">
-              请仔细填写公司抬头和税号。
-            </span>
-          </li>
-
           <li class="pnfm">
             <div class="w cl">
               <div class="z">
@@ -187,6 +254,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="creditslog">
     <ul class="pagelazy" id="page-ul">
     </ul>
@@ -237,7 +306,6 @@
     var finished = true;
 
     $(function () {
-        init(); //初始化查询下拉框选项值
         var items = getItems(); //测试数据   可删除
         // var items = getInitData(); //后台请求数据 获取集合
         var pageSize = 5;  //初始化 当页显示总行数
@@ -302,128 +370,6 @@
             });
             return initItems;
         };
-
-        //初始化下拉动态选项值
-        function init() {
-            var $integral = $('#integral');
-            var Integrals = getIntegrals();
-            var $expenses = $('#expenses');
-            var Expenses = getExpenses();
-            var $operation = $('#operation');
-            var Operations = getOperations();
-            joinToSelect(Integrals, $integral);
-            joinToSelect(Expenses, $expenses);
-            joinToSelect(Operations, $operation);
-        };
-
-        //获取积分下拉集合
-        function getIntegrals() {
-            var Integrals = [
-                {name: '不限', value: '0'},
-                {name: '威望', value: '1'},
-                {name: '财富', value: '1'},
-                {name: '甬钻', value: '1'}
-            ];
-
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                dataType: "json",
-                async: true,
-                // data: {"company_name": company_name },
-                type: "POST", //请求方式
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    var data_list = res.data;
-                    if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            Integrals = data_list;
-                        }
-                    } else {
-
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return Integrals;
-        };
-
-        //获取收支下拉集合
-        function getExpenses() {
-            var expenses = [
-                {name: '不限', value: '0'},
-                {name: '支出', value: '1'},
-                {name: '支入', value: '2'}
-            ];
-
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                dataType: "json",
-                async: true,
-                // data: {"company_name": company_name },
-                type: "POST", //请求方式
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    var data_list = res.data;
-                    if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            expenses = data_list;
-                        }
-                    } else {
-
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return expenses;
-        };
-
-        //获取操作下拉集合
-        function getOperations() {
-            var operations = [
-                {name: '请选择操作类型', value: '0'},
-                {name: '任务奖励', value: '1'},
-                {name: '悬赏主题', value: '2'},
-                {name: '最佳答案', value: '3'}
-            ];
-
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                type: "POST", //请求方式
-                // data: {"company_name": company_name },
-                dataType: "json",
-                async: true,
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    var data_list = res.data;
-                    if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            operations = data_list;
-                        }
-                    } else {
-
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return operations;
-        };
-
-        function joinToSelect(item, dom) {
-            try {
-                for (var i = 0; i < item.length; i++) {
-                    var info = item[i];
-                    dom.append('<option value="' + info.value + '">' + info.name + '</option>');
-                }
-            } catch (e) {
-                console.log(e);
-            }
-        }
 
         //获取初始化总参数
         function getInitData() {

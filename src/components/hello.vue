@@ -699,9 +699,6 @@
 
   .td-left-span-i {
     color: red;
-    /*margin: 0 auto;*/
-    /*top: 3px;*/
-    /*line-height: 10px;*/
     vertical-align: middle;
   }
 
