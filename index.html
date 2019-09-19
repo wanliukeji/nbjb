@@ -11,11 +11,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
   <meta name="keywords" content="宁波,北仑,镇海,阿拉宁波网,新北仑论坛,镇海论坛,宁波网,宁波论坛,房产,人才,二手,商城,团购,文学,博客,摄影,时尚,拼客"/>
   <meta name="description" content="CNNB.COM,阿拉宁波网旗下地方社区门户,提供和分享宁波论坛,北仑论坛,镇海论坛,社交,房产,人才,购物等生活,商务资讯互动平台. ,阿拉宁波网"/>
-  <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="bookmark" href="/favicon.ico" type="image/x-icon"/>
-  <!--  <base href="http://dev.bbs.cnnb.com/"/>-->
-  <title>积分充值 - 阿拉宁波网 - 手机版</title>
+  <base href="http://dev.bbs.cnnb.com/"/>
+  <title>开票 - 阿拉宁波网 - 手机版</title>
   <link rel="stylesheet" href="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/css/base.css" type="text/css"
         media="all">
   <link id="duceapp_style" rel="stylesheet"
@@ -30,7 +29,7 @@
       discuz_uid = '8', cookiepre = 'oYZ9_f4b9_', cookiedomain = '.dev.bbs.cnnb.com', cookiepath = '/',
       showusercard = '1', attackevasive = '0', disallowfloat = 'newthread', creditnotice = '1|威望|,2|财富|,7|甬钻|',
       defaultstyle = '',
-      REPORTURL = 'aHR0cDovL2Rldi5iYnMuY25uYi5jb20vcGx1Z2luLnBocD9pZD1kdWNlYXBwX3Njb3JlYnV5OnRyYWRlbG9nJnN0YXR1cz0xJm1vYmlsZT0y',
+      REPORTURL = 'aHR0cDovL2Rldi5iYnMuY25uYi5jb20vcGx1Z2luLnBocD9pZD1kdWNlYXBwX3Njb3JlYnV5OnRyYWRlbG9nJm1vYmlsZT0y',
       SITEURL = 'http://dev.bbs.cnnb.com/', JSPATH = 'data/cache/', DUCEAPP = {}, calendarform = {
           head: '日期时间设置',
           year: ['年', 2000, 2030],
@@ -39,9 +38,9 @@
           hour: ['时', 0, 23],
           minute: ['分', 0, 59]
       }, DUCEAPP_LANG = {confirms: '确定', cancel: '取消'}, DUCEAPP_BASE = 'duceapp_base';</script>
-  <script src="/static/js/common.js?FKK" type="text/javascript"
+  <script src="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/js/common.js?FKK" type="text/javascript"
           charset="utf-8"></script>
-  <style type="text/css">
+  <style>
     html {
       background-color: #FFFFFF;
     }
@@ -55,18 +54,19 @@
       </div>
       <div class="head_y y"><a href="home.php?mod=space&amp;uid=8&amp;do=profile&amp;mycenter=1&amp;mobile=2"><i
         class="duceapp_font f22">&#xe932;</i></a></div>
-      <h2>积分兑换</h2>
+      <h2>开票记录</h2>
     </div>
   </div>
-  <div class="tbbox tbscrl tbbox2" style="height: 50px;">
-    <div class="tabs">
+  <div class="tbbox tbscrl tbbox2">
+    <div class="tabs" id="tabs">
       <div class="tab bi_d bga">
         <ul class="f15 tab8 ff9">
           <li>
             <a href="home.php?mod=spacecp&amp;ac=credit&amp;op=base&amp;mobile=2">我的</a>
           </li>
-          <li>
-            <a href="home.php?mod=spacecp&amp;ac=credit&amp;op=log&amp;mobile=2">记录</a>
+          <li class="bb_d f15 a">
+            <a
+              href="home.php?mod=spacecp&amp;ac=plugin&amp;op=credit&amp;id=duceapp_scorebuy:tradelog&amp;mobile=2">记录</a>
           </li>
           <li class="bb_d f15 ">
             <a
@@ -74,7 +74,7 @@
           </li>
           <li class="bb_d f15">
             <a
-              href="home.php?mod=spacecp">订单</a>
+              href="">订单</a>
           </li>
           <li class="bb_d f15 ">
             <a href="home.php?mod=spacecp&amp;ac=plugin&amp;op=credit&amp;id=duceapp_scorebuy:cash&amp;mobile=2">提现</a>
@@ -83,216 +83,449 @@
             <a
               href="home.php?mod=spacecp&amp;ac=plugin&amp;op=credit&amp;id=duceapp_scorebuy:invoice&amp;mobile=2">发票</a>
           </li>
-          <li class="bb_d f15 a">
+          <li class="bb_d f15">
             <a
-              href="home.php?mod=spacecp&amp;ac=plugin&amp;op=credit&amp;id=duceapp_scorebuy:tradelog&amp;mobile=2">兑换</a>
+              href="">兑换</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tbb bi_d bgb rel">
+        <ul class="f14 ffb cl">
+          <li class="a"><a href="plugin.php?id=duceapp_scorebuy:tradelog&amp;mobile=1">开票记录</a>
+          <li class="b">/</li>
+        </ul>
+        <span onclick="$('#srchlogfm').show();$(document.body).scrollTop(0)" class="abs mg_r ffr f14"
+              style="top:8px;right:0;"><i class="duceapp_font vm2">&#xe951;</i> 开票</span></div>
+    </div>
+  </div>
+  <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
+    <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
+    <div id="cy_form">
+      <div class="bform tform sjno">
+        <ul class="with optinit in65">
+
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">公司名称</span>
+              <div class="ipt"><input class="px" name="company_name" id="company_name" ></div>
+            </div>
+          </li>
+
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">税号</span>
+              <div class="ipt"><input class="px" name="invoice_code" id="invoice_code"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">开户号</span>
+              <div class="ipt"><input class="px" name="bank_code" id="bank_code"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">开户行</span>
+              <div class="ipt"><input class="px" name="bank" id="bank"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">金额</span>
+              <div class="ipt"><input class="px" name="amount" id="amount"
+                                      onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">联系人</span>
+              <div class="ipt"><input class="px" name="contact_name" id="contact_name"></div>
+            </div>
+          </li>
+          <li>
+            <div style="width: 50%; display: inline-block; float: left;">
+              <span class="ipp">公司地址</span>
+              <div class="ipt"><input class="px" name="company_address" id="company_address"></div>
+            </div>
+          </li>
+
+          <li>
+            <span style="text-align: left; font-size: 12px; color: #999;"
+                  id="show_span">
+             总计充值
+              <em style="color: red;">17.51</em>元，
+              已开票金额
+              <em style="color: #3589ff;">12</em>元，
+              剩余开票金额
+              <em style="color: #cbcbcb;">5.51</em>元，
+              开票最低金额为
+              <em style="color: #cbc872;">2</em>元，
+              元， 请仔细填写公司抬头和税号。
+            </span>
+          </li>
+
+          <li>
+            <span style="text-align: left; font-size: 12px; color: #999;"
+                  id="show_msg">
+              请仔细填写公司抬头和税号。
+            </span>
+          </li>
+
+          <li class="pnfm">
+            <div class="w cl">
+              <div class="z">
+                <button type="button" name="search" class="pn pnw" style="background:#BBB;"
+                        onclick="$('#srchlogfm').hide()" value="true">开票
+                </button>
+              </div>
+              <div class="y">
+                <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">编辑</button>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <div id="srchlogfm" class=" bga" style="margin-top:-1px;">
-    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">
-      <div class="bform tform sjno">
-        <ul class="with optinit in65">
-          <li style="padding-left: 20px;">
-            <span class="ipp" style="width: 30%; text-align: left;"><b>威望:</b>&nbsp;<a
-              id="prestige_score">&nbsp;243</a></span>
-            <span class="ipp" style="width: 30%; text-align: left;"><b>财富:</b>&nbsp;<a
-              id="money_score">&nbsp;3497</a></span>
-            <span class="ipp" style="width: 30%; text-align: left;"><b>甬钻:</b>&nbsp;<a
-              id="jewel_score">&nbsp;4015</a></span>
-          </li>
-          <li>
-            <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp">兑换</span>
-              <div class="ipt"><input class="px" id="exchange_num" name="orderid" value="0"
-                                      onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
-            </div>
-            <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp">请选择</span>
-              <div class="ipt">
-                <select id="jewel" name="paytype" class="ps">
-                  <option value="12" unit="" title="甬钻" ratio="1">甬钻</option>
-                  <option value="16" unit="" title="积分" ratio="2">积分</option>
-                </select>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp">所需</span>
-              <div class="ipt"><input id="need_num" class="px" name="orderid" value="" disabled></div>
-            </div>
-            <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp">请选择</span>
-              <div class="ipt">
-                <select id="money" name="status" class="ps">
-                  <option value="10" unit="" title="财富" ratio="10">财富</option>
-                  <option value="20" unit="" title="甬币" ratio="20">甬币</option>
-                </select>
-              </div>
-            </div>
-          </li>
-          <li>
-            <span class="ipp">密码</span>
-            <div class="ipt"><input type="password" class="px" name="orderid" value=""></div>
-          </li>
-          <li>
-            <span class="ipp" style="text-align: left; font-size: 12px; white-space: nowrap; color: #999;"
-                  id="show_span">
-                【财富】允许兑换1次，每次最多兑换200;【财富】允许兑换1次，每次最多兑换200;
-            </span>
-          </li>
-          <li class="pnfm">
-            <div class="w cl">
-              <div class="z">
-                <button type="reset" name="search" class="pn pnw" style="background:#BBB;" value="true">重置
-                </button>
-              </div>
-              <div class="y">
-                <button type="submit" name="search" class="pn bgt pnw" id="searchsubmit" value="true">提交</button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </form>
+  <div class="creditslog">
+    <ul class="pagelazy" id="page-ul">
+    </ul>
   </div>
 
-  <!--  <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>-->
-  <script src="/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
-  <div class="maskmenu" style="display:none;"></div>
-  <div style="display:none;">
-    <i id="app"></i>
-  </div>
 </div>
-<div id="mask" style="display:none;"></div>
+<script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+
+    // 页面滑动控制区域
+    //获取文档高度
+    function getDocumentTop() {
+        var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+        if (document.body) {
+            bodyScrollTop = document.body.scrollTop;
+        }
+        if (document.documentElement) {
+            documentScrollTop = document.documentElement.scrollTop;
+        }
+        scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+        return scrollTop;
+    }
+
+    //可视窗口高度
+    function getWindowHeight() {
+        var windowHeight = 0;
+        if (document.compatMode == "CSS1Compat") {
+            windowHeight = document.documentElement.clientHeight;
+        } else {
+            windowHeight = document.body.clientHeight;
+        }
+        return windowHeight;
+    }
+
+    //滚动条高度
+    function getScrollHeight() {
+        var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+        if (document.body) {
+            bodyScrollHeight = document.body.scrollHeight;
+        }
+        if (document.documentElement) {
+            documentScrollHeight = document.documentElement.scrollHeight;
+        }
+        scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+        return scrollHeight;
+    }
+
+    var finished = true;
+
     $(function () {
-        var j_flag = new Boolean(false);
-        var m_flag = new Boolean(false);
-        var flag_j = new Boolean(false);
-        var flag_m = new Boolean(false);
-        $('#exchange_num').bind('input porpertychange', function () {
-            var f_val = $('#jewel').val();
-            var m_val = $('#money').val();
-
-            if (f_val == '' || f_val == null || f_val == 'undefined') {
-                f_val = 0;
+        init(); //初始化查询下拉框选项值
+        var items = getItems(); //测试数据   可删除
+        // var items = getInitData(); //后台请求数据 获取集合
+        var pageSize = 5;  //初始化 当页显示总行数
+        var totalPage = getItems().length; //请求数据总行数
+        appendToHTML(items, pageSize);  //显示数据内容
+        $(window).scroll(function () {  //页面滑动至底部更新数据
+            if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
+                console.log('已滑至底部');
+                finished = false;
+                // 设置两秒请求后台
+                setTimeout(function () {
+                    finished = true;
+                    pageSize += 5;  //每请求一次增加一页显示
+                    appendToHTML(items, pageSize); //更新数据
+                    return;
+                }, 2000);
             }
-
-            if (m_val == '' || m_val == null || m_val == 'undefined') {
-                f_val = 0;
-            }
-
-            var f_int = Number(f_val);
-            var m_int = Number(m_val);
-
-            var _exchange_num = $('#exchange_num').val();
-            var _jewel_score = $('#jewel_score').text();
-            _jewel_score = Number(_jewel_score);
-            console.log(toString.call(_exchange_num));
-            _exchange_num = Number(_exchange_num);
-            var need = Number(_exchange_num);
-
-            need == 'undefined' ? 0 : need;
-
-            $('#need_num').val(need / (f_int / m_int));
-
-            if ($('#need_num').val() == 'undefined') {
-                $('#need_num').val(0)
-            }
-
-            j_flag = exec_change_num(_exchange_num, _jewel_score);
-        }).focus(function () {
-            $(this).val('');
+            ;
         });
 
-        $('#need_num').change(function () {
-            var _need_num = $('#need_num').val();//prestige_score
-            var _money_score = $('#_money_score').text();
-            _money_score = Number(_money_score);
-            _need_num = Number(_need_num);
-            m_flag = exec_need_num(_need_num, _money_score);
+        //查询 数据 异步实时更新显示
+        $('#searchsubmit').click(function () {
+            // items = ajax_http();
+            appendToHTML(items, 5);
         });
 
-        $('#submit').click(function () {
+        //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
+        function ajax_http() {
+            var initItems = [];
+            var integral = $('#integral').val();
+            var starttime = $('#startTime').val();
+            var endtime = $('#endTime').val();
+            var expenses = $('#expenses').val();
+            var operation = $('#operation').val();
+            console.log('积分:' + integral + '\t 数据类型:' + typeof integral);
+            console.log('开始时间:' + starttime + '\t 数据类型:' + typeof starttime);
+            console.log('结束时间:' + endtime + '\t 数据类型:' + typeof endtime);
+            console.log('收支:' + expenses + '\t 数据类型:' + typeof expenses);
+            console.log('操作:' + operation + '\t 数据类型:' + typeof operation);
+            //请求路径及筛选值
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json?integral="+integral + "&starttime="+starttime +
+                // "&endtime="+endtime+"&expenses="+expenses+"&operation="+operation,
+                dataType: "json",
+                async: true,
+                type: "GET", //请求方式
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    console.log(JSON.stringify(res));
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            initItems = data_list;
+                        }
+                    } else {
+                        console.dir(JSON.stringify(res));
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return initItems;
+        };
 
-            var _exchange_num = $('#exchange_num').val();
-            var _jewel_score = $('#jewel_score').val();
-            _jewel_score = Number(_jewel_score);
-            _exchange_num = Number(_exchange_num);
-            j_flag = exec_change_num(_exchange_num, _jewel_score);
+        //初始化下拉动态选项值
+        function init() {
+            var $integral = $('#integral');
+            var Integrals = getIntegrals();
+            var $expenses = $('#expenses');
+            var Expenses = getExpenses();
+            var $operation = $('#operation');
+            var Operations = getOperations();
+            joinToSelect(Integrals, $integral);
+            joinToSelect(Expenses, $expenses);
+            joinToSelect(Operations, $operation);
+        };
 
-            var _need_num = $('#need_num').val();//prestige_score
-            var _money_score = $('#_money_score').val();
-            _money_score = Number(_money_score);
-            _need_num = Number(_need_num);
-            m_flag = exec_need_num(_need_num, _money_score);
+        //获取积分下拉集合
+        function getIntegrals() {
+            var Integrals = [
+                {name: '不限', value: '0'},
+                {name: '威望', value: '1'},
+                {name: '财富', value: '1'},
+                {name: '甬钻', value: '1'}
+            ];
 
-            var _jewel = $('#jewel option:selected').val();
-            var _money = $('#money option:selected').val();
-            if (is_NotEmpty(_jewel)) {
-                flag_j = true;
-            } else {
-                alert('请选择兑换商品');
-                return;
-            }
-            if (is_NotEmpty(_money)) {
-                flag_j = true;
-            } else {
-                alert('请选择兑换商品');
-                return;
-            }
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                dataType: "json",
+                async: true,
+                // data: {"company_name": company_name },
+                type: "POST", //请求方式
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            Integrals = data_list;
+                        }
+                    } else {
 
-            if (j_flag && m_flag && flag_j && flag_j) {
-                return true;
-            }
-        });
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return Integrals;
+        };
 
-        var html1 = '<em style="color: red;font-size: 12px;">&nbsp;&nbsp;<b>*兑换数量不能大于每次最多兑换数量</b></em>';
-        var html2 = '<em style="color: red;font-size: 12px; font-family: Tahoma "Microsoft YaHei", SimSun;">&nbsp;&nbsp;<b>兑换数量不能大于可兑换数量</b></em>';
-        var text = '【财富】允许兑换1次，每次最多兑换200;【财富】允许兑换1次，每次最多兑换2000;';
+        //获取收支下拉集合
+        function getExpenses() {
+            var expenses = [
+                {name: '不限', value: '0'},
+                {name: '支出', value: '1'},
+                {name: '支入', value: '2'}
+            ];
 
-        function exec_change_num(_exchange_num, _jewel_score) {
-            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
-            if (_exchange_num > 200) {
-                $('#show_span').html(html1);
-                return false;
-            } else if (_exchange_num > _jewel_score) {
-                $('#show_span').html(html2);
-                return false;
-            } else {
-                $('#show_span').html(text);
-                return true;
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                dataType: "json",
+                async: true,
+                // data: {"company_name": company_name },
+                type: "POST", //请求方式
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            expenses = data_list;
+                        }
+                    } else {
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return expenses;
+        };
+
+        //获取操作下拉集合
+        function getOperations() {
+            var operations = [
+                {name: '请选择操作类型', value: '0'},
+                {name: '任务奖励', value: '1'},
+                {name: '悬赏主题', value: '2'},
+                {name: '最佳答案', value: '3'}
+            ];
+
+            $.ajax({
+                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                type: "POST", //请求方式
+                // data: {"company_name": company_name },
+                dataType: "json",
+                async: true,
+                contentType: "application/json;charset=UTF-8",
+                success: function (res) {
+                    var data_list = res.data;
+                    if (res.status == 200) {
+                        if (data_list != null && data_list != null && data_list != 'undefined') {
+                            operations = data_list;
+                        }
+                    } else {
+
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return operations;
+        };
+
+        function joinToSelect(item, dom) {
+            try {
+                for (var i = 0; i < item.length; i++) {
+                    var info = item[i];
+                    dom.append('<option value="' + info.value + '">' + info.name + '</option>');
+                }
+            } catch (e) {
+                console.log(e);
             }
         }
 
-        function exec_need_num(_need_num, _money_score) {
-            //不得大于每次兑换的最大数量 且 不得大于 所拥有的甬钻数
-            if (_need_num > 200) {
-                $('#show_span').html(html1);
-                return false;
-            } else if (_need_num > _money_score) {
-                $('#show_span').html(html2);
-                return false;
+        //获取初始化总参数
+        function getInitData() {
+            return ajax_http();
+        }
+
+        //页面固定显示
+        var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
+            '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
+            ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center; font-size: 14px; color: #a6a6a6;"><p>' +
+            '暂无无更多交易记录' + '</p><dt></dt></dl><dl class = "cl mt6"><dd><span class = "status f13 ff9"></span>' + '</dd></dl></a></li>';
+
+
+        var newHtml = '<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">' +
+            '<i class="duceapp_font f17 vm3"></i> 20190917</span><strong class="status"><em class="succ">已通过</em></strong></div>' +
+            '<dl class="cl"><dt><cite style="color:"><i class="duceapp_font f15"></i> 积分 <span class="ff9">- 100</span></cite></dt>' +
+            '<dd>￥0.10</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3"></i> ' +
+            '2019-08-05 16:40:27</dt></dl></a></li>';
+
+
+        //数据内容加工显示
+        function appendToHTML(items, count) {
+            if (items.length > 0 && items.length > count) {
+                append_for(items, count);
+                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
+                    '<div class = "cl"> <strong class = "status ffr" style = "float: left;"></strong>' +
+                    ' <span class = "status"><em style = "color: #8b8b8b;"></em></span></div><dl class = "cl" style="text-align: center; font-size: 14px; color: #a6a6a6;"><p>' +
+                    '往上滑动获取更多数据</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                    '<span class = "status f13 ff9"></span>' +
+                    '</dd></dl></a></li>');
+            } else if (count >= items.length) {
+                append_for(items, count);
+                $('#page-ul').append(li_html);
             } else {
-                $('#show_span').html('');
-                return true;
+                $('#page-ul').append(li_html);
+            }
+
+            function append_for(items, count) {
+                $('#page-ul').html('');
+                try {
+                    var statusHtml;
+                    for (var i = 0; i < count; i++) {
+                        var info = items[i];
+                        if (info.stauts == 1) {
+                            statusHtml = '<em class="succ">已通过</em>'
+                        } else {
+                            statusHtml = '<em class="status">未通过</em>'
+                        }
+
+                        $('#page-ul').append('<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">' +
+                            '<i class="duceapp_font f17 vm3"></i> ' + info.top_name + '</span><strong class="status">' + statusHtml + '</strong></div>' +
+                            '<dl class="cl"><dt><cite ><i class="duceapp_font f15"></i> 开票金额 :<span class="ff9"> 100</span></cite></dt>' +
+                            '<dd>￥0.10</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3"></i> ' +
+                            '2019-08-05 16:40:27</dt></dl></a></li>');
+                    }
+
+                } catch (e) {
+                    e.message;
+                    console.log(e.message);
+                }
             }
         }
 
-        function is_NotEmpty(value) {
-            if (value != '' && value != null) {
-                return true;
+        //测试数据 可删除
+        function getItems() {
+            var items = [];
+            var no = 20190102;
+            for (let i = 1; i <= 20; i++) {
+                if (i % 2 == 0) {
+                    var param = {
+                        top_name: '税号:-' + (no + i),
+                        scope: '开票金额-' + (i * 100) + '',
+                        time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
+                        number: i * 10,
+                        stauts: 1,
+                        money: i * 0.1
+                    }
+                } else {
+                    var param = {
+                        top_name: '税号:-' + (no + i),
+                        scope: '开票金额-' + (i * 10) + '',
+                        time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
+                        number: i * 10,
+                        stauts: 0,
+                        money: i * 0.1
+                    }
+                }
+
+                items.push(param);
             }
-            return false;
+            return items;
         }
+
+        //    表单操作控制区域
+
+
+
 
     });
-
 </script>
-<script src="/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
+<div class="maskmenu" style="display:none;"></div>
+</div>
+<div id="mask" style="display:none;"></div>
 </body>
 </html>

@@ -13,14 +13,14 @@
   <meta name="description" content="CNNB.COM,阿拉宁波网旗下地方社区门户,提供和分享宁波论坛,北仑论坛,镇海论坛,社交,房产,人才,购物等生活,商务资讯互动平台. ,阿拉宁波网"/>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="bookmark" href="/favicon.ico" type="image/x-icon"/>
-  <base href="http://dev.bbs.cnnb.com/"/>
+<!--  <base href="http://dev.bbs.cnnb.com/"/>-->
   <title>积分记录 - 阿拉宁波网 - 手机版</title>
   <link rel="stylesheet" href="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/css/base.css" type="text/css"
         media="all">
   <link id="duceapp_style" rel="stylesheet"
         href="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/css/style.css" type="text/css" media="all">
   <link rel="stylesheet" href="http://dev.bbs.cnnb.com/data/duceapp/base/common.css?FKK" type="text/css" media="all">
-  <link rel="stylesheet" href="source/plugin/duceapp_scorebuy/static/css/addfunds_mobile.css?FKK" type="text/css"
+  <link rel="stylesheet" href="http://dev.bbs.cnnb.com/source/plugin/duceapp_scorebuy/static/css/addfunds_mobile.css?FKK" type="text/css"
         media="all">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mescroll.js@1.4.1/mescroll.min.css">
@@ -196,28 +196,6 @@
 <script type="text/javascript">
     $(function () {
         appendToHTML(null);
-        //显示的总行数
-        // $(window).scroll(function () {
-        //     alert(3);
-        //     var scrollTop = $(this).scrollTop();
-        //     var scrollHeight = $(document).height();
-        //     var windowHeight = $(this).height();
-        //     if (scrollTop + windowHeight == scrollHeight) {  //滚动到底部执行事件
-        //         alert(1);
-        //         $('#page-ul').append('<li class = "bga bh_e f14"><a href = "#">' +
-        //             '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
-        //             ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center;"><p>' +
-        //             '正在玩命加载中' +
-        //             '<img height="40" width="40" style="vertical-align: middle;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568098225730&di=652b08af535e21f07b86bc2a08551050&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20181204%2F1639e124b4bd4ceaa21887da4be365c3.gif" alt="">' +
-        //             '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-        //             '<span class = "status f13 ff9"></span>' +
-        //             '</dd></dl></a></li>');
-        //         $('#page-ul').html('');
-        //         appendToHTML(10);
-        //         //scrollLoad();
-        //     }
-        // });
-
         //滚动加载
         function scrollLoad() {
             $.ajax({
