@@ -1,7 +1,7 @@
 $(function () {
   var html = '<i style="color: red;">*</i> 此行为必填项';
   var style = 'style="font: 12px/1.5 Tahoma, \'Microsoft Yahei\', \'Simsun\';\n' +
-    '    color: #999;\n' +
+    '    color: red;\n' +
     '    clear: both;\n' +
     '    margin-left: 18px ;\n' +
     '    color: #999;"\n' +
@@ -125,7 +125,7 @@ $(function () {
       $parent.val(f);
       //SUCCESS
       if (!reg_test(company_name_reg, f)) {
-        $('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+        $('#company_name_font').html('<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
       } else {
         $('#company_name_font').html(success);
         flag_a = true;
@@ -205,7 +205,7 @@ $(function () {
     //SUCCESS
     if (!is_Empty(company_name)) {
       if (!reg_test(company_name_reg, company_name)) {
-        $('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+        $('#company_name_font').html('<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
         CY_ERROR_CSS();
       } else {
         $('#company_name_font').html(success);
@@ -218,7 +218,7 @@ $(function () {
     //SUCCESS
     if (!is_Empty(invoice_code)) {
       if (!reg_test(invoice_code_reg, invoice_code)) {
-        $('#invoice_code_font').html(error + '<em ' + style + ' >税号只能由字母和数字组成</em>');
+        $('#invoice_code_font').html('<em ' + style + ' >税号只能由字母和数字组成</em>');
         CY_ERROR_CSS();
       } else {
         $('#invoice_code_font').html(success);
@@ -231,7 +231,7 @@ $(function () {
     //SUCCESS
     if (!is_Empty(bank_code)) {
       if (!reg_test(invoice_code_reg, bank_code)) {
-        $('#bank_code_font').html(error + '<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
+        $('#bank_code_font').html('<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
         CY_ERROR_CSS();
       } else {
         $('#bank_code_font').html(success);
@@ -246,7 +246,7 @@ $(function () {
     // SUCCESS
     if (!is_Empty(bank)) {
       if (reg_test(regNumStrAbc, bank)) {
-        $('#bank_font').html(error + '<em ' + style + ' >开户行由汉字、字母、数字组成</em>');
+        $('#bank_font').html('<em ' + style + ' >开户行由汉字、字母、数字组成</em>');
         CY_ERROR_CSS();
       } else {
         $('#bank_font').html(success);
@@ -261,7 +261,7 @@ $(function () {
     //SUCCESS
     if (!is_Empty(contact_name)) {
       if (!reg_test(regStringAbc, contact_name)) {
-        $('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名由汉字、字母组成</em>');
+        $('#contact_name_font').html('<em ' + style + ' >联系人姓名由汉字、字母组成</em>');
         CY_ERROR_CSS();
       } else {
         $('#contact_name_font').html(success);
@@ -276,7 +276,7 @@ $(function () {
     //SUCCESS
     if (!is_Empty(company_address)) {
       if (reg_test(regNumStrAbc, company_address)) {
-        $('#company_address_font').html(error + '<em ' + style + ' >公司地址由汉字、字母、数字组成</em>');
+        $('#company_address_font').html('<em ' + style + ' >公司地址由汉字、字母、数字组成</em>');
         CY_ERROR_CSS();
       } else {
         $('#company_address_font').html(success);
@@ -291,7 +291,7 @@ $(function () {
     var count = Number(amount);//输入金额
     var duceapp_all_amount = 0;//充值总金额
     if (count > duceapp_all_amount) {
-      $('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
+      $('#amount_font').html('<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
       CY_ERROR_CSS();
     } else {
       $('#amount_font').html(success);
@@ -348,13 +348,11 @@ $(function () {
   function CY_SUCCESS_CSS() {
     $('#cy_success').css({'background': '#f2f2f2'});
     $('#cy_success').attr('disabled', false);
-    $('#cy_success').attr('title', '可以提交啦!');
   }
 
   function CY_ERROR_CSS() {
     $('#cy_success').css({'background': '#666666'});
     $('#cy_success').attr('disabled', true);
-    $('#cy_success').attr('title', '输入不合法，请检查！');
   }
 
   //实时监听用户输入值
