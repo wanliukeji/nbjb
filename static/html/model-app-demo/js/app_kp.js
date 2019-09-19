@@ -1,56 +1,4 @@
-//识别浏览器版本
-var browser = function myBrowser() {
-  var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-  var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
-  var isIE = userAgent.indexOf("compatible") > -1
-    && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
-  var isEdge = userAgent.indexOf("Edge") > -1; //判断是否IE的Edge浏览器
-  var isFF = userAgent.indexOf("Firefox") > -1; //判断是否Firefox浏览器
-  var isSafari = userAgent.indexOf("Safari") > -1
-    && userAgent.indexOf("Chrome") == -1; //判断是否Safari浏览器
-  var isChrome = userAgent.indexOf("Chrome") > -1
-    && userAgent.indexOf("Safari") > -1; //判断Chrome浏览器
-
-  if (isIE) {
-    var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
-    reIE.test(userAgent);
-    var fIEVersion = parseFloat(RegExp["$1"]);
-    if (fIEVersion == 7) {
-      return "IE7";
-    } else if (fIEVersion == 8) {
-      return "IE8";
-    } else if (fIEVersion == 9) {
-      return "IE9";
-    } else if (fIEVersion == 10) {
-      return "IE10";
-    } else if (fIEVersion == 11) {
-      return "IE11";
-    } else {
-      return "0";
-    }//IE版本过低
-    return "IE";
-  }
-  if (isOpera) {
-    return "Opera";
-  }
-  if (isEdge) {
-    return "Edge";
-  }
-  if (isFF) {
-    return "FF";
-  }
-  if (isSafari) {
-    return "Safari";
-  }
-  if (isChrome) {
-    return "Chrome";
-  }
-
-}
-console.log('当前使用的浏览器: ' + browser());
-/* 兼容高版本jquery */
-var jQuery = jQuery.noConflict(false);
-jQuery(function () {
+$(function () {
   var html = '<i style="color: red;">*</i> 此行为必填项';
   var style = 'style="font: 12px/1.5 Tahoma, \'Microsoft Yahei\', \'Simsun\';\n' +
     '    color: #999;\n' +
@@ -75,13 +23,15 @@ jQuery(function () {
   var regNumStrAbc = /^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$u/;
 
   var myMap = new Map();
+
+
   var items = getList(); //测试数据 可删除
 
-  jQuery('#company_name').focus(function () {
+  $('#company_name').focus(function () {
     ajax_http();
   });
 
-  jQuery('#company_name').blur(function () {
+  $('#company_name').blur(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -90,7 +40,7 @@ jQuery(function () {
     }
   });
 
-  jQuery('#company_name').change(function () {
+  $('#company_name').change(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -99,7 +49,7 @@ jQuery(function () {
     }
   });
 
-  jQuery('#invoice_code').blur(function () {
+  $('#invoice_code').blur(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -108,7 +58,7 @@ jQuery(function () {
     }
   });
 
-  jQuery('#bank_code').blur(function () {
+  $('#bank_code').blur(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -117,7 +67,7 @@ jQuery(function () {
     }
   });
 
-  jQuery('#bank').blur(function () {
+  $('#bank').blur(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -126,7 +76,7 @@ jQuery(function () {
     }
   });
 
-  jQuery('#company_address').blur(function () {
+  $('#company_address').blur(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -135,7 +85,7 @@ jQuery(function () {
     }
   });
 
-  jQuery('#contact_name').blur(function () {
+  $('#contact_name').blur(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -144,7 +94,7 @@ jQuery(function () {
     }
   });
 
-  jQuery('#amount').blur(function () {
+  $('#amount').blur(function () {
     //SUCCESS
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
@@ -169,15 +119,15 @@ jQuery(function () {
 
   function showChilden($parent) {
     var $dom = $parent.next().show();
-    jQuery('.hide-li-selected').click(function () {
-      var $son = jQuery(this);
+    $('.hide-li-selected').click(function () {
+      var $son = $(this);
       var f = $son.text();
       $parent.val(f);
       //SUCCESS
       if (!reg_test(company_name_reg, f)) {
-        jQuery('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+        $('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
       } else {
-        jQuery('#company_name_font').html(success);
+        $('#company_name_font').html(success);
         flag_a = true;
         if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
           CY_SUCCESS_CSS();
@@ -189,29 +139,29 @@ jQuery(function () {
   }
 
   function selectHover() {
-    jQuery(".hide-li-selected").hover(
+    $(".hide-li-selected").hover(
       function () {
-        jQuery(this).css({'background': '#f6f6f6'});
+        $(this).css({'background': '#f6f6f6'});
       },
       function () {
-        jQuery(this).css({'background': '#FFFFFF'});
+        $(this).css({'background': '#FFFFFF'});
       }
     );
   }
 
   function selected($parent, myMap) {
-    jQuery('.hide-li-selected').click(function () {
-      var $son = jQuery(this);
+    $('.hide-li-selected').click(function () {
+      var $son = $(this);
       var f = $son.text();
       $parent.val(f);
       var obj = myMap.get(f);
-      jQuery('[name="invoice_code"]').val(obj.invoice_code);
-      jQuery('[name="bank"]').val(obj.bank);
-      jQuery('[name="bank_code"]').val(obj.bank_code);
-      jQuery('[name="contact_name"]').val(obj.contact_name);
-      jQuery('[name="company_address"]').val(obj.company_address);
-      jQuery('[name="amount"]').val(obj.amount);
-      jQuery('.hide-select').hide();
+      $('[name="invoice_code"]').val(obj.invoice_code);
+      $('[name="bank"]').val(obj.bank);
+      $('[name="bank_code"]').val(obj.bank_code);
+      $('[name="contact_name"]').val(obj.contact_name);
+      $('[name="company_address"]').val(obj.company_address);
+      $('[name="amount"]').val(obj.amount);
+      $('.hide-select').hide();
 
       //正则判断
       if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
@@ -221,18 +171,18 @@ jQuery(function () {
     });
   }
 
-  jQuery(document).bind('click', function (event) {
+  $(document).bind('click', function (event) {
     event.stopPropagation();
     var tar = event.target;
-    if (jQuery(tar).closest('#company_name').length == 0) {
-      jQuery('#hide-select').hide();
+    if ($(tar).closest('#company_name').length == 0) {
+      $('#hide-select').hide();
     } else {
-      jQuery('#hide-select').show();
+      $('#hide-select').show();
     }
   });
 
   //提交
-  jQuery('#cy_form').submit(function () {
+  $('#cy_form').submit(function () {
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       return true;
     }
@@ -244,21 +194,21 @@ jQuery(function () {
     var bool_b, bool_d, bool_e, bool_f, bool_g = false;
     var bool_a = false;
     var bool_c = false;
-    var company_name = jQuery('#company_name').val();
-    var invoice_code = jQuery('#invoice_code').val();
-    var bank_code = jQuery('#bank_code').val();
-    var bank = jQuery('#bank').val();
-    var contact_name = jQuery('#contact_name').val();
-    var company_address = jQuery('#company_address').val();
-    var amount = jQuery('#amount').val();
+    var company_name = $('#company_name').val();
+    var invoice_code = $('#invoice_code').val();
+    var bank_code = $('#bank_code').val();
+    var bank = $('#bank').val();
+    var contact_name = $('#contact_name').val();
+    var company_address = $('#company_address').val();
+    var amount = $('#amount').val();
 
     //SUCCESS
     if (!is_Empty(company_name)) {
       if (!reg_test(company_name_reg, company_name)) {
-        jQuery('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+        $('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
         CY_ERROR_CSS();
       } else {
-        jQuery('#company_name_font').html(success);
+        $('#company_name_font').html(success);
         bool_a = true;
       }
       ;
@@ -268,10 +218,10 @@ jQuery(function () {
     //SUCCESS
     if (!is_Empty(invoice_code)) {
       if (!reg_test(invoice_code_reg, invoice_code)) {
-        jQuery('#invoice_code_font').html(error + '<em ' + style + ' >税号只能由字母和数字组成</em>');
+        $('#invoice_code_font').html(error + '<em ' + style + ' >税号只能由字母和数字组成</em>');
         CY_ERROR_CSS();
       } else {
-        jQuery('#invoice_code_font').html(success);
+        $('#invoice_code_font').html(success);
         bool_b = true;
       }
       ;
@@ -281,70 +231,70 @@ jQuery(function () {
     //SUCCESS
     if (!is_Empty(bank_code)) {
       if (!reg_test(invoice_code_reg, bank_code)) {
-        jQuery('#bank_code_font').html(error + '<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
+        $('#bank_code_font').html(error + '<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
         CY_ERROR_CSS();
       } else {
-        jQuery('#bank_code_font').html(success);
+        $('#bank_code_font').html(success);
         bool_c = true;
       }
       ;
     } else {
-      jQuery('#bank_code_font').html('');
+      $('#bank_code_font').html('');
     }
     ;
 
     // SUCCESS
     if (!is_Empty(bank)) {
       if (reg_test(regNumStrAbc, bank)) {
-        jQuery('#bank_font').html(error + '<em ' + style + ' >开户行由汉字、字母、数字组成</em>');
+        $('#bank_font').html(error + '<em ' + style + ' >开户行由汉字、字母、数字组成</em>');
         CY_ERROR_CSS();
       } else {
-        jQuery('#bank_font').html(success);
+        $('#bank_font').html(success);
         bool_d = true;
       }
       ;
     } else {
-      jQuery('#bank_font').html('');
+      $('#bank_font').html('');
     }
     ;
 
     //SUCCESS
     if (!is_Empty(contact_name)) {
       if (!reg_test(regStringAbc, contact_name)) {
-        jQuery('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名由汉字、字母组成</em>');
+        $('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名由汉字、字母组成</em>');
         CY_ERROR_CSS();
       } else {
-        jQuery('#contact_name_font').html(success);
+        $('#contact_name_font').html(success);
         bool_e = true;
       }
       ;
     } else {
-      jQuery('#contact_name_font').html('');
+      $('#contact_name_font').html('');
     }
     ;
 
     //SUCCESS
     if (!is_Empty(company_address)) {
       if (reg_test(regNumStrAbc, company_address)) {
-        jQuery('#company_address_font').html(error + '<em ' + style + ' >公司地址由汉字、字母、数字组成</em>');
+        $('#company_address_font').html(error + '<em ' + style + ' >公司地址由汉字、字母、数字组成</em>');
         CY_ERROR_CSS();
       } else {
-        jQuery('#company_address_font').html(success);
+        $('#company_address_font').html(success);
         bool_f = true;
       }
       ;
     } else {
-      jQuery('#contact_name_font').html('');
+      $('#contact_name_font').html('');
     }
     ;
 
     var count = Number(amount);//输入金额
     var duceapp_all_amount = 0;//充值总金额
     if (count > duceapp_all_amount) {
-      jQuery('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
+      $('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
       CY_ERROR_CSS();
     } else {
-      jQuery('#amount_font').html(success);
+      $('#amount_font').html(success);
       bool_g = true;
     }
     ;
@@ -396,20 +346,20 @@ jQuery(function () {
   }
 
   function CY_SUCCESS_CSS() {
-    jQuery('#cy_success').css({'background': '#f2f2f2'});
-    jQuery('#cy_success').attr('disabled', false);
-    jQuery('#cy_success').attr('title', '可以提交啦!');
+    $('#cy_success').css({'background': '#f2f2f2'});
+    $('#cy_success').attr('disabled', false);
+    $('#cy_success').attr('title', '可以提交啦!');
   }
 
   function CY_ERROR_CSS() {
-    jQuery('#cy_success').css({'background': '#666666'});
-    jQuery('#cy_success').attr('disabled', true);
-    jQuery('#cy_success').attr('title', '输入不合法，请检查！');
+    $('#cy_success').css({'background': '#666666'});
+    $('#cy_success').attr('disabled', true);
+    $('#cy_success').attr('title', '输入不合法，请检查！');
   }
 
   //实时监听用户输入值
   //输入框值实时更改后停顿0.5秒触发
-  jQuery("#company_name").bind('input porpertychange', function (e) {
+  $("#company_name").bind('input porpertychange', function (e) {
     var lastTime = e.timeStamp;
     console.log('已过: 0.5秒');
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
@@ -426,7 +376,7 @@ jQuery(function () {
   });
 
   //键盘敲击停顿0.5秒触发
-  jQuery('#company_name').keyup(function (e) {
+  $('#company_name').keyup(function (e) {
     var lastTime = e.timeStamp;
     console.log('已过: 0.5秒');
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
@@ -443,11 +393,11 @@ jQuery(function () {
   });
 
   function ajax_http() {
-    var company_name = jQuery('#company_name').val();
-    var $parent = jQuery('#company_name');
+    var company_name = $('#company_name').val();
+    var $parent = $('#company_name');
     var $dom = $parent.next();
     $dom.html('');
-    jQuery.ajax({
+    $.ajax({
       //url: "http://localhost:8080/static/data/demo.json",  //请求路径
       dataType: "json",
       async: true,
@@ -470,6 +420,5 @@ jQuery(function () {
       }
     });
   }
-
 })
 ;
