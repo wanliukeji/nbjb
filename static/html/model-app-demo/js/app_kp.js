@@ -103,6 +103,8 @@ $(function () {
   });
 
   function appendToHtml(res, $dom) {
+    $dom = $('#hide-select');
+    $dom.html('');
     // items = res;
     for (let i = 0; i < items.length; i++) {
       var obj = items[i];
@@ -112,7 +114,7 @@ $(function () {
         '    padding-left: 10px;"' +
         '   height: 20px;>' + obj.company_name + '</li>'
       $dom.append(html);
-      myMap.set(obj.company_name, items[i]);
+      myMap.set(obj.company_name, obj);
     }
   }
 
@@ -153,7 +155,7 @@ $(function () {
       var $son = $(this);
       var f = $son.text();
       $parent.val(f);
-      var obj = myMap.get(f);
+      var obj = myMap.get(f)
       $('[name="invoice_code"]').val(obj.invoice_code);
       $('[name="bank"]').val(obj.bank);
       $('[name="bank_code"]').val(obj.bank_code);
@@ -203,14 +205,11 @@ $(function () {
 
     //SUCCESS
     if (!is_Empty(company_name)) {
-      console.log(reg_test(company_name_reg, company_name));
       if (!reg_test(company_name_reg, company_name)) {
-        console.log('chenyu');
-        $('#company_name_font').html('<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
+        jQuery('#company_name_font').html('<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
         CY_ERROR_CSS();
       } else {
-        // console.log(1);
-        $('#company_name_font').html(success);
+        jQuery('#company_name_font').html(success);
         bool_a = true;
       }
       ;
@@ -412,6 +411,7 @@ $(function () {
       },
       error: function (err) {
         //异常函数内调用函数 测试使用 可删除
+        // console.dir('>>>>>>>>>' + JSON.stringify($dom));
         appendToHtml(err, $dom);
         showChilden($parent);
         selectHover();

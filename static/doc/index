@@ -1,0 +1,515 @@
+//璇嗗埆娴忚鍣ㄧ増鏈�
+var browser = function myBrowser() {
+    var userAgent = navigator.userAgent; //鍙栧緱娴忚鍣ㄧ殑userAgent瀛楃涓�
+    var isOpera = userAgent.indexOf("Opera") > -1; //鍒ゆ柇鏄惁Opera娴忚鍣�
+    var isIE = userAgent.indexOf("compatible") > -1
+            && userAgent.indexOf("MSIE") > -1 && !isOpera; //鍒ゆ柇鏄惁IE娴忚鍣�
+    var isEdge = userAgent.indexOf("Edge") > -1; //鍒ゆ柇鏄惁IE鐨凟dge娴忚鍣�
+    var isFF = userAgent.indexOf("Firefox") > -1; //鍒ゆ柇鏄惁Firefox娴忚鍣�
+    var isSafari = userAgent.indexOf("Safari") > -1
+            && userAgent.indexOf("Chrome") == -1; //鍒ゆ柇鏄惁Safari娴忚鍣�
+    var isChrome = userAgent.indexOf("Chrome") > -1
+            && userAgent.indexOf("Safari") > -1; //鍒ゆ柇Chrome娴忚鍣�
+
+    if (isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if (fIEVersion == 7) {
+            return "IE7";
+        } else if (fIEVersion == 8) {
+            return "IE8";
+        } else if (fIEVersion == 9) {
+            return "IE9";
+        } else if (fIEVersion == 10) {
+            return "IE10";
+        } else if (fIEVersion == 11) {
+            return "IE11";
+        } else {
+            return "0";
+        }//IE鐗堟湰杩囦綆
+        return "IE";
+    }
+    if (isOpera) {
+        return "Opera";
+    }
+    if (isEdge) {
+        return "Edge";
+    }
+    if (isFF) {
+        return "FF";
+    }
+    if (isSafari) {
+        return "Safari";
+    }
+    if (isChrome) {
+        return "Chrome";
+    }
+
+}
+console.log('褰撳墠浣跨敤鐨勬祻瑙堝櫒: ' + browser());
+/* 鍏煎楂樼増鏈琷query */
+var jQuery = jQuery.noConflict(false);
+jQuery(function () {
+    var html = '<i style="color: red;">*</i> 姝よ涓哄繀濉」';
+    var style = 'style="font: 12px/1.5 Tahoma, \'Microsoft Yahei\', \'Simsun\';\n' +
+            '    color: #999;\n' +
+            '    clear: both;\n' +
+            '    margin-left: 18px ;\n' +
+            '    color: #999;"\n' +
+            '    left: 10px;';
+    var success = '<svg style="margin-top: 10px;" t="1567221340551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2070" width="14" height="14"><path d="M511 69C267.4 69 69.9 266.5 69.9 510.1c0 243.6 197.5 441.1 441.1 441.1 243.6 0 441.1-197.5 441.1-441.1C952.2 266.5 754.7 69 511 69z m282 292.7L463.4 691.3l-18.6 18.6c-19.6 19.6-51.4 19.6-71 0l-18.6-18.6-126.8-126.8c-16.3-16.3-14.8-43.9 4.6-58.1 15.4-11.2 36.9-8.7 50.3 4.8l125.9 125.9 330.3-330.3c16.3-16.3 43.9-14.8 58.1 4.6 11.4 15.4 8.8 36.9-4.6 50.3z" p-id="2071" fill="#1afa29"></path></svg>';
+    var error = '<svg t="1567221892863" style=" margin-right: 3px; position: absolute; margin-top: 2px;" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2845" width="14" height="14"><path d="M664.96 630.4a32 32 0 0 1-22.4 54.72 32 32 0 0 1-22.72-9.28L506.56 562.56 393.6 675.84a32 32 0 0 1-22.72 9.28 32 32 0 0 1-22.72-9.28 32 32 0 0 1 0-45.44l113.28-112.96-113.28-113.28a32 32 0 0 1 0-45.12 32 32 0 0 1 45.44 0L506.56 472l113.28-112.96a32 32 0 1 1 45.12 45.12L552 517.44zM512 64a448 448 0 1 0 448 448A448 448 0 0 0 512 64z" p-id="2846" fill="#d81e06"></path></svg>';
+    var flag = false;
+    var flag_g = false;
+    var flag_a = false;
+    var flag_b = false;
+    var flag_c = false;
+    var flag_d = false;
+    var flag_e = false;
+    var flag_f = false;
+    var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
+    var invoice_code_reg = /[a-z0-9A-Z]+$/;
+    var regNumber = /\d+/;
+    var regStringAbc = /^[a-zA-Z\u4e00-\u9fa5]+$/;
+    var regNumStrAbc = /^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$u/;
+
+    var myMap = new Map();
+//  var items = getList(); //娴嬭瘯鏁版嵁 鍙垹闄�
+    var items = {};
+    jQuery('#company_name').focus(function () {
+        ajax_http();
+    });
+
+    jQuery('#company_name').blur(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    jQuery('#company_name').change(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    jQuery('#invoice_code').blur(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    jQuery('#bank_code').blur(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    jQuery('#bank').blur(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    jQuery('#company_address').blur(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    jQuery('#contact_name').blur(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    jQuery('#amount').blur(function () {
+        //SUCCESS
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            CY_SUCCESS_CSS();
+        } else {
+            CY_ERROR_CSS;
+        }
+    });
+
+    function appendToHtml(res, $dom) {
+        items = res;
+        for (var i = 0; i < items.length; i++) {
+            var obj = items[i];
+            var html = '<li value="' + obj.company_name + '" ' + '' +
+                    ' class="hide-li-selected"' +
+                    '" style="cursor: pointer;\n' +
+                    '    padding-left: 10px;"' +
+                    '   height: 20px;>' + obj.company_name + '</li>'
+            $dom.append(html);
+            myMap.set(obj.company_name, items[i]);
+        }
+    }
+
+    function showChilden($parent) {
+        var $dom = $parent.next().show();
+        jQuery('.hide-li-selected').click(function () {
+            var $son = jQuery(this);
+            var f = $son.text();
+            $parent.val(f);
+            //SUCCESS
+            if (!reg_test(company_name_reg, f)) {
+                jQuery('#company_name_font').html(error + '<em ' + style + ' >鍏徃鍚嶅彧鑳界敱姹夊瓧缁勬垚鍜屼腑鏂囩鍙风粍鎴�</em>');
+            } else {
+                jQuery('#company_name_font').html(success);
+                flag_a = true;
+                if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+                    CY_SUCCESS_CSS();
+                }
+            }
+            ;
+            $dom.hide();
+        });
+    }
+
+    function selectHover() {
+        jQuery(".hide-li-selected").hover(
+                function () {
+                    jQuery(this).css({'background': '#f6f6f6'});
+                },
+                function () {
+                    jQuery(this).css({'background': '#FFFFFF'});
+                }
+        );
+    }
+
+    function selected($parent, myMap) {
+        jQuery('.hide-li-selected').click(function () {
+            var $son = jQuery(this);
+            var f = $son.text();
+            $parent.val(f);
+            var obj = myMap.get(f);
+            jQuery('[name="invoice_code"]').val(obj.invoice_code);
+            jQuery('[name="bank"]').val(obj.bank);
+            jQuery('[name="bank_code"]').val(obj.bank_code);
+            jQuery('[name="contact_name"]').val(obj.contact_name);
+            jQuery('[name="company_address"]').val(obj.company_address);
+            jQuery('[name="amount"]').val(obj.amount);
+            jQuery('.hide-select').hide();
+
+            //姝ｅ垯鍒ゆ柇
+            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+                CY_SUCCESS_CSS();
+            }
+
+        });
+    }
+
+    jQuery(document).bind('click', function (event) {
+        event.stopPropagation();
+        var tar = event.target;
+        if (jQuery(tar).closest('#company_name').length == 0) {
+            jQuery('#hide-select').hide();
+        } else {
+            jQuery('#hide-select').show();
+        }
+    });
+
+    //鎻愪氦
+    jQuery('#cy_form').submit(function () {
+        if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+            return true;
+        }
+        return false;
+    });
+
+
+    function exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc) {
+        var bool_b, bool_d, bool_e, bool_f, bool_g = false;
+        var bool_a = false;
+        var bool_c = false;
+        var company_name = jQuery('#company_name').val();
+        var invoice_code = jQuery('#invoice_code').val();
+        var bank_code = jQuery('#bank_code').val();
+        var bank = jQuery('#bank').val();
+        var contact_name = jQuery('#contact_name').val();
+        var company_address = jQuery('#company_address').val();
+        var amount = jQuery('#amount').val();
+
+        //SUCCESS
+        if (!is_Empty(company_name)) {
+            if (!reg_test(company_name_reg, company_name)) {
+                jQuery('#company_name_font').html(error + '<em ' + style + ' >鍏徃鍚嶅彧鑳界敱姹夊瓧缁勬垚鍜屼腑鏂囩鍙风粍鎴�</em>');
+                CY_ERROR_CSS();
+            } else {
+                jQuery('#company_name_font').html(success);
+                bool_a = true;
+            }
+            ;
+        }
+        ;
+
+        //SUCCESS
+        if (!is_Empty(invoice_code)) {
+            if (!reg_test(invoice_code_reg, invoice_code)) {
+                jQuery('#invoice_code_font').html(error + '<em ' + style + ' >绋庡彿鍙兘鐢卞瓧姣嶅拰鏁板瓧缁勬垚</em>');
+                CY_ERROR_CSS();
+            } else {
+                jQuery('#invoice_code_font').html(success);
+                bool_b = true;
+            }
+            ;
+        }
+        ;
+
+        //SUCCESS
+        if (!is_Empty(bank_code)) {
+            if (!reg_test(invoice_code_reg, bank_code)) {
+                jQuery('#bank_code_font').html(error + '<em ' + style + ' >寮€鎴疯璐﹀彿鍙兘鐢卞瓧姣嶅拰鏁板瓧缁勬垚</em>');
+                CY_ERROR_CSS();
+            } else {
+                jQuery('#bank_code_font').html(success);
+                bool_c = true;
+            }
+            ;
+        } else {
+            jQuery('#bank_code_font').html('');
+        }
+        ;
+
+        // SUCCESS
+        if (!is_Empty(bank)) {
+            if (reg_test(regNumStrAbc, bank)) {
+                jQuery('#bank_font').html(error + '<em ' + style + ' >寮€鎴疯鐢辨眽瀛椼€佸瓧姣嶃€佹暟瀛楃粍鎴�</em>');
+                CY_ERROR_CSS();
+            } else {
+                jQuery('#bank_font').html(success);
+                bool_d = true;
+            }
+            ;
+        } else {
+            jQuery('#bank_font').html('');
+        }
+        ;
+
+        //SUCCESS
+        if (!is_Empty(contact_name)) {
+            if (!reg_test(regStringAbc, contact_name)) {
+                jQuery('#contact_name_font').html(error + '<em ' + style + ' >鑱旂郴浜哄鍚嶇敱姹夊瓧銆佸瓧姣嶇粍鎴�</em>');
+                CY_ERROR_CSS();
+            } else {
+                jQuery('#contact_name_font').html(success);
+                bool_e = true;
+            }
+            ;
+        } else {
+            jQuery('#contact_name_font').html('');
+        }
+        ;
+
+        //SUCCESS
+        if (!is_Empty(company_address)) {
+            if (reg_test(regNumStrAbc, company_address)) {
+                jQuery('#company_address_font').html(error + '<em ' + style + ' >鍏徃鍦板潃鐢辨眽瀛椼€佸瓧姣嶃€佹暟瀛楃粍鎴�</em>');
+                CY_ERROR_CSS();
+            } else {
+                jQuery('#company_address_font').html(success);
+                bool_f = true;
+            }
+            ;
+        } else {
+            jQuery('#contact_name_font').html('');
+        }
+        ;
+        //SUCCESS
+        recharge();
+        
+    }
+    
+    function recharge() {
+        var $total_amount = jQuery('#total_amount').text();
+        var $invoice_amount = jQuery('#invoice_amount').text();
+        var $min_amount = jQuery('#min_amount').text();
+        var amount = jQuery('#amount').val();
+
+        var total_amount = Number($total_amount);
+        var invoice_amount = Number($invoice_amount);
+        var min_amount = Number($min_amount);
+        var price_difference = total_amount - invoice_amount;
+         
+        if(amount == 'NaN'){
+            amount = 0;
+        }
+        
+        var amount = Number(amount);//杈撳叆閲戦
+      
+        console.log(typeof amount);
+        
+        if (amount > price_difference || amount < min_amount) {
+            jQuery('#amount_font').html(error + '<em ' + style + ' >寮€绁ㄩ噾棰濆繀椤诲皬浜庣瓑浜庡彲鍏呭€奸噾棰濅笖涓嶈兘灏忎簬鏈€浣庡厖鍊奸噾棰� ' +  '</em>');
+            CY_ERROR_CSS();
+        } else {
+            jQuery('#amount_font').html(success);
+            bool_g = true;
+        };
+    }
+    
+    function reg_test(reg, text) {
+        if (reg.test(text)) {
+            return true;
+        }
+        return false;
+    }
+
+    function is_Empty(val) {
+        if (val == '' || val == null) {
+            return true;
+        }
+        return false;
+    }
+
+    function getList() {
+        return [
+            {
+                "company_name": "绉戞妧",
+                "invoice_code": "XD2019001122",
+                "bank": "瀹佹尝閾惰",
+                "bank_code": "NBBK",
+                "contact_name": "闄堣偛",
+                "company_address": "瀹佹尝甯傚寳浠戝尯鍗氬湴褰辫",
+                "amount": "100.1"
+            },
+            {
+                "company_name": "绉戞妧",
+                "invoice_code": "XD2019001123",
+                "bank": "娓╁窞閾惰",
+                "bank_code": "WZBK001",
+                "contact_name": "闄堝繂",
+                "company_address": "瀹佹尝甯傚寳浠戝尯閾舵嘲",
+                "amount": "0"
+            }
+        ];
+    }
+
+    function CY_SUCCESS_CSS() {
+        jQuery('#cy_success').css({'background': '#f2f2f2'});
+        jQuery('#cy_success').attr('disabled', false);
+        jQuery('#cy_success').attr('title', '鍙互鎻愪氦鍟�!');
+    }
+
+    function CY_ERROR_CSS() {
+        jQuery('#cy_success').css({'background': '#666666'});
+        jQuery('#cy_success').attr('disabled', true);
+        jQuery('#cy_success').attr('title', '杈撳叆涓嶅悎娉曪紝璇锋鏌ワ紒');
+    }
+
+    //瀹炴椂鐩戝惉鐢ㄦ埛杈撳叆鍊�
+    //杈撳叆妗嗗€煎疄鏃舵洿鏀瑰悗鍋滈】0.5绉掕Е鍙�
+//  jQuery("#company_name").bind('input porpertychange', function (e) {
+//    var lastTime = e.timeStamp;
+//    console.log('宸茶繃: 0.5绉�');
+//    if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+//      CY_SUCCESS_CSS();
+//      setTimeout(function () {
+//        if (lastTime - e.timeStamp == 0) {
+//          // alert("0.5绉掑唴娌℃湁淇敼浜嗭紝鍙互鍙戦€佽姹備簡");
+//          ajax_http();
+//        }
+//      }, 500);
+//    } else {
+//      CY_ERROR_CSS();
+//    }
+//  });
+
+    //閿洏鏁插嚮鍋滈】0.5绉掕Е鍙�
+//  jQuery('#company_name').keyup(function (e) {
+//    var lastTime = e.timeStamp;
+//    console.log('宸茶繃: 0.5绉�');
+//    if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
+//      CY_SUCCESS_CSS();
+//      setTimeout(function () {
+//        if (lastTime - e.timeStamp == 0) {
+//          // alert("0.5绉掑唴娌″啀杈撳叆锛屽彲浠ュ彂閫佽姹備簡");
+//          ajax_http();
+//        }
+//      }, 500);
+//    } else {
+//      CY_ERROR_CSS();
+//    }
+//  });
+
+//璁剧疆鍏ㄥ眬鍙橀噺淇濆瓨杈撳叆鏁扮粍
+    var kabiaoThesReadNumber = [];
+//閿�
+    var local = false;
+    var number = 0;
+    var index = 0;
+    var timer_count = 0;
+    var listen_msecond = 200;//鐩戝惉闂撮殧锛屾椂闂存绉掋€�
+    jQuery('#company_name').on('keyup', function (event) {
+        kabiaoThesReadNumber = jQuery(this).val();
+        //console.log(++index + '娆�:' + kabiaoThesReadNumber);
+        if (!local) {
+            time();
+        }
+        number = 0;
+        function time() {
+            local = true;
+            //瀹氭椂鍣�
+            setTimeout(function () {
+                //console.log(++timer_count + '娆�');
+                if (number == listen_msecond) {
+                    ajax_http();
+                    local = false;
+                    return;
+                }
+                number = number + listen_msecond;
+                time();
+            }, listen_msecond)
+        }
+    });
+    function ajax_http() {
+        console.log('璇锋眰');
+        var company_name = jQuery('#company_name').val();
+        var $parent = jQuery('#company_name');
+        var request_url = plugin_url + "&json=1&company_name=" + company_name;
+        var $dom = $parent.next();
+        $dom.html('');
+        jQuery.ajax({
+            url: request_url, //璇锋眰璺緞
+            dataType: "json",
+            async: true,
+            //data: {"company_name": company_name, "json": 1},
+            type: "GET", //璇锋眰鏂瑰紡
+            contentType: "application/json;charset=UTF-8",
+            success: function (res) {
+                appendToHtml(res, $dom);
+                showChilden($parent);
+                selectHover();
+                selected($parent, myMap);
+            },
+            error: function (err) {
+                //寮傚父鍑芥暟鍐呰皟鐢ㄥ嚱鏁� 娴嬭瘯浣跨敤 鍙垹闄�
+                console.log(err);
+            }
+        });
+    }
+
+})
+        ;
