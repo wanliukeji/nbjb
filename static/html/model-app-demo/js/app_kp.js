@@ -347,7 +347,7 @@ $(function () {
   }
 
   function CY_SUCCESS_CSS() {
-    $('#cy_success').css({'background': '#f2f2f2'});
+    $('#cy_success').css({'background': '#3FDD6C'});
     $('#cy_success').attr('disabled', false);
   }
 
@@ -411,7 +411,6 @@ $(function () {
       },
       error: function (err) {
         //异常函数内调用函数 测试使用 可删除
-        // console.dir('>>>>>>>>>' + JSON.stringify($dom));
         appendToHtml(err, $dom);
         showChilden($parent);
         selectHover();
