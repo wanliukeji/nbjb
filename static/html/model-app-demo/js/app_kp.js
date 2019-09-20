@@ -1,9 +1,10 @@
+var $ = jQuery.noConflict(false);
+
 $(function () {
   var html = '<i style="color: red;">*</i> 此行为必填项';
   var style = 'style="font: 12px/1.5 Tahoma, \'Microsoft Yahei\', \'Simsun\';\n' +
-    '    color: red;\n' +
     '    clear: both;\n' +
-    '    color: #999;" ';
+    '    color: red;" ';
   var success = '<svg style="margin-top: 10px;" t="1567221340551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2070" width="14" height="14"><path d="M511 69C267.4 69 69.9 266.5 69.9 510.1c0 243.6 197.5 441.1 441.1 441.1 243.6 0 441.1-197.5 441.1-441.1C952.2 266.5 754.7 69 511 69z m282 292.7L463.4 691.3l-18.6 18.6c-19.6 19.6-51.4 19.6-71 0l-18.6-18.6-126.8-126.8c-16.3-16.3-14.8-43.9 4.6-58.1 15.4-11.2 36.9-8.7 50.3 4.8l125.9 125.9 330.3-330.3c16.3-16.3 43.9-14.8 58.1 4.6 11.4 15.4 8.8 36.9-4.6 50.3z" p-id="2071" fill="#1afa29"></path></svg>';
   var error = '<svg t="1567221892863" style=" margin-right: 3px; position: absolute; margin-top: 2px;" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2845" width="14" height="14"><path d="M664.96 630.4a32 32 0 0 1-22.4 54.72 32 32 0 0 1-22.72-9.28L506.56 562.56 393.6 675.84a32 32 0 0 1-22.72 9.28 32 32 0 0 1-22.72-9.28 32 32 0 0 1 0-45.44l113.28-112.96-113.28-113.28a32 32 0 0 1 0-45.12 32 32 0 0 1 45.44 0L506.56 472l113.28-112.96a32 32 0 1 1 45.12 45.12L552 517.44zM512 64a448 448 0 1 0 448 448A448 448 0 0 0 512 64z" p-id="2846" fill="#d81e06"></path></svg>';
   var flag = false;
@@ -202,12 +203,13 @@ $(function () {
 
     //SUCCESS
     if (!is_Empty(company_name)) {
-      console.dir(!reg_test(company_name_reg, company_name));
+      console.log(reg_test(company_name_reg, company_name));
       if (!reg_test(company_name_reg, company_name)) {
+        console.log('chenyu');
         $('#company_name_font').html('<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
         CY_ERROR_CSS();
       } else {
-        alert(1);
+        // console.log(1);
         $('#company_name_font').html(success);
         bool_a = true;
       }
@@ -359,7 +361,7 @@ $(function () {
   //输入框值实时更改后停顿0.5秒触发
   $("#company_name").bind('input porpertychange', function (e) {
     var lastTime = e.timeStamp;
-    console.log('已过: 0.5秒');
+    // console.log('已过: 0.5秒');
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
       setTimeout(function () {
@@ -376,7 +378,7 @@ $(function () {
   //键盘敲击停顿0.5秒触发
   $('#company_name').keyup(function (e) {
     var lastTime = e.timeStamp;
-    console.log('已过: 0.5秒');
+    // console.log('已过: 0.5秒');
     if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
       CY_SUCCESS_CSS();
       setTimeout(function () {
