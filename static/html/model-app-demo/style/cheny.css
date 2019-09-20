@@ -1,0 +1,55 @@
+html {
+  background-color: #FFFFFF;
+}
+
+.app-input-left {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  width: 50%;
+}
+
+.app-li-span {
+  text-align: left;
+  font-size: 12px;
+  color: #999;
+}
+
+.td-left-span {
+  font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+  color: #999;
+  clear: both;
+  margin: 5px 0;
+  color: #999;
+}
+
+.td-left-span-i {
+  color: red;
+  vertical-align: middle;
+}
+
+.hide-select {
+  display: block;
+  width: 36%;
+  position: absolute;
+  margin-top: 5px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: none;
+  text-align: left;
+  background: #FFFFFF;
+  /*overflow-y:scroll;*/
+  z-index: 10;
+  margin-left: 15%;
+}
+
+.hide-li-selected {
+  cursor: pointer;
+  padding-left: 0px;
+  font: 14px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+  clear: both;
+  margin: 5px 0;
+  color: #444444;
+}

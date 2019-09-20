@@ -147,7 +147,7 @@
                 </button>
               </div>
               <div class="y">
-                <button type="submit" name="search" class="pn bgt pnw" id="searchsubmit">提交</button>
+                <button type="submit" name="search" class="pn pnw" id="searchsubmit">提交</button>
               </div>
             </div>
           </li>
@@ -205,6 +205,7 @@
     var finished = true;
 
     $(function () {
+        CY_ERROR_CSS();
         var items = getItems(); //测试数据   可删除
         // var items = getInitData(); //后台请求数据 获取集合
         var pageSize = 5;  //初始化 当页显示总行数
@@ -381,6 +382,7 @@
 
             if (exchange_num % 10 != 0) {
                 $('#show_msg').html('<em style="color: red;">提现额度必须是10的倍数</em>');
+                CY_ERROR_CSS();
                 return false;
             }
 
@@ -389,23 +391,29 @@
             }
 
             if (exchange_num < 2000) {
+                CY_ERROR_CSS();
                 $('#show_msg').html('<em style="color: red;">最低提现额度必须大于2000</em>');
                 return false;
             } else {
+                CY_SUCCESS_CSS();
                 $('#show_msg').html('<em style="color: #3FDD6C;">提现后余额' + balance + '</em>');
             }
 
             if (exchange_num > max_money) {
+                CY_ERROR_CSS();
                 $('#show_msg').html('<em style="color: red;">提现额度必须小于' + y_sum + '</em>');
                 return false;
             } else {
+                CY_SUCCESS_CSS();
                 $('#show_msg').html('<em style="color: #3FDD6C;">提现后余额' + balance + '</em>');
             }
 
             if (balance < min_money) {
+                CY_ERROR_CSS();
                 $('#show_msg').html('<em style="color: red;">最低余额不足' + min_money + '</em>');
                 return false;
             } else {
+                CY_SUCCESS_CSS();
                 $('#show_msg').html('<em style="color: #3FDD6C;">提现后余额' + balance + '</em>');
             }
             return true;
@@ -429,6 +437,16 @@
                 console.log(e);
             }
         });
+
+        function CY_SUCCESS_CSS() {
+            $('#searchsubmit').css({'background': '#3FDD6C'});
+            $('#searchsubmit').attr('disabled', false);
+        }
+
+        function CY_ERROR_CSS() {
+            $('#searchsubmit').css({'background': '#666666'});
+            $('#searchsubmit').attr('disabled', true);
+        }
     });
 </script>
 <div class="maskmenu" style="display:none;"></div>
