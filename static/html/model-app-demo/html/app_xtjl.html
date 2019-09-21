@@ -173,7 +173,7 @@
         // items = ajax_http(); //获取数据函数
         var totalPage = 0;
         totalPage = getItems().length; //总分页数
-        appendToHTML(getItems(), 5);
+        appendToHTML(items, 5);
         var pageSize = 5;
         $(document).scroll(function () {
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
