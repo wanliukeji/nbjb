@@ -87,6 +87,7 @@
       <h2>积分记录</h2>
     </div>
   </div>
+<!-- 已修改模块 -->
   <div class="tbbox tbscrl tbbox2 form-hiden">
     <div class="tabs tbfxd tab-ul">
       <div class="tab bi_d bga">
@@ -135,9 +136,8 @@
           查询</span></div>
     </div>
   </div>
+
   <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
-    <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
-    <!--    <div id="cy_form">-->
     <div class="bform tform sjno">
       <ul class="with optinit in65">
         <li>
@@ -244,6 +244,14 @@
 
     var items = []; //集合。
 
+    var getDateUrl = ''; //请求后台数据路径
+
+    var getIntegralsUrl = ''; //请求积分
+
+    var getExpensesUrl = ''; //请求收支
+
+    var getOperationsUrl = ''; //请求操作
+
     $(function () {
         init(); //初始化查询下拉框选项值
         items = getItems(); //测试数据   可删除
@@ -268,13 +276,12 @@
 
         //查询 数据 异步实时更新显示
         $('#searchsubmit').click(function () {
-            // items = ajax_http();
+            items = ajax_http();
             appendToHTML(items, 5);
         });
 
         //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
         function ajax_http() {
-            var initItems = [];
             var integral = $('#integral').val();
             var starttime = $('#startTime').val();
             var endtime = $('#endTime').val();
@@ -282,8 +289,7 @@
             var operation = $('#operation').val();
             //请求路径及筛选值
             $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json?integral="+integral + "&starttime="+starttime +
-                // "&endtime="+endtime+"&expenses="+expenses+"&operation="+operation,
+                url: getDateUrl + "?integral = " + integral + "&starttime=" + starttime + "&endtime=" + endtime + "&expenses=" + expenses + "&operation=" + operation,
                 dataType: "json",
                 async: true,
                 type: "GET", //请求方式
@@ -291,9 +297,7 @@
                 success: function (res) {
                     var data_list = res.data;
                     if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            items = data_list;
-                        }
+                        items = data_list;
                     } else {
                         console.dir(JSON.stringify(res));
                     }
@@ -327,20 +331,17 @@
             ];
 
             $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                url: getIntegralsUrl,  //请求路径
                 dataType: "json",
                 async: true,
-                // data: {"company_name": company_name },
                 type: "POST", //请求方式
                 contentType: "application/json;charset=UTF-8",
                 success: function (res) {
                     var data_list = res.data;
                     if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
                             Integrals = data_list;
-                        }
                     } else {
-
+                        console.log('获取数据失败');
                     }
                 },
                 error: function (err) {
@@ -359,20 +360,17 @@
             ];
 
             $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                url: getExpensesUrl,  //请求路径
                 dataType: "json",
                 async: true,
-                // data: {"company_name": company_name },
                 type: "POST", //请求方式
                 contentType: "application/json;charset=UTF-8",
                 success: function (res) {
                     var data_list = res.data;
                     if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
                             expenses = data_list;
-                        }
                     } else {
-
+                          console.log('获取数据失败');
                     }
                 },
                 error: function (err) {
@@ -393,7 +391,7 @@
             ];
 
             $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+                url: getOperationsUrl,  //请求路径
                 type: "GET", //请求方式
                 dataType: "json",
                 async: true,
@@ -401,9 +399,7 @@
                 success: function (res) {
                     var data_list = res.data;
                     if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
                             operations = data_list;
-                        }
                     } else {
                         console.log('数据获取失败');
                     }
@@ -424,11 +420,6 @@
             } catch (e) {
                 console.log(e);
             }
-        }
-
-        //获取初始化数据
-        function getInitData() {
-            return ajax_http();
         }
 
         //页面固定显示
@@ -462,23 +453,21 @@
                     for (var i = 0; i < count; i++) {
                         var info = items[i];
                         if (info.number > 0) {
-                            console.log(1);
                             $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
                                 '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
-                                ' <span class = "status"><em" >甬钻  <i '+ z_style + '> + ' + info.number + '</i> </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                                ' <span class = "status"><em" >甬钻  <i ' + z_style + '> + ' + info.number + '</i> </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
                                 '<span class = "status f13 ff9">' + info.time + '</span>' +
                                 '</dd></dl></a></li>');
                         } else {
                             $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
                                 '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
-                                ' <span class = "status"><em" >甬钻  <i '+ f_style + '> '  + info.number + ' </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                                ' <span class = "status"><em" >甬钻  <i ' + f_style + '> ' + info.number + ' </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
                                 '<span class = "status f13 ff9">' + info.time + '</span>' +
                                 '</dd></dl></a></li>');
                         }
                     }
                 } catch (e) {
-                    e.message;
-                    console.log(e.message);
+                    console.log(e);
                 }
             }
         }
@@ -488,18 +477,18 @@
             var items = [];
             for (let i = 1; i <= 20; i++) {
                 var param = {
-                    top_name:  '购买积分',
-                    remark: '购买 涂鸦板 积分' ,
+                    top_name: '购买积分',
+                    remark: '购买 涂鸦板 积分',
                     time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
                     number: i * 10
                 }
 
                 if (i % 2 == 0) {
                     var param = {
-                        top_name:  '购买道具',
+                        top_name: '购买道具',
                         remark: '购买 涂鸦板 道具',
                         time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
-                        number: i * - 10
+                        number: i * -10
                     }
                 }
                 items.push(param);
