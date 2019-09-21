@@ -242,9 +242,11 @@
 
     var finished = true;
 
+    var items = []; //集合。
+
     $(function () {
         init(); //初始化查询下拉框选项值
-        var items = getItems(); //测试数据   可删除
+        items = getItems(); //测试数据   可删除
         // var items = getInitData(); //后台请求数据 获取集合
         var pageSize = 5;  //初始化 当页显示总行数
         var totalPage = getItems().length; //请求数据总行数
@@ -278,11 +280,6 @@
             var endtime = $('#endTime').val();
             var expenses = $('#expenses').val();
             var operation = $('#operation').val();
-            console.log('积分:' + integral + '\t 数据类型:' + typeof integral);
-            console.log('开始时间:' + starttime + '\t 数据类型:' + typeof starttime);
-            console.log('结束时间:' + endtime + '\t 数据类型:' + typeof endtime);
-            console.log('收支:' + expenses + '\t 数据类型:' + typeof expenses);
-            console.log('操作:' + operation + '\t 数据类型:' + typeof operation);
             //请求路径及筛选值
             $.ajax({
                 //url: "http://localhost:8080/static/data/demo.json?integral="+integral + "&starttime="+starttime +
@@ -292,11 +289,10 @@
                 type: "GET", //请求方式
                 contentType: "application/json;charset=UTF-8",
                 success: function (res) {
-                    console.log(JSON.stringify(res));
                     var data_list = res.data;
                     if (res.status == 200) {
                         if (data_list != null && data_list != null && data_list != 'undefined') {
-                            initItems = data_list;
+                            items = data_list;
                         }
                     } else {
                         console.dir(JSON.stringify(res));
@@ -306,18 +302,17 @@
                     console.log(err);
                 }
             });
-            return initItems;
         };
 
         //初始化下拉动态选项值
         function init() {
             var $integral = $('#integral');
-            var Integrals = getIntegrals();
+            var Integrals = getIntegrals();  //获取积分下拉
             var $expenses = $('#expenses');
-            var Expenses = getExpenses();
+            var Expenses = getExpenses();   //获取收支下拉
             var $operation = $('#operation');
-            var Operations = getOperations();
-            joinToSelect(Integrals, $integral);
+            var Operations = getOperations();  //获取操作下拉
+            joinToSelect(Integrals, $integral);  //动态添加
             joinToSelect(Expenses, $expenses);
             joinToSelect(Operations, $operation);
         };
@@ -389,6 +384,7 @@
 
         //获取操作下拉集合
         function getOperations() {
+            // 测试数据 可删除
             var operations = [
                 {name: '请选择操作类型', value: '0'},
                 {name: '任务奖励', value: '1'},
@@ -398,8 +394,7 @@
 
             $.ajax({
                 //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                type: "POST", //请求方式
-                // data: {"company_name": company_name },
+                type: "GET", //请求方式
                 dataType: "json",
                 async: true,
                 contentType: "application/json;charset=UTF-8",
@@ -410,7 +405,7 @@
                             operations = data_list;
                         }
                     } else {
-
+                        console.log('数据获取失败');
                     }
                 },
                 error: function (err) {
@@ -431,7 +426,7 @@
             }
         }
 
-        //获取初始化总参数
+        //获取初始化数据
         function getInitData() {
             return ajax_http();
         }
@@ -461,16 +456,26 @@
 
             function append_for(items, count) {
                 $('#page-ul').html('');
+                var z_style = 'style="color: red;"';
+                var f_style = 'style="color: black;"';
                 try {
                     for (var i = 0; i < count; i++) {
                         var info = items[i];
-                        $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
-                            '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
-                            ' <span class = "status"><em style = "color: #8b8b8b;" >甬钻 - ' + info.number + ' </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-                            '<span class = "status f13 ff9">' + info.time + '</span>' +
-                            '</dd></dl></a></li>');
+                        if (info.number > 0) {
+                            console.log(1);
+                            $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
+                                '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
+                                ' <span class = "status"><em" >甬钻  <i '+ z_style + '> + ' + info.number + '</i> </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                                '<span class = "status f13 ff9">' + info.time + '</span>' +
+                                '</dd></dl></a></li>');
+                        } else {
+                            $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
+                                '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + info.top_name + '</strong>' +
+                                ' <span class = "status"><em" >甬钻  <i '+ f_style + '> '  + info.number + ' </em></span></div><dl class = "cl"><p>' + info.remark + '</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
+                                '<span class = "status f13 ff9">' + info.time + '</span>' +
+                                '</dd></dl></a></li>');
+                        }
                     }
-
                 } catch (e) {
                     e.message;
                     console.log(e.message);
@@ -483,16 +488,24 @@
             var items = [];
             for (let i = 1; i <= 20; i++) {
                 var param = {
-                    top_name: '测试-' + i,
-                    remark: '购买了' + i + '个道具',
+                    top_name:  '购买积分',
+                    remark: '购买 涂鸦板 积分' ,
                     time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
                     number: i * 10
+                }
+
+                if (i % 2 == 0) {
+                    var param = {
+                        top_name:  '购买道具',
+                        remark: '购买 涂鸦板 道具',
+                        time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
+                        number: i * - 10
+                    }
                 }
                 items.push(param);
             }
             return items;
         }
-
     });
 </script>
 </body>
