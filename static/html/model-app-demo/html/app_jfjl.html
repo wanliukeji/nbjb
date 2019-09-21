@@ -49,6 +49,18 @@
     .top-span {
       margin-top: 10px;
     }
+
+    .form-hiden {
+      max-height: 30px;
+    }
+
+    .tab-ul {
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: 48px;
+      z-index: 48;
+    }
   </style>
 </head>
 <body class="bg">
@@ -75,8 +87,8 @@
       <h2>积分记录</h2>
     </div>
   </div>
-  <div class="tbbox tbscrl tbbox2" style="max-height: 30px;">
-    <div class="tabs tbfxd" style="width: 100%; position: fixed; left: 0; top: 48px; z-index: 48;">
+  <div class="tbbox tbscrl tbbox2 form-hiden">
+    <div class="tabs tbfxd tab-ul">
       <div class="tab bi_d bga">
         <ul class="f15 tab8 ff9">
           <li>
@@ -116,65 +128,68 @@
         </ul>
         <span onclick="$('#srchlogfm').show();$(document.body).scrollTop(0)" class="abs mg_r ffr f14"
               style="top:8px;right:0;">
-          <svg t="1569027895397" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2108" width="16" height="12"><path d="M1003.86 964.58L837.2 797.92c-0.18-0.18-0.43-0.23-0.61-0.41 74.29-83.46 119.86-193 119.86-313.29C956.44 223.83 744.61 12 484.22 12S12 223.83 12 484.22s211.83 472.22 472.22 472.22c120.27 0 229.83-45.57 313.29-119.86 0.17 0.18 0.23 0.43 0.41 0.61l166.67 166.67a27.77 27.77 0 0 0 39.28-39.28z m-519.64-63.69C254.47 900.89 67.56 714 67.56 484.22S254.47 67.56 484.22 67.56s416.67 186.9 416.67 416.67S714 900.89 484.22 900.89z" p-id="2109" fill="#00BB33"></path></svg>
+          <svg t="1569027895397" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               p-id="2108" width="16" height="12"><path
+            d="M1003.86 964.58L837.2 797.92c-0.18-0.18-0.43-0.23-0.61-0.41 74.29-83.46 119.86-193 119.86-313.29C956.44 223.83 744.61 12 484.22 12S12 223.83 12 484.22s211.83 472.22 472.22 472.22c120.27 0 229.83-45.57 313.29-119.86 0.17 0.18 0.23 0.43 0.41 0.61l166.67 166.67a27.77 27.77 0 0 0 39.28-39.28z m-519.64-63.69C254.47 900.89 67.56 714 67.56 484.22S254.47 67.56 484.22 67.56s416.67 186.9 416.67 416.67S714 900.89 484.22 900.89z"
+            p-id="2109" fill="#00BB33"></path></svg>
           查询</span></div>
     </div>
   </div>
   <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
     <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
-<!--    <div id="cy_form">-->
-      <div class="bform tform sjno">
-        <ul class="with optinit in65">
-          <li>
-            <span class="ipp">积分</span>
-            <div class="ipt">
-              <select id="integral" class="ps"></select>
+    <!--    <div id="cy_form">-->
+    <div class="bform tform sjno">
+      <ul class="with optinit in65">
+        <li>
+          <span class="ipp">积分</span>
+          <div class="ipt">
+            <select id="integral" class="ps"></select>
+          </div>
+        </li>
+        <li>
+          <span class="ipp">时间范围</span>
+          <div class="ipt">
+            <div class="ipt mg_n z" style="width:43%">
+              <input type="text" name="starttime" id="startTime" value="" class="px calendar" caltype="date"
+                     placeholder="开始时间">
             </div>
-          </li>
-          <li>
-            <span class="ipp">时间范围</span>
-            <div class="ipt">
-              <div class="ipt mg_n z" style="width:43%">
-                <input type="text" name="starttime" id="startTime" value="" class="px calendar" caltype="date"
-                       placeholder="开始时间">
-              </div>
-              <div class="ipt mg_n y" style="width:43%">
-                <input type="text" name="endtime" id="endTime" value="" class="px calendar" caltype="date"
-                       placeholder="结束时间">
-              </div>
-              <div class="ipt mg_n hc ff9">至</div>
+            <div class="ipt mg_n y" style="width:43%">
+              <input type="text" name="endtime" id="endTime" value="" class="px calendar" caltype="date"
+                     placeholder="结束时间">
             </div>
-          </li>
+            <div class="ipt mg_n hc ff9">至</div>
+          </div>
+        </li>
 
-          <li>
-            <span class="ipp">收支</span>
-            <div class="ipt">
-              <select id="expenses" class="ps"></select>
-            </div>
-          </li>
+        <li>
+          <span class="ipp">收支</span>
+          <div class="ipt">
+            <select id="expenses" class="ps"></select>
+          </div>
+        </li>
 
-          <li>
-            <span class="ipp">操作</span>
-            <div class="ipt">
-              <select id="operation" class="ps"></select>
-            </div>
-          </li>
+        <li>
+          <span class="ipp">操作</span>
+          <div class="ipt">
+            <select id="operation" class="ps"></select>
+          </div>
+        </li>
 
-          <li class="pnfm">
-            <div class="w cl">
-              <div class="z">
-                <button type="button" name="search" class="pn pnw" style="background:#BBB;"
-                        onclick="$('#srchlogfm').hide()" value="true">取消
-                </button>
-              </div>
-              <div class="y">
-                <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">查询</button>
-              </div>
+        <li class="pnfm">
+          <div class="w cl">
+            <div class="z">
+              <button type="button" name="search" class="pn pnw" style="background:#BBB;"
+                      onclick="$('#srchlogfm').hide()" value="true">取消
+              </button>
             </div>
-          </li>
-        </ul>
-      </div>
-<!--    </div>-->
+            <div class="y">
+              <button type="button" name="search" class="pn bgt pnw" id="searchsubmit">查询</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!--    </div>-->
   </div>
 
   <div class="creditslog">
