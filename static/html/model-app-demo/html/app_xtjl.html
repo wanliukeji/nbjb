@@ -70,7 +70,7 @@
             p-id="3707" fill="#ffffff"></path>
         </svg>
       </a></div>
-      <h2>提现记录</h2>
+      <h2>系统奖励</h2>
     </div>
   </div>
   <div class="tbbox tbscrl tbbox2">
@@ -164,10 +164,15 @@
 
     var finished = true;
 
+    var items = [];
+
+    var getDateUrl = '';
+
     $(function () {
-        var items = getItems();
-        // items = ajax_http();
-        var totalPage = getItems().length; //总分页数
+        items = getItems();
+        // items = ajax_http(); //获取数据函数
+        var totalPage = 0;
+        totalPage = getItems().length; //总分页数
         appendToHTML(getItems(), 5);
         var pageSize = 5;
         $(document).scroll(function () {
@@ -179,7 +184,6 @@
                     pageSize += 5;
                     appendToHTML(items , pageSize);
                     return;
-                    console.log('到底啦!');
                 }, 2000);
             }
             ;
@@ -214,13 +218,12 @@
                             '</span><strong class="status"><em class="succ">每天登录</em></strong></div><dl class="cl"><dt style="word-break: break-word; width: 70%;">' +
                             '<span style="margin-right: 10px; color: #999;">总次数：' + info.total + '</span> <span style="margin-right: 10px; color: #999;">周期次数：' + info.z_num + '</span>' +
                             '<span style="margin-right: 10px; color: #e9d679;"><br>威望：' + info.w_num + '</span> <span style="margin-right: 10px; color: #995621;">' +
-                            '财富：' + info.m_num + '</span></dt> <dd><cite><i class="duceapp_font f15"></i> 甬钻 <span class="ff9"> × ' + info.y_num + '</span></cite></dd>' +
+                            '财富：' + info.m_num + '</span></dt> <dd><cite> 甬钻 <span class="ff9"> × ' + info.y_num + '</span></cite></dd>' +
                             '</dl><dl class="cl mt6"><dt class="f13 ff9" style="line-height:26px; float: right;">' + info.time + '</dt></dl></a></li>');
                     }
 
                 } catch (e) {
-                    e.message;
-                    console.log(e.message);
+                    console.log(e);
                 }
             }
         }
@@ -245,7 +248,7 @@
         function ajax_http() {
             //请求路径及筛选值
             $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json
+                url: getDateUrl,
                 dataType: "json",
                 async: true,
                 type: "GET", //请求方式
@@ -254,6 +257,9 @@
                     var data_list = res.data;
                     if (res.status == 200) {
                         items = data_list;
+                        if (items != null) {
+                            totalPage = items.length;
+                        }
                     } else {
                         console.dir(JSON.stringify(res));
                     }

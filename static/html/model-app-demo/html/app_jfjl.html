@@ -257,7 +257,8 @@
         items = getItems(); //测试数据   可删除
         // var items = getInitData(); //后台请求数据 获取集合
         var pageSize = 5;  //初始化 当页显示总行数
-        var totalPage = getItems().length; //请求数据总行数
+        var totalPage = 0;
+        totalPage = getItems().length; //请求数据总行数 可删除
         appendToHTML(items, pageSize);  //显示数据内容
         $(window).scroll(function () {  //页面滑动至底部更新数据
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
@@ -298,6 +299,9 @@
                     var data_list = res.data;
                     if (res.status == 200) {
                         items = data_list;
+                        if (items != null ) {
+                            totalPage = items.length;
+                        }
                     } else {
                         console.dir(JSON.stringify(res));
                     }
