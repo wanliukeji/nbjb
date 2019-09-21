@@ -48,6 +48,7 @@
     .top-span {
       margin-top: 10px;
     }
+
   </style>
 </head>
 <body class="bg">
@@ -222,8 +223,9 @@
 
     var finished = true;
 
-    $(function () {
+    var getDateUrl = '';
 
+    $(function () {
         var items = [];
         CY_ERROR_CSS();
         items = getItems(); //测试数据   可删除
@@ -246,17 +248,11 @@
             ;
         });
 
-        //查询 数据 异步实时更新显示
-        $('#searchsubmit').click(function () {
-            ajax_http();
-            appendToHTML(items, 5);
-        });
-
         //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
         function ajax_http() {
             //请求路径及筛选值
             $.ajax({
-                //url: "http://localhost:8080/static/data/"
+                url: getDateUrl,
                 dataType: "json",
                 async: true,
                 type: "GET", //请求方式
@@ -278,11 +274,6 @@
                 }
             });
         };
-
-        //获取初始化总参数
-        function getInitData() {
-            return ajax_http();
-        }
 
         //页面固定显示
         var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
@@ -351,7 +342,6 @@
                         top_name: no + i,
                         scope: i * 100,
                         time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
-                        number: i * 10,
                         stauts: 1,
                         money: i * 1
                     }
@@ -360,7 +350,6 @@
                         top_name: no + i,
                         scope: i * 10,
                         time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
-                        number: i * 10,
                         stauts: 0,
                         money: i * 2
                     }

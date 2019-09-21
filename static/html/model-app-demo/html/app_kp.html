@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="http://dev.bbs.cnnb.com/data/duceapp/base/common.css?FKK" type="text/css" media="all">
   <link rel="stylesheet" href="source/plugin/duceapp_scorebuy/static/css/addfunds_mobile.css?FKK" type="text/css"
         media="all">
-  <script src="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/js/$.min.js?FKK"
+  <script src="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/js/jquery.min.js"
           type="text/javascript"></script>
   <script type="text/javascript">var STYLEID = '14', STATICURL = 'static/',
       IMGDIR = 'http://dev.bbs.cnnb.com/template/weixia_cms/weixia/src/', VERHASH = 'FKK', charset = 'utf-8',
@@ -40,20 +40,94 @@
       }, DUCEAPP_LANG = {confirms: '确定', cancel: '取消'}, DUCEAPP_BASE = 'duceapp_base';</script>
   <script src="http://dev.bbs.cnnb.com/source/plugin/duceapp_base/static/js/common.js?FKK" type="text/javascript"
           charset="utf-8"></script>
-  <style>
+  <!--  <link rel="stylesheet" href=/static/html/model-app-demo/style/cheny.css>-->
+  <style type="text/css">
     html {
       background-color: #FFFFFF;
     }
+
+    .app-input-left {
+      display: inline-block;
+      float: left;
+      text-align: left;
+      width: 50%;
+    }
+
+    .app-li-span {
+      text-align: left;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .td-left-span {
+      font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+      color: #999;
+      clear: both;
+      margin: 5px 0;
+      color: #999;
+    }
+
+    .td-left-span-i {
+      color: red;
+      vertical-align: middle;
+    }
+
+    .hide-select {
+      display: block;
+      width: 36%;
+      position: absolute;
+      margin-top: 5px;
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      display: none;
+      text-align: left;
+      background: #FFFFFF;
+      /*overflow-y:scroll;*/
+      z-index: 10;
+      margin-left: 67px;
+      padding-left: 0px;
+    }
+
+    .hide-li-selected {
+      cursor: pointer;
+      padding-left: 0px;
+      font: 14px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+      clear: both;
+      /*margin: 5px 0;*/
+      color: #444444;
+    }
+
+    .top-span {
+      margin-top: 10px;
+    }
+
   </style>
+
 </head>
 <body class="bg">
 <div class="duceapp_body">
   <div id="duceapp_head">
     <div class="headfixed duceapp_head fff hc">
-      <div class="head_z z"><a href="javascript:;" onclick="history.go(-1)"><i class="duceapp_font f22">&#xe95d;</i></a>
+      <div class="head_z z"><a href="javascript:;" onclick="history.go(-1)">
+        <svg t="1569026194395" class="icon top-span" viewBox="0 0 1024 1024" version="1.1"
+             xmlns="http://www.w3.org/2000/svg" p-id="1725" width="22" height="22">
+          <path
+            d="M350.62 514.18l392.72-395.43a32 32 0 0 0-45.41-45.1L282.66 491.78a32 32 0 0 0 0.16 45.25l415.27 412.44a32 32 0 1 0 45.1-45.41z"
+            p-id="1726" fill="#ffffff"></path>
+        </svg>
+      </a>
       </div>
-      <div class="head_y y"><a href="home.php?mod=space&amp;uid=8&amp;do=profile&amp;mycenter=1&amp;mobile=2"><i
-        class="duceapp_font f22">&#xe932;</i></a></div>
+      <div class="head_y y"><a href="home.php?mod=space&amp;uid=8&amp;do=profile&amp;mycenter=1&amp;mobile=2">
+        <svg t="1569025982977" class="icon top-span" viewBox="0 0 1024 1024" version="1.1"
+             xmlns="http://www.w3.org/2000/svg" p-id="3706" width="22" height="22">
+          <path
+            d="M707.950617 82.17284c-50.567901-50.567901-126.419753-82.17284-202.271605-82.17284-69.530864 0-139.061728 31.604938-195.950617 82.17284-50.567901 50.567901-75.851852 120.098765-75.851852 195.950617 0 94.814815 44.246914 170.666667 113.777778 227.555555-63.209877 25.283951-120.098765 56.888889-158.024691 94.814815-94.814815 94.814815-139.061728 221.234568-139.061729 379.259259 0 25.283951 25.283951 44.246914 44.246914 44.246914 18.962963 0 44.246914-12.641975 44.246913-37.925926 0-170.666667 63.209877-297.08642 183.308642-372.938272 94.814815-50.567901 189.62963-56.888889 189.62963-56.888888H530.962963c120.098765-37.925926 151.703704-69.530864 183.308642-101.135803 0-6.320988 6.320988-6.320988 6.320988-12.641975 44.246914-63.209877 56.888889-94.814815 56.888888-164.345679 6.320988-101.135802-31.604938-151.703704-69.530864-195.950617z m-18.962963 195.950617c0 50.567901-12.641975 94.814815-50.567901 132.740741-37.925926 37.925926-82.17284 56.888889-139.061728 56.888888-101.135802 0-189.62963-88.493827-189.62963-195.950617 0-107.45679 82.17284-195.950617 189.62963-195.950617 107.45679 6.320988 189.62963 94.814815 189.629629 202.271605zM802.765432 575.209877c-18.962963-12.641975-37.925926-6.320988-50.567901 12.641975-12.641975 18.962963-6.320988 37.925926 12.641975 44.246913 0 0 31.604938 18.962963 56.888889 69.530865 31.604938 50.567901 69.530864 139.061728 69.530864 284.444444 0 18.962963 18.962963 37.925926 37.925926 37.925926s37.925926-12.641975 37.925926-37.925926c0-316.049383-158.024691-404.54321-164.345679-410.864197z"
+            p-id="3707" fill="#ffffff"></path>
+        </svg>
+      </a>
+      </div>
       <h2>开票记录</h2>
     </div>
   </div>
@@ -95,9 +169,13 @@
           <li class="b">/</li>
         </ul>
         <span onclick="$('#srchlogfm').show();$(document.body).scrollTop(0)" class="abs mg_r ffr f14"
-              style="top:8px;right:0;"><i class="duceapp_font vm2">&#xe951;</i> 开票</span></div>
+              style="top:8px;right:0;">
+          开票
+        </span>
+      </div>
     </div>
   </div>
+
   <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
     <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
     <div id="cy_form">
@@ -105,53 +183,89 @@
         <ul class="with optinit in65">
 
           <li>
-            <div style="width: 50%; display: inline-block; float: left;">
+            <div class="app-input-left">
               <span class="ipp">公司名称</span>
-              <div class="ipt"><input class="px" name="orderid" placeholder="请输入"></div>
+              <div class="ipt"><input class="px" name="company_name" id="company_name"></div>
+              <ul class="hide-select px" id="hide-select"></ul>
+            </div>
+
+            <div class="app-input-left">
+              <div class="ipt">
+                <span id="company_name_font" class="td-left-span"><i class="td-left-span-i">*</i> 此行为必填项</span>
+              </div>
             </div>
           </li>
 
           <li>
-            <div style="width: 50%; display: inline-block; float: left;">
+            <div class="app-input-left">
               <span class="ipp">税号</span>
-              <div class="ipt"><input class="px" name="orderid"></div>
+              <div class="ipt"><input class="px" name="invoice_code" id="invoice_code"></div>
+            </div>
+            <div class="app-input-left">
+              <div class="ipt">
+                <span id="invoice_code_font" class="td-left-span"><i class="td-left-span-i">*</i> 此行为必填项</span>
+              </div>
             </div>
           </li>
           <li>
-            <div style="width: 50%; display: inline-block; float: left;">
+            <div class="app-input-left">
               <span class="ipp">开户号</span>
-              <div class="ipt"><input class="px" id="exchange_num" name="orderid" value="0"
-                                      onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
+              <div class="ipt"><input class="px" name="bank_code" id="bank_code"></div>
+            </div>
+            <div class="app-input-left">
+              <div class="ipt">
+                <span id="bank_code_font"></span>
+              </div>
             </div>
           </li>
           <li>
-            <div style="width: 50%; display: inline-block; float: left;">
+            <div class="app-input-left">
               <span class="ipp">开户行</span>
-              <div class="ipt"><input class="px" name="orderid"></div>
+              <div class="ipt"><input class="px" name="bank" id="bank"></div>
+            </div>
+            <div class="app-input-left">
+              <div class="ipt">
+                <span id="bank_font"></span>
+              </div>
             </div>
           </li>
           <li>
-            <div style="width: 50%; display: inline-block; float: left;">
+            <div class="app-input-left">
               <span class="ipp">金额</span>
-              <div class="ipt"><input class="px" name="orderid" value="0"
+              <div class="ipt"><input class="px" name="amount" id="amount" value="0"
                                       onkeyup="value = value.replace(/[^\d.]/g, '')"></div>
             </div>
-          </li>
-          <li>
-            <div style="width: 50%; display: inline-block; float: left;">
-              <span class="ipp">联系人</span>
-              <div class="ipt"><input class="px" name="orderid"></div>
+            <div class="app-input-left">
+              <div class="ipt">
+                <span id="amount_font"></span>
+              </div>
             </div>
           </li>
           <li>
-            <div style="width: 50%; display: inline-block; float: left;">
+            <div class="app-input-left">
+              <span class="ipp">联系人</span>
+              <div class="ipt"><input class="px" name="contact_name" id="contact_name"></div>
+            </div>
+            <div class="app-input-left">
+              <div class="ipt">
+                <span id="contact_name_font"></span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="app-input-left">
               <span class="ipp">公司地址</span>
-              <div class="ipt"><input class="px" name="orderid"></div>
+              <div class="ipt"><input class="px" name="company_address" id="company_address"></div>
+            </div>
+            <div class="app-input-left">
+              <div class="ipt">
+                <span id="company_address_font"></span>
+              </div>
             </div>
           </li>
 
           <li>
-            <span style="text-align: left; font-size: 12px; color: #999;"
+            <span class="app-li-span"
                   id="show_span">
              总计充值
               <em style="color: red;">17.51</em>元，
@@ -164,11 +278,10 @@
               元， 请仔细填写公司抬头和税号。
             </span>
           </li>
-
           <li class="pnfm">
             <div class="w cl">
               <div class="z">
-                <button type="button" name="search" class="pn pnw" style="background:#BBB;"
+                <button type="button" name="search" id="cy_success" class="pn pnw" style="background:#BBB;"
                         onclick="$('#srchlogfm').hide()" value="true">开票
                 </button>
               </div>
@@ -181,6 +294,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="creditslog">
     <ul class="pagelazy" id="page-ul">
     </ul>
@@ -188,624 +303,13 @@
 
 </div>
 <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
 
-    //获取文档高度
-    function getDocumentTop() {
-        var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
-        if (document.body) {
-            bodyScrollTop = document.body.scrollTop;
-        }
-        if (document.documentElement) {
-            documentScrollTop = document.documentElement.scrollTop;
-        }
-        scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
-        return scrollTop;
-    }
+<!-- 滑动控制区-->
+<script src="http://localhost:8080//static/html/model-app-demo/js/cy_scroll_util.js" charset="UTF-8"></script>
 
-    //可视窗口高度
-    function getWindowHeight() {
-        var windowHeight = 0;
-        if (document.compatMode == "CSS1Compat") {
-            windowHeight = document.documentElement.clientHeight;
-        } else {
-            windowHeight = document.body.clientHeight;
-        }
-        return windowHeight;
-    }
+<!--表单操作控制区-->
+<script src="http://localhost:8080//static/html/model-app-demo/js/app_kp.js" charset="UTF-8"></script>
 
-    //滚动条高度
-    function getScrollHeight() {
-        var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
-        if (document.body) {
-            bodyScrollHeight = document.body.scrollHeight;
-        }
-        if (document.documentElement) {
-            documentScrollHeight = document.documentElement.scrollHeight;
-        }
-        scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
-        return scrollHeight;
-    }
-
-    var finished = true;
-
-    $(function () {
-        var items = getItems(); //测试数据   可删除
-        // var items = getInitData(); //后台请求数据 获取集合
-        var pageSize = 5;  //初始化 当页显示总行数
-        var totalPage = getItems().length; //请求数据总行数
-        appendToHTML(items, pageSize);  //显示数据内容
-        $(window).scroll(function () {  //页面滑动至底部更新数据
-            if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
-                console.log('已滑至底部');
-                finished = false;
-                // 设置两秒请求后台
-                setTimeout(function () {
-                    finished = true;
-                    pageSize += 5;  //每请求一次增加一页显示
-                    appendToHTML(items, pageSize); //更新数据
-                    return;
-                }, 2000);
-            }
-            ;
-        });
-
-        //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
-        function ajax_http() {
-            var initItems = [];
-            var integral = $('#integral').val();
-            var starttime = $('#startTime').val();
-            var endtime = $('#endTime').val();
-            var expenses = $('#expenses').val();
-            var operation = $('#operation').val();
-            console.log('积分:' + integral + '\t 数据类型:' + typeof integral);
-            console.log('开始时间:' + starttime + '\t 数据类型:' + typeof starttime);
-            console.log('结束时间:' + endtime + '\t 数据类型:' + typeof endtime);
-            console.log('收支:' + expenses + '\t 数据类型:' + typeof expenses);
-            console.log('操作:' + operation + '\t 数据类型:' + typeof operation);
-            //请求路径及筛选值
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json?integral="+integral + "&starttime="+starttime +
-                // "&endtime="+endtime+"&expenses="+expenses+"&operation="+operation,
-                dataType: "json",
-                async: true,
-                type: "GET", //请求方式
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    console.log(JSON.stringify(res));
-                    var data_list = res.data;
-                    if (res.status == 200) {
-                        if (data_list != null && data_list != null && data_list != 'undefined') {
-                            initItems = data_list;
-                        }
-                    } else {
-                        console.dir(JSON.stringify(res));
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return initItems;
-        };
-
-        //获取初始化总参数
-        function getInitData() {
-            return ajax_http();
-        }
-
-        //页面固定显示
-        var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
-            '<div class = "cl"> <strong class = "status ffr" style = "float: left;">' + '</strong>' +
-            ' <span class = "status"><em style = "color: #8b8b8b;" ></em></span></div><dl class = "cl" style="text-align: center; font-size: 14px; color: #a6a6a6;"><p>' +
-            '暂无无更多交易记录' + '</p><dt></dt></dl><dl class = "cl mt6"><dd><span class = "status f13 ff9"></span>' + '</dd></dl></a></li>';
-
-
-        var newHtml = '<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">' +
-            '<i class="duceapp_font f17 vm3"></i> 20190917</span><strong class="status"><em class="succ">已通过</em></strong></div>' +
-            '<dl class="cl"><dt><cite style="color:"><i class="duceapp_font f15"></i> 积分 <span class="ff9">- 100</span></cite></dt>' +
-            '<dd>￥0.10</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3"></i> ' +
-            '2019-08-05 16:40:27</dt></dl></a></li>';
-
-
-        //数据内容加工显示
-        function appendToHTML(items, count) {
-            if (items.length > 0 && items.length > count) {
-                append_for(items, count);
-                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
-                    '<div class = "cl"> <strong class = "status ffr" style = "float: left;"></strong>' +
-                    ' <span class = "status"><em style = "color: #8b8b8b;"></em></span></div><dl class = "cl" style="text-align: center; font-size: 14px; color: #a6a6a6;"><p>' +
-                    '往上滑动获取更多数据</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-                    '<span class = "status f13 ff9"></span>' +
-                    '</dd></dl></a></li>');
-            } else if (count >= items.length) {
-                append_for(items, count);
-                $('#page-ul').append(li_html);
-            } else {
-                $('#page-ul').append(li_html);
-            }
-
-            function append_for(items, count) {
-                $('#page-ul').html('');
-                try {
-                    var statusHtml;
-                    for (var i = 0; i < count; i++) {
-                        var info = items[i];
-                        if (info.stauts == 1) {
-                            statusHtml = '<em class="succ">已通过</em>'
-                        } else {
-                            statusHtml = '<em class="status">未通过</em>'
-                        }
-
-                        $('#page-ul').append('<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">' +
-                            '<i class="duceapp_font f17 vm3"></i> ' + info.top_name + '</span><strong class="status">' + statusHtml + '</strong></div>' +
-                            '<dl class="cl"><dt><cite ><i class="duceapp_font f15"></i> 开票金额 :<span class="ff9"> 100</span></cite></dt>' +
-                            '<dd>￥0.10</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3"></i> ' +
-                            '2019-08-05 16:40:27</dt></dl></a></li>');
-                    }
-
-                } catch (e) {
-                    e.message;
-                    console.log(e.message);
-                }
-            }
-        }
-
-        //测试数据 可删除
-        function getItems() {
-            var items = [];
-            var no = 20190102;
-            for (let i = 1; i <= 20; i++) {
-                if (i % 2 == 0) {
-                    var param = {
-                        top_name: '税号:-' + (no + i),
-                        scope: '开票金额-' + (i * 100) + '',
-                        time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
-                        number: i * 10,
-                        stauts: 1,
-                        money: i * 0.1
-                    }
-                } else {
-                    var param = {
-                        top_name: '税号:-' + (no + i),
-                        scope: '开票金额-' + (i * 10) + '',
-                        time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
-                        number: i * 10,
-                        stauts: 0,
-                        money: i * 0.1
-                    }
-                }
-
-                items.push(param);
-            }
-            return items;
-        }
-
-    //    表单操作控制区域
-        var html = '<i style="color: red;">*</i> 此行为必填项';
-        var style = 'style="font: 12px/1.5 Tahoma, \'Microsoft Yahei\', \'Simsun\';\n' +
-            '    color: #999;\n' +
-            '    clear: both;\n' +
-            '    margin-left: 18px ;\n' +
-            '    color: #999;"\n' +
-            '    left: 10px;';
-        var success = '<svg style="margin-top: 10px;" t="1567221340551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2070" width="14" height="14"><path d="M511 69C267.4 69 69.9 266.5 69.9 510.1c0 243.6 197.5 441.1 441.1 441.1 243.6 0 441.1-197.5 441.1-441.1C952.2 266.5 754.7 69 511 69z m282 292.7L463.4 691.3l-18.6 18.6c-19.6 19.6-51.4 19.6-71 0l-18.6-18.6-126.8-126.8c-16.3-16.3-14.8-43.9 4.6-58.1 15.4-11.2 36.9-8.7 50.3 4.8l125.9 125.9 330.3-330.3c16.3-16.3 43.9-14.8 58.1 4.6 11.4 15.4 8.8 36.9-4.6 50.3z" p-id="2071" fill="#1afa29"></path></svg>';
-        var error = '<svg t="1567221892863" style=" margin-right: 3px; position: absolute; margin-top: 2px;" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2845" width="14" height="14"><path d="M664.96 630.4a32 32 0 0 1-22.4 54.72 32 32 0 0 1-22.72-9.28L506.56 562.56 393.6 675.84a32 32 0 0 1-22.72 9.28 32 32 0 0 1-22.72-9.28 32 32 0 0 1 0-45.44l113.28-112.96-113.28-113.28a32 32 0 0 1 0-45.12 32 32 0 0 1 45.44 0L506.56 472l113.28-112.96a32 32 0 1 1 45.12 45.12L552 517.44zM512 64a448 448 0 1 0 448 448A448 448 0 0 0 512 64z" p-id="2846" fill="#d81e06"></path></svg>';
-        var flag = false;
-        var flag_g = false;
-        var flag_a = false;
-        var flag_b = false;
-        var flag_c = false;
-        var flag_d = false;
-        var flag_e = false;
-        var flag_f = false;
-        var company_name_reg = /^[^\u0000-\u00FF]+[\.]?$/;
-        var invoice_code_reg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,23}$/;
-        var regNumber = /\d+/;
-        var regStringAbc = /^[a-zA-Z\u4e00-\u9fa5]+$/;
-        var regNumStrAbc = /^[/\\x{4e00}/-\/\\x{9fa5}A-Za-z0-9]+$u/;
-
-        var myMap = new Map();
-        var items = getList(); //测试数据 可删除
-
-        $('#company_name').focus(function () {
-            ajax_http();
-        });
-
-        $('#company_name').blur(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        $('#company_name').change(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        $('#invoice_code').blur(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        $('#bank_code').blur(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        $('#bank').blur(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        $('#company_address').blur(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        $('#contact_name').blur(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        $('#amount').blur(function () {
-            //SUCCESS
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-            } else {
-                CY_ERROR_CSS;
-            }
-        });
-
-        function appendToHtml(res, $dom) {
-            // items = res;
-            for (let i = 0; i < items.length; i++) {
-                var obj = items[i];
-                var html = '<li value="' + obj.company_name + '" ' + '' +
-                    ' class="hide-li-selected"' +
-                    '" style="cursor: pointer;\n' +
-                    '    padding-left: 10px;"' +
-                    '   height: 20px;>' + obj.company_name + '</li>'
-                $dom.append(html);
-                myMap.set(obj.company_name, items[i]);
-            }
-        }
-
-        function showChilden($parent) {
-            var $dom = $parent.next().show();
-            $('.hide-li-selected').click(function () {
-                var $son = $(this);
-                var f = $son.text();
-                $parent.val(f);
-                //SUCCESS
-                if (!reg_test(company_name_reg, f)) {
-                    $('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
-                } else {
-                    $('#company_name_font').html(success);
-                    flag_a = true;
-                    if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                        CY_SUCCESS_CSS();
-                    }
-                }
-                ;
-                $dom.hide();
-            });
-        }
-
-        function selectHover() {
-            $(".hide-li-selected").hover(
-                function () {
-                    $(this).css({'background': '#f6f6f6'});
-                },
-                function () {
-                    $(this).css({'background': '#FFFFFF'});
-                }
-            );
-        }
-
-        function selected($parent, myMap) {
-            $('.hide-li-selected').click(function () {
-                var $son = $(this);
-                var f = $son.text();
-                $parent.val(f);
-                var obj = myMap.get(f);
-                $('[name="invoice_code"]').val(obj.invoice_code);
-                $('[name="bank"]').val(obj.bank);
-                $('[name="bank_code"]').val(obj.bank_code);
-                $('[name="contact_name"]').val(obj.contact_name);
-                $('[name="company_address"]').val(obj.company_address);
-                $('[name="amount"]').val(obj.amount);
-                $('.hide-select').hide();
-
-                //正则判断
-                if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                    CY_SUCCESS_CSS();
-                }
-
-            });
-        }
-
-        $(document).bind('click', function (event) {
-            event.stopPropagation();
-            var tar = event.target;
-            if ($(tar).closest('#company_name').length == 0) {
-                $('#hide-select').hide();
-            } else {
-                $('#hide-select').show();
-            }
-        });
-
-        //提交
-        $('#cy_form').submit(function () {
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                return true;
-            }
-            return false;
-        });
-
-
-        function exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc) {
-            var bool_b, bool_d, bool_e, bool_f, bool_g = false;
-            var bool_a = false;
-            var bool_c = false;
-            var company_name = $('#company_name').val();
-            var invoice_code = $('#invoice_code').val();
-            var bank_code = $('#bank_code').val();
-            var bank = $('#bank').val();
-            var contact_name = $('#contact_name').val();
-            var company_address = $('#company_address').val();
-            var amount = $('#amount').val();
-
-            //SUCCESS
-            if (!is_Empty(company_name)) {
-                if (!reg_test(company_name_reg, company_name)) {
-                    $('#company_name_font').html(error + '<em ' + style + ' >公司名只能由汉字组成和中文符号组成</em>');
-                    CY_ERROR_CSS();
-                } else {
-                    $('#company_name_font').html(success);
-                    bool_a = true;
-                }
-                ;
-            }
-            ;
-
-            //SUCCESS
-            if (!is_Empty(invoice_code)) {
-                if (!reg_test(invoice_code_reg, invoice_code)) {
-                    $('#invoice_code_font').html(error + '<em ' + style + ' >税号只能由字母和数字组成</em>');
-                    CY_ERROR_CSS();
-                } else {
-                    $('#invoice_code_font').html(success);
-                    bool_b = true;
-                }
-                ;
-            }
-            ;
-
-            //SUCCESS
-            if (!is_Empty(bank_code)) {
-                if (!reg_test(invoice_code_reg, bank_code)) {
-                    $('#bank_code_font').html(error + '<em ' + style + ' >开户行账号只能由字母和数字组成</em>');
-                    CY_ERROR_CSS();
-                } else {
-                    $('#bank_code_font').html(success);
-                    bool_c = true;
-                }
-                ;
-            } else {
-                $('#bank_code_font').html('');
-            }
-            ;
-
-            // SUCCESS
-            if (!is_Empty(bank)) {
-                if (reg_test(regNumStrAbc, bank)) {
-                    $('#bank_font').html(error + '<em ' + style + ' >开户行由汉字、字母、数字组成</em>');
-                    CY_ERROR_CSS();
-                } else {
-                    $('#bank_font').html(success);
-                    bool_d = true;
-                }
-                ;
-            } else {
-                $('#bank_font').html('');
-            }
-            ;
-
-            //SUCCESS
-            if (!is_Empty(contact_name)) {
-                if (!reg_test(regStringAbc, contact_name)) {
-                    $('#contact_name_font').html(error + '<em ' + style + ' >联系人姓名由汉字、字母组成</em>');
-                    CY_ERROR_CSS();
-                } else {
-                    $('#contact_name_font').html(success);
-                    bool_e = true;
-                }
-                ;
-            } else {
-                $('#contact_name_font').html('');
-            }
-            ;
-
-            //SUCCESS
-            if (!is_Empty(company_address)) {
-                if (reg_test(regNumStrAbc, company_address)) {
-                    $('#company_address_font').html(error + '<em ' + style + ' >公司地址由汉字、字母、数字组成</em>');
-                    CY_ERROR_CSS();
-                } else {
-                    $('#company_address_font').html(success);
-                    bool_f = true;
-                }
-                ;
-            } else {
-                $('#contact_name_font').html('');
-            }
-            ;
-
-            var count = Number(amount);//输入金额
-            var duceapp_all_amount = 0;//充值总金额
-            if (count > duceapp_all_amount) {
-                $('#amount_font').html(error + '<em ' + style + ' >开票金额必须小于等于充值总金额 &nbsp; 当前充值总金额 = ' + duceapp_all_amount + ' </em>');
-                CY_ERROR_CSS();
-            } else {
-                $('#amount_font').html(success);
-                bool_g = true;
-            }
-            ;
-            console.log('bool_a:' + bool_a + '\nbool_b:' + bool_b + '\nbool_c:' + bool_c
-                + '\nbool_d:' + bool_d + '\nbool_e:' + bool_e + '\nbool_f:' + bool_f + '\nbool_g:' + bool_g);
-
-            if (bool_a && bool_b && bool_c && bool_d && bool_e && bool_f && bool_g) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        function reg_test(reg, text) {
-            if (reg.test(text)) {
-                return true;
-            }
-            return false;
-        }
-
-        function is_Empty(val) {
-            if (val == '' || val == null) {
-                return true;
-            }
-            return false;
-        }
-
-        function getList() {
-            return [
-                {
-                    "company_name": "科技",
-                    "invoice_code": "XD2019001122",
-                    "bank": "宁波银行",
-                    "bank_code": "NBBK",
-                    "contact_name": "陈育",
-                    "company_address": "宁波市北仑区博地影视",
-                    "amount": "100.1"
-                },
-                {
-                    "company_name": "科技",
-                    "invoice_code": "XD2019001123",
-                    "bank": "温州银行",
-                    "bank_code": "WZBK001",
-                    "contact_name": "陈忆",
-                    "company_address": "宁波市北仑区银泰",
-                    "amount": "0"
-                }
-            ];
-        }
-
-        function CY_SUCCESS_CSS() {
-            $('#cy_success').css({'background': '#f2f2f2'});
-            $('#cy_success').attr('disabled', false);
-            $('#cy_success').attr('title', '可以提交啦!');
-        }
-
-        function CY_ERROR_CSS() {
-            $('#cy_success').css({'background': '#666666'});
-            $('#cy_success').attr('disabled', true);
-            $('#cy_success').attr('title', '输入不合法，请检查！');
-        }
-
-        //实时监听用户输入值
-        //输入框值实时更改后停顿0.5秒触发
-        $("#company_name").bind('input porpertychange', function (e) {
-            var lastTime = e.timeStamp;
-            console.log('已过: 0.5秒');
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-                setTimeout(function () {
-                    if (lastTime - e.timeStamp == 0) {
-                        // alert("0.5秒内没有修改了，可以发送请求了");
-                        ajax_http();
-                    }
-                }, 500);
-            } else {
-                CY_ERROR_CSS();
-            }
-        });
-
-        //键盘敲击停顿0.5秒触发
-        $('#company_name').keyup(function (e) {
-            var lastTime = e.timeStamp;
-            console.log('已过: 0.5秒');
-            if (exec(company_name_reg, invoice_code_reg, regNumber, regStringAbc, regNumStrAbc)) {
-                CY_SUCCESS_CSS();
-                setTimeout(function () {
-                    if (lastTime - e.timeStamp == 0) {
-                        // alert("0.5秒内没再输入，可以发送请求了");
-                        ajax_http();
-                    }
-                }, 500);
-            } else {
-                CY_ERROR_CSS();
-            }
-        });
-
-        function ajax_http() {
-            var company_name = $('#company_name').val();
-            var $parent = $('#company_name');
-            var $dom = $parent.next();
-            $dom.html('');
-            $.ajax({
-                //url: "http://localhost:8080/static/data/demo.json",  //请求路径
-                dataType: "json",
-                async: true,
-                // data: {"company_name": company_name },
-                type: "POST", //请求方式
-                contentType: "application/json;charset=UTF-8",
-                success: function (res) {
-                    appendToHtml(res, $dom);
-                    showChilden($parent);
-                    selectHover();
-                    selected($parent, myMap);
-                },
-                error: function (err) {
-                    //异常函数内调用函数 测试使用 可删除
-                    appendToHtml(err, $dom);
-                    showChilden($parent);
-                    selectHover();
-                    selected($parent, myMap);
-                    console.log(err);
-                }
-            });
-        }
-
-
-
-    });
-</script>
 <div class="maskmenu" style="display:none;"></div>
 </div>
 <div id="mask" style="display:none;"></div>

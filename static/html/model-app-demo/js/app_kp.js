@@ -1,6 +1,7 @@
 var $ = jQuery.noConflict(false);
 
 $(function () {
+  var getDateUrl = '';
   var html = '<i style="color: red;">*</i> 此行为必填项';
   var style = 'style="font: 12px/1.5 Tahoma, \'Microsoft Yahei\', \'Simsun\';\n' +
     '    clear: both;\n' +
@@ -397,7 +398,7 @@ $(function () {
     var $dom = $parent.next();
     $dom.html('');
     $.ajax({
-      //url: "http://localhost:8080/static/data/demo.json",  //请求路径
+      url: getDateUrl,  //请求路径
       dataType: "json",
       async: true,
       // data: {"company_name": company_name },

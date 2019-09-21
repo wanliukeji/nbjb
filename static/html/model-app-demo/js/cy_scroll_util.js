@@ -1,4 +1,3 @@
-
 // 页面滑动控制区域
 //获取文档高度
 function getDocumentTop() {
@@ -37,17 +36,18 @@ function getScrollHeight() {
   return scrollHeight;
 }
 
-var finished = true;
-
 $(function () {
-  var items = getItems(); //测试数据   可删除
-  // var items = getInitData(); //后台请求数据 获取集合
+  var finished = true;
+  var getDateUrl = '';
+  var items = [];
+  var totalPage = 0;
+  ajax_http();
+  items = getItems(); //测试数据   可删除
   var pageSize = 5;  //初始化 当页显示总行数
-  var totalPage = getItems().length; //请求数据总行数
+  totalPage = getItems().length; //请求数据总行数
   appendToHTML(items, pageSize);  //显示数据内容
   $(window).scroll(function () {  //页面滑动至底部更新数据
     if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
-      console.log('已滑至底部');
       finished = false;
       // 设置两秒请求后台
       setTimeout(function () {
@@ -60,43 +60,31 @@ $(function () {
     ;
   });
 
-  //查询 数据 异步实时更新显示
-  $('#searchsubmit').click(function () {
-    // items = ajax_http();
-    appendToHTML(items, 5);
-  });
-
   //请求后台数据 仅用于积分记录查询 一下全部为字符串类型
   function ajax_http() {
     //请求路径及筛选值
     $.ajax({
-      //url: "http://localhost:8080/static/data/demo.json"
+      url: getDateUrl,
       dataType: "json",
       async: true,
       type: "GET", //请求方式
       contentType: "application/json;charset=UTF-8",
       success: function (res) {
-        console.log(JSON.stringify(res));
         var data_list = res.data;
         if (res.status == 200) {
-          if (data_list != null && data_list != null && data_list != 'undefined') {
-            initItems = data_list;
+          items = data_list;
+          if (items != null) {
+            totalPage = items.length;
           }
         } else {
-          console.dir(JSON.stringify(res));
+          console.log('获取数据失败');
         }
       },
       error: function (err) {
         console.log(err);
       }
     });
-    return initItems;
   };
-
-  //获取初始化总参数
-  function getInitData() {
-    return ajax_http();
-  }
 
   //页面固定显示
   var li_html = '<li class = "bga bh_e f14"><a href = "#">' +
@@ -136,50 +124,47 @@ $(function () {
         for (var i = 0; i < count; i++) {
           var info = items[i];
           if (info.stauts == 1) {
-            statusHtml = '<em class="succ">已通过</em>'
+            statusHtml = '<em class="succ">成功</em>'
           } else {
-            statusHtml = '<em class="status">未通过</em>'
+            statusHtml = '<em class="status">失败</em>'
           }
 
-          $('#page-ul').append('<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">' +
-            '<i class="duceapp_font f17 vm3"></i> ' + info.top_name + '</span><strong class="status">' + statusHtml + '</strong></div>' +
-            '<dl class="cl"><dt><cite ><i class="duceapp_font f15"></i> 开票金额 :<span class="ff9"> 100</span></cite></dt>' +
-            '<dd>￥0.10</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"><i class="duceapp_font f15 vm3"></i> ' +
-            '2019-08-05 16:40:27</dt></dl></a></li>');
+          $('#page-ul').append('<li class="bga bh_e f14"><a href="#"><div class="cl"><span class="f13 ff9" style="white-space:nowarp">'
+            + info.company_name + '</span><strong class="status">' + statusHtml + '</strong></div>' +
+            '<dl class="cl"><dt><cite > 开票金额 :<span class="ff9"> ' + info.amount + '</span></cite></dt> ' +
+            '<dt><cite > &nbsp;&nbsp;联系人 :<span class="ff9"> ' + info.contact_name + '</span></cite></dt>' +
+            '<dd> ' + info.amount + '</dd></dl><dl class="cl mt6"><dt class="status f13 ff9" style="line-height:26px;"> ' +
+            info.time + '</dt></dl></a></li>');
         }
-
       } catch (e) {
-        e.message;
-        console.log(e.message);
+        console.log(e);
       }
     }
   }
 
   //测试数据 可删除
   function getItems() {
-    var items = [];
-    var no = 20190102;
     for (let i = 1; i <= 20; i++) {
+      var param = {};
       if (i % 2 == 0) {
-        var param = {
-          top_name: '税号:-' + (no + i),
-          scope: '开票金额-' + (i * 100) + '',
-          time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
-          number: i * 10,
-          stauts: 1,
-          money: i * 0.1
+        param = {
+          company_name: "镇海银泰",
+          invoice_code: "DDL331231",
+          contact_name: "陈司",
+          stauts: 0,
+          amount: 0.1,
+          time: '2019-09-10 12:07:23'
         }
       } else {
-        var param = {
-          top_name: '税号:-' + (no + i),
-          scope: '开票金额-' + (i * 10) + '',
-          time: new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay(),
-          number: i * 10,
-          stauts: 0,
-          money: i * 0.1
+        param = {
+          company_name: "北仑银泰",
+          invoice_code: "DDL331231",
+          contact_name: "陈广",
+          stauts: 1,
+          amount: 100.1,
+          time: '2019-09-10 12:07:23'
         }
       }
-
       items.push(param);
     }
     return items;
