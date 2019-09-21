@@ -177,8 +177,7 @@
   </div>
 
   <div id="srchlogfm" class="srchlogfm bga" style="margin-top: -1px;">
-    <!--    <form method="post" action="plugin.php?id=duceapp_scorebuy:tradelog">-->
-    <div id="cy_form">
+    <form method="post" id="cy_form" action="plugin.php?id=duceapp_scorebuy:tradelog">
       <div class="bform tform sjno">
         <ul class="with optinit in65">
 
@@ -282,7 +281,7 @@
             <div class="w cl">
               <div class="z">
                 <button type="button" name="search" id="cy_success" class="pn pnw" style="background:#BBB;"
-                        onclick="$('#srchlogfm').hide()" value="true">开票
+                        onclick="$('#srchlogfm').hide()" disabled>开票
                 </button>
               </div>
               <div class="y">
@@ -292,7 +291,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </form>
   </div>
 
 

@@ -120,7 +120,7 @@ $(function () {
     function append_for(items, count) {
       $('#page-ul').html('');
       try {
-        var statusHtml;
+        var statusHtml = '';
         for (var i = 0; i < count; i++) {
           var info = items[i];
           if (info.stauts == 1) {
