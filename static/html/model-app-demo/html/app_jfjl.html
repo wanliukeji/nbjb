@@ -87,7 +87,7 @@
       <h2>积分记录</h2>
     </div>
   </div>
-<!-- 已修改模块 -->
+  <!-- 已修改模块 -->
   <div class="tbbox tbscrl tbbox2 form-hiden">
     <div class="tabs tbfxd tab-ul">
       <div class="tab bi_d bga">
@@ -257,9 +257,10 @@
         items = getItems(); //测试数据   可删除
         // var items = getInitData(); //后台请求数据 获取集合
         var pageSize = 5;  //初始化 当页显示总行数
-        var totalPage = 0;
+        var totalPage = 0; //总行数
+        var current = 0; //起始页
         totalPage = getItems().length; //请求数据总行数 可删除
-        appendToHTML(items, pageSize);  //显示数据内容
+        appendToHTML(items, pageSize, current);  //显示数据内容
         $(window).scroll(function () {  //页面滑动至底部更新数据
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
                 console.log('已滑至底部');
@@ -267,10 +268,12 @@
                 // 设置两秒请求后台
                 setTimeout(function () {
                     finished = true;
+                    current = pageSize;
                     pageSize += 5;  //每请求一次增加一页显示
-                    appendToHTML(items, pageSize); //更新数据
+                    // ajax_http();
+                    appendToHTML(items, pageSize, current); //更新数据
                     return;
-                }, 2000);
+                }, 1500);
             }
             ;
         });
@@ -290,7 +293,7 @@
             var operation = $('#operation').val();
             //请求路径及筛选值
             $.ajax({
-                url: getDateUrl + "?integral = " + integral + "&starttime=" + starttime + "&endtime=" + endtime + "&expenses=" + expenses + "&operation=" + operation,
+                url: getDateUrl + "?integral = " + integral + "&starttime=" + starttime + "&endtime=" + endtime + "&expenses=" + expenses + "&operation=" + operation + "pageSize" + pageSize + "current" + current,
                 dataType: "json",
                 async: true,
                 type: "GET", //请求方式
@@ -299,7 +302,7 @@
                     var data_list = res.data;
                     if (res.status == 200) {
                         items = data_list;
-                        if (items != null ) {
+                        if (items != null) {
                             totalPage = items.length;
                         }
                     } else {
@@ -343,7 +346,7 @@
                 success: function (res) {
                     var data_list = res.data;
                     if (res.status == 200) {
-                            Integrals = data_list;
+                        Integrals = data_list;
                     } else {
                         console.log('获取数据失败');
                     }
@@ -364,7 +367,7 @@
             ];
 
             $.ajax({
-                url: getExpensesUrl,  //请求路径
+                //url: getExpensesUrl,  //请求路径
                 dataType: "json",
                 async: true,
                 type: "POST", //请求方式
@@ -372,9 +375,9 @@
                 success: function (res) {
                     var data_list = res.data;
                     if (res.status == 200) {
-                            expenses = data_list;
+                        expenses = data_list;
                     } else {
-                          console.log('获取数据失败');
+                        console.log('获取数据失败');
                     }
                 },
                 error: function (err) {
@@ -403,7 +406,7 @@
                 success: function (res) {
                     var data_list = res.data;
                     if (res.status == 200) {
-                            operations = data_list;
+                        operations = data_list;
                     } else {
                         console.log('数据获取失败');
                     }
@@ -433,28 +436,18 @@
             '暂无无更多交易记录' + '</p><dt></dt></dl><dl class = "cl mt6"><dd><span class = "status f13 ff9"></span>' + '</dd></dl></a></li>';
 
         //数据内容加工显示
-        function appendToHTML(items, count) {
-            if (items.length > 0 && items.length > count) {
-                append_for(items, count);
-                $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
-                    '<div class = "cl"> <strong class = "status ffr" style = "float: left;"></strong>' +
-                    ' <span class = "status"><em style = "color: #8b8b8b;"></em></span></div><dl class = "cl" style="text-align: center; font-size: 14px; color: #a6a6a6;"><p>' +
-                    '往上滑动获取更多数据</p><dt></dt></dl><dl class = "cl mt6"><dd>' +
-                    '<span class = "status f13 ff9"></span>' +
-                    '</dd></dl></a></li>');
-            } else if (count >= items.length) {
-                append_for(items, count);
-                $('#page-ul').append(li_html);
-            } else {
-                $('#page-ul').append(li_html);
+        function appendToHTML(items, pageSize, current) {
+            if (items.length > 0 && items.length > pageSize) {
+                append_for(items, pageSize, current);
+            } else if (pageSize >= items.length) {
+                append_for(items, pageSize, current);
             }
 
-            function append_for(items, count) {
-                $('#page-ul').html('');
+            function append_for(items, pageSize, current) {
                 var z_style = 'style="color: red;"';
                 var f_style = 'style="color: black;"';
                 try {
-                    for (var i = 0; i < count; i++) {
+                    for (var i = current; i < pageSize; i++) {
                         var info = items[i];
                         if (info.number > 0) {
                             $('#page-ul').append('<li class = "bga bh_e f14"><a href = "">' +
@@ -479,7 +472,7 @@
         //测试数据 可删除
         function getItems() {
             var items = [];
-            for (let i = 1; i <= 20; i++) {
+            for (let i = 1; i <= 10; i++) {
                 var param = {
                     top_name: '购买积分',
                     remark: '购买 涂鸦板 积分',

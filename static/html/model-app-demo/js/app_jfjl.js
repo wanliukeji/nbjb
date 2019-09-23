@@ -46,7 +46,6 @@ $(function () {
   appendToHTML(items, pageSize);  //显示数据内容
   $(window).scroll(function () {  //页面滑动至底部更新数据
     if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
-      console.log('已滑至底部');
       finished = false;
       // 设置两秒请求后台
       setTimeout(function () {
@@ -73,11 +72,7 @@ $(function () {
     var endtime = $('#endTime').val();
     var expenses = $('#expenses').val();
     var operation = $('#operation').val();
-    console.log('积分:' + integral + '\t 数据类型:' + typeof integral);
-    console.log('开始时间:' + starttime + '\t 数据类型:' + typeof starttime);
-    console.log('结束时间:' + endtime + '\t 数据类型:' + typeof endtime);
-    console.log('收支:' + expenses + '\t 数据类型:' + typeof expenses);
-    console.log('操作:' + operation + '\t 数据类型:' + typeof operation);
+
     //请求路径及筛选值
     $.ajax({
       //url: "http://localhost:8080/static/data/demo.json?integral="+integral + "&starttime="+starttime +
