@@ -44,6 +44,7 @@
     html {
       background-color: #FFFFFF;
     }
+
     .top-span {
       margin-top: 10px;
     }
@@ -119,6 +120,16 @@
     <ul class="pagelazy" id="page-ul">
     </ul>
   </div>
+  <div class="duceapp_page hc">
+    <div class="page"><a href="javascript:;" class="grey">上一页</a>
+      <a id="select_a" style="margin:0 2px;padding:1px 0 0 0;border:0;display:inline-block;position:relative;width:100px;height:31px;line-height:27px;background:url(static//image/mobile/images/pic_select.png) no-repeat;text-align:left;text-indent:20px;"><select
+      id="dumppage" style="position:absolute;left:0;top:0;height:27px;opacity:0;width:100px;">
+      <option value="1" selected="">第1页</option>
+      <option value="2">第2页</option>
+      <option value="3">第3页</option>
+    </select><span>第1页</span></a><a
+      href="https://bbs.cnnb.com/plugin.php?id=duceapp_scorebuy:tradelog&amp;page=2&amp;mobile=2">下一页</a></div>
+  </div>
   <script src="source/plugin/duceapp_base/static/js/optinit.js?FKK" type="text/javascript" charset="utf-8"></script>
   <div class="maskmenu" style="display:none;"></div>
 </div>
@@ -172,48 +183,38 @@
         items = getItems();
         // items = ajax_http(); //获取数据函数
         var totalPage = 0;
-        totalPage = getItems().length; //总分页数
-        appendToHTML(items, 5);
         var pageSize = 5;
+        var current = 0; //起始页
+        totalPage = getItems().length; //总分页数
+        appendToHTML(items, pageSize, current);
         $(document).scroll(function () {
             if (finished && getScrollHeight() >= (getWindowHeight() + getDocumentTop()) && pageSize <= totalPage) {
                 finished = false;
-                // ajax_function()
                 setTimeout(function () {
                     finished = true;
+                    current = pageSize;
                     pageSize += 5;
-                    appendToHTML(items , pageSize);
+                    appendToHTML(items, pageSize, current);
                     return;
                 }, 2000);
             }
             ;
         });
 
-        var li_html = '<li class="bga bh_e f14"><a><div class="cl"><span class="status" style="float: left; color: #373cff;">' +
-            '</span><strong class="status"><em class="succ"></em></strong></div>' +
-            '<dl class = "cl"><P style="font-size: 14px; color: #a6a6a6; text-align: center;">已无更多交易数据</P><dt></dt></dl><dl class="cl mt6">' +
-            '<dt class="f13 ff9" style="line-height:26px; float: right;' + ' border: 1px black solid;"></dt></dl></a></li>';
-
-        function appendToHTML(items, count) {
-            if (items.length > 0 && items.length > count) {
-                append_for(items, count);
-                $('#page-ul').append('<li class="bga bh_e f14"><a><div class="cl"><span class="status" style="float: left; color: #373cff;">' +
-                    '</span><strong class="status"><em class="succ"></em></strong></div>' +
-                    '<dl class = "cl"><P style="font-size: 14px; color: #a6a6a6; text-align: center;">往上滑动获取更多数据</P><dt></dt></dl><dl class="cl mt6">' +
-                    '<dt class="f13 ff9" style="line-height:26px; float: right;' + ' border: 1px black solid;"></dt></dl></a></li>');
-
-            } else if (count >= items.length) {
-                    append_for(items, count);
-                    $('#page-ul').append(li_html);
-            } else {
-                $('#page-ul').append(li_html);
+        function appendToHTML(items, pageSize, current) {
+            console.log(pageSize);
+            console.log(current);
+            if (items.length > 0 && items.length > pageSize) {
+                append_for(items, pageSize, current);
+            } else if (pageSize >= items.length) {
+                append_for(items, pageSize, current);
             }
 
-            function append_for(items, count) {
-                $('#page-ul').html('');
+            function append_for(items, pageSize, current) {
                 try {
-                    for (var i = 0; i < count; i++) {
+                    for (var i = current; i < pageSize; i++) {
                         var info = items[i];
+                        console.log(info);
                         $('#page-ul').append('<li class="bga bh_e f14"><a><div class="cl"><span class="status" style="float: left; color: #373cff;">' + info.top_name +
                             '</span><strong class="status"><em class="succ">每天登录</em></strong></div><dl class="cl"><dt style="word-break: break-word; width: 70%;">' +
                             '<span style="margin-right: 10px; color: #999;">总次数：' + info.total + '</span> <span style="margin-right: 10px; color: #999;">周期次数：' + info.z_num + '</span>' +
@@ -248,7 +249,7 @@
         function ajax_http() {
             //请求路径及筛选值
             $.ajax({
-                url: getDateUrl,
+                url: getDateUrl + '?pageSize=' + pageSize + 'current=' + current,
                 dataType: "json",
                 async: true,
                 type: "GET", //请求方式
