@@ -52,10 +52,12 @@
           <table>
             <tr>
               <td>微信公众号</td>
+              <td width="20"></td>
               <td>APP客户端</td>
             </tr>
             <tr>
               <td><img src="/static/image/weixin.png" class="footer-img"/></td>
+              <td></td>
               <td><img src="/static/image/app.png" class="footer-img"/></td>
             </tr>
           </table>
@@ -117,7 +119,8 @@
       </div>
 
       <div class="footer-bottom-index">
-        Powered by <span style="color: black; font-size: 12px; font-weight: 10px; ">Discuz</span>! X3.4 © 2001-2017 Comsenz Inc.   GMT+8, 2019-8-26 09:36 , Processed in 0.085814 second(s), 1 queries , MemCache On.
+        Powered by <span style="color: black; font-size: 12px; font-weight: 10px; ">Discuz</span>! X3.4 © 2001-2017
+        Comsenz Inc. GMT+8, 2019-8-26 09:36 , Processed in 0.085814 second(s), 1 queries , MemCache On.
       </div>
     </div>
   </div>
@@ -193,7 +196,7 @@
     text-align: center;
     line-height: 35px;
     font-size: 16px;
-    font-family: Tahoma,'Microsoft Yahei','Simsun';;
+    font-family: Tahoma, 'Microsoft Yahei', 'Simsun';;
     color: #606060;
   }
 
@@ -246,7 +249,7 @@
     text-align: center;
   }
 
-  .footer-bottom-span {
+  .footer-bottom-span > a {
     width: auto;
     font-size: 11px;
     padding: 5px;
@@ -270,7 +273,11 @@
     color: #898989;
   }
 
-  .footer-bottom-index>a:hover {
+  .footer-bottom-index > a {
+    color: #ffffff;
+  }
+
+  .footer-bottom-index > a:hover {
     background: #ffffff;
   }
 </style>

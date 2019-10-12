@@ -179,6 +179,11 @@
     background: #399bf3;
   }
 
+  .td-font-1 > a, .td-font-2 > a, .td-font-3 > a,.td-font-4 > a, .td-font-5 > a{
+    font: 16px Tahoma, 'Microsoft Yahei', 'Simsun';
+    color: #FFFFFF;
+  }
+
   td {
     width: 54px;
     height: 29.6px;
@@ -187,6 +192,7 @@
   a {
     font: 11px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
     text-decoration: none;
+    color: #333;
   }
 
   img {

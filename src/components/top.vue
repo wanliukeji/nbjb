@@ -447,5 +447,9 @@
     cursor: pointer;
   }
 
+  a {
+    color: #333;
+  }
+
 
 </style>

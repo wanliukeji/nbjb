@@ -535,7 +535,6 @@
         <li class="nav-bottom-li">
           <img src="/static/image/hg.jpg" class="nav-bottom-li-img" alt="">
         </li>
-
       </ul>
     </div>
     <div class="model-div">
@@ -1429,6 +1428,7 @@
   }
 
   .model {
+    margin: 0 auto;
     height: auto;
     width: 80%;
     min-width: 1200px;
@@ -1665,7 +1665,7 @@
   }
 
   .nav-bottom-ul {
-    position: absolute;
+    position: relative;
     width: 100%;
     min-width: 1200px;
   }
