@@ -50,17 +50,17 @@
           </CarouselItem>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://img2.imgtn.bdimg.com/it/u=4063006253,1928366161&fm=26&gp=0.jpg" alt="" class="head-img">
+              <img src="/static/image/google.jpg" alt="" class="head-img">
             </div>
           </CarouselItem>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://img0.imgtn.bdimg.com/it/u=145540326,2805203100&fm=26&gp=0.jpg" alt="" class="head-img">
+              <img src="/static/image/microsoft.jpg" alt="" class="head-img">
             </div>
           </CarouselItem>
           <CarouselItem>
             <div class="demo-carousel">
-              <img src="http://img0.imgtn.bdimg.com/it/u=2293682190,302752326&fm=26&gp=0.jpg" alt="" class="head-img">
+              <img src="/static/image/aali.jpg" alt="" class="head-img">
             </div>
           </CarouselItem>
         </Carousel>
@@ -1156,7 +1156,6 @@
     width: 680px;
     display: inline-block;
     margin: 0 auto;
-    margin-left: 0;
     float: left;
     -moz-box-shadow: 0px 5px #cfcfcf;
     box-shadow: 0px 5px #cfcfcf;
@@ -1167,6 +1166,7 @@
     width: 100%;
     min-height: 100px;
     margin-top: 15px;
+    border: black 1px solid;
   }
 
   .hidden-div {
@@ -1337,11 +1337,12 @@
     height: auto;
     display: inline-block;
     float: left;
+    border: black 1px solid;
   }
 
   .nav-bottom-li-img {
-    width: 240px;
-    height: 98px;
+    min-width: 240px;
+    height: 110px;
   }
 
   .model-div {

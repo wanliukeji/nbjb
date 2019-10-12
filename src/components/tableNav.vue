@@ -93,7 +93,7 @@
       </table>
     </div>
     <!--        <img src="/static/image/timg.jpg" alt="" width="1200" height="70">-->
-            <img src="/static/image/fuli.gif" alt="" width="1200" height="70">
+            <img src="/static/image/fuli.gif">
   </div>
 
 </template>
@@ -197,6 +197,9 @@
 
   img {
     margin-top: 10px;
+    min-width: 1200px;
+    width: 80%;
+    height: 70px;
   }
 
   td:hover {
