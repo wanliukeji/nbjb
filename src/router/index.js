@@ -10,7 +10,7 @@ export default new Router({
   /* 进行路由配置，规定“/”引入到组件 */
   routes: [
     {
-      path: '/home',
+      path: '/index',
       name: 'home',
       meta: {
         title: "首页"

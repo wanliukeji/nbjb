@@ -1,19 +1,12 @@
 <template lang="html">
   <div class="container-body">
-<!--    -->
-<!--    <top/>-->
-<!--    <search/>-->
-<!--    <menu-nav/>-->
-<!--    <table-nav/>-->
-<!--    <job-nav/>-->
-<!--    <footer-table/>-->
-<!--    <footerNav/>-->
     <top/>
     <search/>
     <menu-nav/>
     <table-nav/>
-    <router-view/>
-    <index/>
+    <job-nav/>
+    <footer-table/>
+    <footerNav/>
   </div>
 </template>
 <script>
@@ -24,7 +17,6 @@
     import MenuNav from "./components/menuNav";
     import FooterTable from "./components/footerTable";
     import footerNav from "./components/footerNav";
-    import index from "./components/index";
     export default {
         data() {
             return {
@@ -38,8 +30,7 @@
             Top,
             Search,
             JobNav,
-            footerNav,
-            index
+            footerNav
         },
         created() {
             this.activeDate = (new Date()).toString();
