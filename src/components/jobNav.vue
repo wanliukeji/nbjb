@@ -1523,10 +1523,9 @@
   .hidden-div {
     width: 680px;
     height: 440px;
-    border: #1c8ce9 0.5px solid;
     position: absolute;
     z-index: 10;
-    left: 270px;
+    left: 422px;
     top: auto;
     display: none;
     background: #FFFFFF;
