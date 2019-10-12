@@ -1,6 +1,5 @@
 <template lang="html">
   <div>
-
     <job-nav/>
     <footer-table/>
     <footerNav/>
