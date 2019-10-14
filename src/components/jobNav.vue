@@ -137,13 +137,13 @@
         </div>
       </div>
     </div>
+    <br>
     <div class="nav-bottom">
       <ul class="nav-bottom-ul">
         <li class="nav-bottom-li">
           <a href="">
             <img
-              src="/static/image/google.jpg"
-              class="nav-bottom-li-img" alt="">
+              src="/static/image/google.jpg" class="nav-bottom-li-img">
           </a>
         </li>
         <li class="nav-bottom-li">
@@ -1041,7 +1041,6 @@
         </Tabs>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -1088,7 +1087,6 @@
     }
 </script>
 
-
 <style scoped>
   .model {
     margin: 0 auto;
@@ -1100,13 +1098,15 @@
 
   .model-head {
     margin-top: 8px;
-    width: 80%;
+    width: 100%;
     height: 460px;
     min-width: 1200px;
+    white-space: nowrap;
   }
 
   .head-img {
-    width: 685px;
+    width: 100%;
+    min-width: 685px;
     height: 440px;
   }
 
@@ -1117,7 +1117,8 @@
 
   .nav-left {
     position: relative;
-    width: 270px;
+    min-width: 270px;
+    width: 25%;
     height: 440px;
     z-index: 2;
     background: #1c8ce9;
@@ -1153,7 +1154,8 @@
     height: 440px;
     overflow: hidden;
     position: relative;
-    width: 680px;
+    min-width: 680px;
+    width: 50%;
     display: inline-block;
     margin: 0 auto;
     margin-left: 0;
@@ -1163,10 +1165,12 @@
   }
 
   .nav-bottom {
+    padding: 0;
     height: auto;
     width: 100%;
     min-height: 100px;
     margin-top: 15px;
+    display: block;
   }
 
   .hidden-div {
@@ -1236,11 +1240,10 @@
   }
 
   .nav-right {
-    width: 250px;
-    padding: 20px;
+    width: auto;
+    padding: 0 auto;
     height: 440px;
     position: relative;
-    display: inline-block;
     background: #FFFFFF;
     -webkit-border-top-right-radius: 8px;
     -moz-border-top-right-radius: 8px;
@@ -1248,30 +1251,36 @@
     -webkit-border-bottom-right-radius: 8px;
     -moz-border-bottom-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    float: left;
     -moz-box-shadow: 5px 5px #cfcfcf;
     box-shadow: 5px 5px #cfcfcf;
     overflow-y: hidden;
+    margin: 0 auto;
   }
 
   .nav-right-tab {
     float: left;
     position: relative;
     top: -20px;
+    margin: 20px;
   }
 
   .nav-right-btn-div {
     position: absolute;
     z-index: 10;
     bottom: 18px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
   }
 
   .nav-right-btn {
     display: block;
-    margin-top: 10px;
-    width: 210px;
+    width: 80%;
     font-size: 16px;
     padding: 3px;
+    margin: 0 auto;
+    margin-top: 10px;
+    float: bottom;
   }
 
   .nav-right-li {
@@ -1333,15 +1342,20 @@
   }
 
   .nav-bottom-li {
-    width: auto;
+    width: 20%;
     height: auto;
     display: inline-block;
     float: left;
   }
 
   .nav-bottom-li-img {
-    width: 240px;
-    height: 98px;
+    float: left;
+    padding: 0 auto;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 240px;
+    height: 110px;
+    display: block;
   }
 
   .model-div {
