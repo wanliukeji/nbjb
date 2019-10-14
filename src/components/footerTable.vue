@@ -126,7 +126,7 @@
 <style scoped>
   .model {
     position: relative;
-    width: 78%;
+    width: 80%;
     min-width: 1200px;
     height: auto;
     vertical-align: center;
@@ -144,19 +144,19 @@
     color: #78bb09;
     font-size: 15px;
     text-align: left;
-    /*padding-left: 20px;*/
     position: relative;
     margin-bottom: 40px;
   }
 
   .ul-div {
-    /*border: darkgreen 1px solid;*/
     display: inline-block;
     float: left;
     position: relative;
     margin-right: 30px;
     min-width: 100px;
     padding-left: 2px;
+    width: 11%;
+    margin: 0px;
   }
 
   .li-div {
