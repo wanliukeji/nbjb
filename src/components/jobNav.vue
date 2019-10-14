@@ -942,7 +942,7 @@
     <br>
     <div class="model-foot">
       <div class="foot-left">
-        <Button shape="circle" style="position: relative; top: 370px; left: 95px;">查看更多</Button>
+        <button shape="circle" class="foot-left-btn">查看更多</button>
       </div>
       <div class="foot-center">
         <Tabs>
@@ -1503,19 +1503,27 @@
     float: left;
     -moz-box-shadow: 0px 5px #cfcfcf;
     box-shadow: 0px 5px #cfcfcf;
-    margin-left: 5px;
-    margin-right: -15px;
+    /*margin-left: 5px;*/
+    /*margin-right: -15px;*/
     background: url('/static/image/aali.jpg') no-repeat;
     background-size: cover;
     margin: 0.1px;
   }
 
   .foot-left-btn {
-    position: relative;
-    top: 370px;
-    /*margin-right: 100px;*/
+    position: absolute;
+    padding: 5px;
+    min-width: 130px;
+    background-color: #0a6beb;
+    border: none;
+    color: white;
     margin: 0 auto;
+    margin-top: 370px;
     text-align: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    margin-left: 31%;
   }
 
   .foot-center {
@@ -1528,7 +1536,6 @@
   }
 
   .foot-right {
-    /*margin: 1px;*/
     position: relative;
     width: auto;
     max-width: 24.3%;
