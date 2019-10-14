@@ -20,6 +20,10 @@ import 'iview/dist/styles/iview.css'  //引用 ivew 全局样式
 
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
+
+// import BaiduMap from 'vue-baidu-map'
+
+// Vue.use(BaiduMap,{ak:'16398096469aa2c92d7b87506732cd90'});
 // import storage from 'good-storage'
 //页面跳转
 // import global from './components/Global.vue'

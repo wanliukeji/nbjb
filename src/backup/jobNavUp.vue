@@ -1106,7 +1106,8 @@
   }
 
   .head-img {
-    width: 685px;
+    width: 100%;
+    min-width: 685px;
     height: 440px;
   }
 
@@ -1153,7 +1154,7 @@
     height: 440px;
     overflow: hidden;
     position: relative;
-    width: 680px;
+    min-width: 680px;
     display: inline-block;
     margin: 0 auto;
     float: left;
@@ -1261,17 +1262,22 @@
   }
 
   .nav-right-btn-div {
-    position: absolute;
+    position: relative;
     z-index: 10;
     bottom: 18px;
+    margin: 0 auto;
+    border: black 1px solid;
   }
 
   .nav-right-btn {
     display: block;
+    position: relative;
+    margin: auto auto;
     margin-top: 10px;
     width: 210px;
     font-size: 16px;
     padding: 3px;
+    border: black 1px solid;
   }
 
   .nav-right-li {
@@ -1351,6 +1357,7 @@
     position: relative;
     top: 20px;
     min-width: 1200px;
+    border: black 1px solid;
   }
 
   .model-div-title {
@@ -1363,6 +1370,7 @@
     font-size: 26px;
     text-align: center;
     font-family: microsoft yahei;
+    border: black 1px solid;
   }
 
   .model-div-title-right {
@@ -1425,13 +1433,15 @@
     background-color: #fff;
     display: inline-block;
     padding: 25px 20px;
-    width: 396px;
+    width: 33%;
+    min-width: 396px;
     height: 220px;
     position: relative;
     -webkit-transition: ease-in-out .3s;
     -moz-transition: ease-in-out .3s;
     transition: ease-in-out .3s;
-    border: #f2f2f2 17px solid;
+    border: #484848 17px solid;
+
   }
 
   .model-div-row-li-4 {
