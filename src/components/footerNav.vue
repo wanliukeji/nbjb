@@ -15,53 +15,55 @@
             </a>&nbsp;
           </p>
         </div>
+        <div class="footer-center-center">
+          <div class="footer-herf">
+            <dt class="footer-dt">购物</dt>
+            <dd class="footer-dd">阿拉商城</dd>
+            <dd class="footer-dd">同城快店</dd>
+            <dd class="footer-dd">商家入驻</dd>
+            <dd class="footer-dd">商家管理</dd>
+          </div>
 
-        <div class="footer-herf">
-          <dt class="footer-dt">购物</dt>
-          <dd class="footer-dd">阿拉商城</dd>
-          <dd class="footer-dd">同城快店</dd>
-          <dd class="footer-dd">商家入驻</dd>
-          <dd class="footer-dd">商家管理</dd>
+          <div class="footer-herf">
+            <dt class="footer-dt">供应</dt>
+            <dd class="footer-dd">二手市场</dd>
+            <dd class="footer-dd">本地服务</dd>
+            <dd class="footer-dd">车辆租售</dd>
+            <dd class="footer-dd">商业服务</dd>
+          </div>
+
+          <div class="footer-herf">
+            <dt class="footer-dt">房产</dt>
+            <dd class="footer-dd">新楼盘</dd>
+            <dd class="footer-dd">二手房</dd>
+            <dd class="footer-dd">出租房</dd>
+            <dd class="footer-dd">找中介</dd>
+          </div>
+
+          <div class="footer-herf">
+            <dt class="footer-dt">招聘</dt>
+            <dd class="footer-dd">找工作</dd>
+            <dd class="footer-dd">找人才</dd>
+            <dd class="footer-dd">发招聘</dd>
+            <dd class="footer-dd">填简历</dd>
+          </div>
+
+          <div class="footer-right">
+            <table>
+              <tr>
+                <td>微信公众号</td>
+                <td width="20"></td>
+                <td>APP客户端</td>
+              </tr>
+              <tr>
+                <td><img src="/static/image/weixin.png" class="footer-img"/></td>
+                <td></td>
+                <td><img src="/static/image/app.png" class="footer-img"/></td>
+              </tr>
+            </table>
+          </div>
         </div>
 
-        <div class="footer-herf">
-          <dt class="footer-dt">供应</dt>
-          <dd class="footer-dd">二手市场</dd>
-          <dd class="footer-dd">本地服务</dd>
-          <dd class="footer-dd">车辆租售</dd>
-          <dd class="footer-dd">商业服务</dd>
-        </div>
-
-        <div class="footer-herf">
-          <dt class="footer-dt">房产</dt>
-          <dd class="footer-dd">新楼盘</dd>
-          <dd class="footer-dd">二手房</dd>
-          <dd class="footer-dd">出租房</dd>
-          <dd class="footer-dd">找中介</dd>
-        </div>
-
-        <div class="footer-herf">
-          <dt class="footer-dt">招聘</dt>
-          <dd class="footer-dd">找工作</dd>
-          <dd class="footer-dd">找人才</dd>
-          <dd class="footer-dd">发招聘</dd>
-          <dd class="footer-dd">填简历</dd>
-        </div>
-
-        <div class="footer-right">
-          <table>
-            <tr>
-              <td>微信公众号</td>
-              <td width="20"></td>
-              <td>APP客户端</td>
-            </tr>
-            <tr>
-              <td><img src="/static/image/weixin.png" class="footer-img"/></td>
-              <td></td>
-              <td><img src="/static/image/app.png" class="footer-img"/></td>
-            </tr>
-          </table>
-        </div>
       </div>
       <div class="footer-bottom">
         <div class="footer-bottom-text">
@@ -119,7 +121,7 @@
       </div>
 
       <div class="footer-bottom-index">
-        Powered by <span style="color: black; font-size: 12px; font-weight: 10px; ">Discuz</span>! X3.4 © 2001-2017
+        Powered by <span style="color: black; font-size: 12px; font-weight: 100; ">Discuz</span>! X3.4 © 2001-2017
         Comsenz Inc. GMT+8, 2019-8-26 09:36 , Processed in 0.085814 second(s), 1 queries , MemCache On.
       </div>
     </div>
@@ -173,20 +175,26 @@
   }
 
   .footer-left {
-    width: 250px;
+    min-width: 250px;
+    width: 20%;
     height: 150px;
     display: inline-block;
     float: left;
     position: relative;
     padding: 0px;
-    /*border: #88ff19 1px solid;*/
     margin-right: 70px;
+  }
+
+  .footer-center-center {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 
   .footer-herf {
     display: inline-block;
-    float: left;
-    width: 130px;
+    min-width: 130px;
+    width: 10%;
     height: 150px;
     border-right: #ececec 1px solid;
     /*padding-left: 40px;*/
