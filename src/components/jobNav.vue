@@ -1364,6 +1364,9 @@
     position: relative;
     top: 20px;
     min-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 auto;
   }
 
   .model-div-title {
@@ -1412,12 +1415,15 @@
     height: auto;
     margin: 0 auto;
     min-width: 1200px;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 auto;
   }
 
   .model-div-row-ul {
     width: auto;
     height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
   }
 
   .model-div-row-li-2 {
@@ -1438,13 +1444,15 @@
     background-color: #fff;
     display: inline-block;
     padding: 25px 20px;
-    width: 396px;
-    height: 220px;
+    margin: 0 auto;
+    min-width: 396px;
+    min-height: 220px;
     position: relative;
     -webkit-transition: ease-in-out .3s;
     -moz-transition: ease-in-out .3s;
     transition: ease-in-out .3s;
-    border: #f2f2f2 17px solid;
+    width: 33%;
+    height: 33%;
   }
 
   .model-div-row-li-4 {
