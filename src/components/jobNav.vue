@@ -1427,13 +1427,13 @@
   }
 
   .model-div-row-li-2 {
+    width: 49%;
+    height: 170px;
     background-color: #fff;
     display: inline-block;
     padding: 25px 20px;
-    width: 590px;
-    height: 170px;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    min-width: 590px;
+    min-height: 170px;
     position: relative;
     -webkit-transition: ease-in-out .3s;
     -moz-transition: ease-in-out .3s;
@@ -1457,15 +1457,16 @@
 
   .model-div-row-li-4 {
     display: inline-block;
-    /*float: left;*/
-    margin: 0 15px 15px 0;
-    width: 285px;
+    width: 24.6%;
     min-width: 285px;
     height: 390px;
+    min-height: 390px;
     background-color: #fff;
     -webkit-transition: ease-in-out .3s;
     -moz-transition: ease-in-out .3s;
     transition: ease-in-out .3s;
+    margin: 0 auto;
+    margin-top: 5px;
   }
 
   .model-div-row-li-3:hover, .model-div-row-li-4:hover, .model-div-row-li-2:hover {
@@ -1654,36 +1655,42 @@
   }
 
   .hot-qy-top {
-    position: absolute;
+    position: relative;
     margin: 0 auto;
-    width: auto;
+    width: 100%;
     padding: 12px;
   }
 
   .hot-qy-img {
+    position: relative;
+    min-width: 260px;
     width: 260px;
     height: 160px;
+    min-height: 160px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .hot-qy-img:hover {
-    -webkit-transition: All 0.4s ease-in-out;
-     transform: scale(1.08);
-    -webkit-transform: scale(1.08);
-    -o-transform: scale(1.08);
-    -ms-transform: scale(1.08);
-    -moz-transform: scale(1.08);
-
-    z-index: -10;
+     transform: scale(1.06);
+    -webkit-transform: scale(1.06);
+    -o-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    -moz-transform: scale(1.06);
+    -webkit-transition: All 1.2s ease-in-out;
+    /*z-index: -10;*/
   }
 
   .hot-qy-center {
-    height: 90px;
-    width: 90px;
+    min-width: 90px;
+    min-height: 90px;
+    width: 20%;
+    height: 20%;
     border-radius: 50%;
     position: relative;
     z-index: 10;
-    top: 125px;
-    left: 100px;
+    top: -50px;
+    margin: 0 auto;
   }
 
   .hot-qy-center-img {
@@ -1697,10 +1704,10 @@
 
   .hot-qy-bottom {
     position: relative;
-    top: 158px;
     height: auto;
     margin: 0 auto;
     text-align: center;
+    margin-top: -30px;
   }
 
   .hot-qy-bottom-title {
@@ -1709,11 +1716,13 @@
     font-weight: bold;
     display: block;
     margin: 0 auto;
-    line-height: 40px;
+    line-height: 45px;
   }
 
   .hot-qy-bottom-xx {
-    line-height: 40px;
+    position: relative;
+    margin: 0 auto;
+    line-height: 45px;
     max-width: 280px;
   }
 
@@ -1723,6 +1732,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .hot-qy-bottom-font {
