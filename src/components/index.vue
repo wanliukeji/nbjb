@@ -1,8 +1,9 @@
 <template lang="html">
   <div>
     <!--    -->
-    <info/>
+<!--    <info/>-->
     <!-- <job-nav/>-->
+    <group/>
     <footer-table/>
     <footerNav/>
   </div>
@@ -17,10 +18,11 @@
     import FooterTable from "./footerTable";
     import footerNav from "./footerNav";
     import Info from "./job/info";
+    import Group from "./job/group";
 
     export default {
         name: "index",
-        components: {Info, TableNav, FooterTable, Top, MenuNav, JobNav, footerNav, Search}
+        components: {Group, Info, TableNav, FooterTable, Top, MenuNav, JobNav, footerNav, Search}
     }
 </script>
 
