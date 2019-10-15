@@ -94,7 +94,44 @@
           </dl>
         </div>
       </div>
-      <div class="model-row-right"></div>
+      <div class="model-row-right">
+        <div class="model-row-right-top">
+
+        </div>
+        <div class="model-row-right-head">
+          <div>
+            <!--            <label for="selectAll" class="selectAll">-->
+            <!--              <input type="checkbox" id="selectAll">-->
+            <!--              全选-->
+            <!--            </label>-->
+          </div>
+        </div>
+
+        <ul class="joblist">
+          <li class="job-info">
+            <div class="job-info-top" style="padding: 0 auto;">
+
+              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+              <i class="job-info-top-name-right">兼职</i>
+            </div>
+            <div class="job-info-body">
+              <div class="job-info-title">
+                <a href="#" class="job-info-title-span"
+                   target="_blank">太极云软</a>
+              </div>
+              <div class="text webkit-line">
+                岗位职责： 1. 按照产品经理的需求，能完成新功能的相关文档的设计 2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档； 3. 完成软件代码的单元测试、功能测试和自动化测试； . 4.
+                分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；岗位职责： 1. 按照产品经理的需求，能完成新功能的相关文档的设计 2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档； 3. 完成软件代码的单元测试、功能测试和自动化测试； . 4.
+                分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；
+              </div>
+              <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">收藏</a>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -121,12 +158,20 @@
         $('.model-row-left-nav').bind('click', function () {
             let dom = $(this).next().toggle(1000);
             let child = $(this).children().children();
-            if($(child).hasClass("open-title-up")){
+            if ($(child).hasClass("open-title-up")) {
                 $(child).removeClass("open-title-up").addClass("open-title-down");
-            }else{
+            } else {
                 $(child).removeClass("open-title-down").addClass("open-title-up");
             }
 
+        });
+
+        $('.text').bind('click',function () {
+            if ($(this).hasClass("webkit-line")) {
+                $(this).removeClass("webkit-line");
+            } else {
+                $(this).addClass("webkit-line");
+            }
         });
     })
 </script>
@@ -141,7 +186,7 @@
     width: 80%;
     height: auto;
     position: relative;
-    top: 20px;
+    top: 10px;
     min-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -161,7 +206,7 @@
     min-height: 500px;
     height: auto;
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 5px;
   }
 
   .model-row-left-top {
@@ -261,15 +306,120 @@
   }
 
   .model-row-right {
-    width: 79.5%;
-    margin-left: 15px;
+    width: 80.7%;
+    margin-left: 5px;
     min-width: 980px;
-    padding-left: 20px;
     min-height: 600px;
     display: inline-block;
-    border: #151515 1px solid;
     vertical-align: top;
   }
 
+  .model-row-right-top {
+    width: 100%;
+    min-height: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+    background-color: #FFFFFF;
+  }
 
+  .model-row-right-head {
+    width: 100%;
+    min-width: 980px;
+    background-color: #f2f2f2;
+    /*border: 0.5px silver solid;*/
+    height: 56px;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+  }
+
+  .selectAll {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin-top: 20px;
+  }
+
+  .joblist {
+    width: 100%;
+    min-height: 120px;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+
+  .job-info {
+    min-height: 175px;
+    height: auto;
+    min-width: 950px;
+    width: 100%;
+    position: relative;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+    margin-top: 15px;
+    border: 1px solid #e8e8e8;
+    cursor: pointer;
+  }
+
+  .job-info-top {
+    margin: 20px 20px -10px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .job-info-top-name {
+    font-size: 16px;
+    color: #1C8CE9;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: auto;
+    display: inline-block;
+  }
+
+  .job-info-top-name-right {
+    font-style: normal;
+    cursor: default;
+    margin: 8px 0px 0px 3px;
+    background-color: #f8ac59;;
+    padding: 2px;
+    border: none;
+    color: #fff;
+    font-size: 8px;
+    display: inline-block;
+    position: absolute;
+  }
+
+  .job-info-body {
+    width: 100%;
+    height: 60%;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 21px;
+  }
+
+  .job-info-title-span {
+    color: #333333;
+  }
+
+  .ctaglist {
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  .text {
+    white-space: normal;
+    color: #999;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 20px;
+    overflow:hidden;
+  }
+
+  .webkit-line {
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+  }
 </style>
