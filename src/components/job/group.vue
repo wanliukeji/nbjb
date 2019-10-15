@@ -96,7 +96,128 @@
       </div>
       <div class="model-row-right">
         <div class="model-row-right-top">
-
+          <div class="model-row-right-top-span">
+            <a href="" class="model-row-right-top-span-a">
+              工作地点
+              <i class="open-title-right">
+                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
+                     version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
+                  <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                        p-id="1814"></path>
+                </svg>
+              </i>
+              <div class="model-row-right-top-span-hidden" style="display: none;">
+                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
+                <br>
+                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </div>
+            </a>
+            <a href="" class="model-row-right-top-span-a">
+              工作地点
+              <i class="open-title-right">
+                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
+                     version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
+                  <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                        p-id="1814"></path>
+                </svg>
+              </i>
+              <div class="model-row-right-top-span-hidden" style="display: none;">
+                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
+                <br>
+                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </div>
+            </a>
+            <a href="" class="model-row-right-top-span-a">
+              工作地点
+              <i class="open-title-right">
+                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
+                     version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
+                  <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                        p-id="1814"></path>
+                </svg>
+              </i>
+              <div class="model-row-right-top-span-hidden" style="display: none;">
+                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
+                <br>
+                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </div>
+            </a>
+            <a href="" class="model-row-right-top-span-a">
+              工作地点
+              <i class="open-title-right">
+                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
+                     version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
+                  <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                        p-id="1814"></path>
+                </svg>
+              </i>
+              <div class="model-row-right-top-span-hidden" style="display: none;">
+                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
+                <br>
+                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </div>
+            </a>
+            <a href="" class="model-row-right-top-span-a">
+              工作地点
+              <i class="open-title-right">
+                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
+                     version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
+                  <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                        p-id="1814"></path>
+                </svg>
+              </i>
+              <div class="model-row-right-top-span-hidden" style="display: none;">
+                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
+                <br>
+                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
+                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </div>
+            </a>
+          </div>
         </div>
         <div class="model-row-right-head">
           <div>
@@ -116,12 +237,38 @@
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
-                <a href="#" class="job-info-title-span"
-                   target="_blank">太极云软</a>
+                <a href="#" class="job-info-title-span">太极云软</a>
+                <a href="#" class="job-info-title-span qrc">
+                  <svg t="1571127706955" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="16" height="16">
+                    <path
+                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"
+                      p-id="2353" fill="#1C8CE9"></path>
+                    <path
+                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"
+                      p-id="2354" fill="#1C8CE9"></path>
+                    <path
+                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"
+                      p-id="2355" fill="#1C8CE9"></path>
+                    <path
+                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"
+                      p-id="2356" fill="#1C8CE9"></path>
+                  </svg>
+                  <div style="display: none;" class="hidden-qrc">
+                    <img src="/static/image/wechat.jpg" width="80" height="80">
+                  </div>
+                </a>
+                <a href="#" class="job-info-title-span">北仑</a>
+                <a href="#" class="job-info-title-span">大碶</a>
+                <a href="#" class="job-info-title-span">本科</a>
+                <a href="#" class="job-info-title-span">6-7年</a>
+                <a href="#" class="job-info-title-span price">8000~9000</a>
+                <a href="#" class="job-info-title-span">2019-10-10发布</a>
               </div>
               <div class="text webkit-line">
                 岗位职责： 1. 按照产品经理的需求，能完成新功能的相关文档的设计 2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档； 3. 完成软件代码的单元测试、功能测试和自动化测试； . 4.
-                分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；岗位职责： 1. 按照产品经理的需求，能完成新功能的相关文档的设计 2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档； 3. 完成软件代码的单元测试、功能测试和自动化测试； . 4.
+                分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；岗位职责： 1. 按照产品经理的需求，能完成新功能的相关文档的设计 2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；
+                3. 完成软件代码的单元测试、功能测试和自动化测试； . 4.
                 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；
               </div>
               <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
@@ -166,13 +313,19 @@
 
         });
 
-        $('.text').bind('click',function () {
+        $('.text').bind('click', function () {
             if ($(this).hasClass("webkit-line")) {
                 $(this).removeClass("webkit-line");
             } else {
                 $(this).addClass("webkit-line");
             }
         });
+
+        $('.qrc').mouseover(function () {
+            let childen = $(this).children();
+            $(childen).show(500);
+        });
+
     })
 </script>
 
@@ -319,6 +472,53 @@
     min-height: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .05);
     background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    z-index: 100;
+  }
+
+  .model-row-right-top-span {
+    min-width: 50%;
+    height: 50px;
+    position: relative;
+    float: left;
+    margin: 0 auto;
+  }
+
+  .model-row-right-top-span-a {
+    border: 0.5px solid #ddd;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    min-width: 130px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    color: #666666;
+    margin: 0 auto;
+  }
+
+  .model-row-right-top-span-hidden {
+    position: absolute;
+    width: auto;
+    height: auto;
+    /*margin: 0 auto;*/
+    padding: 10px;
+    background-color: #FFFFFF;
+    min-width: 130px;
+    min-height: 100px;
+    margin-top: 11px;
+    margin-left: -10px;
+    z-index: 10;
+    cursor: default;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+  }
+
+  .model-row-right-top-span-hidden-a {
+    display: inline-block;
+    font-size: 16px;
+    color: #333333;
+    margin: 5px;
   }
 
   .model-row-right-head {
@@ -400,6 +600,7 @@
 
   .job-info-title-span {
     color: #333333;
+    display: inline-block;
   }
 
   .ctaglist {
@@ -413,13 +614,30 @@
     cursor: pointer;
     margin-left: 8px;
     margin-right: 20px;
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .webkit-line {
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .price {
+    color: red;
+  }
+
+  .hidden-qrc {
+    width: 90px;
+    height: 90px;
+    border: black 1px solid;
+    position: absolute;
+    margin-top: -110px;
+    border: 0.5px #d9d9d9 solid;
+  }
+
+  .hidden-qrc > img {
+    margin: 5px 5px;
   }
 </style>
