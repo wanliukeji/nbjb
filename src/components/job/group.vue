@@ -56,14 +56,12 @@
         $('.model-row-left-nav').bind('click', function () {
             let dom = $(this).next().toggle(1000);
             let child = $(this).children().children();
-            $(child).removeClass('open-title-up');
-            $(child).addClass('open-title-down');
-        });
-        $('.model-row-left-nav').unbind('click', function () {
-            // let dom = $(this).next().toggle(1000);
-            let child = $(this).children().children();
-            $(child).addClass('open-title-up');
-            $(child).removeClass('open-title-down');
+            if($(child).hasClass("open-title-up")){
+                $(child).removeClass("open-title-up").addClass("open-title-down");
+            }else{
+                $(child).removeClass("open-title-down").addClass("open-title-up");
+            }
+
         });
     })
 </script>
@@ -163,12 +161,7 @@
     float: right;
     vertical-align: middle;
     position: relative;
-    margin-top: 5px;
-    transform: rotate(0deg);
-    -ms-transform: rotate(0deg); /* IE 9 */
-    -moz-transform: rotate(0deg); /* Firefox */
-    -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
-    -o-transform: rotate(0deg);
+    margin-top: 2px;
   }
 
   .open-title-down {
