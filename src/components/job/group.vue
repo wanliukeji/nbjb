@@ -13,18 +13,83 @@
                 <i class="open-title-right">
                   <svg t="1571111429872" class="icon open-title-up" viewBox="0 0 1024 1024" version="1.1"
                        xmlns="http://www.w3.org/2000/svg" p-id="1813" width="17" height="17">
-                    <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#666666"
+                    <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
                           p-id="1814"></path>
                   </svg>
                 </i>
               </a>
             </dt>
-            <dd style="display: none;">
+            <dd style="display: block;">
               <a href="#" class="dd-frist">不限</a>
               <a href="#">全职</a>
               <a href="#">兼职</a>
               <a href="#">临时</a>
               <a href="#">实习</a>
+            </dd>
+          </dl>
+          <dl class="open">
+            <dt class="model-row-left-nav">
+              <a href="javascript:;" class="open-title">工作经验
+                <i class="open-title-right">
+                  <svg t="1571111429872" class="icon open-title-up" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="1813" width="17" height="17">
+                    <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                          p-id="1814"></path>
+                  </svg>
+                </i>
+              </a>
+            </dt>
+            <dd style="display: block;">
+              <a href="#" class="dd-frist">不限</a>
+              <a href="#">一年以内</a>
+              <a href="#">1-2年</a>
+              <a href="#">3-5年</a>
+              <a href="#">6-7年</a>
+              <a href="#">8-10年</a>
+            </dd>
+          </dl>
+          <dl class="open">
+            <dt class="model-row-left-nav">
+              <a href="javascript:;" class="open-title">学历要求
+                <i class="open-title-right">
+                  <svg t="1571111429872" class="icon open-title-up" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="1813" width="17" height="17">
+                    <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                          p-id="1814"></path>
+                  </svg>
+                </i>
+              </a>
+            </dt>
+            <dd style="display: block;">
+              <a href="#" class="dd-frist">不限</a>
+              <a href="#">高中以下</a>
+              <a href="#">中专/职高</a>
+              <a href="#">大专</a>
+              <a href="#">本科</a>
+              <a href="#">硕士</a>
+              <a href="#">研究生</a>
+            </dd>
+          </dl>
+          <dl class="open">
+            <dt class="model-row-left-nav">
+              <a href="javascript:;" class="open-title">薪资范围
+                <i class="open-title-right">
+                  <svg t="1571111429872" class="icon open-title-up" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="1813" width="17" height="17">
+                    <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
+                          p-id="1814"></path>
+                  </svg>
+                </i>
+              </a>
+            </dt>
+            <dd style="display: block;">
+              <a href="#" class="dd-frist">不限</a>
+              <a href="#">面议</a>
+              <a href="#">1000以下</a>
+              <a href="#">1000~3999</a>
+              <a href="#">4000~6999</a>
+              <a href="#">6000~8999</a>
+              <a href="#">8000以上</a>
             </dd>
           </dl>
         </div>
@@ -93,7 +158,8 @@
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .05);
     width: 18%;
-    height: 500px;
+    min-height: 500px;
+    height: auto;
     display: inline-block;
     margin-right: 15px;
   }
@@ -119,6 +185,7 @@
     font-size: 14px;
     height: auto;
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .dd-frist {
