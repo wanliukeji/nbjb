@@ -2,7 +2,7 @@
   <div>
     <!--    -->
 <!--    <info/>-->
-    <!-- <job-nav/>-->
+<!--     <job-nav/>-->
     <group/>
     <footer-table/>
     <footerNav/>
