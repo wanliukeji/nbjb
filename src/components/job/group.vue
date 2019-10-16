@@ -594,9 +594,9 @@
                 this.$refs.tree2.filter(val);
             }
         },
+        methods: {
 
-        methods: {},
-
+        },
         data() {
             return {
                 filterText: ''
@@ -615,6 +615,7 @@
             }
 
         });
+
         $('.text').click(function () {
             if ($('.text-p').hasClass("height-fs")) {
                 $('.text-p').removeClass("height-fs").addClass('height-auto');
