@@ -5,13 +5,11 @@ import $ from 'jquery' ;
 Vue.use(Router)  /* 使用路由 */
 
 export default new Router({
-  mode: 'history',
-  base: '/',
   /* 进行路由配置，规定“/”引入到组件 */
   routes: [
     {
       path: '/index',
-      name: 'home',
+      name: 'index',
       meta: {
         title: "首页"
       }

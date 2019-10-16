@@ -236,7 +236,7 @@
           </div>
         </div>
         <div class="model-row-right-head">
-          <a class="selectAll" id="checkAll">
+          <a class="selectAll" id="checkAll" style="margin-left: 23px;">
             <input type="checkbox" id="全选" class="gcs-checkbox">
             <label for="全选"></label>
             <span style="display: inline-block; margin-bottom: 5px;">全选</span>
