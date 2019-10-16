@@ -122,7 +122,7 @@
               </div>
             </a>
             <a href="" class="model-row-right-top-span-a">
-              工作地点
+              行业领域
               <i class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
@@ -146,7 +146,7 @@
               </div>
             </a>
             <a href="" class="model-row-right-top-span-a">
-              工作地点
+              计算机硬件
               <i class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
@@ -170,7 +170,7 @@
               </div>
             </a>
             <a href="" class="model-row-right-top-span-a">
-              工作地点
+              公司性质
               <i class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
@@ -194,7 +194,7 @@
               </div>
             </a>
             <a href="" class="model-row-right-top-span-a">
-              工作地点
+              公司规模
               <i class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
@@ -217,17 +217,32 @@
                 <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
               </div>
             </a>
+          </div>
+          <div class="model-row-right-top-right">
+            <a href="" class="model-row-right-top-right-span">默认</a>
+            <svg t="1571188338878" class="icon model-row-right-top-right-span-svg" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="1258" width="17" height="17">
+              <path
+                d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+                p-id="1259" fill="#9297a0"></path>
+            </svg>
+            <a href="" class="model-row-right-top-right-span">时间</a>
+            <svg t="1571188566789" class="icon model-row-right-top-right-span-svg" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="2049" width="16" height="16">
+              <path
+                d="M64 482.6h277.7V93.4h340.6v389.3H960l-448 448L64 482.6zM390.4 142v389.3H181.5L512 861.8l330.5-330.5H633.6V142H390.4z"
+                fill="#231815" p-id="2050"></path>
+            </svg>
           </div>
         </div>
         <div class="model-row-right-head">
           <div>
-            <!--            <label for="selectAll" class="selectAll">-->
-            <!--              <input type="checkbox" id="selectAll">-->
-            <!--              全选-->
-            <!--            </label>-->
+            <label for="selectAll" class="selectAll">
+              <input type="checkbox" class="selectAll-all" id="selectAll">全选
+            </label>
+            <a href=""></a>
           </div>
         </div>
-
         <ul class="joblist">
           <li class="job-info">
             <div class="job-info-top" style="padding: 0 auto;">
@@ -266,10 +281,13 @@
                 <a href="#" class="job-info-title-span">2019-10-10发布</a>
               </div>
               <div class="text webkit-line">
-                岗位职责： 1. 按照产品经理的需求，能完成新功能的相关文档的设计 2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档； 3. 完成软件代码的单元测试、功能测试和自动化测试； . 4.
-                分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；岗位职责： 1. 按照产品经理的需求，能完成新功能的相关文档的设计 2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；
-                3. 完成软件代码的单元测试、功能测试和自动化测试； . 4.
-                分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；
+                <dl>
+                  <dt>岗位职责：</dt>
+                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
+                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
+                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
+                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
+                </dl>
               </div>
               <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
                 <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
@@ -316,6 +334,9 @@
         $('.text').bind('click', function () {
             if ($(this).hasClass("webkit-line")) {
                 $(this).removeClass("webkit-line");
+                var html = $(this).html();
+
+                console.log(html);
             } else {
                 $(this).addClass("webkit-line");
             }
@@ -476,6 +497,32 @@
     z-index: 100;
   }
 
+  .model-row-right-top-right {
+    position: relative;
+    float: right;
+    display: block;
+    min-width: 20%;
+    height: 100%;
+    min-height: 50px;
+  }
+
+  .model-row-right-top-right-span {
+    padding: 10px;
+    width: auto;
+    display: inline-block;
+    margin: 0 auto;
+    float: right;
+    color: #9297a0;
+  }
+
+  .model-row-right-top-right-span-svg {
+    position: relative;
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+    top: 16px;
+  }
+
   .model-row-right-top-span {
     min-width: 50%;
     height: 50px;
@@ -485,7 +532,6 @@
   }
 
   .model-row-right-top-span-a {
-    border: 0.5px solid #ddd;
     height: 100%;
     position: relative;
     display: inline-block;
@@ -525,19 +571,30 @@
     width: 100%;
     min-width: 980px;
     background-color: #f2f2f2;
-    /*border: 0.5px silver solid;*/
+    border: 0.5px silver solid;
     height: 56px;
     margin: 0 auto;
     padding: 0 auto;
     font-size: 14px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+    clear: both;
+    position: relative;
   }
 
   .selectAll {
-    float: left;
-    height: 36px;
-    line-height: 36px;
-    margin-top: 20px;
+    position: relative;
+    min-width: 130px;
+    height: 100%;
+    min-height: 56px;
+    vertical-align: middle;
+    margin: 0 auto;
+    border: black 1px solid;
+    padding: 15px 45px;
+  }
+
+  .selectAll-all {
+    padding: 0 auto;
+    margin: 0 auto;
   }
 
   .joblist {
@@ -598,6 +655,11 @@
     padding-left: 21px;
   }
 
+  .job-info-title {
+    margin-bottom: -15px;
+    position: relative;
+  }
+
   .job-info-title-span {
     color: #333333;
     display: inline-block;
@@ -615,6 +677,7 @@
     margin-left: 8px;
     margin-right: 20px;
     overflow: hidden;
+    padding-bottom: 5px;
   }
 
   .webkit-line {
