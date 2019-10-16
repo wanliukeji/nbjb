@@ -305,9 +305,9 @@
                   <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
                 </dl>
               </div>
-              <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
-                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
-                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">收藏</a>
+              <p class="job-info-bottom">
+                <a href="" class="job-info-bottom-a">投递</a>
+                <a href="" class="job-info-bottom-a">收藏</a>
               </p>
             </div>
           </li>
@@ -773,9 +773,18 @@
     display: inline-block;
   }
 
-  .ctaglist {
-    height: 25px;
-    margin-right: 10px;
+  .job-info-bottom {
+    position: relative;
+    margin-bottom: 0px;
+    bottom: 0px;
+    padding-left: 3px;
+  }
+
+  .job-info-bottom-a {
+    font-size: 15px;
+    padding: 3px;
+    display: inline-block;
+    color: #1C8CE9;
   }
 
   .text {
