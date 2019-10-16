@@ -236,10 +236,11 @@
           </div>
         </div>
         <div class="model-row-right-head">
-          <label class="selectAll">
-            <input type="checkbox" class="selectAll-all">
-            <span class="selectAll-span">全选</span>
-          </label>
+          <a class="selectAll">
+            <input type="checkbox" id="全选" class="gcs-checkbox">
+            <label for="全选"></label>
+            <span style="display: inline-block; margin-bottom: 5px;">全选</span>
+          </a>
           <a href="" class="selectAll">
             <button class="selectAll-btn-1">应聘</button>
           </a>
@@ -258,7 +259,10 @@
         <ul class="joblist">
           <li class="job-info">
             <div class="job-info-top" style="padding: 0 auto;">
-
+              <span style=" position: relative;display: inline-block; padding-top: 0px;">
+                <input type="checkbox" id="1" class="gcs-checkbox">
+                <label for="1" class="checkbox-label"></label>
+              </span>
               <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
               <i class="job-info-top-name-right">兼职</i>
             </div>
@@ -564,7 +568,7 @@
           </li>
         </ul>
         <div class="page">
-          <Page :total="100" show-sizer />
+          <Page :total="100" show-sizer/>
         </div>
       </div>
     </div>
@@ -1054,5 +1058,43 @@
   .page {
     margin-top: 20px;
     text-align: center;
+  }
+
+  .gcs-checkbox + label {
+    background-color: white;
+    border-radius: 0px;
+    border: 1px solid #d3d3d3;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+
+  .gcs-checkbox {
+    display: none;
+  }
+
+  .gcs-checkbox + label:hover {
+    cursor: pointer;
+    border: 1px solid #2783FB;
+  }
+
+  .gcs-checkbox:checked + label {
+    background-color: #eee;
+    background: #2783FB;
+  }
+
+  .gcs-checkbox:checked + label:after {
+    content: "\2714";
+    color: white;
+  }
+
+  .checkbox-label {
+    margin-left: 0px;
+    margin-bottom: 13px;
   }
 </style>
