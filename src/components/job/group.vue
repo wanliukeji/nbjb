@@ -231,19 +231,287 @@
                  xmlns="http://www.w3.org/2000/svg" p-id="2049" width="16" height="16">
               <path
                 d="M64 482.6h277.7V93.4h340.6v389.3H960l-448 448L64 482.6zM390.4 142v389.3H181.5L512 861.8l330.5-330.5H633.6V142H390.4z"
-                fill="#231815" p-id="2050"></path>
+                fill="#f8ac59" p-id="2050"></path>
             </svg>
           </div>
         </div>
         <div class="model-row-right-head">
-          <div>
-            <label for="selectAll" class="selectAll">
-              <input type="checkbox" class="selectAll-all" id="selectAll">全选
-            </label>
-            <a href=""></a>
+          <label class="selectAll">
+            <input type="checkbox" class="selectAll-all">
+            <span class="selectAll-span">全选</span>
+          </label>
+          <a href="" class="selectAll">
+            <button class="selectAll-btn-1">应聘</button>
+          </a>
+          <a href="" class="selectAll">
+            <button class="selectAll-btn-2">收藏</button>
+          </a>
+          <a href="" class="selectAll">
+              <span class="selectAll-a">
+                目前有 <span style="color: red;">3000</span> 个岗位任你挑选</span>
+          </a>
+          <div class="seach-div">
+            <input type="text" style="width: 265px; padding: 4px 10px; color: #666; border: 1px solid #ededed;
+              display: inline-block;" placeholder="请输入关键字进行搜索">
+            <button class="seach-btn-div" style="">搜索</button>
           </div>
         </div>
         <ul class="joblist">
+          <li class="job-info">
+            <div class="job-info-top" style="padding: 0 auto;">
+
+              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+              <i class="job-info-top-name-right">兼职</i>
+            </div>
+            <div class="job-info-body">
+              <div class="job-info-title">
+                <a href="#" class="job-info-title-span">太极云软</a>
+                <a href="#" class="job-info-title-span qrc">
+                  <svg t="1571127706955" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="16" height="16">
+                    <path
+                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"
+                      p-id="2353" fill="#1C8CE9"></path>
+                    <path
+                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"
+                      p-id="2354" fill="#1C8CE9"></path>
+                    <path
+                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"
+                      p-id="2355" fill="#1C8CE9"></path>
+                    <path
+                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"
+                      p-id="2356" fill="#1C8CE9"></path>
+                  </svg>
+                  <div style="display: none;" class="hidden-qrc">
+                    <img src="/static/image/wechat.jpg" width="80" height="80">
+                  </div>
+                </a>
+                <a href="#" class="job-info-title-span">北仑</a>
+                <a href="#" class="job-info-title-span">大碶</a>
+                <a href="#" class="job-info-title-span">本科</a>
+                <a href="#" class="job-info-title-span">6-7年</a>
+                <a href="#" class="job-info-title-span price">8000~9000</a>
+                <a href="#" class="job-info-title-span">2019-10-10发布</a>
+              </div>
+              <div class="text webkit-line">
+                <dl>
+                  <dt>岗位职责：</dt>
+                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
+                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
+                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
+                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
+                </dl>
+              </div>
+              <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">收藏</a>
+              </p>
+            </div>
+          </li>
+          <li class="job-info">
+            <div class="job-info-top" style="padding: 0 auto;">
+
+              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+              <i class="job-info-top-name-right">兼职</i>
+            </div>
+            <div class="job-info-body">
+              <div class="job-info-title">
+                <a href="#" class="job-info-title-span">太极云软</a>
+                <a href="#" class="job-info-title-span qrc">
+                  <svg t="1571127706955" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="16" height="16">
+                    <path
+                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"
+                      p-id="2353" fill="#1C8CE9"></path>
+                    <path
+                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"
+                      p-id="2354" fill="#1C8CE9"></path>
+                    <path
+                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"
+                      p-id="2355" fill="#1C8CE9"></path>
+                    <path
+                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"
+                      p-id="2356" fill="#1C8CE9"></path>
+                  </svg>
+                  <div style="display: none;" class="hidden-qrc">
+                    <img src="/static/image/wechat.jpg" width="80" height="80">
+                  </div>
+                </a>
+                <a href="#" class="job-info-title-span">北仑</a>
+                <a href="#" class="job-info-title-span">大碶</a>
+                <a href="#" class="job-info-title-span">本科</a>
+                <a href="#" class="job-info-title-span">6-7年</a>
+                <a href="#" class="job-info-title-span price">8000~9000</a>
+                <a href="#" class="job-info-title-span">2019-10-10发布</a>
+              </div>
+              <div class="text webkit-line">
+                <dl>
+                  <dt>岗位职责：</dt>
+                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
+                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
+                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
+                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
+                </dl>
+              </div>
+              <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">收藏</a>
+              </p>
+            </div>
+          </li>
+          <li class="job-info">
+            <div class="job-info-top" style="padding: 0 auto;">
+
+              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+              <i class="job-info-top-name-right">兼职</i>
+            </div>
+            <div class="job-info-body">
+              <div class="job-info-title">
+                <a href="#" class="job-info-title-span">太极云软</a>
+                <a href="#" class="job-info-title-span qrc">
+                  <svg t="1571127706955" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="16" height="16">
+                    <path
+                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"
+                      p-id="2353" fill="#1C8CE9"></path>
+                    <path
+                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"
+                      p-id="2354" fill="#1C8CE9"></path>
+                    <path
+                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"
+                      p-id="2355" fill="#1C8CE9"></path>
+                    <path
+                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"
+                      p-id="2356" fill="#1C8CE9"></path>
+                  </svg>
+                  <div style="display: none;" class="hidden-qrc">
+                    <img src="/static/image/wechat.jpg" width="80" height="80">
+                  </div>
+                </a>
+                <a href="#" class="job-info-title-span">北仑</a>
+                <a href="#" class="job-info-title-span">大碶</a>
+                <a href="#" class="job-info-title-span">本科</a>
+                <a href="#" class="job-info-title-span">6-7年</a>
+                <a href="#" class="job-info-title-span price">8000~9000</a>
+                <a href="#" class="job-info-title-span">2019-10-10发布</a>
+              </div>
+              <div class="text webkit-line">
+                <dl>
+                  <dt>岗位职责：</dt>
+                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
+                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
+                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
+                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
+                </dl>
+              </div>
+              <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">收藏</a>
+              </p>
+            </div>
+          </li>
+          <li class="job-info">
+            <div class="job-info-top" style="padding: 0 auto;">
+
+              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+              <i class="job-info-top-name-right">兼职</i>
+            </div>
+            <div class="job-info-body">
+              <div class="job-info-title">
+                <a href="#" class="job-info-title-span">太极云软</a>
+                <a href="#" class="job-info-title-span qrc">
+                  <svg t="1571127706955" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="16" height="16">
+                    <path
+                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"
+                      p-id="2353" fill="#1C8CE9"></path>
+                    <path
+                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"
+                      p-id="2354" fill="#1C8CE9"></path>
+                    <path
+                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"
+                      p-id="2355" fill="#1C8CE9"></path>
+                    <path
+                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"
+                      p-id="2356" fill="#1C8CE9"></path>
+                  </svg>
+                  <div style="display: none;" class="hidden-qrc">
+                    <img src="/static/image/wechat.jpg" width="80" height="80">
+                  </div>
+                </a>
+                <a href="#" class="job-info-title-span">北仑</a>
+                <a href="#" class="job-info-title-span">大碶</a>
+                <a href="#" class="job-info-title-span">本科</a>
+                <a href="#" class="job-info-title-span">6-7年</a>
+                <a href="#" class="job-info-title-span price">8000~9000</a>
+                <a href="#" class="job-info-title-span">2019-10-10发布</a>
+              </div>
+              <div class="text webkit-line">
+                <dl>
+                  <dt>岗位职责：</dt>
+                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
+                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
+                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
+                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
+                </dl>
+              </div>
+              <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">收藏</a>
+              </p>
+            </div>
+          </li>
+          <li class="job-info">
+            <div class="job-info-top" style="padding: 0 auto;">
+
+              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+              <i class="job-info-top-name-right">兼职</i>
+            </div>
+            <div class="job-info-body">
+              <div class="job-info-title">
+                <a href="#" class="job-info-title-span">太极云软</a>
+                <a href="#" class="job-info-title-span qrc">
+                  <svg t="1571127706955" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="16" height="16">
+                    <path
+                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"
+                      p-id="2353" fill="#1C8CE9"></path>
+                    <path
+                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"
+                      p-id="2354" fill="#1C8CE9"></path>
+                    <path
+                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"
+                      p-id="2355" fill="#1C8CE9"></path>
+                    <path
+                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"
+                      p-id="2356" fill="#1C8CE9"></path>
+                  </svg>
+                  <div style="display: none;" class="hidden-qrc">
+                    <img src="/static/image/wechat.jpg" width="80" height="80">
+                  </div>
+                </a>
+                <a href="#" class="job-info-title-span">北仑</a>
+                <a href="#" class="job-info-title-span">大碶</a>
+                <a href="#" class="job-info-title-span">本科</a>
+                <a href="#" class="job-info-title-span">6-7年</a>
+                <a href="#" class="job-info-title-span price">8000~9000</a>
+                <a href="#" class="job-info-title-span">2019-10-10发布</a>
+              </div>
+              <div class="text webkit-line">
+                <dl>
+                  <dt>岗位职责：</dt>
+                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
+                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
+                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
+                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
+                </dl>
+              </div>
+              <p style="position: relative; margin-bottom: 0px; bottom: 0px; padding-left: 3px;">
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">投递</a>
+                <a href="" style="font-size: 15px; padding: 3px; display: inline-block; color: #1C8CE9;">收藏</a>
+              </p>
+            </div>
+          </li>
           <li class="job-info">
             <div class="job-info-top" style="padding: 0 auto;">
 
@@ -334,9 +602,6 @@
         $('.text').bind('click', function () {
             if ($(this).hasClass("webkit-line")) {
                 $(this).removeClass("webkit-line");
-                var html = $(this).html();
-
-                console.log(html);
             } else {
                 $(this).addClass("webkit-line");
             }
@@ -571,7 +836,6 @@
     width: 100%;
     min-width: 980px;
     background-color: #f2f2f2;
-    border: 0.5px silver solid;
     height: 56px;
     margin: 0 auto;
     padding: 0 auto;
@@ -583,18 +847,91 @@
 
   .selectAll {
     position: relative;
-    min-width: 130px;
+    width: auto;
     height: 100%;
     min-height: 56px;
     vertical-align: middle;
     margin: 0 auto;
-    border: black 1px solid;
-    padding: 15px 45px;
+    padding: 0px auto;
+    display: inline-block;
+    padding-top: 13px;
+  }
+
+  .seach-div {
+    width: auto;
+    height: 56px;
+    position: relative;
+    float: right;
+    margin: 0 auto;
+    padding: 12px 12px;
+  }
+
+  .selectAll-btn-1, .selectAll-btn-2, .seach-btn-div {
+    display: block;
+    background-color: #1C8CE9;
+    color: #FFFFFF;
+    padding: 3px;
+    border: none;
+    font-size: 13px;
+    width: 4em;
+    position: relative;
+    margin: 0 auto;
+    vertical-align: middle;
+    border-radius: 8px;
+  }
+
+  .selectAll-btn-1:hover {
+    background-color: #1481dc;
+  }
+
+  .selectAll-btn-2 {
+    background-color: #f8ac59;
+  }
+
+  .selectAll-btn-2:hover {
+    background-color: #ec9d47;
+  }
+
+  .seach-btn-div {
+    display: inline-block;
+    height: 28px;
+    padding: 3px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    width: 60px;
+    border: none;
+    margin-top: -3.5px;
+  }
+
+  .seach-btn-div:hover {
+    background-color: #1481dc;
+  }
+
+  .selectAll-a {
+    line-height: 30px;
+    margin: 0 10px 10px;
+    font-size: 16px;
+    color: #b2b2b2;
+    text-align: center;
   }
 
   .selectAll-all {
     padding: 0 auto;
     margin: 0 auto;
+  }
+
+  .selectAll-span {
+    color: #555555;
+    font-size: 17px;
+  }
+
+  .selectAll-span:hover {
+    cursor: pointer;
+  }
+
+  #selectAll {
+    color: #6f42c1;
   }
 
   .joblist {
