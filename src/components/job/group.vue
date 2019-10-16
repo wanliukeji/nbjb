@@ -251,8 +251,7 @@
                 目前有 <span style="color: red;">3000</span> 个岗位任你挑选</span>
           </a>
           <div class="seach-div">
-            <input type="text" style="width: 265px; padding: 4px 10px; color: #666; border: 1px solid #ededed;
-              display: inline-block;" placeholder="请输入关键字进行搜索">
+            <input type="text" class="seach-text" placeholder="请输入关键字进行搜索">
             <button class="seach-btn-div" style="">搜索</button>
           </div>
         </div>
@@ -864,6 +863,14 @@
     float: right;
     margin: 0 auto;
     padding: 12px 12px;
+  }
+
+  .seach-text {
+    width: 265px;
+    padding: 4px 10px;
+    color: #666;
+    border: 1px solid #ededed;
+    display: inline-block;
   }
 
   .selectAll-btn-1, .selectAll-btn-2, .seach-btn-div {
