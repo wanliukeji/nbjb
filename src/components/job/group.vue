@@ -237,7 +237,7 @@
         </div>
         <div class="model-row-right-head">
           <a class="selectAll" id="checkAll" style="margin-left: 23px;">
-            <input type="checkbox" id="全选" class="gcs-checkbox">
+            <input type="checkbox" id="全选" class="gcs-checkbox selectedAll">
             <label for="全选"></label>
             <span style="display: inline-block; margin-bottom: 5px;">全选</span>
           </a>
@@ -252,19 +252,21 @@
                 目前有 <span style="color: red;">3000</span> 个岗位任你挑选</span>
           </a>
           <div class="seach-div">
-            <input type="text" class="seach-text" placeholder="请输入关键字进行搜索">
-            <button class="seach-btn-div" style="">搜索</button>
+            <input type="text" style=" float: left;" class="seach-text" placeholder="请输入关键字进行搜索"/>
+            <button class="seach-btn-div" style="float: left; margin-top: 1px;">搜索</button>
           </div>
         </div>
         <ul class="joblist">
           <li class="job-info">
-            <div class="job-info-top" style="padding: 0 auto;">
-              <span class="job-info-btn">
+            <div class="job-info-top">
+              <p>
+                <span class="job-info-btn">
                 <input type="checkbox" id="1" class="gcs-checkbox checkbox-item">
                 <label for="1" class="checkbox-label"></label>
               </span>
-              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
-              <i class="job-info-top-name-right">兼职</i>
+                <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+                <i class="job-info-top-name-right" style="float: left; padding: 2px;">兼职</i>
+              </p>
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
@@ -296,14 +298,22 @@
                 <a href="#" class="job-info-title-span price">8000~9000</a>
                 <a href="#" class="job-info-title-span">2019-10-10发布</a>
               </div>
-              <div class="text webkit-line">
-                <dl>
-                  <dt>岗位职责：</dt>
-                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
-                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
-                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
-                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
-                </dl>
+              <div class="text">
+                <p class="text-p height-fs">
+                  岗位职责：
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                </p>
               </div>
               <p class="job-info-bottom">
                 <a href="" class="job-info-bottom-a">投递</a>
@@ -312,13 +322,15 @@
             </div>
           </li>
           <li class="job-info">
-            <div class="job-info-top" style="padding: 0 auto;">
-              <span class="job-info-btn">
-                <input type="checkbox" id="1" class="gcs-checkbox checkbox-item">
-                <label for="1" class="checkbox-label"></label>
+            <div class="job-info-top">
+              <p>
+                <span class="job-info-btn">
+                <input type="checkbox" id="2" class="gcs-checkbox checkbox-item">
+                <label for="2" class="checkbox-label"></label>
               </span>
-              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
-              <i class="job-info-top-name-right">兼职</i>
+                <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+                <i class="job-info-top-name-right" style="float: left; padding: 2px;">兼职</i>
+              </p>
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
@@ -350,14 +362,22 @@
                 <a href="#" class="job-info-title-span price">8000~9000</a>
                 <a href="#" class="job-info-title-span">2019-10-10发布</a>
               </div>
-              <div class="text webkit-line">
-                <dl>
-                  <dt>岗位职责：</dt>
-                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
-                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
-                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
-                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
-                </dl>
+              <div class="text">
+                <p class="text-p height-fs">
+                  岗位职责：
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                </p>
               </div>
               <p class="job-info-bottom">
                 <a href="" class="job-info-bottom-a">投递</a>
@@ -366,13 +386,15 @@
             </div>
           </li>
           <li class="job-info">
-            <div class="job-info-top" style="padding: 0 auto;">
-              <span class="job-info-btn">
-                <input type="checkbox" id="1" class="gcs-checkbox checkbox-item">
-                <label for="1" class="checkbox-label"></label>
+            <div class="job-info-top">
+              <p>
+                <span class="job-info-btn">
+                <input type="checkbox" id="3" class="gcs-checkbox checkbox-item">
+                <label for="3" class="checkbox-label"></label>
               </span>
-              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
-              <i class="job-info-top-name-right">兼职</i>
+                <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+                <i class="job-info-top-name-right" style="float: left; padding: 2px;">兼职</i>
+              </p>
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
@@ -404,14 +426,22 @@
                 <a href="#" class="job-info-title-span price">8000~9000</a>
                 <a href="#" class="job-info-title-span">2019-10-10发布</a>
               </div>
-              <div class="text webkit-line">
-                <dl>
-                  <dt>岗位职责：</dt>
-                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
-                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
-                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
-                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
-                </dl>
+              <div class="text">
+                <p class="text-p height-fs">
+                  岗位职责：
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                </p>
               </div>
               <p class="job-info-bottom">
                 <a href="" class="job-info-bottom-a">投递</a>
@@ -420,13 +450,15 @@
             </div>
           </li>
           <li class="job-info">
-            <div class="job-info-top" style="padding: 0 auto;">
-              <span class="job-info-btn">
-                <input type="checkbox" id="1" class="gcs-checkbox checkbox-item">
-                <label for="1" class="checkbox-label"></label>
+            <div class="job-info-top">
+              <p>
+                <span class="job-info-btn">
+                <input type="checkbox" id="4" class="gcs-checkbox checkbox-item">
+                <label for="4" class="checkbox-label"></label>
               </span>
-              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
-              <i class="job-info-top-name-right">兼职</i>
+                <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+                <i class="job-info-top-name-right" style="float: left; padding: 2px;">兼职</i>
+              </p>
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
@@ -458,14 +490,22 @@
                 <a href="#" class="job-info-title-span price">8000~9000</a>
                 <a href="#" class="job-info-title-span">2019-10-10发布</a>
               </div>
-              <div class="text webkit-line">
-                <dl>
-                  <dt>岗位职责：</dt>
-                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
-                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
-                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
-                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
-                </dl>
+              <div class="text">
+                <p class="text-p height-fs">
+                  岗位职责：
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                </p>
               </div>
               <p class="job-info-bottom">
                 <a href="" class="job-info-bottom-a">投递</a>
@@ -474,13 +514,15 @@
             </div>
           </li>
           <li class="job-info">
-            <div class="job-info-top" style="padding: 0 auto;">
-              <span class="job-info-btn">
-                <input type="checkbox" id="1" class="gcs-checkbox checkbox-item">
-                <label for="1" class="checkbox-label"></label>
+            <div class="job-info-top">
+              <p>
+                <span class="job-info-btn">
+                <input type="checkbox" id="5" class="gcs-checkbox checkbox-item">
+                <label for="5" class="checkbox-label"></label>
               </span>
-              <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
-              <i class="job-info-top-name-right">兼职</i>
+                <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+                <i class="job-info-top-name-right" style="float: left; padding: 2px;">兼职</i>
+              </p>
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
@@ -512,14 +554,22 @@
                 <a href="#" class="job-info-title-span price">8000~9000</a>
                 <a href="#" class="job-info-title-span">2019-10-10发布</a>
               </div>
-              <div class="text webkit-line">
-                <dl>
-                  <dt>岗位职责：</dt>
-                  <dd>1. 按照产品经理的需求，能完成新功能的相关文档的设计;</dd>
-                  <dd>2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档；</dd>
-                  <dd>3. 完成软件代码的单元测试、功能测试和自动化测试；</dd>
-                  <dd>4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复；</dd>
-                </dl>
+              <div class="text">
+                <p class="text-p height-fs">
+                  岗位职责：
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                  1. 按照产品经理的需求，能完成新功能的相关文档的设计;
+                  2. 高质量的完成软件系统代码的实现，编写代码注释和开发文档;
+                  3. 完成软件代码的单元测试、功能测试和自动化测试;
+                  4. 分析并解决软件开发过程中的问题，能够进行快速的软件bug定位并且及时修复;
+                </p>
               </div>
               <p class="job-info-bottom">
                 <a href="" class="job-info-bottom-a">投递</a>
@@ -528,9 +578,9 @@
             </div>
           </li>
         </ul>
-        <div class="page">
-          <Page :total="100" show-sizer/>
-        </div>
+        <!--        <div class="page">-->
+        <!--          <Page :total="100" show-sizer/>-->
+        <!--        </div>-->
       </div>
     </div>
   </div>
@@ -565,24 +615,23 @@
             }
 
         });
-
-        $('.text').bind('click', function () {
-            if ($(this).hasClass("webkit-line")) {
-                $(this).removeClass("webkit-line");
+        $('.text').click(function () {
+            if ($('.text-p').hasClass("height-fs")) {
+                $('.text-p').removeClass("height-fs").addClass('height-auto');
             } else {
-                $(this).addClass("webkit-line");
+                $('.text-p').addClass("height-fs").removeClass('height-auto');
             }
+        });
+
+        $('.selectedAll').click(function (e) {
+            $('.checkbox-label').click();
+            document.getElementsByClassName('checkbox-label').onclick;
         });
 
         $('.qrc').mouseover(function () {
             let childen = $(this).children();
             $(childen).show(500);
         });
-
-        // $('.qrc').mouseout(function () {
-        //     let childen = $(this).children();
-        //     $(childen).hide(500);
-        // });
 
 
     })
@@ -840,7 +889,7 @@
 
   .seach-text {
     width: 265px;
-    padding: 4px 10px;
+    padding: 5px 10px;
     color: #666;
     border: 1px solid #ededed;
     display: inline-block;
@@ -944,12 +993,13 @@
   .job-info-btn {
     position: relative;
     display: inline-block;
-    padding-top: 0px;
     margin-left: 7px;
+    float: left;
+    padding-top: 3px;
   }
 
   .job-info-top-name {
-    font-size: 16px;
+    font-size: 15px;
     color: #1C8CE9;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -1011,6 +1061,7 @@
     margin-right: 20px;
     overflow: hidden;
     padding-bottom: 5px;
+    padding: 0 auto;
   }
 
   .webkit-line {
@@ -1018,6 +1069,35 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+  }
+
+  .text-p {
+    line-height: 25px;
+    margin-top: 10px;
+  }
+
+  .text-p {
+    font-size: 14px;
+    overflow: hidden;
+    /*line-height: 28px;*/
+    position: relative;
+    white-space: normal;
+    cursor: pointer;
+    margin-left: 0px;
+    margin-right: 20px;
+    overflow: hidden;
+    padding-bottom: 5px;
+  }
+
+  .text-p:after {
+    content: '...';
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    height: 1.8em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
   }
 
   .price {
@@ -1077,5 +1157,13 @@
   .checkbox-label {
     margin-left: 0px;
     margin-bottom: 13px;
+  }
+
+  .height-fs {
+    height: 54px;
+  }
+
+  .height-auto {
+    height: auto;
   }
 </style>
