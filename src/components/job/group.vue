@@ -563,6 +563,9 @@
             </div>
           </li>
         </ul>
+        <div class="page">
+          <Page :total="100" show-sizer />
+        </div>
       </div>
     </div>
   </div>
@@ -1046,5 +1049,10 @@
 
   .hidden-qrc > img {
     margin: 5px 5px;
+  }
+
+  .page {
+    margin-top: 20px;
+    text-align: center;
   }
 </style>
