@@ -575,36 +575,6 @@
     export default {
         name: "group",
         watch: {},
-        methods: {
-            getAddr: function (val, e) {
-                if (val == '不限') {
-                    this.addr = '工作地点';
-                } else {
-                    this.addr = val;
-                }
-            },
-            getFied(val) {
-                if (val == '不限') {
-                    this.field = '行业领域';
-                } else {
-                    this.field = val;
-                }
-            },
-            getNature(val) {
-                if (val == '不限') {
-                    this.nature = '公司性质';
-                } else {
-                    this.nature = val;
-                }
-            },
-            getScale(val) {
-                if (val == '不限') {
-                    this.scale = '公司规模';
-                } else {
-                    this.scale = val;
-                }
-            }
-        },
         data() {
             return {
                 addr: '工作地点',
@@ -613,6 +583,40 @@
                 nature: '公司性质',
                 scale: '公司规模'
             };
+        },
+        methods: {
+            getAddr: function (val) {
+                if (val == '不限') {
+                    this.addr = '工作地点';
+                } else {
+                    this.addr = this.subVal(val);;
+                }
+            },
+            getFied(val) {
+                if (val == '不限') {
+                    this.field = '行业领域';
+                } else {
+                    this.field = this.subVal(val);
+                }
+            },
+            getNature(val) {
+                if (val == '不限') {
+                    this.nature = '公司性质';
+                } else {
+                    this.nature = this.subVal(val);;
+                }
+            },
+            getScale(val) {
+                if (val == '不限') {
+                    this.scale = '公司规模';
+                } else {
+                    this.scale = this.subVal(val);;
+                }
+            }
+            ,
+            subVal(val) {
+                return val.substring(0, 4) + '..';
+            }
         }
     }
 
@@ -848,7 +852,7 @@
     height: 100%;
     position: relative;
     display: inline-block;
-    min-width: 130px;
+    width: 130px;
     text-align: center;
     vertical-align: middle;
     padding-top: 10px;
