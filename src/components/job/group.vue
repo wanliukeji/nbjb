@@ -136,9 +136,9 @@
                 <span class="model-row-right-top-span-hidden-a">
                   计算机软件/互联网/通信
                   <svg t="1571298197868" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                       xmlns="http://www.w3.org/2000/svg" p-id="536" width="24" height="24"><path
+                       xmlns="http://www.w3.org/2000/svg" p-id="536" width="21" height="21"><path
                     d="M213.333333 341.333333h597.333334l-298.666667 384z" p-id="537" fill="#dbdbdb"></path></svg>
-                  <ul class="model-row-right-top-span-hidden-ul">
+                  <ul class="model-row-right-top-span-hidden-ul display-none">
                       <li @click="getFied('计算机软件')">计算机软件</li>
                       <li @click="getFied('计算机硬件')">计算机硬件</li>
                       <li @click="getFied('计算机服务')">计算机服务</li>
@@ -689,6 +689,16 @@
                 $('.model-row-right-top-span-hidden').hide(500);
             }
         }
+        $('.model-row-right-top-span-hidden-a').click(function () {
+            var childen = $(this).children('.model-row-right-top-span-hidden-ul');
+            var svg = $(this).children('.icon');
+            $(childen).toggle(600);
+            if ($(svg).hasClass("icon-up")) {
+                $(svg).removeClass("icon-up").addClass("icon-down");
+            } else {
+                $(svg).removeClass("icon-down").addClass("icon-up");
+            }
+        });
 
 
     })
@@ -806,6 +816,22 @@
     -o-transform: rotate(180deg);
   }
 
+  .icon-up {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -moz-transform: rotate(0deg); /* Firefox */
+    -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+    -o-transform: rotate(0deg);
+  }
+
+  .icon-down {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+    -o-transform: rotate(180deg);
+  }
+
   dl {
     display: block;
     margin-block-start: 1em;
@@ -900,7 +926,7 @@
     height: auto;
     padding: 8px;
     background-color: #FFFFFF;
-    min-height: 100px;
+    /*min-height: 100px;*/
     margin-top: 11px;
     margin-left: 0px;
     z-index: 10;
@@ -917,8 +943,7 @@
     color: #6f6f6f;
     margin: 0px;
     padding: 5px;
-    word-break: normal;
-    word-break: normal;
+    word-break: break-word;
     text-align: left;
   }
 
@@ -928,10 +953,12 @@
   }
 
   .model-row-right-top-span-hidden-ul {
-    width: 100%;
+    /*width: 100%;*/
     height: auto;
     /*min-height: 50px;*/
     padding-left: 0;
+    /*border: #0a6beb 1px solid;*/
+    max-width: 500px;
     word-wrap: break-word;
     word-break: normal;
   }
@@ -942,8 +969,11 @@
     padding-left: 0px;
     display: inline-block;
     font-size: 14px;
-    /*word-break: keep-all;*/
-
+    max-width: 300px;
+    word-break: normal;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
   }
 
   .model-row-right-top-span-hidden-ul > li:hover {
@@ -1106,7 +1136,7 @@
   }
 
   .job-info-top-name-right {
-    font-style: normal;
+    /*font-style: normal;*/
     cursor: default;
     margin: 8px 0px 0px 3px;
     background-color: #f8ac59;;
@@ -1151,7 +1181,7 @@
   }
 
   .text {
-    white-space: normal;
+    /*white-space: normal;*/
     color: #999;
     cursor: pointer;
     margin-left: 8px;
