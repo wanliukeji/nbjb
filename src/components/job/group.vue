@@ -97,124 +97,104 @@
       <div class="model-row-right">
         <div class="model-row-right-top">
           <div class="model-row-right-top-span">
-            <a href="" class="model-row-right-top-span-a">
-              工作地点
-              <i class="open-title-right">
+            <a class="model-row-right-top-span-a">
+              {{addr}}
+              <span class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
                   <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
                         p-id="1814"></path>
                 </svg>
-              </i>
-              <div class="model-row-right-top-span-hidden" style="display: none;">
-                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
-                <br>
-                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </span>
+              <div class="model-row-right-top-span-hidden display-none">
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('不限')">不限</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('北仑区')">北仑区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('镇海区')">镇海区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('江北区')">江北区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('江东区')">江东区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('高新区')">高新区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('海曙区')">海曙区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('鄞州区')">鄞州区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('象山区')">象山区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('宁海区')">宁海区</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getAddr('余姚区')">余姚区</span>
               </div>
             </a>
-            <a href="" class="model-row-right-top-span-a">
-              行业领域
-              <i class="open-title-right">
+            <a class="model-row-right-top-span-a">
+              {{field}}
+              <span class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
                   <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
                         p-id="1814"></path>
                 </svg>
-              </i>
-              <div class="model-row-right-top-span-hidden" style="display: none;">
-                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
-                <br>
-                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </span>
+              <div class="model-row-right-top-span-hidden display-none">
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('贸易/消费/制造/营运')">贸易/消费/制造/营运</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('制药/医疗')">制药/医疗</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('广告/传媒')">广告/传媒</span>
               </div>
             </a>
-            <a href="" class="model-row-right-top-span-a">
-              计算机硬件
-              <i class="open-title-right">
+            <a class="model-row-right-top-span-a">
+              {{jobType}}
+              <span class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
                   <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
                         p-id="1814"></path>
                 </svg>
-              </i>
-              <div class="model-row-right-top-span-hidden" style="display: none;">
-                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
-                <br>
-                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </span>
+              <div class="model-row-right-top-span-hidden display-none">
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('贸易/消费/制造/营运')">贸易/消费/制造/营运</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('制药/医疗')">制药/医疗</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getFied('广告/传媒')">广告/传媒</span>
               </div>
             </a>
-            <a href="" class="model-row-right-top-span-a">
-              公司性质
-              <i class="open-title-right">
+            <a class="model-row-right-top-span-a">
+              {{nature}}
+              <span class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
                   <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
                         p-id="1814"></path>
                 </svg>
-              </i>
-              <div class="model-row-right-top-span-hidden" style="display: none;">
-                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
-                <br>
-                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </span>
+              <div class="model-row-right-top-span-hidden display-none">
+                <span class="model-row-right-top-span-hidden-a" @click="getNature('不限')">不限</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getNature('外商独资')">外商独资</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getNature('中外合营')">中外合营</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getNature('股份制企业')">股份制企业</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getNature('上市公司')">上市公司</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getNature('国有企业')">国有企业</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getNature('私营企业')">私营企业</span>
               </div>
             </a>
-            <a href="" class="model-row-right-top-span-a">
-              公司规模
-              <i class="open-title-right">
+            <a class="model-row-right-top-span-a">
+              {{scale}}
+              <span class="open-title-right">
                 <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
                   <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
                         p-id="1814"></path>
                 </svg>
-              </i>
-              <div class="model-row-right-top-span-hidden" style="display: none;">
-                <a href="" class="model-row-right-top-span-hidden-a">北仑区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">镇海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江北区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">江东区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">高新区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">海曙区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">鄞州区</a>
-                <br>
-                <a href="" class="model-row-right-top-span-hidden-a">象山区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">宁海区</a>
-                <a href="" class="model-row-right-top-span-hidden-a">余姚区</a>
+              </span>
+              <div class="model-row-right-top-span-hidden display-none">
+                <span class="model-row-right-top-span-hidden-a" @click="getScale('不限')">不限</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getScale('1~49')">1~49人</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getScale('50~99')">50~99人</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getScale('100~499')">100~499人</span>
+                <span class="model-row-right-top-span-hidden-a" @click="getScale('500')">500人以上</span>
               </div>
             </a>
           </div>
@@ -595,11 +575,42 @@
             }
         },
         methods: {
-
+            getAddr: function (val) {
+                if (val == '不限') {
+                    this.addr = '工作地点';
+                } else {
+                    this.addr = val;
+                }
+            },
+            getFied(val) {
+                if (val == '不限') {
+                    this.field = '行业领域';
+                } else {
+                    this.field = val;
+                }
+            },
+            getNature(val) {
+                if (val == '不限') {
+                    this.nature = '公司性质';
+                } else {
+                    this.nature = val;
+                }
+            },
+            getScale(val) {
+                if (val == '不限') {
+                    this.scale = '公司规模';
+                } else {
+                    this.scale = val;
+                }
+            }
         },
         data() {
             return {
-                filterText: ''
+                addr: '工作地点',
+                field: '行业领域',
+                jobType:'职业类型',
+                nature: '公司性质',
+                scale:'公司规模'
             };
         }
     }
@@ -634,7 +645,12 @@
             $(childen).show(500);
         });
 
-
+        $('.model-row-right-top-span-a').click(function () {
+            var childen = $(this).children('.model-row-right-top-span-hidden');
+            $(childen).toggle(800);
+            var subs = $(this).siblings();
+            $(subs).children('.model-row-right-top-span-hidden').hide();
+        });
     })
 </script>
 
@@ -826,33 +842,48 @@
     min-width: 130px;
     text-align: center;
     vertical-align: middle;
-    padding: 10px;
+    padding-top: 10px;
     color: #666666;
     margin: 0 auto;
+    padding-left: 0px;
+  }
+
+  .open-title-right {
+    position: relative;
+    display: inline-block;
+    float: right;
   }
 
   .model-row-right-top-span-hidden {
     position: absolute;
-    width: auto;
+    min-width: 500px;
     height: auto;
-    /*margin: 0 auto;*/
-    padding: 10px;
+    padding: 8px;
     background-color: #FFFFFF;
-    min-width: 130px;
     min-height: 100px;
     margin-top: 11px;
-    margin-left: -10px;
+    margin-left: 0px;
     z-index: 10;
     cursor: default;
     border: 1px solid #ddd;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+    white-space: normal;
+    text-align: center;
   }
 
   .model-row-right-top-span-hidden-a {
     display: inline-block;
     font-size: 16px;
     color: #333333;
-    margin: 5px;
+    margin: 0px;
+    float: left;
+    padding: 10px;
+    word-break: normal;
+  }
+
+  .model-row-right-top-span-hidden-a:hover {
+    cursor: pointer;
+    background-color: #F2F2F2;
   }
 
   .model-row-right-head {
@@ -1166,5 +1197,13 @@
 
   .height-auto {
     height: auto;
+  }
+
+  .display-block {
+    display: block;
+  }
+
+  .display-none {
+    display: none;
   }
 </style>
