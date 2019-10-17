@@ -131,31 +131,31 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-block">
+              <div class="model-row-right-top-span-hidden">
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a">
                   计算机软件/互联网/通信
                   <svg t="1571298197868" class="icon" viewBox="0 0 1024 1024" version="1.1"
                        xmlns="http://www.w3.org/2000/svg" p-id="536" width="21" height="21"><path
                     d="M213.333333 341.333333h597.333334l-298.666667 384z" p-id="537" fill="#dbdbdb"></path></svg>
-                  <ul class="model-row-right-top-span-hidden-ul display-none">
-                      <li @click="getFied('计算机软件')">计算机软件</li>
-                      <li @click="getFied('计算机硬件')">计算机硬件</li>
-                      <li @click="getFied('计算机服务')">计算机服务</li>
-                      <li @click="getFied('网络通信')">网络通信</li>
-                      <li @click="getFied('宽带安装')">宽带安装</li>
-                      <li @click="getFied('路由安装')">路由安装</li>
-                      <li @click="getFied('服务器部署')">服务器部署</li>
-                      <li @click="getFied('软件测试')">软件测试</li>
-                      <li @click="getFied('计算机软件')">计算机软件</li>
-                      <li @click="getFied('计算机硬件')">计算机硬件</li>
-                      <li @click="getFied('计算机服务')">计算机服务</li>
-                      <li @click="getFied('网络通信')">网络通信</li>
-                      <li @click="getFied('宽带安装')">宽带安装</li>
-                      <li @click="getFied('路由安装')">路由安装</li>
-                      <li @click="getFied('服务器部署')">服务器部署</li>
-                      <li @click="getFied('软件测试')">软件测试</li>
-                  </ul>
+                  <div class="model-row-right-top-span-hidden-ul">
+                      <span @click="getFied('计算机软件')">计算机软件</span>
+                      <span @click="getFied('计算机硬件')">计算机硬件</span>
+                      <span @click="getFied('计算机服务')">计算机服务</span>
+                      <span @click="getFied('网络通信')">网络通信</span>
+                      <span @click="getFied('宽带安装')">宽带安装</span>
+                      <span @click="getFied('路由安装')">路由安装</span>
+                      <span @click="getFied('服务器部署')">服务器部署</span>
+                      <span @click="getFied('软件测试')">软件测试</span>
+                      <span @click="getFied('计算机软件')">计算机软件</span>
+                      <span @click="getFied('计算机硬件')">计算机硬件</span>
+                      <span @click="getFied('计算机服务')">计算机服务</span>
+                      <span @click="getFied('网络通信')">网络通信</span>
+                      <span @click="getFied('宽带安装')">宽带安装</span>
+                      <span @click="getFied('路由安装')">路由安装</span>
+                      <span @click="getFied('服务器部署')">服务器部署</span>
+                      <span @click="getFied('软件测试')">软件测试</span>
+                  </div>
                 </span>
 
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
@@ -675,31 +675,30 @@
 
         $('.qrc').mouseover(function () {
             let childen = $(this).children();
-            $(childen).show(500);
+            $(childen).show(100);
         });
 
         $('.model-row-right-top-span-a').click(function () {
             var childen = $(this).children('.model-row-right-top-span-hidden');
-            $(childen).show(800);
+            $(childen).show(200);
             var subs = $(this).siblings();
-            $(subs).children('.model-row-right-top-span-hidden').hide(800);
+            $(subs).children('.model-row-right-top-span-hidden').hide(200);
         });
         document.onclick = function (e) {
             if (e.target._prevClass != 'model-row-right-top-span-a' && e.target._prevClass != 'model-row-right-top-span-hidden-a') {
-                $('.model-row-right-top-span-hidden').hide(500);
+                $('.model-row-right-top-span-hidden').hide(200);
             }
         }
         $('.model-row-right-top-span-hidden-a').click(function () {
             var childen = $(this).children('.model-row-right-top-span-hidden-ul');
             var svg = $(this).children('.icon');
-            $(childen).toggle(600);
+            $(childen).toggle(200);
             if ($(svg).hasClass("icon-up")) {
                 $(svg).removeClass("icon-up").addClass("icon-down");
             } else {
                 $(svg).removeClass("icon-down").addClass("icon-up");
             }
         });
-
 
     })
 </script>
@@ -841,7 +840,6 @@
   }
 
   .body-title {
-    /*margin: 10px -10px 10px;*/
     padding-left: 15px;
     line-height: 1;
     border-left: 5px solid #e76320;
@@ -905,7 +903,7 @@
     height: 100%;
     position: relative;
     display: inline-block;
-    width: 130px;
+    min-width: 130px;
     text-align: center;
     vertical-align: middle;
     padding-top: 10px;
@@ -926,7 +924,6 @@
     height: auto;
     padding: 8px;
     background-color: #FFFFFF;
-    /*min-height: 100px;*/
     margin-top: 11px;
     margin-left: 0px;
     z-index: 10;
@@ -943,7 +940,6 @@
     color: #6f6f6f;
     margin: 0px;
     padding: 5px;
-    word-break: break-word;
     text-align: left;
   }
 
@@ -953,27 +949,18 @@
   }
 
   .model-row-right-top-span-hidden-ul {
-    /*width: 100%;*/
     height: auto;
-    /*min-height: 50px;*/
     padding-left: 0;
-    /*border: #0a6beb 1px solid;*/
-    max-width: 500px;
-    word-wrap: break-word;
-    word-break: normal;
+    display: none;
   }
 
-  .model-row-right-top-span-hidden-ul > li {
+  .model-row-right-top-span-hidden-ul > span {
     margin: 0 auto;
     padding: 5px;
     padding-left: 0px;
     display: inline-block;
     font-size: 14px;
     max-width: 300px;
-    word-break: normal;
-    word-break: keep-all;
-    word-wrap: break-word;
-    white-space: normal;
   }
 
   .model-row-right-top-span-hidden-ul > li:hover {
