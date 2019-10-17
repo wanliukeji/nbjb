@@ -107,7 +107,7 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-none">
+              <div class="model-row-right-top-span-hidden">
                 <span class="model-row-right-top-span-hidden-a" @click="getAddr('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getAddr('北仑区')">北仑区</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getAddr('镇海区')">镇海区</span>
@@ -131,7 +131,7 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-none">
+              <div class="model-row-right-top-span-hidden">
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
@@ -150,7 +150,7 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-none">
+              <div class="model-row-right-top-span-hidden">
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
@@ -169,7 +169,7 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-none">
+              <div class="model-row-right-top-span-hidden">
                 <span class="model-row-right-top-span-hidden-a" @click="getNature('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getNature('外商独资')">外商独资</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getNature('中外合营')">中外合营</span>
@@ -189,7 +189,7 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-none">
+              <div class="model-row-right-top-span-hidden">
                 <span class="model-row-right-top-span-hidden-a" @click="getScale('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getScale('1~49')">1~49人</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getScale('50~99')">50~99人</span>
@@ -574,11 +574,7 @@
 <script>
     export default {
         name: "group",
-        watch: {
-            filterText(val) {
-                this.$refs.tree2.filter(val);
-            }
-        },
+        watch: {},
         methods: {
             getAddr: function (val, e) {
                 if (val == '不限') {
@@ -651,18 +647,19 @@
             $(childen).show(500);
         });
 
-        $('.model-row-right-top-span-a').hover(function () {
+        $('.model-row-right-top-span-a').click(function () {
             var childen = $(this).children('.model-row-right-top-span-hidden');
             $(childen).show(800);
             var subs = $(this).siblings();
             $(subs).children('.model-row-right-top-span-hidden').hide(800);
         });
+        document.onclick = function (e) {
+            if (e.target._prevClass != 'model-row-right-top-span-a') {
+                $('.model-row-right-top-span-hidden').hide(500);
+            }
+        }
 
-        $('.model-row-right-top-span-hidden').click(function () {
-            // $(this).hide();
-        }).mouseout(function () {
-            // $(this).hide();
-        });
+
     })
 </script>
 
@@ -880,6 +877,7 @@
     border: 1px solid #ddd;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
     text-align: center;
+    display: none;
   }
 
   .model-row-right-top-span-hidden-a {
@@ -1239,6 +1237,7 @@
     cursor: pointer;
     background-color: #297ef0;
   }
+
   .page-num {
     padding: 8px;
     color: #686868;
