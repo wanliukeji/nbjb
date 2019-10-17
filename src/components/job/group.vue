@@ -131,7 +131,7 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-block">
+              <div class="model-row-right-top-span-hidden display-none">
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
@@ -575,7 +575,7 @@
             }
         },
         methods: {
-            getAddr: function (val) {
+            getAddr: function (val, e) {
                 if (val == '不限') {
                     this.addr = '工作地点';
                 } else {
@@ -608,9 +608,9 @@
             return {
                 addr: '工作地点',
                 field: '行业领域',
-                jobType:'职业类型',
+                jobType: '职业类型',
                 nature: '公司性质',
-                scale:'公司规模'
+                scale: '公司规模'
             };
         }
     }
@@ -645,11 +645,11 @@
             $(childen).show(500);
         });
 
-        $('.model-row-right-top-span-a').click(function () {
+        $('.model-row-right-top-span-a').hover(function () {
             var childen = $(this).children('.model-row-right-top-span-hidden');
-            $(childen).toggle(800);
+            $(childen).show(800);
             var subs = $(this).siblings();
-            $(subs).children('.model-row-right-top-span-hidden').hide();
+            $(subs).children('.model-row-right-top-span-hidden').hide(800);
         });
     })
 </script>
