@@ -131,9 +131,33 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden">
+              <div class="model-row-right-top-span-hidden display-block">
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
-                <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
+                <span class="model-row-right-top-span-hidden-a">
+                  计算机软件/互联网/通信
+                  <svg t="1571298197868" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg" p-id="536" width="24" height="24"><path
+                    d="M213.333333 341.333333h597.333334l-298.666667 384z" p-id="537" fill="#dbdbdb"></path></svg>
+                  <ul class="model-row-right-top-span-hidden-ul">
+                      <li @click="getFied('计算机软件')">计算机软件</li>
+                      <li @click="getFied('计算机硬件')">计算机硬件</li>
+                      <li @click="getFied('计算机服务')">计算机服务</li>
+                      <li @click="getFied('网络通信')">网络通信</li>
+                      <li @click="getFied('宽带安装')">宽带安装</li>
+                      <li @click="getFied('路由安装')">路由安装</li>
+                      <li @click="getFied('服务器部署')">服务器部署</li>
+                      <li @click="getFied('软件测试')">软件测试</li>
+                      <li @click="getFied('计算机软件')">计算机软件</li>
+                      <li @click="getFied('计算机硬件')">计算机硬件</li>
+                      <li @click="getFied('计算机服务')">计算机服务</li>
+                      <li @click="getFied('网络通信')">网络通信</li>
+                      <li @click="getFied('宽带安装')">宽带安装</li>
+                      <li @click="getFied('路由安装')">路由安装</li>
+                      <li @click="getFied('服务器部署')">服务器部署</li>
+                      <li @click="getFied('软件测试')">软件测试</li>
+                  </ul>
+                </span>
+
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('贸易/消费/制造/营运')">贸易/消费/制造/营运</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('制药/医疗')">制药/医疗</span>
@@ -589,7 +613,8 @@
                 if (val == '不限') {
                     this.addr = '工作地点';
                 } else {
-                    this.addr = this.subVal(val);;
+                    this.addr = this.subVal(val);
+                    ;
                 }
             },
             getFied(val) {
@@ -603,14 +628,16 @@
                 if (val == '不限') {
                     this.nature = '公司性质';
                 } else {
-                    this.nature = this.subVal(val);;
+                    this.nature = this.subVal(val);
+                    ;
                 }
             },
             getScale(val) {
                 if (val == '不限') {
                     this.scale = '公司规模';
                 } else {
-                    this.scale = this.subVal(val);;
+                    this.scale = this.subVal(val);
+                    ;
                 }
             }
             ,
@@ -658,7 +685,7 @@
             $(subs).children('.model-row-right-top-span-hidden').hide(800);
         });
         document.onclick = function (e) {
-            if (e.target._prevClass != 'model-row-right-top-span-a') {
+            if (e.target._prevClass != 'model-row-right-top-span-a' && e.target._prevClass != 'model-row-right-top-span-hidden-a') {
                 $('.model-row-right-top-span-hidden').hide(500);
             }
         }
@@ -887,9 +914,9 @@
   .model-row-right-top-span-hidden-a {
     display: block;
     font-size: 16px;
-    color: #333333;
+    color: #6f6f6f;
     margin: 0px;
-    padding: 10px;
+    padding: 5px;
     word-break: normal;
     word-break: normal;
     text-align: left;
@@ -897,7 +924,31 @@
 
   .model-row-right-top-span-hidden-a:hover {
     cursor: pointer;
-    background-color: #F2F2F2;
+    color: black;
+  }
+
+  .model-row-right-top-span-hidden-ul {
+    width: 100%;
+    height: auto;
+    /*min-height: 50px;*/
+    padding-left: 0;
+    word-wrap: break-word;
+    word-break: normal;
+  }
+
+  .model-row-right-top-span-hidden-ul > li {
+    margin: 0 auto;
+    padding: 5px;
+    padding-left: 0px;
+    display: inline-block;
+    font-size: 14px;
+    /*word-break: keep-all;*/
+
+  }
+
+  .model-row-right-top-span-hidden-ul > li:hover {
+    cursor: pointer;
+    color: #0a6beb;
   }
 
   .model-row-right-head {
