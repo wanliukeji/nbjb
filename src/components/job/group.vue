@@ -131,7 +131,7 @@
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden display-none">
+              <div class="model-row-right-top-span-hidden display-block">
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
@@ -856,7 +856,7 @@
 
   .model-row-right-top-span-hidden {
     position: absolute;
-    min-width: 500px;
+    min-width: 130px;
     height: auto;
     padding: 8px;
     background-color: #FFFFFF;
@@ -867,18 +867,18 @@
     cursor: default;
     border: 1px solid #ddd;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
-    white-space: normal;
     text-align: center;
   }
 
   .model-row-right-top-span-hidden-a {
-    display: inline-block;
+    display: block;
     font-size: 16px;
     color: #333333;
     margin: 0px;
-    float: left;
     padding: 10px;
     word-break: normal;
+    word-break: normal;
+    text-align: left;
   }
 
   .model-row-right-top-span-hidden-a:hover {
