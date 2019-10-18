@@ -157,31 +157,22 @@
                       <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('软件测试')">软件测试</a>
                   </div>
                 </span>
-
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('贸易/消费/制造/营运')">贸易/消费/制造/营运</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('制药/医疗')">制药/医疗</span>
                 <span class="model-row-right-top-span-hidden-a" @click="getFied('广告/传媒')">广告/传媒</span>
               </div>
             </a>
-            <a class="model-row-right-top-span-a">
+            <a class="model-row-right-top-span-a" id="job-type" @click="centerDialogVisible = true">
               {{jobType}}
               <span class="open-title-right">
-                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-down" viewBox="0 0 1024 1024"
+                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
                      version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
                   <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
                         p-id="1814"></path>
                 </svg>
               </span>
-              <div class="model-row-right-top-span-hidden">
-                <span class="model-row-right-top-span-hidden-a" @click="getFied('不限')">不限</span>
-                <span class="model-row-right-top-span-hidden-a" @click="getFied('计算机软件/互联网/通信')">计算机软件/互联网/通信</span>
-                <span class="model-row-right-top-span-hidden-a" @click="getFied('会计/金融/银行/保险')">会计/金融/银行/保险</span>
-                <span class="model-row-right-top-span-hidden-a" @click="getFied('贸易/消费/制造/营运')">贸易/消费/制造/营运</span>
-                <span class="model-row-right-top-span-hidden-a" @click="getFied('制药/医疗')">制药/医疗</span>
-                <span class="model-row-right-top-span-hidden-a" @click="getFied('广告/传媒')">广告/传媒</span>
-              </div>
             </a>
             <a class="model-row-right-top-span-a">
               {{nature}}
@@ -592,6 +583,57 @@
         </div>
       </div>
     </div>
+    <el-dialog style="min-width: 790px;"
+               title="请选择职业"
+               :visible.sync="centerDialogVisible"
+               width="50%"
+               center>
+      <div class="model-alert-body" style="min-width: 790px;">
+        <dl class="model-alert-body-dl">
+          <dt>
+            计算机/互联网/通信/电子
+          </dt>
+          <dd class="model-alert-body-dl-dd">
+            <div class="model-alert-body-dl-dd-div" @click="getModelJobType">
+              计算机软件
+              <svg t="1571298197868" class="icon model-alert-body-dl-dd-div-svg" viewBox="0 0 1024 1024"
+                   version="1.1"
+                   xmlns="http://www.w3.org/2000/svg" p-id="536" width="21" height="21">
+                <path
+                  d="M213.333333 341.333333h597.333334l-298.666667 384z" p-id="537" fill="#dbdbdb"></path>
+              </svg>
+            </div>
+            <div class="model-alert-body-dl-dd-div" @click="getModelJobType">
+              计算机硬件
+              <svg t="1571298197868" class="icon model-alert-body-dl-dd-div-svg" viewBox="0 0 1024 1024"
+                   version="1.1"
+                   xmlns="http://www.w3.org/2000/svg" p-id="536" width="21" height="21">
+                <path
+                  d="M213.333333 341.333333h597.333334l-298.666667 384z" p-id="537" fill="#dbdbdb"></path>
+              </svg>
+            </div>
+            <div class="model-alert-body-dl-dd-div" @click="getModelJobType">
+              IT维护
+              <svg t="1571298197868" class="icon model-alert-body-dl-dd-div-svg" viewBox="0 0 1024 1024"
+                   version="1.1"
+                   xmlns="http://www.w3.org/2000/svg" p-id="536" width="21" height="21">
+                <path
+                  d="M213.333333 341.333333h597.333334l-298.666667 384z" p-id="537" fill="#dbdbdb"></path>
+              </svg>
+            </div>
+            <ul class="model-alert-body-dl-ul display-none" style="line-height: 17px;">
+              <li class="model-alert-body-dl-ul-li" @click="getJobType('初级工程师')">初级工程师</li>
+              <li class="model-alert-body-dl-ul-li" @click="getJobType('中级工程师')">中级工程师</li>
+              <li class="model-alert-body-dl-ul-li" @click="getJobType('高级工程师')">高级工程师</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+      <span slot="footer" class="dialog-footer">
+    <el-button @click="getJobType('不限')"
+               style="right: 0; margin-right: 0px; width: 130px; position: relative;">不限</el-button>
+  </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -605,7 +647,8 @@
                 field: '行业领域',
                 jobType: '职业类型',
                 nature: '公司性质',
-                scale: '公司规模'
+                scale: '公司规模',
+                centerDialogVisible: false
             };
         },
         methods: {
@@ -643,6 +686,26 @@
             ,
             subVal(val) {
                 return val.substring(0, 4) + '..';
+            },
+            getJobType(val) {
+                if (val == '不限') {
+                    this.jobType = '职业类型';
+                    this.centerDialogVisible = false;
+                } else {
+                    this.jobType = this.subVal(val);
+                    this.centerDialogVisible = false;
+                }
+            },
+            getModelJobType(event) {
+                var $this = event.target;
+                var svg = $($this).children();
+                let ul = $($this).siblings('.model-alert-body-dl-ul');
+                $(ul).toggle(200);
+                if ($(svg).hasClass("icon-up")) {
+                    $(svg).removeClass("icon-up").addClass("icon-down");
+                } else {
+                    $(svg).removeClass("icon-down").addClass("icon-up");
+                }
             }
         }
     }
@@ -684,23 +747,12 @@
             var subs = $(this).siblings();
             $(subs).children('.model-row-right-top-span-hidden').hide(200);
         });
+
         document.onclick = function (e) {
             if (e.target._prevClass != 'model-row-right-top-span-a' && e.target._prevClass != 'model-row-right-top-span-hidden-a') {
                 $('.model-row-right-top-span-hidden').hide(200);
             }
         };
-
-        // document.onmouseover = function (e) {
-        //     if (e.target._prevClass == 'qrc' && e.target._prevClass == 'hidden-qrc') {
-        //         $('.hidden-qrc').show(200);
-        //     }
-        // };
-        //
-        // document.onmouseout = function (e) {
-        //     if (e.target._prevClass != 'qrc' && e.target._prevClass != 'hidden-qrc') {
-        //         $('.hidden-qrc').hide(200);
-        //     }
-        // };
 
         $('.model-row-right-top-span-hidden-a').click(function () {
             var childen = $(this).children('.model-row-right-top-span-hidden-ul');
@@ -711,6 +763,18 @@
             } else {
                 $(svg).removeClass("icon-down").addClass("icon-up");
             }
+        });
+
+        $('.model-alert-body-dl-dd-div').click(function () {
+            alert(1);
+            var childen = $(this).first('model-alert-body-dl-ul');
+            // var svg = $(this).children('.icon');
+            // $(childen).toggle(200);
+            // if ($(svg).hasClass("icon-up")) {
+            //     $(svg).removeClass("icon-up").addClass("icon-down");
+            // } else {
+            //     $(svg).removeClass("icon-down").addClass("icon-up");
+            // }
         });
 
     })
@@ -1345,4 +1409,64 @@
   .border {
     border: black 1px solid;
   }
+
+  .model-alert-body {
+    border-top: 0.5px #e2e2e2 solid;
+    width: 100%;
+    min-height: 100px;
+    margin-top: -20px;
+    height: auto;
+  }
+
+  .model-alert-body-dl {
+    line-height: 30px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 auto;
+    padding: 10px;
+    border-bottom: 0.5px #F2F2F2 solid;
+  }
+
+  .model-alert-body-dl-dd-div {
+    display: inline-block;
+    width: 32.5%;
+    min-width: 233px;
+    padding-left: 10px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .model-alert-body-dl-dd-div:hover {
+    cursor: pointer;
+    color: black;
+  }
+
+  .model-alert-body-dl-dd-div-svg {
+    float: right;
+    margin-top: 10px;
+    margin-right: 30px;
+  }
+
+  .model-alert-body-dl-ul {
+    margin: 0 auto;
+    padding-left: 12px;
+  }
+
+  .model-alert-body-dl-ul-li {
+    width: 33%;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-size: 12px;
+    color: #9d9d9d;
+    text-align: left;
+    line-height: 30px;
+  }
+
+
+  .model-alert-body-dl-ul-li:hover {
+    cursor: pointer;
+    color: #0a6beb;
+  }
+
 </style>
