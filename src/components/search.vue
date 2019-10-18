@@ -11,11 +11,12 @@
             <option>全部板块</option>
             <option>阿拉新闻</option>
           </select>
-          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-               p-id="7678" width="20" height="20" style="position:relative; margin-left: -208px; top: 10px; display: inline-block;">
+          <svg t="1566630465890" class="icon icon-select-left" viewBox="0 0 1024 1024" version="1.1"
+               xmlns="http://www.w3.org/2000/svg"
+               p-id="7678" width="27" height="27">
             <path
               d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
-              p-id="7679" fill="#999999"></path>
+              p-id="7679" fill="#ccc"></path>
           </svg>
           <input type="text" name="srchtxt" class="seach-text-div" value="" placeholder="请输入关键字"/>
           <button type="submit" name="searchsubmit" value="搜索" class="seach-btn-div"/>
@@ -301,7 +302,7 @@
     float: left;
     outline: none;
     /*将默认的select选择框样式清除*/
-    -ms-appearance:none;
+    -ms-appearance: none;
     /*在选择框的最右侧中间显示小箭头图片*/
   }
 
@@ -550,6 +551,16 @@
     color: #9c9c9c;
     float: left;
     font-size: 11px;
+  }
+
+  .icon-select-left {
+    position: absolute;
+    float: left;
+    top: 7px;
+    z-index: 10;
+    display: inline-block;
+    left: 0;
+    margin-left: 80px;
   }
 
 </style>
