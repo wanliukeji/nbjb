@@ -1,30 +1,26 @@
 <template lang="html">
   <div class="seach-div">
-    <div class="seach-center-div">
+    <div class="seach-center-div" style="margin: 0 auto;">
       <a href="/index.html">
         <div class="img_log"></div>
       </a>
-      <div class="seach-input-div" style=" display: inline-block;">
-        <select class="select-div">
-          <option>全部板块</option>
-          <option>阿拉新闻</option>
-          <option>阿拉娱乐</option>
-        </select>
-        <svg t="1566803108722" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="3566" width="18" height="18" style="position:absolute; margin-left: -225px; top: 13px;">
-          <path
-            d="M512 721.5c-4.6 0-9.2-1.8-12.7-5.3l-383.1-383c-7-7-7-18.4 0-25.5s18.4-7 25.5 0L512 678.1l370.3-370.3c7-7 18.4-7 25.5 0 7 7 7 18.4 0 25.5l-383.1 383c-3.5 3.5-8.1 5.2-12.7 5.2z"
-            p-id="3567" fill="#8a8a8a"></path>
-        </svg>
-        <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="7678" width="20" height="20" style="position:absolute; margin-left: -208px; top: 10px;">
-          <path
-            d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
-            p-id="7679" fill="#ccc"></path>
-        </svg>
-        <input type="text" name="srchtxt" class="seach-text-div" value="" placeholder="请输入关键字" autocomplete="off"
-               x-webkit-speech="" speech="">
-        <input type="submit" name="searchsubmit" value="搜索" class="seach-btn-div">
+      <div class="seach-input-div">
+        <div class="seach-input-div-center">
+          <select class="select-div">
+            <option>阿拉娱乐</option>
+            <option>全部板块</option>
+            <option>阿拉新闻</option>
+          </select>
+          <svg t="1566630465890" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               p-id="7678" width="20" height="20" style="position:relative; margin-left: -208px; top: 10px; display: inline-block;">
+            <path
+              d="M531.185456 943.532317c0 8.899694-6.493901 16.114003-14.503319 16.114003l-9.364275 0c-8.010441 0-14.504342-7.214309-14.504342-16.114003L492.81352 80.46666c0-8.898671 6.493901-16.114003 14.504342-16.114003l9.364275 0c8.009418 0 14.503319 7.215332 14.503319 16.114003L531.185456 943.532317z"
+              p-id="7679" fill="#999999"></path>
+          </svg>
+          <input type="text" name="srchtxt" class="seach-text-div" value="" placeholder="请输入关键字"/>
+          <button type="submit" name="searchsubmit" value="搜索" class="seach-btn-div"/>
+        </div>
+
       </div>
 
       <a href="#" @click="showFlag = true"
@@ -279,15 +275,19 @@
     /*left: 20px;*/
     display: inline-block;
     float: left;
+    position: relative;
+    margin-left: 10px;
+    display: inline;
+  }
+
+  select::-ms-expand {
+    display: none;
   }
 
   .select-div {
     display: inline-block;
-    float: left;
     width: 100px;
     height: 42px;
-    margin-left: -300px;
-    position: absolute;
     font-size: 13px;
     color: #454545;
     padding-left: 15px;
@@ -297,6 +297,12 @@
     -webkit-appearance: none; /* Safari 和 Chrome */
     border: 1px #1C8CE9 solid;
     border-right: none;
+    left: 0;
+    float: left;
+    outline: none;
+    /*将默认的select选择框样式清除*/
+    -ms-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
   }
 
   .select-div:hover {
@@ -310,6 +316,7 @@
     border: none;
     border: 0;
     background: transparent;
+    padding-left: 15px;
     /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
   }
 
@@ -327,7 +334,6 @@
 
 
   .seach-input-div {
-    display: block;
     height: auto;
     /*border: red 1px solid;*/
     width: auto;
@@ -335,8 +341,18 @@
     position: relative;
     top: 40px;
     /*border: #0a6beb solid 1px;*/
-    width: 400px;
+    min-width: 538px;
+    display: inline-block;
     margin: 0 auto;
+    margin-left: -110px;
+  }
+
+  .seach-input-div-center {
+    margin: 0 auto;
+    vertical-align: middle;
+    position: relative;
+    height: 44px;
+    width: auto;
   }
 
   .el-select .el-input {
@@ -350,6 +366,7 @@
 
   .seach-text-div {
     float: left;
+    width: 240px;
     width: 372px;
     height: 42px;
     outline: 0;
@@ -370,9 +387,9 @@
 
   .seach-btn-div {
     position: absolute;
-    top: -0.5px;
+    top: -1px;
     right: -1px;
-    display: block;
+    display: inline-block;
     overflow: hidden;
     width: 66px;
     height: 43px;
@@ -386,6 +403,7 @@
     text-indent: -999em;
     font-size: 16px;
     cursor: pointer;
+    left: auto;
   }
 
   p {
