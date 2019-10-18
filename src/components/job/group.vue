@@ -590,7 +590,7 @@
                center>
       <div class="model-alert-body" style="min-width: 790px;">
         <dl class="model-alert-body-dl">
-          <dt>
+          <dt style="text-align: left;">
             计算机/互联网/通信/电子
           </dt>
           <dd class="model-alert-body-dl-dd">
@@ -1431,6 +1431,7 @@
     display: inline-block;
     width: 32.5%;
     min-width: 233px;
+    text-align: left;
     padding-left: 10px;
     height: auto;
     margin: 0 auto;
