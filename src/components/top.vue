@@ -365,7 +365,7 @@
     position: relative;
     display: inline-block;
     float: right;
-    top: -27px;
+    top: -32px;
     right: 0px;
     z-index: 11;
   }
