@@ -139,22 +139,22 @@
                        xmlns="http://www.w3.org/2000/svg" p-id="536" width="21" height="21"><path
                     d="M213.333333 341.333333h597.333334l-298.666667 384z" p-id="537" fill="#dbdbdb"></path></svg>
                   <div class="model-row-right-top-span-hidden-ul">
-                      <span @click="getFied('计算机软件')">计算机软件</span>
-                      <span @click="getFied('计算机硬件')">计算机硬件</span>
-                      <span @click="getFied('计算机服务')">计算机服务</span>
-                      <span @click="getFied('网络通信')">网络通信</span>
-                      <span @click="getFied('宽带安装')">宽带安装</span>
-                      <span @click="getFied('路由安装')">路由安装</span>
-                      <span @click="getFied('服务器部署')">服务器部署</span>
-                      <span @click="getFied('软件测试')">软件测试</span>
-                      <span @click="getFied('计算机软件')">计算机软件</span>
-                      <span @click="getFied('计算机硬件')">计算机硬件</span>
-                      <span @click="getFied('计算机服务')">计算机服务</span>
-                      <span @click="getFied('网络通信')">网络通信</span>
-                      <span @click="getFied('宽带安装')">宽带安装</span>
-                      <span @click="getFied('路由安装')">路由安装</span>
-                      <span @click="getFied('服务器部署')">服务器部署</span>
-                      <span @click="getFied('软件测试')">软件测试</span>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('计算机软件')">计算机软件</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('计算机硬件')">计算机硬件</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('计算机服务')">计算机服务</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('网络通信')">网络通信</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('宽带安装')">宽带安装</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('路由安装')">路由安装</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('服务器部署')">服务器部署</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('软件测试')">软件测试</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('计算机软件')">计算机软件</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('计算机硬件')">计算机硬件</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('计算机服务')">计算机服务</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('网络通信')">网络通信</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('宽带安装')">宽带安装</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('路由安装')">路由安装</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('服务器部署')">服务器部署</a>
+                      <a class="model-row-right-top-span-hidden-ul-a" @click="getFied('软件测试')">软件测试</a>
                   </div>
                 </span>
 
@@ -845,7 +845,7 @@
   }
 
   dl {
-    display: block;
+    /*display: block;*/
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -923,6 +923,8 @@
     color: #666666;
     margin: 0 auto;
     padding-left: 0px;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 
   .open-title-right {
@@ -943,8 +945,9 @@
     cursor: default;
     border: 1px solid #ddd;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
-    text-align: center;
     display: none;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 
   .model-row-right-top-span-hidden-a {
@@ -954,6 +957,8 @@
     margin: 0px;
     padding: 5px;
     text-align: left;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 
   .model-row-right-top-span-hidden-a:hover {
@@ -965,20 +970,25 @@
     height: auto;
     padding-left: 0;
     display: none;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 
-  .model-row-right-top-span-hidden-ul > span {
+  .model-row-right-top-span-hidden-ul-a {
     margin: 0 auto;
+    display: block;
     padding: 5px;
-    padding-left: 0px;
-    display: inline-block;
     font-size: 14px;
-    max-width: 300px;
+    width: auto;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 
-  .model-row-right-top-span-hidden-ul > li:hover {
+
+  .model-row-right-top-span-hidden-ul-a:hover {
     cursor: pointer;
-    color: #0a6beb;
+    color: #eb6324;
+    background: #F2F2F2;
   }
 
   .model-row-right-head {
@@ -1136,7 +1146,6 @@
   }
 
   .job-info-top-name-right {
-    /*font-style: normal;*/
     cursor: default;
     margin: 8px 0px 0px 3px;
     background-color: #f8ac59;;
@@ -1331,5 +1340,9 @@
   .page-num:hover {
     cursor: pointer;
     color: #1a1a1a;
+  }
+
+  .border {
+    border: black 1px solid;
   }
 </style>
