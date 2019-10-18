@@ -167,7 +167,7 @@
             <a class="model-row-right-top-span-a">
               {{jobType}}
               <span class="open-title-right">
-                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-up" viewBox="0 0 1024 1024"
+                <svg t="1571111429872" style="margin-top: 6px;" class="icon open-title-down" viewBox="0 0 1024 1024"
                      version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1813" width="15" height="15">
                   <path d="M876.8 377.6l-96-89.6L512 556.8 243.2 288 147.2 377.6 512 736z" fill="#999999"
@@ -675,7 +675,7 @@
 
         $('.qrc').mouseover(function () {
             let childen = $(this).children();
-            $(childen).show(100);
+            $(childen).show();
         });
 
         $('.model-row-right-top-span-a').click(function () {
@@ -688,7 +688,20 @@
             if (e.target._prevClass != 'model-row-right-top-span-a' && e.target._prevClass != 'model-row-right-top-span-hidden-a') {
                 $('.model-row-right-top-span-hidden').hide(200);
             }
-        }
+        };
+
+        // document.onmouseover = function (e) {
+        //     if (e.target._prevClass == 'qrc' && e.target._prevClass == 'hidden-qrc') {
+        //         $('.hidden-qrc').show(200);
+        //     }
+        // };
+        //
+        // document.onmouseout = function (e) {
+        //     if (e.target._prevClass != 'qrc' && e.target._prevClass != 'hidden-qrc') {
+        //         $('.hidden-qrc').hide(200);
+        //     }
+        // };
+
         $('.model-row-right-top-span-hidden-a').click(function () {
             var childen = $(this).children('.model-row-right-top-span-hidden-ul');
             var svg = $(this).children('.icon');
