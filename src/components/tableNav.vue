@@ -141,7 +141,7 @@
 
   .table-model-div {
     display: inline-block;
-    width: 19.7%;
+    width: 19.5%;
     min-width: 230px;
     margin: 0 auto;
     padding: 0px auto;
