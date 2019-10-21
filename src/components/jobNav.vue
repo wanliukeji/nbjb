@@ -1104,8 +1104,8 @@
     margin: 0 auto;
     right: 0;
     float: left;
-    -moz-box-shadow: 0px 2px #cfcfcf;
-    box-shadow: 0px 3px #cfcfcf;
+    -moz-box-shadow: 0px 5px #d6d6d6;
+    box-shadow: 0px 5px #d6d6d6;
   }
 
   .right-arrow {
