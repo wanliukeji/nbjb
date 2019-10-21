@@ -83,7 +83,7 @@
         </div>
       </div>
       <div class="nav-right">
-        <el-tabs v-model="activeName">
+        <el-tabs v-model="activeName" style="margin-left: 15px;">
           <el-tab-pane label="热点资讯" name="first" class="nav-right-tab">
             <ul>
               <li class="nav-right-li">
@@ -1286,7 +1286,7 @@
     box-shadow: 5px 5px #cfcfcf;
     overflow-y: hidden;
     margin: 0 auto;
-    padding-left: 15px;
+    /*padding-left: 15px;*/
     padding-right: 15px;
     overflow-x: hidden;
   }
