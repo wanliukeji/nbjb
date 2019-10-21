@@ -1,13 +1,5 @@
 <template lang="html">
   <div class="container-body">
-<!--    -->
-<!--    <top/>-->
-<!--    <search/>-->
-<!--    <menu-nav/>-->
-<!--    <table-nav/>-->
-<!--    <job-nav/>-->
-<!--    <footer-table/>-->
-<!--    <footerNav/>-->
     <top/>
     <search/>
     <menu-nav/>

@@ -65,6 +65,23 @@
           </CarouselItem>
         </Carousel>
       </div>
+
+      <div class="hidden-div" ref="hide_div" @mouseover="showarrow($event)" @mouseout="hidearrow($event)">
+        <div class="hidden-div-center">
+          <div class="hidden-div-model">
+            <h4>
+              <a href="" class="hidden-div-p">
+                销售管理
+              </a>
+            </h4>
+            <ul class="hidden-div-model-ul">
+              <li class="hidden-div-model-li" v-for="i in [1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6]">
+                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="nav-right">
         <Tabs class="nav-right-tab">
           <TabPane label="热点资讯">
@@ -88,52 +105,6 @@
           <Button type="primary" class="nav-right-btn">
             入驻招聘单位
           </Button>
-        </div>
-      </div>
-      <div class="hidden-div" ref="hide_div" @mouseover="showarrow($event)" @mouseout="hidearrow($event)">
-        <div class="hidden-div-center">
-          <div class="hidden-div-model">
-            <h4>
-              <a href="" class="hidden-div-p">
-                销售管理
-              </a>
-            </h4>
-            <ul class="hidden-div-model-ul">
-              <li class="hidden-div-model-li">
-                <a href="" class="hidden-div-model-li-a">销售助理</a>
-              </li>
-              <li class="hidden-div-model-li">
-                <a href="" class="hidden-div-model-li-a">销售助理</a>
-              </li>
-            </ul>
-          </div>
-          <div class="hidden-div-model">
-            <h4>
-              <a href="" class="hidden-div-p">
-                销售管理
-              </a>
-            </h4>
-            <ul class="hidden-div-model-ul">
-              <li class="hidden-div-model-li">
-                <a href="" class="hidden-div-model-li-a">销售助理</a>
-              </li>
-              <li class="hidden-div-model-li">
-                <a href="" class="hidden-div-model-li-a">销售助理</a>
-              </li>
-            </ul>
-          </div>
-          <div class="hidden-div-model">
-            <h4>
-              <a href="" class="hidden-div-p">
-                销售管理
-              </a>
-            </h4>
-            <ul class="hidden-div-model-ul">
-              <li class="hidden-div-model-li">
-                <a href="" class="hidden-div-model-li-a">销售助理</a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -1093,7 +1064,6 @@
     height: auto;
     width: 80%;
     min-width: 1200px;
-    /*background: #f4f6f9;*/
   }
 
   .model-head {
@@ -1102,6 +1072,7 @@
     height: 460px;
     min-width: 1200px;
     white-space: nowrap;
+    position: relative;
   }
 
   .head-img {
@@ -1133,8 +1104,8 @@
     margin: 0 auto;
     right: 0;
     float: left;
-    -moz-box-shadow: 0px 5px #cfcfcf;
-    box-shadow: 0px 5px #cfcfcf;
+    -moz-box-shadow: 0px 2px #cfcfcf;
+    box-shadow: 0px 3px #cfcfcf;
   }
 
   .right-arrow {
@@ -1174,17 +1145,19 @@
   }
 
   .hidden-div {
-    width: 680px;
+    min-width: 680px;
     height: 440px;
     position: absolute;
     z-index: 10;
-    left: 422px;
+    width: 50%;
+    left: 25%;
     top: auto;
-    display: none;
+    /*display: none;*/
     background: #FFFFFF;
     padding: 25px;
     overflow-y: scroll;
     /*overflow-x: scroll;*/
+    display: block;
   }
 
   .hidden-div-center {
@@ -1227,11 +1200,18 @@
     display: block;
     float: left;
     margin-bottom: 10px;
+    border-bottom: #dfdfdf solid 1px;
+    padding-bottom: 5px;
   }
 
   .hidden-div-model-li-a {
     font-size: 12px;
     color: #6b6b6b;
+  }
+
+  .hidden-div-model-li-a:hover {
+    color: #0a6beb;
+    cursor: pointer;
   }
 
   .demo-carousel {
@@ -1645,7 +1625,7 @@
   }
 
   .hot-jop-title:hover, .hot-jop-gs-name:hover, hidden-div-model-li-a:hover, .hidden-div-model-li-a:hover {
-    color: #53eb45;
+    color: #2d8cf0;;
     cursor: pointer;
   }
 

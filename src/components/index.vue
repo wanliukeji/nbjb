@@ -1,9 +1,8 @@
 <template lang="html">
   <div>
-    <!--    -->
-<!--    <info/>-->
-<!--     <job-nav/>-->
-    <group/>
+<!--    -->
+<!--    <group/>-->
+    <job-nav/>
     <footer-table/>
     <footerNav/>
   </div>
@@ -22,7 +21,17 @@
 
     export default {
         name: "index",
-        components: {Group, Info, TableNav, FooterTable, Top, MenuNav, JobNav, footerNav, Search}
+        components: {
+            Group,
+            Info,
+            TableNav,
+            FooterTable,
+            Top,
+            MenuNav,
+            JobNav,
+            footerNav,
+            Search
+        }
     }
 </script>
 
