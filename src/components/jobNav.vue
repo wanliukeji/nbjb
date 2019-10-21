@@ -1,3 +1,4 @@
+<script src="../../static/server/conn.js"></script>
 <template>
   <div class="model">
     <div class="model-head">
@@ -984,67 +985,6 @@
           </el-tab-pane>
           <el-tab-pane label="热点资讯" name="second"></el-tab-pane>
         </el-tabs>
-
-
-        <!--            <div class="foot-center-tab-fw">-->
-        <!--              <ul>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--                <li class="foot-center-tab-fw-li">-->
-        <!--                  <a href="">-->
-        <!--                    <span class="foot-center-tab-fw-li-span">山东威海市：为人才服务到每个细节</span>-->
-        <!--                  </a>-->
-        <!--                  <span class="foot-center-tab-fw-li-span-time">2016-09-19</span>-->
-        <!--                </li>-->
-        <!--              </ul>-->
-        <!--            </div>-->
-
-        <!--          </TabPane>-->
-        <!--          <TabPane label="招聘现场"></TabPane>-->
-        <!--          <TabPane label="培训进修"></TabPane>-->
-        <!--          <TabPane label="薪酬福利"></TabPane>-->
-        <!--          <TabPane label="社会保险"></TabPane>-->
-        <!--        </Tabs>-->
       </div>
       <div class="foot-right">
         <el-tabs v-model="activeName" @tab-click="handleClick">
@@ -1072,10 +1012,38 @@
                 info: {
                     val: ''
                 },
-                activeName: 'first'
+                activeName: 'first',
+                items: []
             }
         },
         created() {
+            this.$http.get('/static/data/job_work.json').then(res => {
+                var obj = res.data;
+                this.items = obj;
+                if (res.status == 200) {
+                    this.$notify({
+                        title: '成功连接服务器',
+                        message: '获取数据成功！',
+                        type: 'success'
+                    });
+                    getConn();
+                    // let addSql = 'INSERT INTO job(name,firstChar,pinyin) VALUES(?,?,?)';
+                    // var param = ['chenyu', 'c', 'y'];
+                    // this.close(this.insert(con, addSql, param));
+                } else {
+                    this.$notify.error({
+                        title: '获取数据失败',
+                        message: result,
+                        type: 'error'
+                    });
+                }
+            }).catch(function (result) {
+                this.$notify.error({
+                    title: '获取数据失败',
+                    message: result,
+                    type: 'error'
+                });
+            });
         },
         methods: {
             changeActive(e) {
@@ -1085,7 +1053,7 @@
                 $(sub).css('display', 'none');
                 this.$refs.hide_div.style.display = 'block';
             },
-            removeActive(e) {
+            removeActive: function (e) {
                 let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
                 $(sub).css('display', 'block');

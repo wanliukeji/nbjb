@@ -39,7 +39,6 @@ Vue.use(ElementUI) //使用elementUI
 Vue.use(iView);
 Vue.use(VueRouter);
 // Vue.use(storage)
-
 Vue.use(VueVideoPlayer)
 // Vue.use(axios);
 // Vue.prototype.$http=axios;
