@@ -19,12 +19,12 @@
                 </i>
               </a>
             </dt>
-            <dd style="display: block;">
-              <a href="#" class="dd-frist">不限</a>
-              <a href="#">全职</a>
-              <a href="#">兼职</a>
-              <a href="#">临时</a>
-              <a href="#">实习</a>
+            <dd class="display-block">
+              <span class="model-row-left-span dd-frist">不限</span>
+              <span class="model-row-left-span">全职</span>
+              <span class="model-row-left-span">兼职</span>
+              <span class="model-row-left-span">临时</span>
+              <span class="model-row-left-span">实习</span>
             </dd>
           </dl>
           <dl class="open">
@@ -843,6 +843,17 @@
     display: block;
   }
 
+  .model-row-left-span {
+    font-size: 16px;
+    font-family: microsoft yahei;
+    color: #9297a0;
+    position: relative;
+    display: block;
+    line-height: 26px;
+    padding: 5px;
+    display: block;;
+  }
+
   a {
     text-decoration: none;
     font-size: 16px;
@@ -856,6 +867,12 @@
   }
 
   a:hover {
+    cursor: pointer;
+    color: #333333;
+  }
+
+  .model-row-left-span:hover {
+    cursor: pointer;
     color: #333333;
   }
 
