@@ -1,4 +1,3 @@
-<script src="../../static/server/conn.js"></script>
 <template>
   <div class="model">
     <div class="model-head">
@@ -1026,10 +1025,17 @@
                         message: '获取数据成功！',
                         type: 'success'
                     });
-                    getConn();
-                    // let addSql = 'INSERT INTO job(name,firstChar,pinyin) VALUES(?,?,?)';
-                    // var param = ['chenyu', 'c', 'y'];
-                    // this.close(this.insert(con, addSql, param));
+                    var con = null;
+                    try {
+                        con = this.getConn();
+                        let addSql = 'INSERT INTO job(name,firstChar,pinyin) VALUES(?,?,?)';
+                        var param = ['chenyu', 'c', 'y'];
+                        con = this.insertObj(con, addSql, param);
+                    } catch (e) {
+                        console.log(e)
+                    } finally {
+                        this.closeConn(con);
+                    }
                 } else {
                     this.$notify.error({
                         title: '获取数据失败',
@@ -1073,6 +1079,53 @@
             },
             handleClick(tab, event) {
                 console.log(tab, event);
+            },
+            getConn() {
+                var mysql = require('mysql');
+                //连接数据库
+                var connection = mysql.createConnection({
+                    host: 'localhost',
+                    user: 'root',  //用户名
+                    password: 'root',   //密码
+                    database: 'aymc',
+                    port: '3306'
+                    //端口号
+                });
+                return connection;
+            },
+            //插入数据
+            insertObj(connection, addSql, param) {
+                alert('已进入.........');
+                connection.connect(function (err) {
+                    if (err) {
+                        connection.rollback(function () {//如果失败回滚
+                            sendData(req, res, next, conn, err);
+                        });
+                        console.log('---:' + err);
+                        return;
+                    }
+                    console.log('连接succeed');
+                });
+                connection.query(addSql, param, function (err, rs) {
+                    if (err) {
+                        console.log(err.message);
+                        return;
+                    }
+                    console.log('插入数据succeed');
+                });
+
+                return connection;
+
+            },
+            closeConn(connection) {
+                //关闭数据库
+                connection.end(function (err) {
+                    if (err) {
+                        console.log('---:' + err);
+                        return;
+                    }
+                    console.log('关闭succeed');
+                });
             }
         }
     }
