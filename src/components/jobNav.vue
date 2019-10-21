@@ -1033,7 +1033,6 @@
                 let sub = e.currentTarget.firstElementChild;
                 $(parent).css('background-color', '#0a6beb');
                 $(sub).css('display', 'none');
-                console.dir($(parent).val());
                 this.$refs.hide_div.style.display = 'block';
             },
             removeActive(e) {
