@@ -4,7 +4,6 @@
       <div class="model-row-left">
         <div class="model-row-left-top">
           <p class="body-title">筛选条件</p>
-          <p style="border-bottom: 3px solid #e5e5e5; margin-top: 10px;"></p>
         </div>
         <div class="model-row-left-body">
           <dl class="open">
@@ -20,7 +19,7 @@
               </a>
             </dt>
             <dd class="display-block">
-              <span class="model-row-left-span dd-frist">不限</span>
+              <span class="model-row-left-span left-selected">不限</span>
               <span class="model-row-left-span">全职</span>
               <span class="model-row-left-span">兼职</span>
               <span class="model-row-left-span">临时</span>
@@ -40,12 +39,12 @@
               </a>
             </dt>
             <dd style="display: block;">
-              <a href="#" class="dd-frist">不限</a>
-              <a href="#">一年以内</a>
-              <a href="#">1-2年</a>
-              <a href="#">3-5年</a>
-              <a href="#">6-7年</a>
-              <a href="#">8-10年</a>
+              <span class="model-row-left-span left-selected">不限</span>
+              <span class="model-row-left-span">一年以内</span>
+              <span class="model-row-left-span">1-2年</span>
+              <span class="model-row-left-span">3-5年</span>
+              <span class="model-row-left-span">6-7年</span>
+              <span class="model-row-left-span">8-10年</span>
             </dd>
           </dl>
           <dl class="open">
@@ -61,13 +60,13 @@
               </a>
             </dt>
             <dd style="display: block;">
-              <a href="#" class="dd-frist">不限</a>
-              <a href="#">高中以下</a>
-              <a href="#">中专/职高</a>
-              <a href="#">大专</a>
-              <a href="#">本科</a>
-              <a href="#">硕士</a>
-              <a href="#">研究生</a>
+              <span class="model-row-left-span left-selected">不限</span>
+              <span class="model-row-left-span">高中以下</span>
+              <span class="model-row-left-span">中专/职高</span>
+              <span class="model-row-left-span">大专</span>
+              <span class="model-row-left-span" href="#">本科</span>
+              <span class="model-row-left-span">硕士</span>
+              <span class="model-row-left-span">研究生</span>
             </dd>
           </dl>
           <dl class="open">
@@ -83,13 +82,13 @@
               </a>
             </dt>
             <dd style="display: block;">
-              <a href="#" class="dd-frist">不限</a>
-              <a href="#">面议</a>
-              <a href="#">1000以下</a>
-              <a href="#">1000~3999</a>
-              <a href="#">4000~6999</a>
-              <a href="#">6000~8999</a>
-              <a href="#">8000以上</a>
+              <span class="model-row-left-span left-selected">不限</span>
+              <span class="model-row-left-span">面议</span>
+              <span class="model-row-left-span">1000以下</span>
+              <span class="model-row-left-span">1000~3999</span>
+              <span class="model-row-left-span">4000~6999</span>
+              <span class="model-row-left-span">6000~8999</span>
+              <span class="model-row-left-span">8000以上</span>
             </dd>
           </dl>
         </div>
@@ -528,6 +527,11 @@
                 $(svg[1]).removeClass("icon-down").addClass("icon-up");
             }
         });
+
+        $('.model-row-left-span').click(function () {
+            $(this).addClass('left-selected');
+            $(this).siblings().removeClass('left-selected');
+        });
     })
 </script>
 
@@ -605,6 +609,10 @@
     display: block;;
   }
 
+  .left-selected {
+    color: #f60;
+  }
+
   a {
     text-decoration: none;
     font-size: 16px;
@@ -624,7 +632,7 @@
 
   .model-row-left-span:hover {
     cursor: pointer;
-    color: #333333;
+    color: #f60;
   }
 
   .open {
