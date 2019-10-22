@@ -3,7 +3,7 @@
     <div class="model-head">
       <div class="nav-left">
         <ul class="nav-left-ul">
-          <li class="nav-left-li" value="1" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
+          <li class="nav-left-li"  @mouseover="changeActive($event)" @mouseout="removeActive($event)">
             计算机/互联网/通信/电子
             <i class="right-arrow"></i>
           </li>
@@ -1018,24 +1018,14 @@
         created() {
             this.$http.get('/static/data/job_work.json').then(res => {
                 var obj = res.data;
-                this.items = obj;
                 if (res.status == 200) {
                     this.$notify({
                         title: '成功连接服务器',
                         message: '获取数据成功！',
                         type: 'success'
                     });
-                    var con = null;
-                    try {
-                        con = this.getConn();
-                        let addSql = 'INSERT INTO job(name,firstChar,pinyin) VALUES(?,?,?)';
-                        var param = ['chenyu', 'c', 'y'];
-                        con = this.insertObj(con, addSql, param);
-                    } catch (e) {
-                        console.log(e)
-                    } finally {
-                        this.closeConn(con);
-                    }
+                    this.items = obj.data;
+                    console.log(this.items);
                 } else {
                     this.$notify.error({
                         title: '获取数据失败',
@@ -1079,53 +1069,6 @@
             },
             handleClick(tab, event) {
                 console.log(tab, event);
-            },
-            getConn() {
-                var mysql = require('mysql');
-                //连接数据库
-                var connection = mysql.createConnection({
-                    host: 'localhost',
-                    user: 'root',  //用户名
-                    password: 'root',   //密码
-                    database: 'aymc',
-                    port: '3306'
-                    //端口号
-                });
-                return connection;
-            },
-            //插入数据
-            insertObj(connection, addSql, param) {
-                alert('已进入.........');
-                connection.connect(function (err) {
-                    if (err) {
-                        connection.rollback(function () {//如果失败回滚
-                            sendData(req, res, next, conn, err);
-                        });
-                        console.log('---:' + err);
-                        return;
-                    }
-                    console.log('连接succeed');
-                });
-                connection.query(addSql, param, function (err, rs) {
-                    if (err) {
-                        console.log(err.message);
-                        return;
-                    }
-                    console.log('插入数据succeed');
-                });
-
-                return connection;
-
-            },
-            closeConn(connection) {
-                //关闭数据库
-                connection.end(function (err) {
-                    if (err) {
-                        console.log('---:' + err);
-                        return;
-                    }
-                    console.log('关闭succeed');
-                });
             }
         }
     }
