@@ -1,6 +1,11 @@
 <template>
   <div class="model">
     <div class="model-row">
+      <p style="padding: 5px 0px 10px; color: #727272;">当前位置:
+        <span class="model-row-p-span" @click="goTo('index')">阿拉招聘</span>&nbsp;>&nbsp;<span class="model-row-p-span" @click="goTo('group')">计算机/互联网/通信</span>
+      </p>
+    </div>
+    <div class="model-row">
       <div class="model-row-left">
         <div class="model-row-left-top">
           <p class="body-title">筛选条件</p>
@@ -258,33 +263,33 @@
                 <input type="checkbox" id="1" class="gcs-checkbox checkbox-item">
                 <label for="1" class="checkbox-label"></label>
               </span>
-                <a href="" class="job-info-top-name">智能家居云平台高级/资深</a>
+                <a class="job-info-top-name" @click="goTo('info')">智能家居云平台高级/资深</a>
                 <i class="job-info-top-name-right" style="float: left; padding: 2px;">兼职</i>
               </p>
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
                 <a href="#" class="job-info-title-span">太极云软</a>
-<!--                <a href="#" class="job-info-title-span qrc">-->
-<!--                  <svg t="1571127706955" style="margin-bottom: 4px;" class="icon" viewBox="0 0 1024 1024" version="1.1"-->
-<!--                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="20" height="20">-->
-<!--                    <path-->
-<!--                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"-->
-<!--                      p-id="2353" fill="#555555"></path>-->
-<!--                    <path-->
-<!--                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"-->
-<!--                      p-id="2354" fill="#555555"></path>-->
-<!--                    <path-->
-<!--                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"-->
-<!--                      p-id="2355" fill="#555555"></path>-->
-<!--                    <path-->
-<!--                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"-->
-<!--                      p-id="2356" fill="#555555"></path>-->
-<!--                  </svg>-->
-<!--                  <div style="display: none;" class="hidden-qrc">-->
-<!--                    <img src="/static/image/qrcode.jpg" width="80" height="80">-->
-<!--                  </div>-->
-<!--                </a>-->
+                <!--                <a href="#" class="job-info-title-span qrc">-->
+                <!--                  <svg t="1571127706955" style="margin-bottom: 4px;" class="icon" viewBox="0 0 1024 1024" version="1.1"-->
+                <!--                       xmlns="http://www.w3.org/2000/svg" p-id="2352" width="20" height="20">-->
+                <!--                    <path-->
+                <!--                      d="M540.9 866h59v59h-59v-59zM422.8 423.1V98.4H98.1v324.8h59v59h59v-59h206.7z m-265.7-59V157.4h206.7v206.7H157.1z m0 0"-->
+                <!--                      p-id="2353" fill="#555555"></path>-->
+                <!--                    <path-->
+                <!--                      d="M216.2 216.4h88.6V305h-88.6v-88.6zM600 98.4v324.8h324.8V98.4H600z m265.7 265.7H659V157.4h206.7v206.7z m0 0"-->
+                <!--                      p-id="2354" fill="#555555"></path>-->
+                <!--                    <path-->
+                <!--                      d="M718.1 216.4h88.6V305h-88.6v-88.6zM216.2 718.3h88.6v88.6h-88.6v-88.6zM98.1 482.2h59v59h-59v-59z m118.1 0h59.1v59h-59.1v-59z m0 0"-->
+                <!--                      p-id="2355" fill="#555555"></path>-->
+                <!--                    <path-->
+                <!--                      d="M275.2 600.2H98.1V925h324.8V600.2h-88.6v-59h-59v59z m88.6 59.1V866H157.1V659.3h206.7z m118.1-531.4h59v88.6h-59v-88.6z m0 147.6h59v59h-59v-59zM659 482.2H540.9v-88.6h-59v88.6H334.3v59H600v59h59v-118z m0 118h59.1v59H659v-59z m-177.1 0h59v88.6h-59v-88.6z m0 147.7h59V866h-59V747.9zM600 688.8h59V866h-59V688.8z m177.1-88.6h147.6v59H777.1v-59z m88.6-118h59v59h-59v-59z m-147.6 0h118.1v59H718.1v-59z m0 206.6h59v59h-59v-59z m147.6 59.1h-29.5v59h59v-59h29.5v-59h-59v59z m-147.6 59h59V866h-59v-59.1z m59 59.1h147.6v59H777.1v-59z m0 0"-->
+                <!--                      p-id="2356" fill="#555555"></path>-->
+                <!--                  </svg>-->
+                <!--                  <div style="display: none;" class="hidden-qrc">-->
+                <!--                    <img src="/static/image/qrcode.jpg" width="80" height="80">-->
+                <!--                  </div>-->
+                <!--                </a>-->
                 <a href="#" class="job-info-title-span">北仑</a>
                 <a href="#" class="job-info-title-span">大碶</a>
                 <a href="#" class="job-info-title-span">本科</a>
@@ -415,7 +420,6 @@
                     this.nature = '公司性质';
                 } else {
                     this.nature = this.subVal(val);
-                    ;
                 }
             },
             getScale(val) {
@@ -449,6 +453,9 @@
                 } else {
                     $(svg).removeClass("icon-down").addClass("icon-up");
                 }
+            },
+            goTo(name){
+                this.$router.push({name:name});
             }
         }
     }
@@ -550,8 +557,6 @@
     margin: 0 auto;
     position: relative;
     padding: 0 auto;
-    min-height: 230px;
-    min-width: 1200px;
     margin: 0px auto;
     vertical-align: top;
     white-space: nowrap;
@@ -898,6 +903,10 @@
     background-color: #ec9d47;
   }
 
+  .model-row-p-span:hover {
+    cursor: pointer;
+    color: #0a6beb;
+  }
   .seach-btn-div {
     display: inline-block;
     height: 28px;

@@ -23,13 +23,13 @@
         <div class="hidden-div-center">
           <div class="hidden-div-model" v-for="item in subItem">
             <h4>
-              <a href="" class="hidden-div-p">
+              <a @click="goGroup(item.name)" class="hidden-div-p">
                 {{item.name}}
               </a>
             </h4>
             <ul class="hidden-div-model-ul">
-              <li class="hidden-div-model-li" v-for="sub in item.subLevelModelList">
-                <a href="" class="hidden-div-model-li-a">{{sub.name}}</a>
+              <li class="hidden-div-model-li" v-for="sub in item.subLevelModelList" @click="goGroup(sub.name)">
+                <a class="hidden-div-model-li-a">{{sub.name}}</a>
               </li>
             </ul>
           </div>
@@ -74,7 +74,7 @@
       </div>
       <div class="model-div-row">
         <ul class="model-div-row-ul">
-          <li class="model-div-row-li-3" v-for="item in jobs">
+          <li class="model-div-row-li-3" v-for="item in jobs" @click="gotInfo(item.code)">
             <div class="hot-jop" :title="item.company">
               <h3>
                 <a href="" class="hot-jop-title">{{item.name}}</a>
@@ -323,9 +323,9 @@
                 querymap: new Map(),
                 subItem: [],
                 imgs: ['/static/image/job.jpg', '/static/image/google.jpg', 'static/image/microsoft.jpg', '/static/image/aali.jpg', '/static/image/sina.jpg'],
-                jobs:[],
-                companys:[],
-                fairs:[]
+                jobs: [],
+                companys: [],
+                fairs: []
             }
         },
         created() {
@@ -461,6 +461,12 @@
             },
             handleClick(tab, event) {
                 console.log(tab, event);
+            },
+            goGroup(val) {
+                this.$router.push({name:'group'});
+            },
+            gotInfo(id) {
+                this.$router.push({name:'info'});
             },
             forItem(items) {
                 try {
@@ -1276,62 +1282,3 @@
 </style>
 
 
-<!--    <div class="model-top">-->
-<!--      <el-menu class="el-menu-demo" mode="horizontal" style="background: #f1f1f1;">-->
-<!--        <el-menu-item index="1">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">首页</span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-<!--        <el-menu-item index="2">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">-->
-<!--            职位-->
-<!--            </span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-<!--        <el-menu-item index="3">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">-->
-<!--            公司-->
-<!--            </span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-<!--        <el-menu-item index="4">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">-->
-<!--            简历-->
-<!--            </span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-<!--        <el-menu-item index="5">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">-->
-<!--            求职-->
-<!--            </span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-<!--        <el-menu-item index="6">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">-->
-<!--            招聘-->
-<!--            </span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-<!--        <el-menu-item index="7">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">-->
-<!--            招聘会-->
-<!--            </span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-<!--        <el-menu-item index="8">-->
-<!--          <a href="">-->
-<!--            <span class="model-a">-->
-<!--            简历中心-->
-<!--            </span>-->
-<!--          </a>-->
-<!--        </el-menu-item>-->
-
-<!--      </el-menu>-->
-<!--    </div>-->

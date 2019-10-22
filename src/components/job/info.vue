@@ -1,5 +1,9 @@
 <template>
   <div class="model">
+    <p class="model-p">当前位置:
+      <span class="model-row-p-span" @click="goTo('index')">阿拉招聘</span>&nbsp;>&nbsp;<span class="model-row-p-span"
+                                                                                          @click="goTo('group')">计算机/互联网/通信</span>&nbsp;>&nbsp;<span>JAVA工程师</span>
+    </p>
     <div class="model-row">
       <div class="model-left">
         <img src="https://uploads.ihuoniao.cn/job/card/large/2019/03/18/15529101108532.png" class="model-top-img">
@@ -78,19 +82,25 @@
       </div>
       <div class="body-more"><a href="https://ihuoniao.cn/sz/job/company-album-50.html">查看所有照片(4)>></a></div>
       <p style="height: 30px;"/>
-<!--      <h2 class="body-title">企业地图</h2>-->
-<!--      <div class="body-map">-->
-<!--        <map/>-->
-<!--      </div>-->
+      <!--      <h2 class="body-title">企业地图</h2>-->
+      <!--      <div class="body-map">-->
+      <!--        <map/>-->
+      <!--      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-  import map from "./map";
+    import map from "./map";
+
     export default {
         name: "info",
-        components: {map}
+        components: {map},
+        methods: {
+            goTo(name) {
+                this.$router.push({name: name});
+            }
+        }
     }
 </script>
 
@@ -100,12 +110,25 @@
     height: 100%;
   }
 
+  .model-p {
+    padding: 5px 0px 0px;
+    color: #727272;
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .model-row-p-span:hover {
+    cursor: pointer;
+    color: #0a6beb;
+  }
+
   .model-row {
     width: 80%;
     height: auto;
     position: relative;
-    top: 20px;
-    min-width: 1200px;
+    top: 10px;
     margin: 0 auto;
     position: relative;
     padding: 0 auto;

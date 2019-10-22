@@ -5,7 +5,8 @@
     <menu-nav/>
     <table-nav/>
     <router-view/>
-    <index/>
+    <footer-table/>
+    <footerNav/>
   </div>
 </template>
 <script>
@@ -35,7 +36,7 @@
         },
         created() {
             this.activeDate = (new Date()).toString();
-            this.$router.push({name: 'login'})
+            this.$router.push({name: 'index'})
         },
         mounted() {
 

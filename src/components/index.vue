@@ -1,10 +1,6 @@
 <template lang="html">
   <div>
-<!--    -->
-<!--    <group/>-->
     <job-nav/>
-    <footer-table/>
-    <footerNav/>
   </div>
 </template>
 

@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router' /* 引用vue路由模块，并赋值给变量Router */
 import $ from 'jquery' ;
 
+import index from '../components/index'
+import group from '../components/job/group'
+import info from '../components/job/info'
+
 Vue.use(Router)  /* 使用路由 */
 
 export default new Router({
@@ -10,12 +14,21 @@ export default new Router({
     {
       path: '/index',
       name: 'index',
-      meta: {
-        title: "首页"
-      }
+      component: index
+    },
+    {
+      path: '/group',
+      name: 'group',
+      component: group
+    },
+    {
+      path: '/info',
+      name: 'info',
+      component: info
     }
   ]
-});
+})
+;
 
 
 
