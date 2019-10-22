@@ -3,40 +3,9 @@
     <div class="model-head">
       <div class="nav-left">
         <ul class="nav-left-ul">
-          <li class="nav-left-li"  @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            计算机/互联网/通信/电子
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            销售/客服/技术支持
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            会计/金融/银行/保险
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            生产/营运/采购/物流
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            生物/制药/医疗/护理
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            广告/市场/媒体/艺术
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            生活/服务业
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" v-model="info.val" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            人力/行政/管理
-            <i class="right-arrow"></i>
-          </li>
-          <li class="nav-left-li" v-model="info.val" @mouseover="changeActive($event)" @mouseout="removeActive($event)">
-            其他
+          <li class="nav-left-li" @mouseover="changeActive($event,item.code)" @mouseout="removeActive($event,item.code)"
+              v-for="(item,index) in items.slice(12,22)" :key="index">
+            {{item.name}}
             <i class="right-arrow"></i>
           </li>
         </ul>
@@ -1025,7 +994,14 @@
                         type: 'success'
                     });
                     this.items = obj.data;
-                    console.log(this.items);
+                    try {
+                        this.forItem(this.items);
+                        console.log(localStorage.length);
+                        console.log(localStorage);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                    // console.log(map);
                 } else {
                     this.$notify.error({
                         title: '获取数据失败',
@@ -1042,14 +1018,16 @@
             });
         },
         methods: {
-            changeActive(e) {
+            changeActive(e, code) {
+                // console.log(code);
                 let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
                 $(parent).css('background-color', '#0a6beb');
                 $(sub).css('display', 'none');
                 this.$refs.hide_div.style.display = 'block';
             },
-            removeActive: function (e) {
+            removeActive: function (e, code) {
+                // console.log(code);
                 let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
                 $(sub).css('display', 'block');
@@ -1069,6 +1047,21 @@
             },
             handleClick(tab, event) {
                 console.log(tab, event);
+            },
+            forItem(item) {
+                try {
+                    for (let i = 0; i < item; i++) {
+                        let item = item[i];
+                        this.setloacl(item);
+                        this.forItem(item.subLevelModelList)
+                    }
+                } catch (e) {
+                    console.error(e);
+                }
+
+            },
+            setloacl(item) {
+                localStorage.setItem(item.code, JSON.stringify(item));
             }
         }
     }
@@ -1321,10 +1314,9 @@
   .nav-left-li {
     color: #fff;
     font-size: 16px;
-    line-height: 38px;
     text-align: left;
     height: 44px;
-    line-height: 44px;
+    line-height: 32px;
     padding: 0 20px 0 30px;
   }
 
