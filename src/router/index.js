@@ -6,6 +6,10 @@ import index from '../components/index'
 import group from '../components/job/group'
 import info from '../components/job/info'
 
+import appGroup from '../components/app/appGroup'
+import appIndex from '../components/app/appIndex'
+import appInfo from '../components/app/appInfo'
+
 Vue.use(Router)  /* 使用路由 */
 
 export default new Router({
@@ -25,10 +29,22 @@ export default new Router({
       path: '/info',
       name: 'info',
       component: info
+    },
+    {
+      path: '/appIndex',
+      name: 'appIndex',
+      component: appIndex
+    },
+    {
+      path: '/appGroup',
+      name: 'appGroup',
+      component: appGroup
+    },
+    {
+      path: '/appInfo',
+      name: 'appInfo',
+      component: appInfo
     }
   ]
 })
 ;
-
-
-

@@ -1,12 +1,14 @@
 <template lang="html">
   <div class="container-body">
-    <top/>
-    <search/>
-    <menu-nav/>
-    <table-nav/>
-    <router-view/>
-    <footer-table/>
-    <footerNav/>
+<!--    -->
+<!--    <top/>-->
+<!--    <search/>-->
+<!--    <menu-nav/>-->
+<!--    <table-nav/>-->
+<!--    <router-view/>-->
+<!--    <footer-table/>-->
+<!--    <footerNav/>-->
+    <app-index/>
   </div>
 </template>
 <script>
@@ -18,6 +20,7 @@
     import FooterTable from "./components/footerTable";
     import footerNav from "./components/footerNav";
     import index from "./components/index";
+    import AppIndex from "./components/app/appIndex";
     export default {
         data() {
             return {
@@ -25,6 +28,7 @@
             };
         },
         components: {
+            AppIndex,
             FooterTable,
             MenuNav,
             TableNav,

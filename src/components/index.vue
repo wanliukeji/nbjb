@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div class="model">
     <job-nav/>
   </div>
 </template>
@@ -32,5 +32,9 @@
 </script>
 
 <style scoped>
-
+  /*.model {*/
+  /*  width: 100%;*/
+  /*  height: auto;*/
+  /*  border: black 1px solid;*/
+  /*}*/
 </style>
