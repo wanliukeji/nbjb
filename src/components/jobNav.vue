@@ -37,15 +37,15 @@
 
       <div class="hidden-div" ref="hide_div" @mouseover="showarrow($event)" @mouseout="hidearrow($event)">
         <div class="hidden-div-center">
-          <div class="hidden-div-model">
+          <div class="hidden-div-model" v-for="item in subItem">
             <h4>
               <a href="" class="hidden-div-p">
-                销售管理
+                {{item.name}}
               </a>
             </h4>
             <ul class="hidden-div-model-ul">
-              <li class="hidden-div-model-li" v-for="i in [1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6]">
-                <a href="" class="hidden-div-model-li-a">销售助理</a>
+              <li class="hidden-div-model-li"  v-for="sub in item.subLevelModelList">
+                <a href="" class="hidden-div-model-li-a">{{sub.name}}</a>
               </li>
             </ul>
           </div>
@@ -1019,10 +1019,10 @@
         methods: {
             changeActive(e, code) {
                 var obj = this.localmap.get(code);
-                var entity = JSON.stringify(obj);
+                var entity = obj;
                 console.log('>>>>>>>:' + entity);
                 this.subItem = entity.subLevelModelList;
-                console.log(this.subItem);
+                console.log(entity.subLevelModelList);
 
                 let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
