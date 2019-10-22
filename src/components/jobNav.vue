@@ -892,8 +892,7 @@
                   </el-carousel-item>
                   <el-carousel-item><img width="250" height="150">
                   </el-carousel-item>
-                  <el-carousel-item><img src="/static/image/baidu.jpg"
-                                         alt="" width="250" height="150">
+                  <el-carousel-item><img src="/static/image/baidu.jpg" alt="" width="250" height="150">
                   </el-carousel-item>
                 </el-carousel>
               </div>
@@ -981,7 +980,10 @@
                     val: ''
                 },
                 activeName: 'first',
-                items: []
+                items: [],
+                localmap: new Map(),
+                querymap: new Map(),
+                subItem: []
             }
         },
         created() {
@@ -996,12 +998,9 @@
                     this.items = obj.data;
                     try {
                         this.forItem(this.items);
-                        console.log(localStorage.length);
-                        console.log(localStorage);
                     } catch (e) {
                         console.log(e);
                     }
-                    // console.log(map);
                 } else {
                     this.$notify.error({
                         title: '获取数据失败',
@@ -1019,7 +1018,12 @@
         },
         methods: {
             changeActive(e, code) {
-                // console.log(code);
+                var obj = this.localmap.get(code);
+                var entity = JSON.stringify(obj);
+                console.log('>>>>>>>:' + entity);
+                this.subItem = entity.subLevelModelList;
+                console.log(this.subItem);
+
                 let parent = e.currentTarget;
                 let sub = e.currentTarget.firstElementChild;
                 $(parent).css('background-color', '#0a6beb');
@@ -1048,13 +1052,22 @@
             handleClick(tab, event) {
                 console.log(tab, event);
             },
-            forItem(item) {
+            forItem(items) {
                 try {
-                    for (let i = 0; i < item; i++) {
-                        let item = item[i];
-                        this.setloacl(item);
-                        this.forItem(item.subLevelModelList)
+                    for (let i = 0; i < items.length; i++) {
+                        var item = items[i];
+                        this.querymap.set(item.code, item);
+                        this.localmap.set(item.code, item);
+                        for (let j = 0; j < item.subLevelModelList.length; j++) {
+                            var sub = item.subLevelModelList[j];
+                            this.querymap.set(sub.code, sub);
+                            for (let k = 0; k < sub.subLevelModelList.length; k++) {
+                                var son = sub.subLevelModelList[k];
+                                this.querymap.set(son.code, son);
+                            }
+                        }
                     }
+                    console.log(this.querymap);
                 } catch (e) {
                     console.error(e);
                 }
