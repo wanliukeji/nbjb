@@ -1,6 +1,7 @@
 <template>
   <div class="model">
-    <van-nav-bar fixed title="职位列表" left-text="返回" right-text="设置" left-arrow/>
+    <van-nav-bar fixed title="职位列表" left-text="返回" right-text="设置" left-arrow @click-left="onClickLeft"
+                 @click-right="onClickRight"/>
     <van-dropdown-menu class="menu">
       <van-dropdown-item v-model="value1" :options="option1"/>
       <van-dropdown-item v-model="value2" :options="option2"/>
@@ -88,6 +89,12 @@
             }
         },
         methods: {
+            onClickLeft() {
+                history.go(-1);
+            },
+            onClickRight() {
+                Toast('按钮');
+            },
             onRefresh() {
                 setTimeout(() => {
                     this.$toast('刷新成功');

@@ -18,7 +18,7 @@
     </van-swipe>
     <van-search placeholder="请输入搜索关键词" v-model="value" shape="round"/>
     <van-grid>
-      <van-grid-item>
+      <van-grid-item @click="goTo('jobList')">
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon01.png" class="item-img" alt="">
         <span class="grid-span">找工作</span>
       </van-grid-item>
@@ -188,6 +188,9 @@
             },
             onClickRight() {
                 Toast('按钮');
+            },
+            goTo(name) {
+                this.$router.push({name: name});
             }
         }
     }

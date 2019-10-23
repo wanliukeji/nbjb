@@ -47,8 +47,8 @@ export default new Router({
       component: appInfo
     },
     {
-      path: '/appList',
-      name: 'appList',
+      path: '/jobList',
+      name: 'jobList',
       component: jobList
     }
   ]

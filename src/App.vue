@@ -1,15 +1,15 @@
 <template lang="html">
   <div class="container-body">
-<!---->
+<!-- -->
 <!--    <top/>-->
 <!--    <search/>-->
 <!--    <menu-nav/>-->
 <!--    <table-nav/>-->
-<!--    <router-view/>-->
+    <router-view/>
 <!--    <footer-table/>-->
 <!--    <footerNav/>-->
 <!--    <app-index/>-->
-    <job-list/>
+<!--    <job-list/>-->
   </div>
 </template>
 <script>
@@ -43,7 +43,7 @@
         },
         created() {
             this.activeDate = (new Date()).toString();
-            this.$router.push({name: 'index'})
+            this.$router.push({name: 'appIndex'})
         },
         mounted() {
 
