@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container-body">
-<!--    -->
+<!---->
 <!--    <top/>-->
 <!--    <search/>-->
 <!--    <menu-nav/>-->
@@ -80,7 +80,7 @@
     background-color: #F2F2F2;
     width: 100%;
     height: 100%;
-    min-width: 1200px;
+    /*min-width: 1200px;*/
   }
 
   ul, ol {

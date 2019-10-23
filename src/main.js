@@ -13,13 +13,21 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'vant/lib/index.css';
 import VueResource from 'vue-resource'
-import ElementUI from 'element-ui' //element-ui的全部组件
-import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
+//element-ui的全部组件
+import ElementUI from 'element-ui'
+//element-ui的css
+import 'element-ui/lib/theme-chalk/index.css'
+//引用 ivew 全局样式
 import iView from 'iview'
-import 'iview/dist/styles/iview.css'  //引用 ivew 全局样式
-
+import 'iview/dist/styles/iview.css'
+//引入视频播放
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
+
+//引入移动端框架
+// import Mint from 'mint-ui';
+// Vue.use(Mint);
+// import 'mint-ui/lib/style.css';
 
 // import BaiduMap from 'vue-baidu-map'
 
@@ -35,7 +43,8 @@ Vue.use(Vuex);
 Vue.use(Vant);
 // Vue.use($query);
 Vue.use(VueResource);
-Vue.use(ElementUI) //使用elementUI
+//使用elementUI
+Vue.use(ElementUI)
 Vue.use(iView);
 Vue.use(VueRouter);
 // Vue.use(storage)

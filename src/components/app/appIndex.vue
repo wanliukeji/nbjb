@@ -1,79 +1,109 @@
 <template>
   <div class="model">
-    <div class="top">
-      <span class="left">
-        <svg t="1571735779534" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="1116" width="28" height="28"><path
-          d="M682.424996 911.667585c-8.490372 0-17.041118-2.841721-24.091698-8.685823L199.142038 522.585079c-8.662287-7.185656-13.682627-17.853623-13.682627-29.112038s5.02034-21.926382 13.682627-29.111015L658.333298 83.941807c16.068977-13.325493 39.902802-11.06194 53.228295 4.995781 13.313214 16.081257 11.073196 39.901779-4.995781 53.228295L282.502607 493.473041 706.565812 844.756663c16.068977 13.326517 18.308995 37.147038 4.995781 53.228295C704.080202 907.004379 693.301717 911.667585 682.424996 911.667585z"
-          p-id="1117"></path></svg>
-      </span>
-      <span
-        style="text-align: center; color: black; margin: 0 auto; font-size: 22px; margin-bottom: 5px; margin-top: -5px;">阿拉招聘</span>
-      <span class="right">
-        <svg t="1571734414773" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="15379" width="28" height="28"><path
-          d="M0 106.5h1024M0 85.2h1024v42.7H0zM0 917.5h1024M0 896.2h1024v42.7H0z" p-id="15380"></path><path
-          d="M0 512h1024M0 490.7h1024v42.7H0z" p-id="15381"></path></svg>
-      </span>
-    </div>
-    <div class="model-body">
+    <van-nav-bar title="阿拉招聘" left-text="返回" right-text="设置" left-arrow @click-left="onClickLeft"
+                 @click-right="onClickRight"/>
+    <van-swipe :autoplay="3000" indicator-color="white">
+      <van-swipe-item>
+        <img src="/static/image/aali.jpg" class="img-item">
+      </van-swipe-item>
+      <van-swipe-item>
+        <img src="/static/image/google.jpg" class="img-item">
+      </van-swipe-item>
+      <van-swipe-item>
+        <img src="/static/image/baidu.jpg" class="img-item">
+      </van-swipe-item>
+      <van-swipe-item>
+        <img src="/static/image/microsoft.jpg" class="img-item">
+      </van-swipe-item>
+    </van-swipe>
+    <van-search placeholder="请输入搜索关键词" v-model="value" shape="round"/>
+    <van-grid>
+      <van-grid-item>
+        <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon01.png" class="item-img" alt="">
+        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">找工作</span>
+      </van-grid-item>
 
-    </div>
-    <div class="footer">
-      <a class="footer-div">
-        <svg t="1571733274994" class="icon" viewBox="0 0 1031 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="2066" width="24" height="24">
-          <path
-            d="M843.51176 1024H707.69576c-41.736 0-75.68-33.144-75.68-73.856V709.656c0-15.6-12.616-28.312-28.168-28.312H422.35976c-15.544 0-28.192 12.712-28.192 28.312v240.488c0 40.72-33.128 73.856-73.832 73.856H186.51976c-40.704 0-73.832-33.144-73.832-73.856l0.192-448.16H30.54376a30.56 30.56 0 0 1-28.008-18.352 30.504 30.504 0 0 1 5.64-32.976l484.88-441.344c11.576-12.408 33.176-12.408 44.744 0l481.648 437.832a30.424 30.424 0 0 1 12.048 24.296 30.52 30.52 0 0 1-31.136 30.544h-82.328v448.16c-0.008 40.712-33.448 73.856-74.52 73.856zM422.35976 620.248h181.496c49.216 0 89.256 40.096 89.256 89.408v240.488c0 6.68 6.944 12.768 14.584 12.768h135.816c7.4 0 13.424-5.728 13.424-12.768V471.44a30.52 30.52 0 0 1 30.544-30.528h42.752L515.42376 74.96 100.67176 440.904h42.776a30.56 30.56 0 0 1 30.552 30.56l-0.208 478.704c0 7.008 5.712 12.736 12.736 12.736h133.816c7.024 0 12.736-5.728 12.736-12.768v-240.48c0-49.312 40.04-89.408 89.28-89.408z"
-            fill="#838384" p-id="2067"></path>
-        </svg>
-        <span class="footer-span font-color">首页</span>
-      </a>
-      <a class="footer-div">
-        <svg t="1571733553978" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="4934" width="24" height="24">
-          <path
-            d="M960.512 375.808c0-153.6-149.504-281.6-332.8-281.6-136.192 0-256 68.608-307.2 171.008 17.408 0 33.792-4.096 51.2-4.096 51.2-72.704 145.408-123.904 256-123.904 161.792 0 289.792 106.496 289.792 238.592 0 63.488-29.696 123.904-84.992 171.008-13.312 8.192-17.408 29.696-13.312 43.008l17.408 59.392L750.592 614.4c0 13.312-4.096 29.696-8.192 43.008L900.096 716.8l-38.912-141.312C921.6 529.408 960.512 456.704 960.512 375.808zM375.808 303.104c-183.296 0-332.8 128-332.8 281.6 0 80.896 37.888 153.6 102.4 204.8l-38.912 141.312 187.392-72.704c25.6 4.096 55.296 8.192 84.992 8.192 183.296 0 332.8-123.904 332.8-281.6C712.704 431.104 563.2 303.104 375.808 303.104zM375.808 823.296c-25.6 0-51.2-4.096-76.8-8.192-4.096 0-4.096 0-8.192 0-4.096 0-8.192 0-17.408 4.096l-110.592 43.008 17.408-59.392c4.096-17.408 0-33.792-13.312-43.008-55.296-47.104-84.992-106.496-84.992-171.008 0-132.096 132.096-238.592 289.792-238.592s289.792 106.496 289.792 238.592C669.696 716.8 537.6 823.296 375.808 823.296z"
-            p-id="4935"></path>
-        </svg>
-        <span class="footer-span">社区</span>
-      </a>
-      <a class="footer-div">
-        <svg t="1571733674981" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="9255" width="24" height="24">
-          <path
-            d="M215.2448 388.9152l0.4096-0.4096h-0.4096v0.4096z m592.6912-3.4816v0.6144l0.4096-0.4096-0.4096-0.2048zM388.5056 810.3936h0.4096l-0.4096-0.4096v0.4096z m-0.8192-594.944h0.6144l-0.4096-0.4096-0.2048 0.4096z m248.0128-2.048h-0.4096l0.4096 0.4096v-0.4096z m-419.84 422.7072v-0.6144l-0.4096 0.4096 0.4096 0.2048z m418.2016 174.2848h-0.6144l0.4096 0.4096 0.2048-0.4096zM512 0C229.1712 0 0 229.1712 0 512s229.1712 512 512 512 512-229.1712 512-512S794.8288 0 512 0z m186.368 418.2016V71.2704c38.7072 16.384 75.5712 38.0928 109.568 65.1264 13.9264 11.0592 27.4432 22.9376 40.3456 35.84 30.1056 30.1056 55.0912 63.2832 75.3664 98.7136 5.12 8.8064 9.8304 17.8176 14.336 27.0336L698.368 537.3952c2.2528-14.5408 3.072-29.0816 1.8432-43.6224-0.4096-5.5296-1.024-11.0592-2.048-16.384l0.2048-59.1872z m-239.4112-380.928c17.6128-2.048 35.6352-3.2768 53.8624-3.2768 42.5984 0 83.7632 5.7344 123.0848 16.384 9.8304 2.6624 19.6608 5.7344 29.2864 8.8064v339.1488c-8.6016-11.8784-18.432-22.7328-29.4912-32.1536-4.096-3.6864-8.6016-6.9632-13.1072-10.24l-41.7792-41.7792-19.8656-19.8656L335.2576 68.608c38.912-15.7696 80.4864-26.4192 123.6992-31.3344z m-320.3072 178.176c11.0592-13.9264 22.9376-27.4432 35.84-40.3456 30.1056-30.1056 63.2832-55.0912 98.7136-75.3664 8.8064-5.12 17.8176-9.8304 27.0336-14.336l239.8208 239.8208c-14.5408-2.2528-29.0816-3.072-43.6224-1.8432-5.5296 0.4096-11.0592 1.024-16.384 2.048H73.3184c16.384-39.1168 38.2976-75.9808 65.3312-109.9776zM39.1168 565.0432c-2.048-17.6128-3.2768-35.6352-3.2768-53.8624 0-42.5984 5.7344-83.7632 16.384-123.0848 2.6624-9.8304 5.7344-19.6608 8.8064-29.2864h339.1488c-11.8784 8.6016-22.7328 18.432-32.3584 29.4912-3.6864 4.096-6.9632 8.6016-10.24 13.1072l-41.7792 41.7792-19.8656 19.8656L70.4512 688.7424c-15.7696-38.912-26.4192-80.4864-31.3344-123.6992z m286.3104 38.2976V950.272c-38.7072-16.384-75.5712-38.0928-109.568-65.1264-13.9264-11.0592-27.4432-22.9376-40.3456-35.84-30.1056-30.1056-55.296-63.2832-75.5712-98.5088-5.12-8.8064-9.8304-17.8176-14.336-27.0336l239.8208-239.8208c-2.2528 14.5408-3.072 29.0816-1.8432 43.6224 0.4096 5.5296 1.024 11.0592 1.8432 16.384v59.392zM512 357.376c85.4016 0 154.624 69.2224 154.624 154.624s-69.2224 154.624-154.624 154.624-154.624-69.2224-154.624-154.624 69.2224-154.624 154.624-154.624z m53.248 629.1456c-17.6128 2.048-35.6352 3.2768-53.8624 3.2768-42.5984 0-83.7632-5.7344-123.0848-16.384-9.8304-2.6624-19.6608-5.5296-29.2864-8.8064V625.4592c8.6016 11.8784 18.432 22.7328 29.4912 32.3584 4.096 3.6864 8.6016 6.9632 13.1072 10.24l41.7792 41.7792 19.8656 19.8656 225.4848 225.4848c-38.912 15.7696-80.2816 26.4192-123.4944 31.3344z m318.0544-176.128c-11.0592 13.9264-22.9376 27.4432-35.84 40.3456-30.1056 30.1056-63.2832 55.0912-98.7136 75.3664-8.8064 5.12-17.8176 9.8304-27.0336 14.336l-239.616-239.8208c14.5408 2.2528 29.0816 3.072 43.6224 1.8432 5.5296-0.4096 11.0592-1.024 16.384-1.8432H948.224c-16.1792 38.7072-37.888 75.5712-64.9216 109.7728z m79.6672-145.408H623.8208c11.8784-8.6016 22.7328-18.432 32.1536-29.4912 3.6864-4.096 6.9632-8.6016 10.24-13.1072l41.7792-41.7792 19.8656-19.8656 225.4848-225.4848c15.7696 38.912 26.4192 80.4864 31.3344 123.6992 2.048 17.6128 3.2768 35.6352 3.2768 53.8624 0 42.5984-5.7344 83.7632-16.384 123.0848-2.4576 9.8304-5.3248 19.456-8.6016 29.0816zM808.96 635.4944v-0.4096l-0.4096 0.4096h0.4096z m0 0"
-            p-id="9256"></path>
-        </svg>
-        <span class="footer-span">发现</span>
-      </a>
-      <a class="footer-div">
-        <svg t="1571733746047" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="12462" width="24" height="24">
-          <path
-            d="M511.775 92.431c-231.597 0-419.344 187.747-419.344 419.344s187.747 419.344 419.344 419.344c231.597 0 419.344-187.747 419.344-419.344 0-231.597-187.747-419.344-419.344-419.344zM511.775 892.981c-210.431-0.256-380.95-170.775-381.206-381.182 0.224-210.468 170.762-381.007 381.185-381.231 210.453 0.256 380.972 170.775 381.228 381.182-0.288 210.442-170.788 380.943-381.179 381.231z"
-            fill="" p-id="12463"></path>
-          <path
-            d="M298.419 721.813l296.494-134.775 130.162-291.881-291.825 130.162-134.831 296.494zM375.2 645.031l86.737-190.744 0.169-0.056 103.95 104.006v0.112l-190.856 86.681z"
-            fill="" p-id="12464"></path>
-        </svg>
-        <span class="footer-span">分享</span>
-      </a>
-      <a class="footer-div">
-        <svg t="1571733828048" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-             p-id="13249" width="24" height="24">
-          <path
-            d="M1022.761 953.443c-43.779-182.414-182.415-328.347-364.829-379.422 87.56-51.076 153.228-145.933 153.228-255.381 0-160.524-131.338-291.863-291.863-291.863-160.524 0-291.863 131.339-291.863 291.863 0 109.448 58.373 204.305 153.228 255.381C183.654 625.097 45.019 771.029 1.239 968.037v7.297c0 14.592 14.593 21.889 29.187 21.889 14.593 0 21.889-7.297 29.186-21.889v-7.297c21.89-80.263 58.373-160.525 124.042-218.898 87.559-87.559 204.304-138.634 328.345-138.634 124.042 0 240.787 51.075 328.347 138.634 58.373 58.373 102.151 138.636 124.042 218.898v7.297c0 14.592 14.594 21.889 29.186 21.889 14.594 0 29.188-14.594 29.188-29.186l-0.001-14.594zM278.509 318.641c0-131.338 102.152-233.491 233.49-233.491 131.339 0 233.492 102.152 233.492 233.491S643.338 544.835 511.999 544.835c-131.338 0-233.49-102.153-233.49-226.194z"
-            p-id="13250"></path>
-        </svg>
-        <span class="footer-span">我的</span>
-      </a>
-    </div>
+      <van-grid-item>
+        <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon02.png" class="item-img" alt="">
+        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">找人才</span>
+      </van-grid-item>
+
+      <van-grid-item>
+        <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon03.png" class="item-img" alt="">
+        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">招聘企业</span>
+      </van-grid-item>
+
+      <van-grid-item>
+        <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon04.png" class="item-img" alt="">
+        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">招聘会</span>
+      </van-grid-item>
+    </van-grid>
+
+    <van-row type="flex" justify="center">
+      <van-col span="0">
+        <div style="padding: 10px;">
+          <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fczx.png" width="20%" height="40"
+               class="row-left-img">
+          <div class="row-right-div">
+            <marquee direction="up" height="35" scrollamount="3">
+              <ul>
+                <li class="li-p">大碶模具企业招聘注塑机师傅</li>
+                <li class="li-p">春晓纸箱厂包吃住不体检,夫妻房</li>
+                <li class="li-p">诚招计算机网络专业技术元(8000-12000)</li>
+              </ul>
+            </marquee>
+          </div>
+        </div>
+      </van-col>
+    </van-row>
+
+    <van-row type="flex" justify="center">
+      <van-col span="0">
+        <ul>
+          <li><a href="https://ihuoniao.cn/b/post.html?do=add"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu1.png" class="li-img"></a></li>
+          <li><a href="https://ihuoniao.cn/b"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu2.png" class="li-img"></a></li>
+        </ul>
+      </van-col>
+    </van-row>
+
+    <van-row type="flex" justify="center">
+      <van-col span="0">
+        <ul>
+          <li><a href="https://ihuoniao.cn/b/post.html?do=add"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu1.png" class="li-img"></a></li>
+          <li><a href="https://ihuoniao.cn/b"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu2.png" class="li-img"></a></li>
+        </ul>
+      </van-col>
+    </van-row>
+
+    <van-tabbar v-model="active">
+      <van-tabbar-item icon="wap-home-o">标签</van-tabbar-item>
+      <van-tabbar-item icon="search">搜索</van-tabbar-item>
+      <van-tabbar-item icon="chat-o">信息</van-tabbar-item>
+      <van-tabbar-item icon="manager-o">个人中心</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 <script>
     export default {
-        name: "appIndex"
+        name: "appIndex",
+        data() {
+            return {
+                active: 0,
+                images: [
+                    'https://img.yzcdn.cn/vant/apple-1.jpg',
+                    'https://img.yzcdn.cn/vant/apple-2.jpg'
+                ],
+                value: ''
+            }
+        },
+        methods: {
+            onClickLeft() {
+                Toast('返回');
+            },
+            onClickRight() {
+                Toast('按钮');
+            }
+        }
     }
 </script>
 
@@ -81,67 +111,69 @@
   .model {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 1200px;
     padding: 0 auto;
-  }
-
-  .top {
-    position: fixed;
+    margin: 0 auto;
     left: 0;
+    right: 0;
     top: 0;
-    right: 0;
-    height: 55px;
-    background-color: #fff;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    border-bottom: #d4d4d4 1px solid;
-    padding-top: 2px;
-    z-index: 10;
-    padding: 15px 10px 0px 10px;
   }
 
-  .model-body {
-    height: auto;
-    position: relative;
-    /*padding: 10px 0px 10px 0px;*/
+  .van-nav-bar {
+    background-color: #1382de;
+    /*position: fixed;*/
   }
 
-  .footer {
-    position: fixed;
+  .van-nav-bar__title, .van-nav-bar__text, .van-nav-bar .van-icon {
+    color: #ffffff;
+  }
+
+  .img-item {
+    width: 100%;
+    height: 220px;
+  }
+
+  .item-img {
+    height: 60%;
+    width: 60%;
+  }
+
+  .van-grid-item {
+    border: none;
+    margin-top: 10px;
+  }
+
+  .van-row {
+    background-color: #ffffff;
+    margin-top: 10px;
+  }
+
+  .li-p {
+    white-space: nowrap;
+    color: black;
+    font-size: 14px;
+  }
+
+  .row-left-img {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+  }
+
+  .row-right-div {
+    display: inline-block;
     left: 0;
-    bottom: 0;
-    right: 0;
-    height: 49px;
-    background-color: #fff;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    border-top: #d4d4d4 1px solid;
-    padding-top: 2px;
-    /*width: 86%;*/
-    z-index: 10;
+    width: 70%;
+    vertical-align: top;
   }
 
-  .footer-div {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    text-align: center;
-    color: #f08002;
-    box-sizing: border-box;
+  .li-img {
+    margin: 0 auto;
+    width: 50%;
+    display: inline-block;
+    float: left;
+    padding: 8px;
   }
 
-  .footer-span {
-    display: block;
-    font-size: 8px;
-  }
 
-  a:hover {
-    cursor: pointer;
-  }
-
-  .font-color {
-    color: #f08002;
-  }
 </style>
