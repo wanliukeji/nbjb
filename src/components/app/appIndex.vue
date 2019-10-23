@@ -158,7 +158,48 @@
         </ul>
       </van-tab>
       <van-tab title="最新职位">
-
+        <ul class="tab-ul">
+          <li class="tab-ul-li" v-for="i in [1,2,3,4,5,6]">
+            <div class="li-top">
+              <p>
+                <span class="p-title">JAVA</span>
+                <span class="p-right-a">8000~12000</span>
+              </p>
+              <p>
+                <span class="tab-ul-li-p-span">苏州</span>
+                <i class="tab-ul-li-p-i"></i>
+                <span class="tab-ul-li-p-span">3-5年</span>
+                <i class="tab-ul-li-p-i"></i>
+                <span class="tab-ul-li-p-span">本科</span>
+                <i class="tab-ul-li-p-i"></i>
+                <span class="tab-ul-li-p-span">临时</span>
+                <span class="tab-ul-li-p-time">2019-10-29</span>
+              </p>
+              <p>
+                <span class="tab-ul-li-div">绩效奖金</span>
+                <span class="tab-ul-li-div">周末双休</span>
+              </p>
+            </div>
+            <div class="li-bottom-div">
+              <div class="li-bottom-div-img">
+                <img src="/static/image/google.jpg" width="50" height="43">
+              </div>
+              <div class="li-bottom-div-title">
+                <p class="li-bottom-div-name">Google</p>
+                <p class="li-bottom-div-p">
+                  <span class="li-bottom-div-span">100-499人</span>
+                  <span class="li-bottom-div-span">国有企业</span>
+                  <span class="li-bottom-div-span">互联网/IT/通信</span>
+                </p>
+              </div>
+              <div class="li-bottom-right">
+                <button class="li-bottom-div-btn">
+                  立即投递
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </van-tab>
     </van-tabs>
     <van-tabbar v-model="active">
