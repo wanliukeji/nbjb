@@ -47,6 +47,7 @@
         </li>
       </ul>
     </div>
+    <van-loading type="spinner" color="#1989fa" vertical/>
   </div>
 </template>
 
@@ -78,14 +79,23 @@
                     {text: '职业类型', value: 'a'},
                     {text: '不限', value: 'b'}
                 ],
-                option4:
-                    [
-                        {text: '更多', value: 'a'},
-                        {text: '不限', value: 'b'}
-                    ]
+                option4: [
+                    {text: '更多', value: 'a'},
+                    {text: '不限', value: 'b'}
+                ],
+                count: 0,
+                isLoading: false
             }
         },
-        methods: {}
+        methods: {
+            onRefresh() {
+                setTimeout(() => {
+                    this.$toast('刷新成功');
+                    this.isLoading = false;
+                    this.count++;
+                }, 500);
+            }
+        }
     }
 </script>
 
@@ -98,6 +108,7 @@
     left: 0;
     right: 0;
     top: 0;
+    bottom: 0;
   }
 
   .van-nav-bar {
