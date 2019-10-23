@@ -78,7 +78,6 @@
         </div>
       </van-col>
     </van-row>
-
     <van-row type="flex" class="row-div">
       <van-col span="24">
         <p class="row-p">
@@ -107,14 +106,12 @@
         </ul>
       </van-col>
     </van-row>
-
     <van-row type="flex" class="row-div" style="padding: 0; height: 100px; margin-bottom: 20px;">
       <van-col span="24">
         <img src="https://uploads.ihuoniao.cn/job/advthumb/large/2019/07/15/1563190378565.png" height="150"
              width="100%">
       </van-col>
     </van-row>
-
     <van-tabs v-model="active" class="tab-div">
       <van-tab title="推荐职位">
         <ul class="tab-ul">
@@ -162,7 +159,6 @@
 
       </van-tab>
     </van-tabs>
-
     <van-tabbar v-model="active">
       <van-tabbar-item icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item icon="search">搜索</van-tabbar-item>
