@@ -11,6 +11,7 @@ import appIndex from '../components/app/appIndex'
 import appInfo from '../components/app/appInfo'
 import jobList from '../components/app/jobList'
 import companyList from '../components/app/companyList'
+import resList from '../components/app/resList'
 
 Vue.use(Router)  /* 使用路由 */
 
@@ -56,6 +57,11 @@ export default new Router({
       path: '/companyList',
       name: 'companyList',
       component: companyList
+    },
+    {
+      path: '/resList',
+      name: 'resList',
+      component: resList
     }
   ]
 })

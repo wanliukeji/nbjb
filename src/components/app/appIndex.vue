@@ -23,7 +23,7 @@
         <span class="grid-span">找工作</span>
       </van-grid-item>
 
-      <van-grid-item>
+      <van-grid-item @click="goTo('resList')">
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon02.png" class="item-img" alt="">
         <span class="grid-span">找人才</span>
       </van-grid-item>
