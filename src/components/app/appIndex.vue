@@ -85,7 +85,7 @@
           <span class="p-right">查看更多</span>
         </p>
         <ul>
-          <li class="row-lis" v-for="i in [1,2,3,4,5]">
+          <li class="row-lis" v-for="i in [1,2,3]">
             <div class="li-left">
               <h3 class="p-title">阿里巴巴</h3>
               <p class="li-left-p">该企业有10个在招职位</p>
@@ -115,7 +115,7 @@
     <van-tabs v-model="active" class="tab-div">
       <van-tab title="推荐职位">
         <ul class="tab-ul">
-          <li class="tab-ul-li" v-for="i in [1,2,3,4,5,6]">
+          <li class="tab-ul-li" v-for="i in [1,2,3,4]">
             <div class="li-top">
               <p>
                 <span class="p-title">PHP</span>
@@ -159,7 +159,7 @@
       </van-tab>
       <van-tab title="最新职位">
         <ul class="tab-ul">
-          <li class="tab-ul-li" v-for="i in [1,2,3,4,5,6]">
+          <li class="tab-ul-li" v-for="i in [1,2,3,4]">
             <div class="li-top">
               <p>
                 <span class="p-title">JAVA</span>
