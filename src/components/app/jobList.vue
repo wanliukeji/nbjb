@@ -63,20 +63,26 @@
                 option1: [
                     {text: '工作地点', value: 0},
                     {text: '不限', value: 1},
-                    {text: '北仑区', value: 2}
+                    {text: '北仑区', value: 2},
+                    {text: '江东区', value: 3},
+                    {text: '鄞州区', value: 4},
+                    {text: '镇海区', value: 5},
+                    {text: '海曙区', value: 6},
+                    {text: '宁海县', value: 7},
+                    {text: '余姚县', value: 8}
                 ],
                 option2: [
-                    {text: '行业领域', value: 'a'},
-                    {text: '销量排序', value: 'c'}
+                    {text: '行业领域', value: 'a'}
                 ],
                 option3: [
                     {text: '职业类型', value: 'a'},
-                    {text: '销量排序', value: 'c'}
+                    {text: '不限', value: 'b'}
                 ],
-                option4: [
-                    {text: '更多', value: 'a'},
-                    {text: '销量排序', value: 'c'}
-                ]
+                option4:
+                    [
+                        {text: '更多', value: 'a'},
+                        {text: '不限', value: 'b'}
+                    ]
             }
         },
         methods: {}
