@@ -20,25 +20,24 @@
     <van-grid>
       <van-grid-item>
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon01.png" class="item-img" alt="">
-        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">找工作</span>
+        <span class="grid-span">找工作</span>
       </van-grid-item>
 
       <van-grid-item>
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon02.png" class="item-img" alt="">
-        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">找人才</span>
+        <span class="grid-span">找人才</span>
       </van-grid-item>
 
       <van-grid-item>
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon03.png" class="item-img" alt="">
-        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">招聘企业</span>
+        <span class="grid-span">招聘企业</span>
       </van-grid-item>
 
       <van-grid-item>
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon04.png" class="item-img" alt="">
-        <span style="font-size: .24rem; margin-top: 3px; color: #404040;">招聘会</span>
+        <span class="grid-span">招聘会</span>
       </van-grid-item>
     </van-grid>
-
     <van-row type="flex" justify="center">
       <van-col span="0">
         <div style="padding: 10px;">
@@ -56,27 +55,57 @@
         </div>
       </van-col>
     </van-row>
-
     <van-row type="flex" justify="center">
       <van-col span="0">
         <ul>
-          <li><a href="https://ihuoniao.cn/b/post.html?do=add"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu1.png" class="li-img"></a></li>
-          <li><a href="https://ihuoniao.cn/b"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu2.png" class="li-img"></a></li>
+          <li><a href="https://ihuoniao.cn/b/post.html?do=add"><img
+            src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu1.png" class="li-img"></a></li>
+          <li><a href="https://ihuoniao.cn/b"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu2.png"
+                                                   class="li-img"></a></li>
         </ul>
       </van-col>
     </van-row>
+    <van-row type="flex" class="row-div">
+      <van-col span="24">
+        <p>
+          <span class="p-title">招聘会</span>
+          <span class="p-right">查看更多</span>
+        </p>
+        <div class="row-col-div">
+          <img src="/static/image/aali.jpg" class="row-col-div-img">
+          <p style="margin-top: 5px; white-space: nowrap; color: #333333;padding-right: 10px; max-width: 100%;">
+            9月14日宁波北仑秋季招人,春晓梅山现场招聘</p>
+        </div>
+      </van-col>
+    </van-row>
 
-    <van-row type="flex" justify="center">
-      <van-col span="0">
+    <van-row type="flex" class="row-div">
+      <van-col span="24">
+        <p style="border-bottom: 1px #F2F2F2 solid;">
+          <span class="p-title">热门企业</span>
+          <span class="p-right">查看更多</span>
+        </p>
         <ul>
-          <li><a href="https://ihuoniao.cn/b/post.html?do=add"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu1.png" class="li-img"></a></li>
-          <li><a href="https://ihuoniao.cn/b"><img src="https://ihuoniao.cn/templates/job/touch/skin3/images/fabu2.png" class="li-img"></a></li>
+          <li style="border-bottom: 1px #F2F2F2 solid; padding: 15px 0px 10px; white-space: nowrap;">
+            <div class="li-left" style="width: 70%; display: inline-block; height: 94px;position:relative;">
+              <h3 class="p-title">阿里巴巴</h3>
+              <p style="color: #8D8E91;font-size: 12px; line-height: 35px;">该企业有10个在招职位</p>
+              <p style="bottom: 0; margin-bottom: 0; float: bottom; position: absolute;">
+                <span class="li-span">宁波</span>
+                <span class="li-span">1-49人</span>
+                <span class="li-span">外商合资</span>
+                <span class="li-span">中国合资企业</span>
+              </p>
+            </div>
+            <div style="display:inline-block;width: 28%; vertical-align: top; padding: 2px;">
+              <img src="/static/image/aali.jpg" width="100%" height="90">
+            </div>
+          </li>
         </ul>
       </van-col>
     </van-row>
-
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="wap-home-o">标签</van-tabbar-item>
+      <van-tabbar-item icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item icon="search">搜索</van-tabbar-item>
       <van-tabbar-item icon="chat-o">信息</van-tabbar-item>
       <van-tabbar-item icon="manager-o">个人中心</van-tabbar-item>
@@ -128,6 +157,12 @@
     color: #ffffff;
   }
 
+  .grid-span {
+    font-size: 12px;
+    margin-top: 3px;
+    color: #404040;
+  }
+
   .img-item {
     width: 100%;
     height: 220px;
@@ -175,5 +210,51 @@
     padding: 8px;
   }
 
+  .row-div {
+    padding: 10px;
+    width: 100%;
+  }
 
+  p {
+    width: 100%;
+  }
+
+  .p-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    display: inline-block;
+    left: 0;
+  }
+
+  .p-right {
+    font-size: 12px;
+    color: #BEC0C4;
+    display: inline-block;
+    float: right;
+    right: 0;
+    margin-top: 5px;
+    text-align: right;
+  }
+
+  .row-col-div {
+    height: auto;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  .row-col-div-img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+
+  .li-span {
+    color: #404040;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-right: 5px;
+  }
 </style>
