@@ -28,7 +28,7 @@
         <span class="grid-span">找人才</span>
       </van-grid-item>
 
-      <van-grid-item>
+      <van-grid-item @click="goTo('companyList')">
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon03.png" class="item-img" alt="">
         <span class="grid-span">招聘企业</span>
       </van-grid-item>
