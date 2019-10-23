@@ -8,7 +8,8 @@
 <!--    <router-view/>-->
 <!--    <footer-table/>-->
 <!--    <footerNav/>-->
-    <app-index/>
+<!--    <app-index/>-->
+    <job-list/>
   </div>
 </template>
 <script>
@@ -21,6 +22,7 @@
     import footerNav from "./components/footerNav";
     import index from "./components/index";
     import AppIndex from "./components/app/appIndex";
+    import JobList from "./components/app/jobList";
     export default {
         data() {
             return {
@@ -28,6 +30,7 @@
             };
         },
         components: {
+            JobList,
             AppIndex,
             FooterTable,
             MenuNav,
@@ -45,7 +48,9 @@
         mounted() {
 
         },
-        methods: {}
+        methods: {
+
+        }
     };
 </script>
 

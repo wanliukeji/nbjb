@@ -9,6 +9,7 @@ import info from '../components/job/info'
 import appGroup from '../components/app/appGroup'
 import appIndex from '../components/app/appIndex'
 import appInfo from '../components/app/appInfo'
+import jobList from '../components/app/jobList'
 
 Vue.use(Router)  /* 使用路由 */
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/appInfo',
       name: 'appInfo',
       component: appInfo
+    },
+    {
+      path: '/appList',
+      name: 'appList',
+      component: jobList
     }
   ]
 })

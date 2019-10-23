@@ -144,6 +144,8 @@
                 <p class="li-bottom-div-name">北京百度网络科技</p>
                 <p class="li-bottom-div-p">
                   <span class="li-bottom-div-span">100-499人</span>
+                  <span class="li-bottom-div-span">国有企业</span>
+                  <span class="li-bottom-div-span">互联网/IT/通信</span>
                 </p>
               </div>
               <div class="li-bottom-right">
