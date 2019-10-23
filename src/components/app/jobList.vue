@@ -1,7 +1,7 @@
 <template>
   <div class="model">
-    <van-nav-bar title="职位列表" left-text="返回" right-text="设置" left-arrow/>
-    <van-dropdown-menu>
+    <van-nav-bar fixed title="职位列表" left-text="返回" right-text="设置" left-arrow/>
+    <van-dropdown-menu style="z-index: 10; margin-top: 35px; position: fixed; width: 100%;">
       <van-dropdown-item v-model="value1" :options="option1"/>
       <van-dropdown-item v-model="value2" :options="option2"/>
       <van-dropdown-item v-model="value3" :options="option3"/>
@@ -62,14 +62,15 @@
                 value4: 'a',
                 option1: [
                     {text: '工作地点', value: 0},
-                    {text: '北仑区', value: 0}
+                    {text: '不限', value: 1},
+                    {text: '北仑区', value: 2}
                 ],
                 option2: [
                     {text: '行业领域', value: 'a'},
                     {text: '销量排序', value: 'c'}
                 ],
                 option3: [
-                    {text: '行业领域', value: 'a'},
+                    {text: '职业类型', value: 'a'},
                     {text: '销量排序', value: 'c'}
                 ],
                 option4: [
@@ -225,6 +226,10 @@
     border: #F2F2F2 1px solid;
     margin-right: 12px;
     height: 5px;
+  }
+
+  .van-dropdown-item {
+    color: #444444;
   }
 
 </style>
