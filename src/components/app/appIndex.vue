@@ -81,29 +81,88 @@
 
     <van-row type="flex" class="row-div">
       <van-col span="24">
-        <p style="border-bottom: 1px #F2F2F2 solid;">
+        <p class="row-p">
           <span class="p-title">热门企业</span>
           <span class="p-right">查看更多</span>
         </p>
         <ul>
-          <li style="border-bottom: 1px #F2F2F2 solid; padding: 15px 0px 10px; white-space: nowrap;">
-            <div class="li-left" style="width: 70%; display: inline-block; height: 94px;position:relative;">
+          <li class="row-lis" v-for="i in [1,2,3,4,5]">
+            <div class="li-left">
               <h3 class="p-title">阿里巴巴</h3>
-              <p style="color: #8D8E91;font-size: 12px; line-height: 35px;">该企业有10个在招职位</p>
-              <p style="bottom: 0; margin-bottom: 0; float: bottom; position: absolute;">
+              <p class="li-left-p">该企业有10个在招职位</p>
+              <p class="li-bottom">
                 <span class="li-span">宁波</span>
                 <span class="li-span">1-49人</span>
                 <span class="li-span">外商合资</span>
                 <span class="li-span">中国合资企业</span>
               </p>
             </div>
-            <div style="display:inline-block;width: 28%; vertical-align: top; padding: 2px;">
+            <div class="li-rigth">
               <img src="/static/image/aali.jpg" width="100%" height="90">
             </div>
+          </li>
+          <li class="li-bottom-p">
+            查看更多
           </li>
         </ul>
       </van-col>
     </van-row>
+
+    <van-row type="flex" class="row-div" style="padding: 0; height: 100px; margin-bottom: 20px;">
+      <van-col span="24">
+        <img src="https://uploads.ihuoniao.cn/job/advthumb/large/2019/07/15/1563190378565.png" height="150"
+             width="100%">
+      </van-col>
+    </van-row>
+
+    <van-tabs v-model="active" class="tab-div">
+      <van-tab title="推荐职位">
+        <ul class="tab-ul">
+          <li class="tab-ul-li" v-for="i in [1,2,3,4,5,6]">
+            <div class="li-top">
+              <p>
+                <span class="p-title">PHP</span>
+                <span class="p-right-a">8000~12000</span>
+              </p>
+              <p>
+                <span class="tab-ul-li-p-span">苏州</span>
+                <i class="tab-ul-li-p-i"></i>
+                <span class="tab-ul-li-p-span">3-5年</span>
+                <i class="tab-ul-li-p-i"></i>
+                <span class="tab-ul-li-p-span">本科</span>
+                <i class="tab-ul-li-p-i"></i>
+                <span class="tab-ul-li-p-span">临时</span>
+                <span class="tab-ul-li-p-time">2019-10-29</span>
+              </p>
+              <p>
+                <span class="tab-ul-li-div">绩效奖金</span>
+                <span class="tab-ul-li-div">周末双休</span>
+              </p>
+            </div>
+            <div class="li-bottom-div">
+              <div class="li-bottom-div-img">
+                <img src="/static/image/baidu.jpg" width="50" height="43">
+              </div>
+              <div class="li-bottom-div-title">
+                <p class="li-bottom-div-name">北京百度网络科技</p>
+                <p class="li-bottom-div-p">
+                  <span class="li-bottom-div-span">100-499人</span>
+                </p>
+              </div>
+              <div class="li-bottom-right">
+                <button class="li-bottom-div-btn">
+                  立即投递
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </van-tab>
+      <van-tab title="最新职位">
+
+      </van-tab>
+    </van-tabs>
+
     <van-tabbar v-model="active">
       <van-tabbar-item icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item icon="search">搜索</van-tabbar-item>
@@ -140,7 +199,6 @@
   .model {
     position: relative;
     width: 100%;
-    height: 1200px;
     padding: 0 auto;
     margin: 0 auto;
     left: 0;
@@ -227,6 +285,42 @@
     left: 0;
   }
 
+  .p-right-a {
+    color: #FF0B00;
+    font-size: 14px;
+    font-weight: bolder;
+    right: 0;
+    float: right;
+  }
+
+  .tab-ul-li-p-span {
+    color: #8D8E91;
+    font-size: 14px;
+    line-height: 35px;
+    margin-right: 10px;
+  }
+
+  .tab-ul-li-p-time {
+    float: right;
+    color: #C4C4C4;
+    font-size: 8px;
+    bottom: 0;
+    margin-bottom: 0px;
+    margin-top: 8px;
+  }
+
+  .tab-ul-li-div {
+    padding: 5px;
+    background-color: #f4f4f6;
+    color: #636363;
+  }
+
+  .tab-ul-li-p-i {
+    border: #F2F2F2 1px solid;
+    margin-right: 12px;
+    height: 5px;
+  }
+
   .p-right {
     font-size: 12px;
     color: #BEC0C4;
@@ -257,4 +351,124 @@
     white-space: nowrap;
     margin-right: 5px;
   }
+
+  .row-p {
+    border-bottom: 1px #F2F2F2 solid
+  }
+
+  .row-lis {
+    border-bottom: 1px #F2F2F2 solid;
+    padding: 15px 0px 10px;
+    white-space: nowrap;
+  }
+
+  .li-left {
+    width: 70%;
+    display: inline-block;
+    height: 94px;
+    position: relative;
+  }
+
+  .li-left-p {
+    color: #8D8E91;
+    font-size: 12px;
+    line-height: 35px;
+  }
+
+  .li-bottom {
+    bottom: 0;
+    margin-bottom: 0;
+    float: bottom;
+    position: absolute;
+  }
+
+  .li-rigth {
+    display: inline-block;
+    width: 28%;
+    vertical-align: top;
+    padding: 2px;
+  }
+
+  .li-bottom-p {
+    border-bottom: 1px #F2F2F2 solid;
+    padding: 10px 0px 10px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .tab-div {
+    position: relative;
+    margin-top: 50px;
+    height: auto;
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .tab-ul {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .tab-ul-li {
+    padding: 10px;
+    background-color: #FFFFFF;
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+
+  .li-top {
+    border-bottom: #F2F2F2 1px solid;
+    padding: 0px 0px 10px 0px;
+  }
+
+  .li-bottom-div {
+    width: 100%;
+    position: relative;
+    padding: 10px 0px 0px 0px;
+  }
+
+  .li-bottom-div-img {
+    display: inline-block;
+    width: 15%;
+    vertical-align: top;
+  }
+
+  .li-bottom-div-title {
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+  }
+
+  .li-bottom-div-name {
+    color: #212121;
+    font-size: 15px;
+  }
+
+  .li-bottom-div-p {
+    padding: 0;
+    white-space: nowrap;
+    margin-top: 0px;
+  }
+
+  .li-bottom-div-span {
+    color: #8D8E91;
+    font-size: 12px;
+    vertical-align: bottom;
+    margin-bottom: 0;
+  }
+
+  .li-bottom-right {
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+  }
+
+  .li-bottom-div-btn {
+    padding: 2px;
+    background-color: #0a6beb;
+    border: none;
+    color: #FFFFEE;
+    width: 85px;
+  }
+
 </style>
