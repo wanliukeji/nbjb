@@ -1,16 +1,16 @@
 <template>
   <div class="model">
     <van-nav-bar fixed title="职位列表" left-text="返回" right-text="设置" left-arrow/>
-    <van-dropdown-menu style="z-index: 10; margin-top: 35px; position: fixed; width: 100%;">
+    <van-dropdown-menu class="menu">
       <van-dropdown-item v-model="value1" :options="option1"/>
       <van-dropdown-item v-model="value2" :options="option2"/>
       <van-dropdown-item v-model="value3" :options="option3"/>
       <van-dropdown-item v-model="value4" :options="option4"/>
     </van-dropdown-menu>
-    <van-search placeholder="请输入搜索关键词" v-model="value" shape="round" style="margin:10px 0px 10px 0px;"/>
-    <div>
+    <van-search placeholder="请输入搜索关键词" v-model="value" shape="round" class="search"/>
+    <div style="position: relative;">
       <ul class="tab-ul">
-        <li class="tab-ul-li" v-for="i in [1,2,3,4,5,6]">
+        <li class="tab-ul-li" v-for="i in [1,2,3,4,5,6,7,8,9,10]">
           <div class="li-top">
             <p>
               <span class="p-title">PHP</span>
@@ -230,6 +230,18 @@
 
   .van-dropdown-item {
     color: #444444;
+  }
+
+  .menu {
+    z-index: 10;
+    margin-top: -55px;
+    position: fixed;
+    width: 100%;
+  }
+
+  .search {
+    margin: 100px 0px 10px 0px;
+    position: relative;
   }
 
 </style>
