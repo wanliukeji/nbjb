@@ -17,7 +17,7 @@
       </van-swipe-item>
     </van-swipe>
     <van-search placeholder="请输入搜索关键词" v-model="value" shape="round"/>
-    <van-grid>
+    <van-grid :column-num="3">
       <van-grid-item @click="goTo('jobList')">
         <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon01.png" class="item-img" alt="">
         <span class="grid-span">找工作</span>
@@ -33,10 +33,6 @@
         <span class="grid-span">招聘企业</span>
       </van-grid-item>
 
-      <van-grid-item>
-        <img src="https://ihuoniao.cn/templates/job/touch/skin3/images/icon04.png" class="item-img" alt="">
-        <span class="grid-span">招聘会</span>
-      </van-grid-item>
     </van-grid>
     <van-row type="flex" justify="center">
       <van-col span="0">
