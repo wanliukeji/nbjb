@@ -6,12 +6,12 @@
     </p>
     <div class="model-row">
       <div class="model-left">
-        <img src="https://uploads.ihuoniao.cn/job/card/large/2019/03/18/15529101108532.png" class="model-top-img">
+        <img src="/static/image/baidu.jpg" class="model-top-img">
       </div>
       <div class="model-center">
         <p class="model-center-title">
             <span class="model-center-title-name">
-                太极云软
+                百度科技
             </span>
         </p>
         <p class="model-center-text">
@@ -57,26 +57,20 @@
       <div>
         <ul class="body-jpgs">
           <li class="body-li">
-            <a href="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983511328.jpg" target="_blank">
-              <img src="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983511328.jpg" class="body-img"
-                   data-url="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983511328.jpg" alt=""></a></li>
+            <a href="/static/image/google.jpg" target="_blank">
+              <img src="/static/image/google.jpg" class="body-img"
+                   data-url="/static/image/google.jpg" alt=""></a></li>
           <li class="body-li">
-            <a href="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983521250.jpg" target="_blank"
-               title=""><img src="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983521250.jpg"
+            <a href="/static/image/aali.jpg" target="_blank"
+               title=""><img src="/static/image/aali.jpg"
                              class="body-img"
-                             data-url="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983521250.jpg"
+                             data-url="/static/image/aali.jpg"
                              alt=""></a></li>
           <li class="body-li">
-            <a href="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983528430.jpg" target="_blank"
-               title=""><img src="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983528430.jpg"
+            <a href="/static/image/microsoft.jpg" target="_blank"
+               title=""><img src="/static/image/microsoft.jpg"
                              class="body-img"
-                             data-url="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983528430.jpg"
-                             alt=""></a></li>
-          <li class="body-li">
-            <a href="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983525213.jpg" target="_blank"
-               title=""><img src="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983525213.jpg"
-                             class="body-img"
-                             data-url="https://uploads.ihuoniao.cn/job/atlas/large/2018/01/08/15153983525213.jpg"
+                             data-url="/static/image/microsoft.jpg"
                              alt=""></a></li>
         </ul>
       </div>
@@ -238,7 +232,7 @@
   .body-img {
     width: 100%;
     min-width: 300px;
-    min-height: 300px;
+    height: 300px;
   }
 
   .body-more {
