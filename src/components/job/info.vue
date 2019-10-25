@@ -24,7 +24,7 @@
           地址：江苏 苏州 东宁路553号东溪德必易园A区325室
         </p>
         <p class="model-center-bottom">
-          <a class="model-center-div-btn btn">企业首页</a>
+          <a class="model-center-div-btn btn" style="color: #f2f3f5;">企业首页</a>
           <a class="model-center-div-btn">企业相册(1)</a>
           <a class="model-center-div-btn">招聘职位(10)</a>
           <a class="model-center-div-btn">工资(3)</a>
@@ -216,7 +216,7 @@
 
   .model-center-div-btn:hover, .btn {
     background-color: #cb2027;
-    color: #ffffff;
+    color: #f2f3f5;
   }
 
   .body-title {

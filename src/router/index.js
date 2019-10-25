@@ -13,6 +13,7 @@ import jobList from '../components/app/jobList'
 import companyList from '../components/app/companyList'
 import resList from '../components/app/resList'
 import companyGroup from '../components/job/companyGroup'
+import jobInfo from '../components/job/jobInfo'
 
 Vue.use(Router)  /* 使用路由 */
 
@@ -68,6 +69,11 @@ export default new Router({
       path: '/companyGroup',
       name: 'companyGroup',
       component: companyGroup
+    },
+    {
+      path: '/jobInfo',
+      name: 'jobInfo',
+      component: jobInfo
     }
   ]
 })
