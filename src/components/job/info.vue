@@ -83,17 +83,14 @@
     </div>
     <div class="model-row">
       <h2 class="body-title">公司地址</h2>
-      <p style="z-index: 10; position: absolute;">
-        <input type="text" v-model="addr"
-               style="border: none; margin: 10px 0px 0px 70px; padding:5px; display: inline-block;  width: 300px;"
+      <p class="body-div-p">
+        <input type="text" v-model="addr" class="body-input"
                placeholder="请输入地址"/>
-        <button @click="searchAddr"
-                style="border: none; margin: 10px 5px 0px; 0px; padding:5px; display: inline-block; background-color: #0a6beb; color: #f2f3f5; width: 70px; border-radius: 3px;">
+        <button @click="searchAddr" class="body-btn">
           搜索
         </button>
       </p>
-      <div style="width: 100%; height: 700px; border: #151515 1px solid;" id="container">
-      </div>
+      <div id="container"></div>
     </div>
   </div>
 </template>
@@ -386,6 +383,36 @@
   .body-map {
     height: 500px;
     width: 100%;
+    border: #151515 1px solid;
+  }
+
+  .body-div-p {
+    z-index: 10;
+    position: absolute;
+  }
+
+  .body-input {
+    border: none;
+    margin: 10px 0px 0px 70px;
+    padding: 5px;
+    display: inline-block;
+    width: 300px;
+  }
+
+  .body-btn {
+    border: none;
+    margin: 10px 5px 0px 0px;
+    padding: 5px;
+    display: inline-block;
+    background-color: #0a6beb;
+    color: #f2f3f5;
+    width: 70px;
+    border-radius: 3px;
+  }
+
+  #container {
+    width: 100%;
+    height: 700px;
     border: #151515 1px solid;
   }
 </style>
