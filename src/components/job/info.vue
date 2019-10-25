@@ -380,12 +380,6 @@
     text-align: right;
   }
 
-  .body-map {
-    height: 500px;
-    width: 100%;
-    border: #151515 1px solid;
-  }
-
   .body-div-p {
     z-index: 10;
     position: absolute;
@@ -413,6 +407,6 @@
   #container {
     width: 100%;
     height: 700px;
-    border: #151515 1px solid;
+    border: #151515 0.5px solid;
   }
 </style>
