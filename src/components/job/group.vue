@@ -256,7 +256,7 @@
           </div>
         </div>
         <ul class="joblist">
-          <li class="job-info">
+          <li class="job-info" v-for="i in [1,2,3,4,5]">
             <div class="job-info-top">
               <p>
                 <span class="job-info-btn">
