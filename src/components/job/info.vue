@@ -82,21 +82,83 @@
       <!--      </div>-->
     </div>
     <div class="model-row">
-      <h2 class="body-title">企业地图</h2>
-      <div style="width: 100%; height: 500px; border: #151515 1px solid;" id="container">
-
+      <h2 class="body-title">公司地址</h2>
+      <div style="width: 100%; height: 700px; border: #151515 1px solid;" id="container">
       </div>
     </div>
   </div>
 </template>
 
 <script>
-    import map from "./map";
-
     export default {
         name: "info",
-        components: {map},
+        components: {},
         created() {
+        },
+        mounted() {
+            /**================================================= 地图初始化定位 start ============================================*/
+            var geolocation = new BMap.Geolocation();
+            var x = '';
+            var y = '';
+            geolocation.getCurrentPosition(function (r) {
+                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                    var mk = new BMap.Marker(r.point);
+                    map.addOverlay(mk);
+                    map.panTo(r.point);
+                    x = r.point.lng;
+                    y = r.point.lat;
+                } else {
+                    alert('failed' + this.getStatus());
+                }
+            }, {enableHighAccuracy: true});
+
+            /**================================================= 地图初始化 start ============================================*/
+            var map = new BMap.Map("container");    // 创建Map实例
+            map.centerAndZoom(new BMap.Point(x, y), 11);  // 初始化地图,设置中心点坐标和地图级别
+            //添加地图类型控件
+            map.addControl(new BMap.MapTypeControl({
+                mapTypes: [
+                    BMAP_NORMAL_MAP,
+                    BMAP_HYBRID_MAP
+                ]
+            }));
+            map.addControl(new BMap.NavigationControl());
+            map.addControl(new BMap.ScaleControl());
+            map.addControl(new BMap.OverviewMapControl());
+            map.addControl(new BMap.MapTypeControl());
+            map.setCurrentCity("宁波");          // 设置地图显示的城市 此项是必须设置的
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+            var point = new BMap.Point(116.404, 39.915);
+            map.centerAndZoom(point, 15);
+            var marker = new BMap.Marker(point);        // 创建标注
+            map.addOverlay(marker);
+
+            var styleOptions = {
+                strokeColor: "red",    //边线颜色。
+                fillColor: "red",      //填充颜色。当参数为空时，圆形将没有填充效果。
+                strokeWeight: 3,       //边线的宽度，以像素为单位。
+                strokeOpacity: 0.8,    //边线透明度，取值范围0 - 1。
+                fillOpacity: 0.6,      //填充的透明度，取值范围0 - 1。
+                strokeStyle: 'solid' //边线的样式，solid或dashed。
+            }
+            //实例化鼠标绘制工具
+            var drawingManager = new BMapLib.DrawingManager(map, {
+                isOpen: false, //是否开启绘制模式
+                enableDrawingTool: true, //是否显示工具栏
+                drawingToolOptions: {
+                    anchor: BMAP_ANCHOR_TOP_RIGHT, //位置
+                    offset: new BMap.Size(5, 5), //偏离值
+                },
+                circleOptions: styleOptions, //圆的样式
+                polylineOptions: styleOptions, //线的样式
+                polygonOptions: styleOptions, //多边形的样式
+                rectangleOptions: styleOptions //矩形的样式
+            });
+            var local = new BMap.LocalSearch(map, {
+                renderOptions: {map: map}
+            });
+            local.search("松花江");
         },
         methods: {
             goTo(name) {
@@ -104,19 +166,8 @@
             }
         }
     }
-
     $(function () {
-        // var map = new BMap.Map("container");
-        // map.centerAndZoom(new BMap.Point(121.528599, 31.217681), 18);
-        // map.addControl(new BMap.ScaleControl());
-        // map.addControl(new BMap.OverviewMapControl());
-        // var ctrl_nav = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
-        // map.addControl(ctrl_nav);
 
-        // map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
-        // map.enableScrollWheelZoom(); //启用地图滚轮放大缩小
-        // map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
-        // map.enableKeyboard(); //启用键盘上下左右键移动地图
     })
 </script>
 

@@ -7,8 +7,8 @@
     <router-view/>
     <footer-table/>
     <footerNav/>
-    <!--    <app-index/>-->
-    <!--    <job-list/>-->
+    <!-- <app-index/>-->
+    <!-- <job-list/>-->
   </div>
 </template>
 <script>

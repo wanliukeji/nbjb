@@ -24,35 +24,19 @@ import 'iview/dist/styles/iview.css'
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
 
+//引入百度地图
+//百度地图
 //引入移动端框架
-// import Mint from 'mint-ui';
-// Vue.use(Mint);
-// import 'mint-ui/lib/style.css';
-// import BaiduMap from 'vue-baidu-map'
-// Vue.use(BaiduMap,{ak:'16398096469aa2c92d7b87506732cd90'});
-// import storage from 'good-storage'
-//页面跳转
-// import global from './components/Global.vue'
-// Vue.use(layer);
-// Vue.prototype.$layer = layer(Vue);
-// Vue.component('popup', popup);
 Vue.use(Vuex);
 Vue.use(Vant);
-// Vue.use($query);
 Vue.use(VueResource);
 //使用elementUI
 Vue.use(ElementUI)
 Vue.use(iView);
 Vue.use(VueRouter);
-// Vue.use(storage)
 Vue.use(VueVideoPlayer)
-// Vue.use(axios);
-// Vue.prototype.$http=axios;
-// Vue.prototype.$http.get=VueResource;
-// Vue.prototype.$http=axios;
-// Vue.prototype.GLOBAL = public;
+
 Vue.config.productionTip = false;
-// The routing configuration  备注
 const RouterConfig = {
   routes: router
 };
