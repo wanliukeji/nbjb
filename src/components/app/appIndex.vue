@@ -81,7 +81,7 @@
           <span class="p-right">查看更多</span>
         </p>
         <ul>
-          <li class="row-lis" v-for="i in [1,2,3]">
+          <li class="row-lis" v-for="i in [1,2,3]" @click="goTo('compayInfo')">
             <div class="li-left">
               <h3 class="p-title">阿里巴巴</h3>
               <p class="li-left-p">该企业有10个在招职位</p>

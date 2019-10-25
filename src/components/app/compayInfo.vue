@@ -1,54 +1,72 @@
 <template>
   <div class="model">
-    <van-nav-bar fixed title="职位列表" left-text="返回" right-text="设置" left-arrow @click-left="onClickLeft"
+    <van-nav-bar fixed title="公司详情" left-text="返回" right-text="设置" left-arrow @click-left="onClickLeft"
                  @click-right="onClickRight"/>
-    <van-dropdown-menu class="menu">
-      <van-dropdown-item v-model="value1" :options="option1"/>
-      <van-dropdown-item v-model="value2" :options="option2"/>
-      <van-dropdown-item v-model="value3" :options="option3"/>
-      <van-dropdown-item v-model="value4" :options="option4"/>
-    </van-dropdown-menu>
-    <van-search placeholder="请输入搜索关键词" v-model="value" shape="round" class="search"/>
-    <div style="position: relative;">
-      <ul class="tab-ul">
-        <li class="tab-ul-li" v-for="i in [1,2,3,4,5,6,7,8,9,10]">
-          <div class="li-top">
-            <p>
-              <span class="p-title">PHP</span>
-              <span class="p-right-a">8000~12000</span>
-            </p>
-            <p>
-              <span class="tab-ul-li-p-span">苏州</span>
-              <i class="tab-ul-li-p-i"></i>
-              <span class="tab-ul-li-p-span">3-5年</span>
-              <i class="tab-ul-li-p-i"></i>
-              <span class="tab-ul-li-p-span">本科</span>
-              <i class="tab-ul-li-p-i"></i>
-              <span class="tab-ul-li-p-span">临时</span>
-              <span class="tab-ul-li-p-time">2019-10-29</span>
-            </p>
-            <p>
-              <span class="tab-ul-li-div">绩效奖金</span>
-              <span class="tab-ul-li-div">周末双休</span>
-            </p>
-          </div>
-          <div class="li-bottom-div">
-            <div class="li-bottom-div-img">
-              <img src="/static/image/baidu.jpg" width="50" height="43">
-            </div>
-            <div class="li-bottom-div-title">
-              <p class="li-bottom-div-name">北京百度网络科技</p>
-              <p class="li-bottom-div-p">
-                <span class="li-bottom-div-span">100-499人</span>
-                <span class="li-bottom-div-span">国有企业</span>
-                <span class="li-bottom-div-span">互联网/IT/通信</span>
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
+    <van-row>
+      <van-col span="24">
+        <img src="/static/image/aali.jpg" width="100%" height="220"/>
+      </van-col>
+    </van-row>
+    <div style="position: absolute; z-index: 100; top:170px;
+            margin-left: 40px;">
+      <img src="/static/image/wechat.jpg" width="90" height="90"/>
     </div>
-    <van-loading type="spinner" color="#1989fa" vertical/>
+
+    <van-row>
+      <van-col span="24" style="background-color: white;">
+        <div style="padding-top: 70px; padding-left: 40px;">
+          <p
+            style=" background-color: white; font-size:24px; font-weight: bolder; color: #000; vertical-align: bottom;">
+            WULIAN智能家居
+            <svg style="margin-bottom: 0px; line-height: 16px; margin-left: 20px; margin-top: 3px;" t="1571883912820"
+                 class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="4778" width="14" height="14">
+              <path
+                d="M512 1020.736a103.68 103.68 0 0 1-81.344-39.168L145.344 625.024h8.832C118.144 560.64 95.36 497.152 95.36 416.704c0-233.6 192.384-423.68 428.224-416.448 220.416 6.016 402.112 190.528 404.928 411.2 0.96 72.96-16.896 138.752-58.624 213.568h8.128l-33.28 42.304-251.456 314.24c-19.84 24.896-49.408 39.168-81.28 39.168zM223.232 638.976l248.064 310.144c19.904 24.832 61.504 24.832 81.408 0l249.344-312.192c53.824-84.032 75.392-149.248 74.432-224.896C873.984 219.008 715.072 57.536 522.176 52.288a365.12 365.12 0 0 0-374.72 364.416c0 84.608 29.888 149.248 74.624 220.48l1.152 1.792z"
+                fill="#808080" p-id="4779"></path>
+              <path
+                d="M512 598.912A182.528 182.528 0 0 1 329.728 416.64 182.528 182.528 0 0 1 512 234.368a182.464 182.464 0 0 1 182.272 182.272A182.464 182.464 0 0 1 512 598.912z m0-312.384a130.368 130.368 0 0 0-130.176 130.176c0 71.808 58.432 130.176 130.176 130.176a130.304 130.304 0 0 0 130.176-130.176A130.432 130.432 0 0 0 512 286.528z"
+                fill="#dbdbdb" p-id="4780"></path>
+            </svg>
+            <span style="color: #a2a2a2; font-size: 15px;">苏州</span>
+          </p>
+
+          <p style="color: #404040; font-size: 16px; line-height: 44px;">
+            <span>500-999人</span>
+            <span>国有企业</span>
+            <span>互联网/电子商务</span>
+          </p>
+
+        </div>
+      </van-col>
+    </van-row>
+
+    <van-row style="margin-top: 10px;">
+      <van-col span="24" style="background-color: white; padding:7px 0px 7px 0px;">
+        <p style="color: #444444; font-weight: bolder; font-size: 20px; margin-left: 40px;">联系电话</p>
+        <p style="margin-left: 40px; font-size: 18px; color: #00c192; line-height: 34px;">
+          0791-8181  &nbsp; <a style="color: #444444;">刘经理</a>
+        </p>
+      </van-col>
+    </van-row>
+
+    <van-row style="margin-top: 10px;">
+      <van-col span="24" style="background-color: white; padding:10px 0px 10px 0px;">
+        <p style="color: #444444; font-weight: bolder; font-size: 20px; margin-left: 40px;">公司地址</p>
+        <div id="container" style="width: 100%;height: 260px; margin-top: 10px;">
+        </div>
+      </van-col>
+    </van-row>
+
+    <van-row style="margin-top: 10px;">
+      <van-col span="24" style="background-color: white; padding:10px 0px 10px 0px;">
+        <p style="color: #444444; font-weight: bolder; font-size: 20px; margin-left: 40px;">公司地址</p>
+        <div>
+
+        </div>
+      </van-col>
+    </van-row>
+
   </div>
 </template>
 
@@ -57,36 +75,57 @@
         name: "compayInfo",
         data() {
             return {
-                value: '',
-                value1: 0,
-                value2: 'a',
-                value3: 'a',
-                value4: 'a',
-                option1: [
-                    {text: '工作地点', value: 0},
-                    {text: '不限', value: 1},
-                    {text: '北仑区', value: 2},
-                    {text: '江东区', value: 3},
-                    {text: '鄞州区', value: 4},
-                    {text: '镇海区', value: 5},
-                    {text: '海曙区', value: 6},
-                    {text: '宁海县', value: 7},
-                    {text: '余姚县', value: 8}
-                ],
-                option2: [
-                    {text: '行业领域', value: 'a'}
-                ],
-                option3: [
-                    {text: '职业类型', value: 'a'},
-                    {text: '不限', value: 'b'}
-                ],
-                option4: [
-                    {text: '更多', value: 'a'},
-                    {text: '不限', value: 'b'}
-                ],
-                count: 0,
-                isLoading: false
+                addr: '松花江',
+                x: '',
+                y: ''
             }
+        },
+        mounted() {
+            /**================================================= 地图初始化定位 start ============================================*/
+            var geolocation = new BMap.Geolocation();
+            this.x = '';
+            this.y = '';
+            geolocation.getCurrentPosition(function (r) {
+                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                    var mk = new BMap.Marker(r.point);
+                    map.addOverlay(mk);
+                    map.panTo(r.point);
+                    this.x = r.point.lng;
+                    this.y = r.point.lat;
+                } else {
+                    console.log('failed' + this.getStatus());
+                }
+            }, {enableHighAccuracy: true});
+
+            /**================================================= 地图初始化 start ============================================*/
+            var map = new BMap.Map("container");    // 创建Map实例
+            map.centerAndZoom(new BMap.Point(this.x, this.y), 11);  // 初始化地图,设置中心点坐标和地图级别
+            //添加地图类型控件
+            map.addControl(new BMap.MapTypeControl({
+                mapTypes: [
+                    BMAP_NORMAL_MAP,
+                    BMAP_HYBRID_MAP
+                ]
+            }));
+            map.addControl(new BMap.NavigationControl());
+            map.addControl(new BMap.ScaleControl());
+            map.addControl(new BMap.OverviewMapControl());
+            map.addControl(new BMap.MapTypeControl());
+            map.setCurrentCity("宁波");          // 设置地图显示的城市 此项是必须设置的
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+            var styleOptions = {
+                strokeColor: "red",    //边线颜色。
+                fillColor: "red",      //填充颜色。当参数为空时，圆形将没有填充效果。
+                strokeWeight: 3,       //边线的宽度，以像素为单位。
+                strokeOpacity: 0.8,    //边线透明度，取值范围0 - 1。
+                fillOpacity: 0.6,      //填充的透明度，取值范围0 - 1。
+                strokeStyle: 'solid' //边线的样式，solid或dashed。
+            }
+            var local = new BMap.LocalSearch(map, {
+                renderOptions: {map: map}
+            });
+            // 关键词搜索
+            local.search('松花江');
         },
         methods: {
             onClickLeft() {
@@ -116,11 +155,11 @@
     right: 0;
     top: 0;
     bottom: 0;
+    background-color: #f2f3f5;
   }
 
   .van-nav-bar {
     background-color: #1382de;
-    /*position: fixed;*/
   }
 
   .van-nav-bar__title, .van-nav-bar__text, .van-nav-bar .van-icon {
