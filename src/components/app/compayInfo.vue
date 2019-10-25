@@ -1,13 +1,13 @@
 <template>
   <div class="model">
-    <van-nav-bar fixed title="公司详情" left-text="返回" right-text="设置" left-arrow @click-left="onClickLeft"
+    <van-nav-bar style="z-index: 10;" fixed title="公司详情" left-text="返回" right-text="设置" left-arrow @click-left="onClickLeft"
                  @click-right="onClickRight"/>
     <van-row>
       <van-col span="24">
         <img src="/static/image/aali.jpg" width="100%" height="220"/>
       </van-col>
     </van-row>
-    <div style="position: absolute; z-index: 100; top:170px;
+    <div style="position: absolute; z-index: 1; top:170px;
             margin-left: 40px;">
       <img src="/static/image/wechat.jpg" width="90" height="90"/>
     </div>
@@ -187,6 +187,7 @@
 
   .van-nav-bar {
     background-color: #1382de;
+    z-index: 20;
   }
 
   .van-nav-bar__title, .van-nav-bar__text, .van-nav-bar .van-icon {
