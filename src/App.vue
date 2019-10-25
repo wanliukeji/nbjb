@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="container-body">
-
     <top/>
     <search/>
     <menu-nav/>
@@ -8,8 +7,8 @@
     <router-view/>
     <footer-table/>
     <footerNav/>
-<!--    <app-index/>-->
-<!--    <job-list/>-->
+    <!--    <app-index/>-->
+    <!--    <job-list/>-->
   </div>
 </template>
 <script>
@@ -23,6 +22,7 @@
     import index from "./components/index";
     import AppIndex from "./components/app/appIndex";
     import JobList from "./components/app/jobList";
+
     export default {
         data() {
             return {
@@ -43,14 +43,12 @@
         },
         created() {
             this.activeDate = (new Date()).toString();
-            this.$router.push({name: 'index'})
+            this.$router.push({name: 'companyGroup'});
         },
         mounted() {
 
         },
-        methods: {
-
-        }
+        methods: {}
     };
 </script>
 

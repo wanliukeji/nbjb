@@ -11,7 +11,6 @@
     import JobNav from "./jobNav";
     import JobInfo from "./jobInfo";
     import Hello from "./hello";
-
     export default {
         name: "exampleModel",
         components: {Hello, JobInfo, JobNav},
