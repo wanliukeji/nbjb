@@ -43,9 +43,9 @@
 
     <van-row style="margin-top: 10px;">
       <van-col span="24" style="background-color: white; padding:7px 0px 7px 0px;">
-        <p style="color: #444444; font-weight: bolder; font-size: 20px; margin-left: 40px;">联系电话</p>
+        <p style="color: #444444; font-weight: bolder; font-size: 18px; margin-left: 40px;">联系电话</p>
         <p style="margin-left: 40px; font-size: 18px; color: #00c192; line-height: 34px;">
-          0791-8181  &nbsp; <a style="color: #444444;">刘经理</a>
+          0791-8181 &nbsp; <a style="color: #444444;">刘经理</a>
         </p>
       </van-col>
     </van-row>
@@ -60,9 +60,36 @@
 
     <van-row style="margin-top: 10px;">
       <van-col span="24" style="background-color: white; padding:10px 0px 10px 0px;">
-        <p style="color: #444444; font-weight: bolder; font-size: 20px; margin-left: 40px;">公司地址</p>
         <div>
+          <van-tabs type="card">
+            <van-tab title="在招职位">
+              <ul>
+                <li style="padding: 15px;">
+                  <div style="line-height: 35px;">
+                    <p>
+                     <span style="color: #151515; font-weight: bolder; font-size: 18px; float: left;">JAVA</span>
+                     <span style="float: right; color: #ff2d5e; font-weight: bolder;">面议</span>
+                    </p>
+                    <p style="border: #d3d4d6 1px solid; width: 100%; display: block;"></p>
+                  </div>
+                  <div style="height: 100px; width: 100%; border: #b2b3b4 1px solid;">
 
+                  </div>
+                </li>
+              </ul>
+            </van-tab>
+            <van-tab title="公司简介">
+              <p>
+                北京云天时空科技有限公司（以下简称云天时空公司）创建于2011年，公司依托于信息产业通信经济研究所（原邮电部管理干部学院通信经济研究所）形成的产学研一体化的高科技公司。是一家集科研、销售、运营为一体的企业，注册资本2000万元，注册地北京。公司是中关村高新技术认证企业，并获得国家级双软企业认证、国家级系统集成资质及国际ISO9001质量管理体系认证等，同时拥有数十项著作权和专利技术。
+
+                云天时空公司总部位于北京中关村高科技电子工业园区（原邮电部738工业园），具有覆盖全国十余个重点省份的分支机构和技术服务网络。公司拥有一支高素质的科技开发团队，专注于无线网络功能平台与移动互联网应用、无线终端智能技术三者的无缝融合技术的研究和开发，为客户提供安全、可靠和先进的移动互联网解决方案。并于2012年参与建设工业和信息化部消费品工业司组织的“中国食品质量安全追溯体系项目”的平台。与工业和信息化部、电子部一所、CSIP（工业和信息化部软件与集成电路促进中心）、诺基亚西门子公司等具有战略合作关系。
+
+                云天时空公司管理团队由来自于信息产业通信经济研究所、诺基亚西门子、微软等国内外著名软件公司。公司坚持以诚信向用户提供优质的产品和精益求精的服务理念，遵循高效、创新、务实、进取的企业精神，凭借专业的技术优势、务实创新的开拓精神、扎扎实实的员工团队，不断努力为广大客户创造更高的价值。
+
+                欢迎了解学生圈平台：http://www.studentcircle.cn/index.html
+              </p>
+            </van-tab>
+          </van-tabs>
         </div>
       </van-col>
     </van-row>
