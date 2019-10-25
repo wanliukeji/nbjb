@@ -43,7 +43,7 @@
         },
         created() {
             this.activeDate = (new Date()).toString();
-            this.$router.push({name: 'companyGroup'});
+            this.$router.push({name: 'index'});
         },
         mounted() {
 

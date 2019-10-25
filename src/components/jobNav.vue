@@ -134,7 +134,7 @@
       </div>
       <div class="model-div-row">
         <ul class="model-div-row-ul">
-          <li class="model-div-row-li-4" v-for="item in companys">
+          <li class="model-div-row-li-4" v-for="item in companys" @click="gotCompanyList(item.code)">
             <div class="hot-qy-top">
               <img :src="item.imgUrl" class="hot-qy-img">
             </div>
@@ -467,6 +467,9 @@
             },
             gotInfo(id) {
                 this.$router.push({name:'info'});
+            },
+            gotCompanyList(id) {
+                this.$router.push({name:'companyGroup'});
             },
             forItem(items) {
                 try {
