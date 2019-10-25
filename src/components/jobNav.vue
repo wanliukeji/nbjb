@@ -23,7 +23,7 @@
         <div class="hidden-div-center">
           <div class="hidden-div-model" v-for="item in subItem">
             <h4>
-              <a @click="goGroup(item.name)" class="hidden-div-p">
+              <a @click="gotInfo(item.name)" class="hidden-div-p">
                 {{item.name}}
               </a>
             </h4>
@@ -134,7 +134,7 @@
       </div>
       <div class="model-div-row">
         <ul class="model-div-row-ul">
-          <li class="model-div-row-li-4" v-for="item in companys" @click="gotCompanyList(item.code)">
+          <li class="model-div-row-li-4" v-for="item in companys" @click="gotInfo(item.code)">
             <div class="hot-qy-top">
               <img :src="item.imgUrl" class="hot-qy-img">
             </div>
