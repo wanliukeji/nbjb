@@ -269,13 +269,13 @@
             </div>
             <div class="job-info-body">
               <div class="job-info-title">
-                <a   class="job-info-title-span">太极云软</a>
-                <a   class="job-info-title-span">北仑</a>
-                <a   class="job-info-title-span">大碶</a>
-                <a   class="job-info-title-span">本科</a>
-                <a   class="job-info-title-span">6-7年</a>
-                <a   class="job-info-title-span price">8000~9000</a>
-                <a   class="job-info-title-span">2019-10-10发布</a>
+                <a class="job-info-title-span">太极云软</a>
+                <a class="job-info-title-span">北仑</a>
+                <a class="job-info-title-span">大碶</a>
+                <a class="job-info-title-span">本科</a>
+                <a class="job-info-title-span">6-7年</a>
+                <a class="job-info-title-span price">8000~9000</a>
+                <a class="job-info-title-span">2019-10-10发布</a>
               </div>
               <div class="text">
                 <p class="text-p height-fs">
