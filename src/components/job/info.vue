@@ -124,7 +124,7 @@
                     this.x = r.point.lng;
                     this.y = r.point.lat;
                 } else {
-                    alert('failed' + this.getStatus());
+                    console.log('failed' + this.getStatus());
                 }
             }, {enableHighAccuracy: true});
 
@@ -187,7 +187,7 @@
                         this.x = r.point.lng;
                         this.y = r.point.lat;
                     } else {
-                        alert('failed' + this.getStatus());
+                        console.log('failed' + this.getStatus());
                     }
                 }, {enableHighAccuracy: true});
 
