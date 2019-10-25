@@ -205,7 +205,7 @@
                 map.addControl(new BMap.ScaleControl());
                 map.addControl(new BMap.OverviewMapControl());
                 map.addControl(new BMap.MapTypeControl());
-                map.setCurrentCity("宁波");          // 设置地图显示的城市 此项是必须设置的
+                map.setCurrentCity(this.addr);          // 设置地图显示的城市 此项是必须设置的
                 map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
                 var styleOptions = {
                     strokeColor: "red",    //边线颜色。
