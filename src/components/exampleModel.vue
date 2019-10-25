@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="model">
-<!---->
-<!--    <job-nav></job-nav>-->
-<!--<job-info></job-info>-->
+    <!---->
+    <!-- <job-nav></job-nav> -->
+    <!--<job-info></job-info>-->
     <hello>
     </hello>
   </div>
