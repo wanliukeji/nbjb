@@ -28,14 +28,11 @@ import 'video.js/dist/video-js.css'
 // import Mint from 'mint-ui';
 // Vue.use(Mint);
 // import 'mint-ui/lib/style.css';
-
 // import BaiduMap from 'vue-baidu-map'
-
 // Vue.use(BaiduMap,{ak:'16398096469aa2c92d7b87506732cd90'});
 // import storage from 'good-storage'
 //页面跳转
 // import global from './components/Global.vue'
-
 // Vue.use(layer);
 // Vue.prototype.$layer = layer(Vue);
 // Vue.component('popup', popup);
@@ -52,18 +49,13 @@ Vue.use(VueVideoPlayer)
 // Vue.use(axios);
 // Vue.prototype.$http=axios;
 // Vue.prototype.$http.get=VueResource;
-
 // Vue.prototype.$http=axios;
-
 // Vue.prototype.GLOBAL = public;
-
 Vue.config.productionTip = false;
-
 // The routing configuration  备注
 const RouterConfig = {
   routes: router
 };
-
 //页面跳转异常处理
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
@@ -78,5 +70,6 @@ new Vue({
   template: '<App/>'
   // render: h => h(App)
 })
+
 
 

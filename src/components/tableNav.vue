@@ -220,7 +220,7 @@
   }
 
   a {
-    font: 11px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
+    font: 12px/1.5 Tahoma, 'Microsoft Yahei', 'Simsun';
     text-decoration: none;
     color: #333;
     /*padding: 3px;*/

@@ -1,13 +1,13 @@
 <template lang="html">
   <div class="container-body">
-<!-- -->
-<!--    <top/>-->
-<!--    <search/>-->
-<!--    <menu-nav/>-->
-<!--    <table-nav/>-->
+
+    <top/>
+    <search/>
+    <menu-nav/>
+    <table-nav/>
     <router-view/>
-<!--    <footer-table/>-->
-<!--    <footerNav/>-->
+    <footer-table/>
+    <footerNav/>
 <!--    <app-index/>-->
 <!--    <job-list/>-->
   </div>
