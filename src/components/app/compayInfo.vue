@@ -1,6 +1,6 @@
 <template>
   <div class="model">
-    <van-nav-bar style="z-index: 10;" fixed title="公司详情" left-text="返回" right-text="设置" left-arrow
+    <van-nav-bar style="z-index: 10;" title="公司详情" left-text="返回" right-text="设置" left-arrow
                  @click-left="onClickLeft"
                  @click-right="onClickRight"/>
     <van-row>
@@ -150,7 +150,6 @@
     </van-row>
   </div>
 </template>
-
 <script>
     export default {
         name: "compayInfo",
@@ -225,7 +224,6 @@
         }
     }
 </script>
-
 <style scoped>
   .model {
     position: relative;
@@ -242,7 +240,7 @@
   .model-img {
     position: absolute;
     z-index: 1;
-    top: 170px;
+    top: 220px;
     margin-left: 40px;
   }
 
