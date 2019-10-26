@@ -111,7 +111,7 @@
     <van-tabs v-model="active" class="tab-div">
       <van-tab title="推荐职位">
         <ul class="tab-ul">
-          <li class="tab-ul-li" v-for="i in [1,2,3,4]">
+          <li class="tab-ul-li" v-for="i in [1,2,3,4]" @click="goTo('jobInfo')">
             <div class="li-top">
               <p>
                 <span class="p-title">PHP</span>
@@ -155,7 +155,7 @@
       </van-tab>
       <van-tab title="最新职位">
         <ul class="tab-ul">
-          <li class="tab-ul-li" v-for="i in [1,2,3,4]">
+          <li class="tab-ul-li" v-for="i in [1,2,3,4]" @click="goTo('jobInfo')">
             <div class="li-top">
               <p>
                 <span class="p-title">JAVA</span>
