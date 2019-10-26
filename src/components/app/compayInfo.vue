@@ -1,5 +1,6 @@
 <template>
   <div class="model">
+
     <van-nav-bar style="z-index: 10;" fixed title="公司详情" left-text="返回" right-text="设置" left-arrow
                  @click-left="onClickLeft"
                  @click-right="onClickRight"/>
@@ -8,6 +9,7 @@
         <img src="/static/image/aali.jpg" width="100%" height="220"/>
       </van-col>
     </van-row>
+
     <div class="model-img">
       <img src="/static/image/wechat.jpg" width="90" height="90"/>
     </div>
