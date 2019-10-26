@@ -1,6 +1,5 @@
 <template>
   <div class="model">
-
     <van-nav-bar style="z-index: 10;" fixed title="公司详情" left-text="返回" right-text="设置" left-arrow
                  @click-left="onClickLeft"
                  @click-right="onClickRight"/>
@@ -9,11 +8,9 @@
         <img src="/static/image/aali.jpg" width="100%" height="220"/>
       </van-col>
     </van-row>
-
     <div class="model-img">
       <img src="/static/image/wechat.jpg" width="90" height="90"/>
     </div>
-
     <van-row>
       <van-col span="24" style="background-color: white;">
         <div class="col-div">
@@ -41,7 +38,6 @@
         </div>
       </van-col>
     </van-row>
-
     <van-row style="margin-top: 10px;">
       <van-col span="24" class="row-col-link">
         <p class="row-col-phone">联系电话</p>
@@ -50,7 +46,6 @@
         </p>
       </van-col>
     </van-row>
-
     <van-row style="margin-top: 10px;">
       <van-col span="24" class="van-col-map">
         <p class="addr">公司地址</p>
@@ -58,7 +53,6 @@
         </div>
       </van-col>
     </van-row>
-
     <van-row class="joblist">
       <van-col span="24" class="job-col">
         <div>
@@ -130,9 +124,7 @@
         </div>
       </van-col>
     </van-row>
-
     <h1 class="company-title">推荐企业</h1>
-
     <van-row style="margin-top: 10px;">
       <van-col span="24" style="padding: 0px;">
         <ul style="margin: 0 auto;">
