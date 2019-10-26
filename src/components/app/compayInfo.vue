@@ -133,7 +133,7 @@
 
     <van-row style="margin-top: 10px;">
       <van-col span="24" style="padding: 0px;">
-        <lu>
+        <ul style="margin: 0 auto;">
           <li v-for="i in [1,1,1,1,1]" class="li-div">
             <div class="li-img">
               <img src="/static/image/aali.jpg" width="100" height="90">
@@ -151,7 +151,7 @@
               </p>
             </div>
           </li>
-        </lu>
+        </ul>
       </van-col>
     </van-row>
   </div>
@@ -387,7 +387,7 @@
   .li-div {
     width: 100%;
     height: 110px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 20px 20px;
     white-space: nowrap;
     margin-bottom: 10px;
     background-color: white;
@@ -403,7 +403,8 @@
   .li-name {
     display: inline-block;
     margin: 0 auto;
-    width: 60%;
+    width: 70%;
+    padding-left: 10px;
     height: 92px;
   }
 
