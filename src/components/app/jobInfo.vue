@@ -53,8 +53,7 @@
 
     <van-row>
       <van-col span="24">
-        <div
-          style="width: 95%; min-height: 100px; margin: 0 auto; background-color: #ffffff; margin-top: 10px; border-radius: 5px; padding: 15px;">
+        <div class="van-row-div">
           <p>
             <span class="p-title" style="font-size: 18px;">网易科技</span>
             <span class="tab-ul-li-p-span"
@@ -67,9 +66,9 @@
             <span class="li-bottom-div-span">互联网/电子商务</span>
           </p>
 
-          <div style="width: 100%; height: 40px; margin-top: 10px; border-top: #e4e4e4 1px solid;">
-            <p style="line-height: 40px; font-size: 16px; color: #151515;">
-              <span style="float: left; color: #333;">该公司所有的职位</span>
+          <div class="row-col-name">
+            <p class="row-col-name-p">
+              <span class="row-col-name-left">该公司所有的职位</span>
               <span style="float: right;">
                 <svg t="1572225644917" class="icon" viewBox="0 0 1024 1024" version="1.1"
                      xmlns="http://www.w3.org/2000/svg" p-id="1769" width="18" height="18"><path
@@ -80,43 +79,41 @@
 
         </div>
 
-        <div
-          style="width: 95%; min-height: 100px; margin: 0 auto; background-color: #ffffff; margin-top: 10px; margin-bottom: 10px; border-radius: 5px; padding: 15px;">
+        <div class="job-info">
           <p>
-            <span class="p-title" style="font-size: 18px; margin-bottom: 10px;">职位描述:</span>
+            <span class="p-title" style="">职位描述:</span>
           </p>
 
-          <lo style="line-height: 25px;">
-            <li>三年不间断PHP网站或APP接口开发经验,熟练使用PHP, 熟悉主流PHP框架；</li>
+          <ol style="line-height: 25px;">
+            <li>1. 三年不间断PHP网站或APP接口开发经验,熟练使用PHP, 熟悉主流PHP框架；</li>
             <br>
-            <li>熟悉MySQL数据库及其优化；熟练使用Redis、MangoDB数据库；</li>
+            <li>2. 熟悉MySQL数据库及其优化；熟练使用Redis、MangoDB数据库；</li>
             <br>
-            <li>有良好的编码习惯, 注重代码性能及安全性；</li>
+            <li>3. 有良好的编码习惯, 注重代码性能及安全性；</li>
             <br>
-            <li>工作认真严谨, 善于与他人沟通、合作，具有团队精神和良好的自学能力题；</li>
+            <li>4. 工作认真严谨, 善于与他人沟通、合作，具有团队精神和良好的自学能力题；</li>
             <br>
-            <li>熟悉shell/python或对mysql读写分离有实际经验者优先录用；</li>
+            <li>5. 熟悉shell/python或对mysql读写分离有实际经验者优先录用；</li>
             <br>
-            <li>h5开发(css的bootstrap)。</li>
+            <li>6. h5开发(css的bootstrap)。</li>
             <br>
-            <li>熟悉PHP扩展开发者优先；</li>
+            <li>7. 熟悉PHP扩展开发者优先；</li>
             <br>
-            <li>有高并发、大负载下服务端开发经验者优先。</li>
+            <li>8. 有高并发、大负载下服务端开发经验者优先。</li>
             <br>
-            <li>有较好的团队合作精神和沟通能力，有强烈的责任心</li>
-          </lo>
+            <li>9. 有较好的团队合作精神和沟通能力，有强烈的责任心</li>
+          </ol>
         </div>
       </van-col>
     </van-row>
 
-<!--    <van-row-->
-<!--      style="width: 95%; min-height: 100px; margin: 0 auto; background-color: #ffffff; border-radius: 5px; padding: 10px;">-->
-<!--      <van-col span="24" class="van-col-map">-->
-<!--      </van-col>-->
-<!--    </van-row>-->
+    <!--    <van-row-->
+    <!--      style="width: 95%; min-height: 100px; margin: 0 auto; background-color: #ffffff; border-radius: 5px; padding: 10px;">-->
+    <!--      <van-col span="24" class="van-col-map">-->
+    <!--      </van-col>-->
+    <!--    </van-row>-->
 
-    <van-row
-      style="width: 95%; min-height: 100px; margin: 0 auto; background-color: #ffffff; border-radius: 5px; padding: 10px; margin-bottom: 70px;">
+    <van-row class="row-map">
       <van-col span="24" class="van-col-map">
         <p class="addr">公司地址</p>
         <div id="container">
@@ -124,25 +121,26 @@
       </van-col>
     </van-row>
 
-    <div style="position: fixed; bottom: 0px; height: 60px; width: 100%; background-color: #ffffff; padding-bottom: 20px; padding: 10px;">
-      <div style=" width: auto; display: inline-block; vertical-align: top;  width: 10%; margin-right: 10px;">
-        <svg t="1572227336050" style=" display: block; margin: 0 auto;" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    <div class="row-bottom">
+      <div class="row-bottom-left">
+        <svg t="1572227336050" style=" display: block; margin: 0 auto;" class="icon" viewBox="0 0 1024 1024"
+             version="1.1" xmlns="http://www.w3.org/2000/svg"
              p-id="3515" width="30" height="25">
           <path
             d="M511.987 911.927c-11.778 0-23.397-3.967-32.717-11.169-6.322-4.887-63.714-49.503-131.443-110.731-90.284-81.62-155.042-152.78-192.476-211.504-16.984-26.669-33.263-53.062-45.803-82.796-14.956-35.462-22.225-70.536-22.225-107.227 0-67.594 24.281-131.373 68.372-179.587 45.312-49.55 105.938-76.838 170.712-76.838 72.511 0 140.648 35.542 185.59 94.887 44.955-59.343 113.097-94.887 185.596-94.887 64.765 0 125.388 27.288 170.701 76.837 44.098 48.219 68.383 111.998 68.383 179.588 0 83.24-39.333 144.955-68.054 190.018-37.422 58.726-102.177 129.888-192.467 211.51-67.731 61.229-125.131 105.847-131.453 110.732C535.378 907.962 523.761 911.927 511.987 911.927zM326.407 182.073c-50.567 0-98.09 21.515-133.814 60.581-35.642 38.975-55.27 90.771-55.27 145.845 0 29.887 5.984 58.605 18.295 87.797 11.03 26.153 26.114 50.57 41.901 75.358 84.647 132.791 303.07 302.387 312.327 309.542 0.781 0.604 1.595 0.73 2.141 0.73 0.545 0 1.36-0.127 2.146-0.734 9.253-7.15 227.699-176.748 312.323-309.545 28.228-44.291 60.22-94.487 60.22-163.148 0-55.07-19.632-106.866-55.279-145.845-35.727-39.065-83.246-60.58-133.805-60.58-67.126 0-129.784 39.45-163.522 102.955-4.338 8.167-12.831 13.271-22.078 13.271-0.001 0-0.002 0-0.003 0-9.248-0.001-17.74-5.107-22.078-13.276C456.194 221.522 393.542 182.073 326.407 182.073z"
             p-id="3516"></path>
         </svg>
-        <span style="font-size: 11px; width: 100%; text-align: center; display: block; margin: 0 auto;">收藏</span>
+        <span class="row-bottom-left-span">收藏</span>
       </div>
 
-      <div style="display: inline-block; position: relative; vertical-align: top;  width: 30%;  margin-right: 10px;">
-        <button style="border: none; background-color: rgba(0,0,0,0); border: #00c192 1px solid; border-radius: 3px; min-width: 100px;  width: 100%;
-              padding: 10px; vertical-align: middle;">在线沟通</button>
+      <div class="row-bottom-center">
+        <button class="row-bottom-btn">在线沟通
+        </button>
       </div>
 
-      <div style="display: inline-block; position: relative; vertical-align: top;   width: 50%;">
-        <button style="border: none; background-color: #00c192; border: #00c192 1px solid; border-radius: 3px; min-width: 130px; width: 100%;
-              padding: 10px; color: 20px; vertical-align: middle; color: #f2f3f5;">投递简历</button>
+      <div class="row-bottom-right">
+        <button class="row-bottom-right-btn">投递简历
+        </button>
       </div>
     </div>
   </div>
@@ -332,4 +330,117 @@
     margin-top: 10px;
   }
 
+  .van-row-div {
+    width: 95%;
+    min-height: 100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+  }
+
+  .row-col-name {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-top: #e4e4e4 1px solid;
+  }
+
+  .row-col-name-p {
+    line-height: 40px;
+    font-size: 16px;
+    color: #151515;
+  }
+
+  .row-col-name-left {
+    float: left;
+    color: #333;
+  }
+
+  .job-info {
+    width: 95%;
+    min-height: 100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 15px;
+  }
+
+  .row-map {
+    width: 95%;
+    min-height: 100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 70px;
+  }
+
+  .row-bottom {
+    position: fixed;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+    padding: 10px;
+  }
+
+  .row-bottom-left {
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+    width: 10%;
+    margin-right: 10px;
+  }
+
+  .row-bottom-left-span {
+    font-size: 11px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .row-bottom-center {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 30%;
+    margin-right: 10px;
+  }
+
+  .row-bottom-btn {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border: #00c192 1px solid;
+    border-radius: 3px;
+    min-width: 100px;
+    width: 100%;
+    padding: 10px;
+    vertical-align: middle;
+  }
+
+  .row-bottom-right {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 50%;
+  }
+
+  .row-bottom-right-btn {
+    border: none;
+    background-color: #00c192;
+    border: #00c192 1px solid;
+    border-radius: 3px;
+    min-width: 130px;
+    width: 100%;
+    padding: 10px;
+    vertical-align: middle;
+    color: #f2f3f5;
+  }
 </style>
