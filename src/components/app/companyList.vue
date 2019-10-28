@@ -1,7 +1,8 @@
 <template>
   <div class="model">
-    <van-nav-bar fixed title="公司列表" left-text="返回" right-text="设置" left-arrow @click-left="onClickLeft"
-                 @click-right="onClickRight"/>
+    <van-nav-bar fixed title="公司列表" left-text="返回" left-arrow @click-left="onClickLeft">
+      <svg t="1572229825059" @click="onClickRight" slot="right" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5058" width="20" height="20"><path d="M38.5536 858.8288v-66.0992h946.944v66.0992H38.5536z m0-330.2912V462.4384H856.064v66.0992H38.5536z m0-330.3424v-66.048h946.944v66.0992H38.5536z" p-id="5059" fill="#ffffff"></path></svg>
+    </van-nav-bar>
     <van-dropdown-menu class="menu">
       <van-dropdown-item v-model="value1" :options="option1"/>
       <van-dropdown-item v-model="value2" :options="option2"/>
